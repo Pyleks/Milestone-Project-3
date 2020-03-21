@@ -1,3 +1,28 @@
 {% extends 'base.html' %} {% block content %}
+<!--    callout image-->
+<div class="section image-container container">
+    <div class="row">
+        <div class="col-12">
+            <img class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
+        </div>
+    </div>
+</div>
+
+<div class="section container">
+    <div class="row">
+        {% for url in imageDB %}
+        <div class="col-4">
+            <div class="card card-box cooking-img">
+                <img class="auto-size img-fluid" src="{{url.url}}">
+                <div class="card-body">
+                    <div class="card-text">
+                        <p>{{url.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

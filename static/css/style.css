@@ -32,3 +32,22 @@ body {
         max-width: 1200px;
     }
 }
+/************ Navigation Bar Text ************/
+.navbar-nav {
+    font-size: 1.5em;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+
+/************ Hero Image ************/
+.main-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    padding: 0 0 3em 0;
+
+}
+
