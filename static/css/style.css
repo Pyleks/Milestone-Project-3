@@ -20,3 +20,10 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
+/************ Custom container ************/
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1200px;
+    }
+}
