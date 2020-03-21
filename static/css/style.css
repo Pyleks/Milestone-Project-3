@@ -21,6 +21,11 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
+/************ Global Font ************/
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 /************ Custom container ************/
 @media (min-width: 1200px) {
     .container{
