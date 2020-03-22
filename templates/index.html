@@ -13,12 +13,22 @@
         {% for url in imageDB %}
         <div class="col-4">
             <div class="card card-box cooking-img">
-                <img class="auto-size img-fluid" src="{{url.url}}">
-                <div class="card-body">
-                    <div class="card-text">
-                        <p>{{url.name}}</p>
+                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                    <img class="auto-size img-fluid" src="{{url.url}}">
+                    <div class="card-body">
+                        <div class="card-text ">
+                            <div class="info-card-wrap">
+                                <p>{{url.name}}</p>
+                                <div class="star-wrap">
+                                    <a class="far fa-star"></a>
+                                    <a class="far fa-star"></a>
+                                    <a class="far fa-star"></a>
+                                    <a class="far fa-star"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         {% endfor %}

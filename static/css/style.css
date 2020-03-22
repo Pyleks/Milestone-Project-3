@@ -26,6 +26,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
 /************ Custom container ************/
 @media (min-width: 1200px) {
     .container{
@@ -50,4 +54,16 @@ body {
     padding: 0 0 3em 0;
 
 }
+/************ Card boxes ************/
+/*.star-rating {*/
+/*    display: flex;*/
+/*}*/
 
+.info-card-wrap {
+    display: flex;
+}
+
+.star-wrap {
+    float: right;
+    margin-left: auto;
+}
