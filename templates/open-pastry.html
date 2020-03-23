@@ -4,9 +4,46 @@
     <div class="row">
         <div class="col-12">
             <img class="main-image" src="{{task.url}}">
-
         </div>
     </div>
 </div>
+
+<section class="food-headline description">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="food-text text-center">{{task.name}}</h1>
+                {% for names in task %}
+                {{names.name}}
+                {% endfor %}
+                <div class="star-wrap-middle">
+                    <a class="far fa-star"></a>
+                    <a class="far fa-star"></a>
+                    <a class="far fa-star"></a>
+                    <a class="far fa-star"></a>
+                    <a class="far fa-star"></a>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 text-center card">
+                <h2 class="global-h2">Ingridents</h2>
+                <ul class="list-group list-group-flush">
+                    {% for content in task.ingredients %}
+                    <li class="list-group-item">{{content}}</li>
+                    {%endfor%}
+
+
+
+
+                </ul>
+            </div>
+            <div class="col-6 text-center">
+                <h2 class="global-h2">This is how you do it</h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
