@@ -22,7 +22,7 @@ def recipes():
 @app.route('/viewBake/<task_id>')
 def viewBake(task_id):
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    return render_template('open-pastry.html', pastry_details=access_pastry)
+    return render_template('pastry.html', pastry_details=access_pastry)
 
 
 if __name__ == '__main__':
