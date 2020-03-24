@@ -22,8 +22,12 @@ def recipes():
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-
     return render_template('pastry.html', pastry_details=access_pastry)
+
+@app.route('/update_pastry/<task_id>')
+def update_pastry(task_id):
+    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+    return render_template('pastryUpdate.html', pastry_details=access_pastry)
 
 
 if __name__ == '__main__':
