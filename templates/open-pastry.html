@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
+<!--Generated Image from MongoDB-->
 <div class="container-fluid bg-lightBlue">
     <div class="section image-container container">
         <div class="row">
@@ -10,16 +11,16 @@
     </div>
 </div>
 
-<section class="food-headline description">
 
+<section class="food-headline description">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="food-text text-center">{{task.name}}</h1>
+                <h1 class="pastry-name text-center">{{task.name}}</h1>
                 {% for names in task %}
                 {{names.name}}
                 {% endfor %}
-                <div class="star-wrap-middle">
+                <div class="star-wrap-pastry">
                     <a class="far fa-star"></a>
                     <a class="far fa-star"></a>
                     <a class="far fa-star"></a>
@@ -31,7 +32,7 @@
         </div>
         <div class="row">
             <div class="offset-1 col-5 text-center card bg-lightBlue">
-                <h2 class="global-h2">Ingredients</h2>
+                <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
                 <h3 class="portion-size">Number of portions</h3>
                 <h3 class="portion-number">{{task.portions}}</h3>
 
@@ -40,11 +41,10 @@
                     <li class="list-group-item bg-lightBlue">{{content}}</li>
                     {%endfor%}
 
-
                 </ul>
             </div>
-            <div class="col-6 text-center">
-                <h2 class="global-h2">This is how you do it</h2>
+            <div class="col-6 ">
+                <h2 class="pastry-h2 text-center">This is how you do it</h2>
             </div>
         </div>
     </div>

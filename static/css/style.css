@@ -64,10 +64,6 @@ a:-webkit-any-link {
 
 }
 /************ Card boxes ************/
-/*.star-rating {*/
-/*    display: flex;*/
-/*}*/
-
 .info-card-wrap {
     display: flex;
 }
@@ -77,25 +73,29 @@ a:-webkit-any-link {
     margin-left: auto;
 }
 
-.star-wrap-middle {
+
+/************ PASTRY PAGE CSS ************/
+
+.pastry-name {
+    font-size: 2.5em;
+    text-decoration: underline;
+    padding: 0.5em 0 0 0;
+
+}
+
+.pastry-h2 {
+    font-size: 1.9em;
+    font-weight: 600;
+}
+.star-wrap-pastry {
     text-align: center;
     padding: 2em 0 2em 0;
 }
 
-.food-text {
-    font-size: 2.5em;
-    text-decoration: underline;
-
+.ing-buffer {
+    padding: 0 0 0.5em 0;
 }
 
-.global-h2 {
-    font-size: 1.9em;
-    font-weight: 600;
-
-
-}
-
-/************ PASTRY PAGE CSS ************/
 .portion-size {
     font-size: 1.4em;
     padding: 0 0 0.5em 0;
