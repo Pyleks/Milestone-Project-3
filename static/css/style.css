@@ -30,11 +30,20 @@ a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
 }
-/************ Custom container ************/
+/************ Custom Global container ************/
 @media (min-width: 1200px) {
     .container{
         max-width: 1200px;
     }
+}
+
+/************ Global Background Color Scheme ************/
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.bg-lightBlue {
+    background-color: #f0f8ff !important;
 }
 /************ Navigation Bar Text ************/
 .navbar-nav {
@@ -51,7 +60,7 @@ a:-webkit-any-link {
     width: 100%;
     display: block;
     height: auto;
-    padding: 0 0 3em 0;
+
 
 }
 /************ Card boxes ************/
@@ -80,6 +89,19 @@ a:-webkit-any-link {
 }
 
 .global-h2 {
-    font-size: 1.6em;
+    font-size: 1.9em;
     font-weight: 600;
+
+
+}
+
+/************ PASTRY PAGE CSS ************/
+.portion-size {
+    font-size: 1.4em;
+    padding: 0 0 0.5em 0;
+}
+.portion-number {
+    font-size: 2em;
+    font-weight: 600;
+    padding: 0 0 0.7em 0;
 }
