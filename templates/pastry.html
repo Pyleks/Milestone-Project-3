@@ -32,17 +32,15 @@
             </div>
         </div>
         <div class="row lower-footer">
-            <div class="col-5 text-center card bg-lightBlue">
+            <div class="col-5 text-center card-body bg-lightBlue">
                 <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
                 <h3 class="portion-size">Number of portions</h3>
                 <h3 class="portion-number">{{pastry_details.portions}}</h3>
+                {% for content in pastry_details.ingredients %}
+                <p class="card-text pastry_text">{{content}}</p>
+                <hr>
+                {%endfor%}
 
-                <ul class="list-group list-group-flush pastry_text">
-                    {% for content in pastry_details.ingredients %}
-                    <li class="list-group-item bg-lightBlue">{{content}}</li>
-                    {%endfor%}
-
-                </ul>
             </div>
             <div class="offset-2 col-5 ">
                 <h2 class="pastry-h2 text-center">This is how you do it</h2>
