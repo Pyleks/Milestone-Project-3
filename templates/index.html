@@ -8,10 +8,10 @@
     </div>
 </div>
 
-<div class="section container">
+<div class="section container container-space">
     <div class="row">
         {% for url in imageDB %}
-        <div class="col-4">
+        <div class="col-4 extra-pad">
             <div class="card card-box cooking-img">
                 <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
                     <img class="auto-size img-fluid" src="{{url.url}}">

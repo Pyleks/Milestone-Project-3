@@ -72,6 +72,19 @@ a:-webkit-any-link {
     float: right;
     margin-left: auto;
 }
+/************ Landing Page CSS ************/
+.container-space {
+    padding: 2% 1% 2% 1%;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.extra-pad {
+    padding: 0.5% 1% 0.5% 1%;
+}
+
 
 
 /************ PASTRY PAGE CSS ************/
@@ -120,4 +133,14 @@ a:-webkit-any-link {
     font-size: 2em;
     font-weight: 600;
     padding: 0 0 0.7em 0;
+}
+
+/************ Footer ************/
+.footer-container {
+    background-color: currentColor;
+    padding: 2% 0 2% 0;
+}
+
+.lower-footer {
+    padding: 0 0 5% 0;
 }

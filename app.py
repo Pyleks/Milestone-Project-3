@@ -19,9 +19,10 @@ def recipes():
         imageDB=mongo.db.imageDB.find())
 
 
-@app.route('/viewBake/<task_id>')
+@app.route('/pastries/<task_id>/')
 def viewBake(task_id):
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+
     return render_template('pastry.html', pastry_details=access_pastry)
 
 
