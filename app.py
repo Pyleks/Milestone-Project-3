@@ -21,10 +21,8 @@ def recipes():
 
 @app.route('/viewBake/<task_id>')
 def viewBake(task_id):
-    view_task = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    view_ingredients = mongo.db.ingredients.find()
-    access_ingredients = mongo.db.imageDB.find()
-    return render_template('open-pastry.html', task=view_task, ingredients=view_ingredients, my_ingredients=access_ingredients)
+    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+    return render_template('open-pastry.html', pastry_details=access_pastry)
 
 
 if __name__ == '__main__':

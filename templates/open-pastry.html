@@ -5,7 +5,7 @@
     <div class="section image-container container">
         <div class="row">
             <div class="col-12">
-                <img class="main-image" src="{{task.url}}">
+                <img class="main-image" src="{{pastry_details.url}}">
             </div>
         </div>
     </div>
@@ -16,9 +16,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="pastry-name text-center">{{task.name}}</h1>
-                {% for names in task %}
-                {{names.name}}
+                <h1 class="pastry-name text-center">{{pastry_details.name}}</h1>
+                {% for ingredient in pastry_details %}
+                {{ingredient.name}}
                 {% endfor %}
                 <div class="star-wrap-pastry">
                     <a class="far fa-star"></a>
@@ -27,7 +27,7 @@
                     <a class="far fa-star"></a>
                     <a class="far fa-star"></a>
                 </div>
-                <p class="text-center callout-margin">{{task.callout}}</p>
+                <p class="text-center callout-margin">{{pastry_details.callout}}</p>
                 <hr class="buffer-margin">
             </div>
         </div>
@@ -35,10 +35,10 @@
             <div class="col-5 text-center card bg-lightBlue">
                 <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
                 <h3 class="portion-size">Number of portions</h3>
-                <h3 class="portion-number">{{task.portions}}</h3>
+                <h3 class="portion-number">{{pastry_details.portions}}</h3>
 
                 <ul class="list-group list-group-flush pastry_text">
-                    {% for content in task.ingredients %}
+                    {% for content in pastry_details.ingredients %}
                     <li class="list-group-item bg-lightBlue">{{content}}</li>
                     {%endfor%}
 
@@ -47,7 +47,7 @@
             <div class="offset-2 col-5 ">
                 <h2 class="pastry-h2 text-center">This is how you do it</h2>
                 <ol class="text-left pastry_text">
-                    {% for steps in task.howTo%}
+                    {% for steps in pastry_details.howTo%}
                     <li class="recipe-steps">{{steps}}</li>
                     {%endfor%}
                 </ol>
