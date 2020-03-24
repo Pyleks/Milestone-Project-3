@@ -75,7 +75,14 @@ a:-webkit-any-link {
 
 
 /************ PASTRY PAGE CSS ************/
+.pastry_text {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
 
+.recipe-steps {
+    padding: 0.5em 0 0.5em 0;
+}
 .pastry-name {
     font-size: 2.5em;
     text-decoration: underline;

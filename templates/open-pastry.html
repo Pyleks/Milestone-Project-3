@@ -32,22 +32,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="offset-1 col-5 text-center card bg-lightBlue">
+            <div class="col-5 text-center card bg-lightBlue">
                 <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
                 <h3 class="portion-size">Number of portions</h3>
                 <h3 class="portion-number">{{task.portions}}</h3>
 
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush pastry_text">
                     {% for content in task.ingredients %}
                     <li class="list-group-item bg-lightBlue">{{content}}</li>
                     {%endfor%}
 
                 </ul>
             </div>
-            <div class="col-6 ">
+            <div class="offset-2 col-5 ">
                 <h2 class="pastry-h2 text-center">This is how you do it</h2>
-                <ol>
-                    <li></li>
+                <ol class="text-left pastry_text">
+                    {% for steps in task.howTo%}
+                    <li class="recipe-steps">{{steps}}</li>
+                    {%endfor%}
                 </ol>
             </div>
         </div>
