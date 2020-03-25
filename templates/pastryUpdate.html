@@ -4,33 +4,38 @@
 <div class="container">
     <h3 class="update-heading">Update {{pastry_details.name}} Recipe</h3>
     <div class="row">
-        <form class="full-form">
+        <form action="{{ url_for('update_pastry', task_id=pastry_details._id)}}" method="POST" class="full-form">
             <div class="form-group">
                 <label for="exampleInputEmail1">Image URL</label>
-                <input type="text" class="form-control" aria-describedby="emailHelp">
+                <input id="pastry_url" name="pastry_url" type="text" class="validate form-control" value="{{pastry_details.url}}">
 
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Pastry Name</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <input id="pastry_name" name="pastry_name" type="text" class="validate form-control" value="{{pastry_details.name}}">
+
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Callout Text</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <input id="pastry_callout" name="pastry_callout" type="text" class="validate form-control" value="{{pastry_details.callout}}">
+
             </div>
             <div class="form-group text-left small-form">
                 <label for="exampleInputPassword1">Portions</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <input id="pastry_portions" name="pastry_portions" type="text" class="validate form-control" value="{{pastry_details.portions}}">
+
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Ingredients</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control" value="{{pastry_details.ingredients|join(', ')}}">
+
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">How To</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control" value="{{pastry_details.howTo|join(', ')}}">
+
             </div>
-            <button type="button" class="btn btn-outline-success">Update</button>
+            <button type="submit" name="action" class="btn btn-outline-success">Update</button>
         </form>
     </div>
 </div>

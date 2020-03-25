@@ -46,12 +46,12 @@
                 <h2 class="pastry-h2 text-center">This is how you do it</h2>
                 <ol class="text-left pastry_text">
                     {% for steps in pastry_details.howTo%}
-                    <li class="recipe-steps">{{steps}}</li>
+                    <li class="recipe-steps">{{steps}} </li>
                     {%endfor%}
                 </ol>
             </div>
         </div>
     </div>
 </section>
-<a class="button-placement btn btn-outline-dark" href="{{url_for('update_pastry', task_id=pastry_details._id)}}" role="button" id="update">Update</a>
+<a class="button-placement btn btn-outline-dark" href="{{url_for('edit_pastry', task_id=pastry_details._id)}}" role="button" id="update">Update</a>
 {% endblock %}
