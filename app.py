@@ -20,8 +20,27 @@ def recipes():
         imageDB=mongo.db.imageDB.find())
 
 @app.route('/add_pastry')
-def add_pastry:
-    return render_template('add_pastry')
+def add_pastry():
+    return render_template('add_pastry.html')
+
+
+@app.route('/insert_pastry', methods=['POST'])
+def insert_pastry():
+    all_ingredients = request.form.get('pastry_ingredients')
+    all_ingredients_array = all_ingredients.split(", ")
+    all_howto = request.form.get('pastry_howTo')
+    all_howto_array = all_howto.split(", ")
+    mongo.db.imageDB.insert(
+                     {
+                         'name': request.form.get('pastry_name'),
+                         'callout': request.form.get('pastry_callout'),
+                         'url': request.form.get('pastry_url'),
+                         'ingredients': all_ingredients_array,
+                         'howTo': all_howto_array,
+                         'portions': request.form.get('pastry_portions')
+                     })
+
+    return redirect(url_for('recipes'))
 
 
 @app.route('/pastries/<task_id>/')
@@ -53,8 +72,7 @@ def update_pastry(task_id):
                           'portions': request.form.get('pastry_portions')
                       })
     return redirect(url_for('recipes'))
-    # access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    # return render_template('pastryUpdate.html', pastry_details=access_pastry)
+
 
 
 if __name__ == '__main__':

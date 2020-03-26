@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<div class="container">
+
+    <div class="row update-margin">
+        <div class="col-12">
+            <h3 class="update-heading">Create Recipe</h3>
+            <form action="{{ url_for('insert_pastry')}}" method="POST" class="full-form">
+                <div class="form-group card card-body bg-lightBlue">
+                    <label class="strong-label">URL</label>
+                    <input id="pastry_url" name="pastry_url" type="text" class="validate form-control">
+                </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group card card-body bg-lightBlue">
+                <label class="strong-label">Pastry Name</label>
+                <input id="pastry_name" name="pastry_name" type="text" class="validate form-control">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group card card-body bg-lightBlue">
+                <label class="strong-label">Callout Text</label>
+                <input id="pastry_callout" name="pastry_callout" type="text" class="validate form-control">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group text-left small-form card card-body bg-lightBlue">
+                <label class="strong-label">Portions</label>
+                <input id="pastry_portions" name="pastry_portions" type="text" class="validate form-control">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group card card-body bg-lightBlue">
+                <label class="strong-label">Ingredients</label>
+                <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control">
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group card card-body bg-lightBlue">
+                <label class="strong-label">How To</label>
+                <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control">
+
+            </div>
+            <button type="submit" name="action" class="btn btn-outline-success">Update</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
