@@ -74,6 +74,11 @@ def update_pastry(task_id):
     return redirect(url_for('recipes'))
 
 
+@app.route('/delete_pastry/<task_id>')
+def delete_pastry(task_id):
+    mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('recipes'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
