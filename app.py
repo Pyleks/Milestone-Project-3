@@ -19,6 +19,10 @@ def recipes():
     return render_template("index.html",
         imageDB=mongo.db.imageDB.find())
 
+@app.route('/add_pastry')
+def add_pastry:
+    return render_template('add_pastry')
+
 
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
