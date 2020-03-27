@@ -19,6 +19,14 @@ def recipes():
     return render_template("index.html",
         imageDB=mongo.db.imageDB.find())
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
+@app.route('/register')
+def register():
+    return render_template("register.html")
+
 @app.route('/add_pastry')
 def add_pastry():
     return render_template('add_pastry.html')

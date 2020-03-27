@@ -176,6 +176,22 @@ a:-webkit-any-link {
 .update-margin{
     margin: 0 10% 0 10%;
 }
+/************ LOGIN AND REGISTER CSS************/
+.credential-margin {
+    margin: 0 25% 0 25%;
+}
+
+.login-heading{
+    font-size: 3em;
+    margin: 50% 0 5%;
+    text-align: center;
+}
+
+.register-heading {
+    font-size: 3em;
+    margin: 30% 0 5%;
+    text-align: center;
+}
 /************ Footer ************/
 .footer-container {
     background-color: currentColor;
