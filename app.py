@@ -1,12 +1,13 @@
 import os
 from os import path
 import json
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if path.exists("env.py"):
     import env
+
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'nordicPastry'
@@ -14,6 +15,8 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_NAME")
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+users_collection = mongo.db.users
 
 @app.route('/')
 @app.route('/recipes')
@@ -24,10 +27,6 @@ def recipes():
 @app.route('/login')
 def login():
     return render_template("login.html")
-
-@app.route('/register')
-def register():
-    return render_template("register.html")
 
 @app.route('/add_pastry')
 def add_pastry():
@@ -87,6 +86,59 @@ def update_pastry(task_id):
 @app.route('/delete_pastry/<task_id>')
 def delete_pastry(task_id):
     mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('recipes'))
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Check if user is not logged in already
+    if 'user' in session:
+        flash('You are already sign in!')
+        print("You are alreay loggedin")
+        return redirect(url_for('recipes'))
+
+    if request.method == 'POST':
+        form = request.form.to_dict()
+        # Check if the password and password1 actualy match
+        if form['user_password'] == form['user_password1']:
+            # If so try to find the user in db
+            user = users_collection.find_one({"username" : form['username']})
+            if user:
+                flash(f"{form['username']} already exists!")
+                return redirect(url_for('register'))
+            # If user does not exist register new user
+            else:
+                # Hash password
+                hash_pass = generate_password_hash(form['user_password'])
+                #Create new user with hashed password
+                users_collection.insert_one(
+                    {
+                        'username': form['username'],
+                        'email': form['email'],
+                        'password': hash_pass
+                    }
+                )
+                # Check if user is actualy saved
+                user_in_db = users_collection.find_one({"username": form['username']})
+                if user_in_db:
+                    # Log user in (add to session)
+                    session['user'] = user_in_db['username']
+                    return redirect(url_for('register'))
+                else:
+                    flash("There was a problem savaing your profile")
+                    return redirect(url_for('register'))
+
+        else:
+            flash("Passwords dont match!")
+            return redirect(url_for('register'))
+
+    return render_template("register.html")
+
+@app.route('/logout')
+def logout():
+    # Clear the session
+    session.clear()
+    flash('You were logged out!')
     return redirect(url_for('recipes'))
 
 
