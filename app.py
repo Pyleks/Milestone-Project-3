@@ -24,9 +24,7 @@ def recipes():
     return render_template("index.html",
         imageDB=mongo.db.imageDB.find())
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
+
 
 @app.route('/add_pastry')
 def add_pastry():
@@ -87,6 +85,45 @@ def update_pastry(task_id):
 def delete_pastry(task_id):
     mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('recipes'))
+
+
+@app.route('/login', methods=['GET'])
+def login():
+    # Check if user is not logged in already
+    if 'user' in session:
+        user_in_db = users_collection.find_one({"username": session['user']})
+        if user_in_db:
+            # If so redirect user to his profile
+            flash("You are logged in already!")
+            return render_template('recipes.html')
+    else:
+        # Render the page for user to be able to log in
+        return render_template("login.html")
+
+
+@app.route('/user_auth', methods=['POST'])
+def user_auth():
+    form = request.form.to_dict()
+    user_in_db = users_collection.find_one({"username": form['username']})
+    # Check for user in database
+    if user_in_db:
+        # If passwords match (hashed / real password)
+        if check_password_hash(user_in_db['password'], form['user_password']):
+            # Log user in (add to session)
+            session['user'] = form['username']
+            # If the user is admin redirect him to admin area
+            if session['user'] == "admin":
+                return redirect(url_for('recipes'))
+            else:
+                flash("You were logged in!")
+                return redirect(url_for('recipes'))
+
+        else:
+            flash("Wrong password or user name!")
+            return redirect(url_for('login'))
+    else:
+        flash("You must be registered!")
+        return redirect(url_for('register'))
 
 
 @app.route('/register', methods=['GET', 'POST'])

@@ -5,13 +5,13 @@
     <div class="row credential-margin">
         <div class="col-12">
             <h3 class="login-heading">Login</h3>
-            <form action="{{ url_for('insert_pastry')}}" method="POST" class="full-form">
+            <form action="/user_auth" method="POST" class="full-form">
                 <div class="form-group card card-body bg-lightBlue">
-                    <label class="strong-label">Email</label>
-                    <input id="pastry_name" name="pastry_name" type="email" placeholder="Email" class="validate form-control">
+                    <label for="username" class="strong-label">Username</label>
+                    <input  name="username" type="text" placeholder="Username" class="validate form-control">
 
-                    <label class="strong-label">Password</label>
-                    <input id="pastry_callout" name="pastry_callout" type="password" placeholder="Type your Password" class="validate form-control">
+                    <label for="user_password" class="strong-label">Password</label>
+                    <input name="user_password" type="password" placeholder="Type your Password" class="validate form-control">
 
 
                 </div>
