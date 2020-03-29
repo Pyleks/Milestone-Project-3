@@ -31,6 +31,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                         </li>
+                        {%endif%}
+                        {% if session.user and session.user != "Administrator" %}
                         <li class="nav-item">
                             <a class="nav-link h" href="#">{{session.user}}</a>
                         </li>
@@ -41,6 +43,11 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  {% if 'register' in request.path %} active {% endif %}" href="{{url_for('register')}}">Register</a>
+                        </li>
+                        {% endif %}
+                        {% if session.user == "Administrator" %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('admin_portal')}}">Admin Portal</a>
                         </li>
                         {% endif %}
 

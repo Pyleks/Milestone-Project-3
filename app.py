@@ -17,12 +17,18 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 users_collection = mongo.db.users
+admin_approval = mongo.db.approval
 
 @app.route('/')
 @app.route('/recipes')
 def recipes():
     return render_template("index.html",
         imageDB=mongo.db.imageDB.find())
+
+
+@app.route('/admin_portal')
+def admin_portal():
+    return render_template("admin_portal.html")
 
 
 @app.route('/add_pastry')
@@ -54,6 +60,17 @@ def insert_pastry():
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user']
                      })
+
+    mongo.db.approval.insert(
+        {
+            'name': request.form.get('pastry_name'),
+            'callout': request.form.get('pastry_callout'),
+            'url': request.form.get('pastry_url'),
+            'ingredients': all_ingredients_array,
+            'howTo': all_howto_array,
+            'portions': request.form.get('pastry_portions'),
+            'author': session['user']
+        })
 
     return redirect(url_for('recipes'))
 
