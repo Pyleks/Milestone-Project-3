@@ -25,10 +25,17 @@ def recipes():
         imageDB=mongo.db.imageDB.find())
 
 
-
 @app.route('/add_pastry')
 def add_pastry():
-    return render_template('add_pastry.html')
+    if 'user' in session:
+        user_in_db = users_collection.find_one({"username": session['user']})
+        if user_in_db:
+            # If so redirect user to his profile
+            return render_template('add_pastry.html')
+    else:
+        # Render the page for user to be able to log in
+        return render_template("login.html")
+
 
 
 @app.route('/insert_pastry', methods=['POST'])
@@ -58,8 +65,15 @@ def viewBake(task_id):
 
 @app.route('/edit_pastry/<task_id>')
 def edit_pastry(task_id):
-    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    return render_template('pastryUpdate.html', pastry_details=access_pastry)
+    if 'user' in session:
+        if session['user'] == 'admin':
+            access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+            return render_template('pastryUpdate.html', pastry_details=access_pastry)
+        else:
+            flash('Only Admins can access this page!')
+            return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/update_pastry/<task_id>', methods=["POST"])
@@ -95,10 +109,10 @@ def login():
         if user_in_db:
             # If so redirect user to his profile
             flash("You are logged in already!")
-            return render_template('recipes.html')
+            return redirect(url_for('recipes'))
     else:
         # Render the page for user to be able to log in
-        return render_template("login.html")
+        return render_template('login.html')
 
 
 @app.route('/user_auth', methods=['POST'])
