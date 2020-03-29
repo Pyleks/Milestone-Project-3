@@ -1,6 +1,36 @@
 {% extends 'base.html' %} {% block content %}
 
+<section class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="admin-name">Administrative Portal</h1>
+            <h2 class="approval-name">Waiting Approval</h2>
+        </div>
+    </div>
+    <div class="row">
+        {% for url in imageDB %}
+        {% if url.approved == false %}
+        <div class="col-6 extra-pad">
+            <div class="card card-box cooking-img">
+                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                    <img class="auto-size img-fluid" src="{{url.url}}">
+                    <div class="card-body">
+                        <div class="card-text ">
+                            <div class="info-card-wrap">
+                                <p>{{url.name}}</p>
+                                <!--                                <a class="btn btn-outline-dark" href="{{url_for('delete_pastry', task_id=url._id)}}" role="button">Delete</a>-->
 
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+</section>
 
 
 {% endblock %}

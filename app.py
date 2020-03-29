@@ -28,7 +28,7 @@ def recipes():
 
 @app.route('/admin_portal')
 def admin_portal():
-    return render_template("admin_portal.html")
+    return render_template("admin_portal.html", imageDB=mongo.db.imageDB.find())
 
 
 @app.route('/add_pastry')
@@ -58,19 +58,10 @@ def insert_pastry():
                          'ingredients': all_ingredients_array,
                          'howTo': all_howto_array,
                          'portions': request.form.get('pastry_portions'),
-                         'author': session['user']
+                         'author': session['user'],
+                         'approved': False
                      })
 
-    mongo.db.approval.insert(
-        {
-            'name': request.form.get('pastry_name'),
-            'callout': request.form.get('pastry_callout'),
-            'url': request.form.get('pastry_url'),
-            'ingredients': all_ingredients_array,
-            'howTo': all_howto_array,
-            'portions': request.form.get('pastry_portions'),
-            'author': session['user']
-        })
 
     return redirect(url_for('recipes'))
 
