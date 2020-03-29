@@ -51,7 +51,8 @@ def insert_pastry():
                          'url': request.form.get('pastry_url'),
                          'ingredients': all_ingredients_array,
                          'howTo': all_howto_array,
-                         'portions': request.form.get('pastry_portions')
+                         'portions': request.form.get('pastry_portions'),
+                         'author': session['user']
                      })
 
     return redirect(url_for('recipes'))
