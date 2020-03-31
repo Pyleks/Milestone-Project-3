@@ -29,8 +29,7 @@ def recipes():
 @app.route('/admin_portal')
 def admin_portal():
     if 'user' in session:
-        user_in_db = users_collection.find_one({"username": session['user']})
-        if user_in_db == "Administrator":
+        if session['user'] == "Administrator":
             return render_template("admin_portal.html", imageDB=mongo.db.imageDB.find())
         else:
             return redirect(url_for('recipes'))

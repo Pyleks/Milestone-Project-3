@@ -203,6 +203,12 @@ a:-webkit-any-link {
     margin: 5% 0 2% 0;
 }
 
+.admin-card {
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
 /************ Footer ************/
 .footer-container {
     background-color: currentColor;
