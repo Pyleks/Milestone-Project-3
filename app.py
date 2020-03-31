@@ -122,9 +122,18 @@ def delete_pastry(task_id):
 @app.route('/approve_pastry/<task_id>')
 def approve_pastry(task_id):
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
-                        {
-                            'approved': True
-                        })
+                            {
+                                '$set': {
+                                    'approved': True
+                                }
+                            },
+                            # protection={'seq': True, '_id': False},
+                            upsert=False
+
+                            )
+
+    return redirect(url_for('admin_portal'))
+
 
 @app.route('/login', methods=['GET'])
 def login():
