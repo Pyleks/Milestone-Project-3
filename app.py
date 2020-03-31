@@ -26,11 +26,14 @@ def recipes():
         imageDB=mongo.db.imageDB.find())
 
 
+
 @app.route('/admin_portal')
 def admin_portal():
     if 'user' in session:
         if session['user'] == "Administrator":
-            return render_template("admin_portal.html", imageDB=mongo.db.imageDB.find())
+            approval_false = mongo.db.imageDB.find({'approved': False})
+            return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count())
+
         else:
             return redirect(url_for('recipes'))
     else:
@@ -81,7 +84,7 @@ def viewBake(task_id):
 @app.route('/edit_pastry/<task_id>')
 def edit_pastry(task_id):
     if 'user' in session:
-        if session['user'] == 'admin':
+        if session['user'] == 'Administrator':
             access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
             return render_template('pastryUpdate.html', pastry_details=access_pastry)
         else:
@@ -93,19 +96,19 @@ def edit_pastry(task_id):
 
 @app.route('/update_pastry/<task_id>', methods=["POST"])
 def update_pastry(task_id):
-    pastry_db = mongo.db.imageDB
     all_ingredients = request.form.get('pastry_ingredients')
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
     all_howto_array = all_howto.split(", ")
-    pastry_db.update({'_id': ObjectId(task_id)},
+    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                       {
                           'name': request.form.get('pastry_name'),
                           'callout': request.form.get('pastry_callout'),
                           'url': request.form.get('pastry_url'),
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
-                          'portions': request.form.get('pastry_portions')
+                          'portions': request.form.get('pastry_portions'),
+                          'approved': True
                       })
     return redirect(url_for('recipes'))
 
@@ -114,6 +117,7 @@ def update_pastry(task_id):
 def delete_pastry(task_id):
     mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('recipes'))
+
 
 
 @app.route('/login', methods=['GET'])
