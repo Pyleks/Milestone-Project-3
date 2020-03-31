@@ -119,6 +119,12 @@ def delete_pastry(task_id):
     return redirect(url_for('recipes'))
 
 
+@app.route('/approve_pastry/<task_id>')
+def approve_pastry(task_id):
+    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                        {
+                            'approved': True
+                        })
 
 @app.route('/login', methods=['GET'])
 def login():
