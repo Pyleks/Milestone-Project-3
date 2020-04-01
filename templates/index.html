@@ -13,9 +13,9 @@
         {% for url in imageDB %}
         {% if url.approved == true %}
         <div class="col-4 extra-pad">
-            <div class="card card-box cooking-img">
+            <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
-                    <img class="auto-size img-fluid" src="{{url.url}}">
+                    <img class="auto-size" src="{{url.url}}">
                     <div class="card-body">
                         <div class="card-text ">
                             <div class="info-card-wrap">

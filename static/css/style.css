@@ -87,7 +87,21 @@ a:-webkit-any-link {
 }
 
 .extra-pad {
-    padding: 0.5% 1% 0.5% 1%;
+    padding: 1% 1% 1% 1%;
+}
+
+.card-size {
+    float: left;
+    width: 370px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.auto-size {
+    float: left;
+    width: 370px;
+    height: 350px;
+    background-size: cover;
 }
 
 
