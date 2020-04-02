@@ -17,7 +17,6 @@
 
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         {% for content in recipes %}
-                        {% if session.user == content.author %}
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-4">
@@ -43,7 +42,6 @@
                                 </div>
                             </div>
                         </div>
-                        {% endif %}
                         {% endfor %}
 
                     </div>

@@ -15,7 +15,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_NAME")
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
+authors = mongo.db.imageDB.author
 users_collection = mongo.db.users
 admin_approval = mongo.db.approval
 
@@ -32,7 +32,7 @@ def admin_portal():
     if 'user' in session:
         if session['user'] == "Administrator":
             all_users = mongo.db.users.find()
-            approval_false = mongo.db.imageDB.find({'approved': True})
+            approval_false = mongo.db.imageDB.find({'approved': False})
             return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count(),
                                    all_users=all_users, total_users=all_users.count())
 
@@ -48,7 +48,7 @@ def profile():
         approval_true = mongo.db.imageDB.find({'approved': True})
         approval_false = mongo.db.imageDB.find({'approved': False})
         return render_template("profile.html", approved_recipes=approval_true, pending_recipes=approval_false,
-                               total_count=approval_true.count())
+                               profile_count=approval_true.count())
     else:
         return redirect(url_for('login'))
 
@@ -90,7 +90,6 @@ def insert_pastry():
 
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
-
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
     return render_template('pastry.html', pastry_details=access_pastry)
 
@@ -98,12 +97,12 @@ def viewBake(task_id):
 @app.route('/edit_pastry/<task_id>')
 def edit_pastry(task_id):
     if 'user' in session:
+        access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
         if session['user'] == 'Administrator':
-            access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
             return render_template('pastryUpdate.html', pastry_details=access_pastry)
         else:
             flash('Only Admins can access this page!')
-            return redirect(url_for('recipes'))
+            return render_template('pastryUpdate.html', pastry_details=access_pastry)
     else:
         return redirect(url_for('login'))
 
