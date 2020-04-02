@@ -15,7 +15,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGODB_NAME")
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-authors = mongo.db.imageDB.author
+
 users_collection = mongo.db.users
 admin_approval = mongo.db.approval
 
