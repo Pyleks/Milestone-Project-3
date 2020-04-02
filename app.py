@@ -31,8 +31,10 @@ def recipes():
 def admin_portal():
     if 'user' in session:
         if session['user'] == "Administrator":
+            all_users = mongo.db.users.find()
             approval_false = mongo.db.imageDB.find({'approved': False})
-            return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count())
+            return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count(),
+                                   all_users=all_users, total_users=all_users.count())
 
         else:
             return redirect(url_for('recipes'))

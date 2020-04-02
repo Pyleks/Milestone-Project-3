@@ -49,6 +49,36 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="true" aria-controls="collapseTwo">
+                                <h2 class="approval-name">Users({{total_users}})</h2>
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        {% for user in all_users %}
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p><strong class="admin-card">Username:</strong> {{user.username}}</p>
+                                    <p><strong class="admin-card">Email: </strong> {{user.email}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

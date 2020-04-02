@@ -93,14 +93,14 @@ a:-webkit-any-link {
 .card-size {
     float: left;
     width: 370px;
-    height: 400px;
+    height: 370px;
     overflow: hidden;
 }
 
 .auto-size {
     float: left;
     width: 370px;
-    height: 350px;
+    height: 310px;
     background-size: cover;
 }
 
