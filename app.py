@@ -32,12 +32,23 @@ def admin_portal():
     if 'user' in session:
         if session['user'] == "Administrator":
             all_users = mongo.db.users.find()
-            approval_false = mongo.db.imageDB.find({'approved': False})
+            approval_false = mongo.db.imageDB.find({'approved': True})
             return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count(),
                                    all_users=all_users, total_users=all_users.count())
 
         else:
             return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
+
+
+@app.route('/profile/')
+def profile():
+    if 'user' in session:
+        approval_true = mongo.db.imageDB.find({'approved': True})
+        approval_false = mongo.db.imageDB.find({'approved': False})
+        return render_template("profile.html", approved_recipes=approval_true, pending_recipes=approval_false,
+                               total_count=approval_true.count())
     else:
         return redirect(url_for('login'))
 
@@ -79,6 +90,7 @@ def insert_pastry():
 
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
+
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
     return render_template('pastry.html', pastry_details=access_pastry)
 
@@ -94,6 +106,8 @@ def edit_pastry(task_id):
             return redirect(url_for('recipes'))
     else:
         return redirect(url_for('login'))
+
+
 
 
 @app.route('/update_pastry/<task_id>', methods=["POST"])
@@ -119,6 +133,12 @@ def update_pastry(task_id):
 def delete_pastry(task_id):
     mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('recipes'))
+
+
+@app.route('/delete_user/<task_id>')
+def delete_user(task_id):
+    mongo.db.users.remove({'_id': ObjectId(task_id)})
+    return redirect(url_for('admin_portal'))
 
 
 @app.route('/approve_pastry/<task_id>')

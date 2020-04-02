@@ -8,16 +8,16 @@
             <form action="/register" method="POST" class="full-form">
                 <div class="form-group card card-body bg-lightBlue">
                     <label class="strong-label">Name</label>
-                    <input id="pastry_url" name="username" type="text" placeholder="Name" class="validate form-control">
+                    <input id="pastry_url" name="username" type="text" placeholder="Name" class="validate form-control" required>
 
                     <label class="strong-label">Email</label>
-                    <input id="pastry_name" name="email" type="email" placeholder="Email" class="validate form-control">
+                    <input id="pastry_name" name="email" type="email" placeholder="Email" class="validate form-control" required>
 
                     <label class="strong-label">Password</label>
-                    <input id="pastry_callout" name="user_password" type="password" placeholder="Type your Password" class="validate form-control">
+                    <input id="pastry_callout" name="user_password" type="password" placeholder="Type your Password" class="validate form-control" required>
 
                     <label class="strong-label">Confirm Password</label>
-                    <input id="pastry_portions" name="user_password1" type="password" placeholder="Type your Password Again" class="validate form-control">
+                    <input id="pastry_portions" name="user_password1" type="password" placeholder="Type your Password Again" class="validate form-control" required>
 
                 </div>
                 <button type="submit" name="action" class="btn btn-outline-success">Create</button>

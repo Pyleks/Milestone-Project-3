@@ -34,7 +34,7 @@
                         {%endif%}
                         {% if session.user and session.user != "Administrator" %}
                         <li class="nav-item">
-                            <a class="nav-link h" href="#">{{session.user}}</a>
+                            <a class="nav-link h" href="{{url_for('profile')}}">{{session.user}}</a>
                         </li>
                         {% endif %}
                         {% if not session.user %}

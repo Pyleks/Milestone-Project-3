@@ -1,6 +1,58 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="admin-name">{{session.user}} Portal</h1>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                <h2 class="approval-name">Your Public Recipes ({{total_count}})</h2>
+                            </button>
+                        </h5>
+                    </div>
 
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        {% for content in approved_recipes %}
+                        {% if session.user == content.author %}
 
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card card-box cooking-img">
+                                        <div href="{{url_for('viewBake',task_id=content._id)}}" class="link-wrap">
+                                            <img class="auto-size img-fluid" src="{{content.url}}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <p><strong class="admin-card">Author:</strong> {{content.author}}</p>
+                                    <p><strong class="admin-card">Name: </strong> {{content.name}}</p>
+                                    <p><strong class="admin-card">Callout: </strong> {{content.callout}}</p>
+                                    <p><strong class="admin-card">Ingredients: </strong> {{content.ingredients}}</p>
+                                    <p><strong class="admin-card">How To: </strong> {{content.howTo}}</p>
+                                    <p><strong class="admin-card">Portions: </strong> {{content.portions}}</p>
+                                    <a class="btn btn-primary text-white bg-success"
+                                       href="{{url_for('approve_pastry', task_id=content._id)}}"
+                                       role="button">Approve</a>
+                                    <a class="btn btn-primary text-white bg-warning" href="{{url_for('add_pastry')}}"
+                                       role="button">Decline</a>
+                                    <a class="btn btn-primary text-white bg-danger"
+                                       href="{{url_for('delete_pastry', task_id=content._id)}}"
+                                       role="button">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
