@@ -156,6 +156,8 @@ def approve_pastry(task_id):
     return redirect(url_for('admin_portal'))
 
 
+
+
 @app.route('/login', methods=['GET'])
 def login():
     # Check if user is not logged in already
