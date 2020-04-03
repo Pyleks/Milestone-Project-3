@@ -29,12 +29,12 @@
                                     </div>
                                 </div>
                                 <div class="col-8">
-                                    <p><strong class="admin-card">Author:</strong> {{content.author}}</p>
-                                    <p><strong class="admin-card">Name: </strong> {{content.name}}</p>
-                                    <p><strong class="admin-card">Callout: </strong> {{content.callout}}</p>
-                                    <p><strong class="admin-card">Ingredients: </strong> {{content.ingredients}}</p>
-                                    <p><strong class="admin-card">How To: </strong> {{content.howTo}}</p>
-                                    <p><strong class="admin-card">Portions: </strong> {{content.portions}}</p>
+                                    <p><span class="custom-font" class="admin-card">Author:</span> {{content.author}}</p>
+                                    <p><span class="custom-font" class="admin-card">Name: </span> {{content.name}}</p>
+                                    <p><span class="custom-font" class="admin-card">Callout: </span> {{content.callout}}</p>
+                                    <p><span class="custom-font" class="admin-card">Ingredients: </span> {{content.ingredients}}</p>
+                                    <p><span class="custom-font" class="admin-card">How To: </span> {{content.howTo}}</p>
+                                    <p><span class="custom-font" class="admin-card">Portions: </span> {{content.portions}}</p>
                                     <a class="btn btn-primary text-white bg-success"
                                        href="{{url_for('approve_pastry', task_id=content._id)}}"
                                        role="button">Approve</a>

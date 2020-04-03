@@ -112,6 +112,16 @@ a:-webkit-any-link {
     line-height: 1.5;
 }
 
+.custom-font {
+    font-weight: 600;
+}
+
+.star-box {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 1.5em !important;
+}
 .recipe-steps {
     padding: 0.5em 0 0.5em 0;
 }
