@@ -21,11 +21,11 @@
                 {{ingredient.name}}
                 {% endfor %}
                 <div class="star-wrap-pastry">
-                    <a class="far fa-star"></a>
-                    <a class="far fa-star"></a>
-                    <a class="far fa-star"></a>
-                    <a class="far fa-star"></a>
-                    <a class="far fa-star"></a>
+                    <button id="starRating1" class="far fa-star" data-score="1"></button>
+                    <button id="starRating2" class="far fa-star" data-score="2"></button>
+                    <button id="starRating3" class="far fa-star" data-score="3"></button>
+                    <button id="starRating4" class="far fa-star" data-score="4"></button>
+                    <button id="starRating5" class="far fa-star" data-score="5"></button>
                 </div>
                 <p class="text-center callout-margin">{{pastry_details.callout}}</p>
                 <p class="text-center"><small>Author: {{pastry_details.author}}</small></p>
