@@ -83,9 +83,28 @@ def insert_pastry():
                          'author': session['user'],
                          'approved': False
                      })
+    return redirect(url_for('recipes'))
 
+
+@app.route('/insert_rating/<task_id>', methods=['POST'])
+def insert_rating(task_id):
+    starRating = request.form['submit_rating']
+    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                            {
+                                '$inc': {
+                                    starRating: 1,
+                                    'totalVotes': 1
+                                }
+                            },
+                            # protection={'seq': True, '_id': False},
+                            upsert=False
+                            )
 
     return redirect(url_for('recipes'))
+
+
+
+
 
 
 @app.route('/pastries/<task_id>/')

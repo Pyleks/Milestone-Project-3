@@ -35,6 +35,10 @@ button:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
 }
+
+a {
+    outline: none;
+}
 /************ Custom Global container ************/
 @media (min-width: 1200px) {
     .container{
@@ -52,7 +56,7 @@ button:-webkit-any-link {
 }
 
 .bg-black {
-    background-color: black;
+    background-color: black !important;
 }
 /************ Navigation Bar ************/
 .navbar-nav {
