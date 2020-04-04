@@ -23,7 +23,7 @@
                 <form method="POST" action="{{ url_for('insert_rating', task_id=pastry_details._id)}}">
                     <div id="star-wrap" class="star-wrap-pastry">
                         {% for i in range(1, 6) %}
-                        <button type="submit" name="submit_rating" value="starRating-{{i}}" aria-label="rating-button" class="far fa-star star-box"></button>
+                        <button type="submit" id="starRating_{{i}}" name="submit_rating" value="starRating-{{i}}" aria-label="rating-button" class="far fa-star star-box"></button>
                         {%endfor%}
                     </div>
                 </form>

@@ -4,6 +4,7 @@ import json
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 if path.exists("env.py"):
     import env
@@ -46,6 +47,7 @@ def admin_portal():
 def profile():
     if 'user' in session:
         approval_true = mongo.db.imageDB.find({'approved': True})
+        print(approval_true)
         approval_false = mongo.db.imageDB.find({'approved': False})
         return render_template("profile.html", approved_recipes=approval_true, pending_recipes=approval_false,
                                profile_count=approval_true.count())
@@ -81,12 +83,18 @@ def insert_pastry():
                          'howTo': all_howto_array,
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user'],
-                         'approved': False
+                         'approved': False,
+                         'starRating-1': 0,
+                         'starRating-2': 0,
+                         'starRating-3': 0,
+                         'starRating-4': 0,
+                         'starRating-5': 0,
+                         'totalVotes': 0
                      })
     return redirect(url_for('recipes'))
 
 
-@app.route('/insert_rating/<task_id>', methods=['POST'])
+@app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
     starRating = request.form['submit_rating']
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
@@ -99,8 +107,14 @@ def insert_rating(task_id):
                             # protection={'seq': True, '_id': False},
                             upsert=False
                             )
+    star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    print((5*star_array["starRating-5"] + 4*star_array["starRating-4"] + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
+          + 1*star_array["starRating-1"]) / (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"]
+                                            + star_array["starRating-2"] + star_array["starRating-1"]))
 
     return redirect(url_for('recipes'))
+
+
 
 
 
