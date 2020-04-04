@@ -108,9 +108,15 @@ def insert_rating(task_id):
                             upsert=False
                             )
     star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    print((5*star_array["starRating-5"] + 4*star_array["starRating-4"] + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
+    star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"] + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
           + 1*star_array["starRating-1"]) / (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"]
                                             + star_array["starRating-2"] + star_array["starRating-1"]))
+
+    total_rate = (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"] + star_array["starRating-2"]
+                  + star_array["starRating-1"])
+
+    print(star_calculator)
+    print(total_rate)
 
     return redirect(url_for('recipes'))
 
