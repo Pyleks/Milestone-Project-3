@@ -118,6 +118,7 @@ def insert_rating(task_id):
                     + star_array["starRating-1"])
 
     star_calculator = (round(star_calculator, 1))
+    data = {'total': star_array["totalStarValue"]}
     print(star_calculator)
 
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
@@ -131,7 +132,7 @@ def insert_rating(task_id):
                             upsert=True
 
                             )
-    return render_template('pastry.html', pastry_details=star_array)
+    return render_template('pastry.html', pastry_details=star_array, data=data)
 
 
 
@@ -144,7 +145,8 @@ def insert_rating(task_id):
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    return render_template('pastry.html', pastry_details=access_pastry)
+    data = {'total': access_pastry["totalStarValue"]}
+    return render_template('pastry.html', pastry_details=access_pastry, data=data)
 
 
 @app.route('/edit_pastry/<task_id>')

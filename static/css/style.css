@@ -55,8 +55,8 @@ a {
     background-color: #f0f8ff !important;
 }
 
-.bg-black {
-    background-color: black !important;
+.bg-blue {
+    color: cornflowerblue !important;
 }
 /************ Navigation Bar ************/
 .navbar-nav {
@@ -127,6 +127,11 @@ a {
 
 .custom-font {
     font-weight: 600;
+}
+
+.tV-font {
+    color: cornflowerblue !important;
+    font-size: 1.4em;
 }
 
 .star-box {
