@@ -104,21 +104,35 @@ def insert_rating(task_id):
                                     'totalVotes': 1
                                 }
                             },
-                            # protection={'seq': True, '_id': False},
                             upsert=False
                             )
     star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"] + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
-          + 1*star_array["starRating-1"]) / (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"]
-                                            + star_array["starRating-2"] + star_array["starRating-1"]))
+    star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
+                        + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
+                        + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
+                        + star_array["starRating-4"] + star_array["starRating-3"]
+                        + star_array["starRating-2"] + star_array["starRating-1"]))
 
-    total_rate = (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"] + star_array["starRating-2"]
-                  + star_array["starRating-1"])
+    total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
+                    + star_array["starRating-3"] + star_array["starRating-2"]
+                    + star_array["starRating-1"])
 
     star_calculator = (round(star_calculator, 1))
-    total_rate = total_rate
     print(star_calculator)
-    return redirect(url_for('recipes'))
+
+    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                            {
+                                '$set': {
+                                    'totalStarValue': star_calculator,
+                                    'totalVotes': total_votes
+                                }
+                            },
+                            # protection={'seq': True, '_id': False},
+                            upsert=True
+
+                            )
+    return render_template('pastry.html', pastry_details=star_array)
+
 
 
 
