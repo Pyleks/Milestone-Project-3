@@ -89,7 +89,8 @@ def insert_pastry():
                          'starRating-3': 0,
                          'starRating-4': 0,
                          'starRating-5': 0,
-                         'totalVotes': 0
+                         'totalVotes': 0,
+                         'totalStarValue': 0
                      })
     return redirect(url_for('recipes'))
 
@@ -178,7 +179,14 @@ def update_pastry(task_id):
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
-                          'approved': True
+                          'approved': True,
+                          'starRating-1': 0,
+                          'starRating-2': 0,
+                          'starRating-3': 0,
+                          'starRating-4': 0,
+                          'starRating-5': 0,
+                          'totalVotes': 0,
+                          'totalStarValue': 0
                       })
     return redirect(url_for('recipes'))
 
