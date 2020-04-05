@@ -115,9 +115,9 @@ def insert_rating(task_id):
     total_rate = (star_array["starRating-5"] + star_array["starRating-4"] + star_array["starRating-3"] + star_array["starRating-2"]
                   + star_array["starRating-1"])
 
+    star_calculator = (round(star_calculator, 1))
+    total_rate = total_rate
     print(star_calculator)
-    print(total_rate)
-
     return redirect(url_for('recipes'))
 
 
