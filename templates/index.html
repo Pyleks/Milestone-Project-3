@@ -15,24 +15,22 @@
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
-                    <img class="auto-size" src="{{url.url}}">
+                    <img class="auto-size" src="{{url.url}}"></a>
                     <div class="card-body">
                         <div class="card-text ">
                             <div class="info-card-wrap">
                                 <p>{{url.name}}</p>
                                 <div class="star-wrap">
                                         {% for star in range(url.totalStarValue) %}
-                                            <a id="starRating_{{i}}"  class="fas fa-star bg-blue star-box"></a>
+                                            <span id="starRating_{{i}}"  class="fas fa-star bg-blue star-box"></span>
                                         {%endfor%}
                                         {% for empty in range(5 - url.totalStarValue)%}
-                                        <a id="starRating_{{i}}"  class="far fa-star bg-blue star-box"></a>
+                                            <span id="starRating_{{i}}"  class="far fa-star bg-blue star-box"></span>
                                         {%endfor%}
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </a>
             </div>
         </div>
         {% endif %}
