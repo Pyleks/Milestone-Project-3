@@ -20,7 +20,6 @@
                         <div class="card-text ">
                             <div class="info-card-wrap">
                                 <p>{{url.name}}</p>
-<!--                                <a class="btn btn-outline-dark" href="{{url_for('delete_pastry', task_id=url._id)}}" role="button">Delete</a>-->
                                 <div class="star-wrap">
                                         {% for star in range(url.totalStarValue) %}
                                             <a id="starRating_{{i}}"  class="fas fa-star bg-blue star-box"></a>
