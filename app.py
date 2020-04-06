@@ -25,10 +25,10 @@ admin_approval = mongo.db.approval
 def recipes():
     if 'user' in session:
         imageDB=mongo.db.imageDB.find()
-        data = list(mongo.db.imageDB.find({'total': ["totalStarValue"]}))
+        data = mongo.db.imageDB.find({'total': ["totalStarValue"]})
         print(data)
         # total_star_value = mongo.db.imageDB.find("totalStarValue")
-        return render_template("index.html", imageDB=mongo.db.imageDB.find(), data=data)
+        return render_template("index.html", imageDB=mongo.db.imageDB.find())
     else:
         return render_template("index.html", imageDB=mongo.db.imageDB.find())
 

@@ -41,11 +41,11 @@
 <a class="button-placement btn btn-outline-dark" href="{{url_for('add_pastry')}}" role="button">+</a>
 {%endif%}
 
-<script type="text/javascript">
-    let star_rate = "{{imageDB}}"
+<script>
+var star_rate = {% for x in imageDB%}
+{{x.totalStarValue}}
+{%endfor%}
 </script>
-
-
 
 <script src="{{ url_for('static', filename='js/home.js') }}"></script>
 
