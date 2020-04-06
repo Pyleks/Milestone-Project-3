@@ -26,9 +26,9 @@ def recipes():
     if 'user' in session:
         imageDB=mongo.db.imageDB.find()
         data = mongo.db.imageDB.find({'total': ["totalStarValue"]})
-        print(data)
-        # total_star_value = mongo.db.imageDB.find("totalStarValue")
-        return render_template("index.html", imageDB=mongo.db.imageDB.find())
+        imageDB=(mongo.db.imageDB.find())
+
+        return render_template("index.html", imageDB=imageDB)
     else:
         return render_template("index.html", imageDB=mongo.db.imageDB.find())
 
@@ -124,7 +124,7 @@ def insert_rating(task_id):
                     + star_array["starRating-3"] + star_array["starRating-2"]
                     + star_array["starRating-1"])
 
-    star_calculator = (round(star_calculator, 1))
+    star_calculator = (int(star_calculator))
     data = {'total': star_array["totalStarValue"]}
     print(star_calculator)
 
@@ -180,7 +180,9 @@ def update_pastry(task_id):
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
-                          'approved': True
+                          'approved': True,
+                          'totalStarValue': 1,
+                          'totalVotes': 1
                       })
     return redirect(url_for('recipes'))
 

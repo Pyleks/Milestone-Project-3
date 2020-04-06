@@ -1,47 +1,47 @@
 function myFunc() {
     console.log("This is a fking number", star_rate);
-    if(star_rate >= 0.1 && star_rate <= 1.5) {
+    if(star_rate >= 0 && star_rate <= 1) {
         goldenStarOne();
         emptyStarTwo();
         emptyStarThree();
         emptyStarFour();
         emptyStarFive();
 
-    }else if(star_rate >= 1.6 && star_rate <= 2.5) {
+    }else if(star_rate >= 1 && star_rate <= 2) {
         goldenStarOne();
         goldenStarTwo();
         emptyStarThree();
         emptyStarFour();
         emptyStarFive();
 
-    }else if(star_rate >= 2.6 && star_rate <= 3.5){
+    }else if(star_rate >= 3 && star_rate <= 4){
         goldenStarOne();
         goldenStarTwo();
         goldenStarThree();
         emptyStarFour();
         emptyStarFive();
 
-    }else if(star_rate >= 3.6 && star_rate <= 4.5){
+    }else if(star_rate >= 4 && star_rate <= 5){
         goldenStarOne();
         goldenStarTwo();
         goldenStarThree();
         goldenStarFour();
         emptyStarFive();
 
-    }else if(star_rate >= 4.6 && star_rate >= 5){
-        goldenStarOne();
-        goldenStarTwo();
-        goldenStarThree();
-        goldenStarFour();
-        goldenStarFive();
-
-    } else {
-        emptyStarOne();
-        emptyStarTwo();
-        emptyStarThree();
-        emptyStarFour();
-        emptyStarFive();
-    }
+    // }else if(star_rate >= 4.6 && star_rate >= 5){
+    //     goldenStarOne();
+    //     goldenStarTwo();
+    //     goldenStarThree();
+    //     goldenStarFour();
+    //     goldenStarFive();
+    //
+    // } else {
+    //     emptyStarOne();
+    //     emptyStarTwo();
+    //     emptyStarThree();
+    //     emptyStarFour();
+    //     emptyStarFive();
+    // }
 }
 
 

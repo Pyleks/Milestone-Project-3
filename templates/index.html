@@ -22,9 +22,12 @@
                                 <p>{{url.name}}</p>
 <!--                                <a class="btn btn-outline-dark" href="{{url_for('delete_pastry', task_id=url._id)}}" role="button">Delete</a>-->
                                 <div class="star-wrap">
-                                    {% for i in range(1, 6) %}
-                                    <a id="starRating_{{i}}"  class="star-box">{{url.totalStarValue}}</a>
-                                    {%endfor%}
+                                        {% for star in range(url.totalStarValue) %}
+                                            <a id="starRating_{{i}}"  class="fas fa-star bg-blue star-box"></a>
+                                        {%endfor%}
+                                        {% for empty in range(5 - url.totalStarValue)%}
+                                        <a id="starRating_{{i}}"  class="far fa-star bg-blue star-box"></a>
+                                        {%endfor%}
 
                                 </div>
                             </div>
@@ -41,12 +44,16 @@
 <a class="button-placement btn btn-outline-dark" href="{{url_for('add_pastry')}}" role="button">+</a>
 {%endif%}
 
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
 <script>
-var star_rate = {% for x in imageDB%}
-{{x.totalStarValue}}
-{%endfor%}
+    let star_rate = [{% for x in imageDB %}
+    {{ x.totalStarValue }},
+    {% endfor %}]
+    myFunc(star_rate)
 </script>
 
-<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+
+
 
 {% endblock %}

@@ -22,8 +22,15 @@
                 {% endfor %}
                 <form method="POST" action="{{ url_for('insert_rating', task_id=pastry_details._id)}}">
                     <div id="star-wrap" class="star-wrap-pastry">
-                        {% for i in range(1, 6) %}
-                        <button type="submit" id="starRating_{{i}}" name="submit_rating" value="starRating-{{i}}" aria-label="rating-button" class="star-box"></button>
+                        {% set count = namespace(value=0) %}
+                        {% for star in range(pastry_details.totalStarValue) %}
+                        {% set count.value = count.value + 1 %}
+                        {{ count.value }}
+                        <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="fas fa-star bg-blue star-box"></button>
+                        {%endfor%}
+                        {% for empty in range(5 - pastry_details.totalStarValue)%}
+                        {% set count.value = count.value + 1 %}
+                        <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="far fa-star bg-blue star-box"></button>
                         {%endfor%}
                         <span class="tV-font"> ({{pastry_details.totalVotes}})</span>
                     </div>
