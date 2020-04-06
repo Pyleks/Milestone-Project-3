@@ -24,10 +24,7 @@ admin_approval = mongo.db.approval
 @app.route('/recipes')
 def recipes():
     if 'user' in session:
-        imageDB=mongo.db.imageDB.find()
-        data = mongo.db.imageDB.find({'total': ["totalStarValue"]})
         imageDB=(mongo.db.imageDB.find())
-
         return render_template("index.html", imageDB=imageDB)
     else:
         return render_template("index.html", imageDB=mongo.db.imageDB.find())
@@ -181,8 +178,14 @@ def update_pastry(task_id):
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
                           'approved': True,
-                          'totalStarValue': 1,
-                          'totalVotes': 1
+                          'totalVotes': 0,
+                          'starRating-1': 0,
+                          'starRating-2': 0,
+                          'starRating-3': 0,
+                          'starRating-4': 0,
+                          'starRating-5': 0,
+                          'totalVotes:': 0,
+                          'totalStarValue': 0
                       })
     return redirect(url_for('recipes'))
 
