@@ -1,4 +1,5 @@
 function myFunc() {
+    console.log("This is a fking number", star_rate);
     if(star_rate >= 0.1 && star_rate <= 1.5) {
         goldenStarOne();
         emptyStarTwo();

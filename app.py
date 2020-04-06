@@ -23,8 +23,14 @@ admin_approval = mongo.db.approval
 @app.route('/')
 @app.route('/recipes')
 def recipes():
-    return render_template("index.html",
-        imageDB=mongo.db.imageDB.find())
+    if 'user' in session:
+        imageDB=mongo.db.imageDB.find()
+        data = list(mongo.db.imageDB.find({'total': ["totalStarValue"]}))
+        print(data)
+        # total_star_value = mongo.db.imageDB.find("totalStarValue")
+        return render_template("index.html", imageDB=mongo.db.imageDB.find(), data=data)
+    else:
+        return render_template("index.html", imageDB=mongo.db.imageDB.find())
 
 
 
@@ -138,11 +144,6 @@ def insert_rating(task_id):
 
 
 
-
-
-
-
-
 @app.route('/pastries/<task_id>/')
 def viewBake(task_id):
     access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
@@ -179,14 +180,7 @@ def update_pastry(task_id):
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
-                          'approved': True,
-                          'starRating-1': 0,
-                          'starRating-2': 0,
-                          'starRating-3': 0,
-                          'starRating-4': 0,
-                          'starRating-5': 0,
-                          'totalVotes': 0,
-                          'totalStarValue': 0
+                          'approved': True
                       })
     return redirect(url_for('recipes'))
 
