@@ -20,21 +20,37 @@
                 {% for ingredient in pastry_details %}
                 {{ingredient.name}}
                 {% endfor %}
-                <form method="POST" action="{{ url_for('insert_rating', task_id=pastry_details._id)}}">
-                    <div id="star-wrap" class="star-wrap-pastry">
-                        {% set count = namespace(value=0) %}
+                <div id="star-wrap" class="star-wrap-pastry">
+                    <button id="enable-overlay" class="overlay-star-layer bg-fa">
                         {% for star in range(pastry_details.totalStarValue) %}
-                        {% set count.value = count.value + 1 %}
-                        {{ count.value }}
-                        <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="fas fa-star bg-blue star-box"></button>
+                        <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
                         {%endfor%}
                         {% for empty in range(5 - pastry_details.totalStarValue)%}
-                        {% set count.value = count.value + 1 %}
-                        <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="far fa-star bg-blue star-box"></button>
+                        <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
                         {%endfor%}
-                        <span class="tV-font"> ({{pastry_details.totalVotes}})</span>
+                    </button>
+                    <span class="tV-font"> ({{pastry_details.totalVotes}})</span>
+                </div>
+                <div id="overlay">
+                    <div class="card-body overlay-content bg-fa">
+                        <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
+                        <p class="star-review-callout">Please leave a star review</p>
+                        <form method="POST" action="{{ url_for('insert_rating', task_id=pastry_details._id)}}">
+                            <div id="star-wrap" class="star-wrap-pastry">
+                                {% set count = namespace(value=0) %}
+                                {% for star in range(pastry_details.totalStarValue) %}
+                                {% set count.value = count.value + 1 %}
+                                <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="fas fa-star bg-blue star-box"></button>
+                                {%endfor%}
+                                {% for empty in range(5 - pastry_details.totalStarValue)%}
+                                {% set count.value = count.value + 1 %}
+                                <button type="submit" id="starRating_{{count.value}}" name="submit_rating" value="starRating-{{count.value}}" aria-label="rating-button" class="far fa-star bg-blue star-box"></button>
+                                {%endfor%}
+                            </div>
+                        </form>
                     </div>
-                </form>
+
+                </div>
                 <p class="text-center callout-margin">{{pastry_details.callout}}</p>
                 <p class="text-center">
                     <small>Author: {{pastry_details.author}}</small>

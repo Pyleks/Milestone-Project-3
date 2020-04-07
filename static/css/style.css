@@ -51,6 +51,10 @@ a {
     background-color: #ffffff !important;
 }
 
+.bg-fa {
+    background-color: #fafafa;
+}
+
 .bg-lightBlue {
     background-color: #f0f8ff !important;
 }
@@ -203,6 +207,43 @@ a {
     transition: background-color .3s, opacity .3s, visibility .5s;
 }
 
+.overlay-star-layer {
+    border: none;
+    background-color: ;
+}
+
+/************ PASTRY PAGE OVERLAY CSS ************/
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlay-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5em;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.leave-button {
+    float: right;
+    border: none;
+}
+.star-review-callout {
+
+}
+
 /************ UPDATE PASTRY PAGE CSS************/
 .update-heading {
     font-size: 3em;
@@ -218,6 +259,7 @@ a {
 .update-margin{
     margin: 0 10% 0 10%;
 }
+
 /************ LOGIN AND REGISTER CSS************/
 .credential-margin {
     margin: 0 25% 0 25%;

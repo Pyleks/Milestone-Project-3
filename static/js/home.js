@@ -1,32 +1,40 @@
-function myFunc() {
-    console.log("This is a fking number", star_rate);
-    if(star_rate >= 0 && star_rate <= 1) {
-        goldenStarOne();
-        emptyStarTwo();
-        emptyStarThree();
-        emptyStarFour();
-        emptyStarFive();
+document.getElementById("enable-overlay").addEventListener("click", function(){
+    document.getElementById("overlay").style.display = "block";
+});
 
-    }else if(star_rate >= 1 && star_rate <= 2) {
-        goldenStarOne();
-        goldenStarTwo();
-        emptyStarThree();
-        emptyStarFour();
-        emptyStarFive();
+document.getElementById("disable-overlay").addEventListener("click", function(){
+    document.getElementById("overlay").style.display = "none";
+});
 
-    }else if(star_rate >= 3 && star_rate <= 4){
-        goldenStarOne();
-        goldenStarTwo();
-        goldenStarThree();
-        emptyStarFour();
-        emptyStarFive();
-
-    }else if(star_rate >= 4 && star_rate <= 5){
-        goldenStarOne();
-        goldenStarTwo();
-        goldenStarThree();
-        goldenStarFour();
-        emptyStarFive();
+// function myFunc() {
+//     console.log("This is a fking number", star_rate);
+//     if(star_rate >= 0 && star_rate <= 1) {
+//         goldenStarOne();
+//         emptyStarTwo();
+//         emptyStarThree();
+//         emptyStarFour();
+//         emptyStarFive();
+//
+//     }else if(star_rate >= 1 && star_rate <= 2) {
+//         goldenStarOne();
+//         goldenStarTwo();
+//         emptyStarThree();
+//         emptyStarFour();
+//         emptyStarFive();
+//
+//     }else if(star_rate >= 3 && star_rate <= 4){
+//         goldenStarOne();
+//         goldenStarTwo();
+//         goldenStarThree();
+//         emptyStarFour();
+//         emptyStarFive();
+//
+//     }else if(star_rate >= 4 && star_rate <= 5){
+//         goldenStarOne();
+//         goldenStarTwo();
+//         goldenStarThree();
+//         goldenStarFour();
+//         emptyStarFive();
 
     // }else if(star_rate >= 4.6 && star_rate >= 5){
     //     goldenStarOne();
@@ -42,78 +50,78 @@ function myFunc() {
     //     emptyStarFour();
     //     emptyStarFive();
     // }
-}
 
 
-function goldenStarOne() {
-    let element = document.getElementById("starRating_1");
-    element.classList.add("fas");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
 
-function goldenStarTwo() {
-    let element = document.getElementById("starRating_2");
-    element.classList.add("fas");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-function goldenStarThree() {
-    let element = document.getElementById("starRating_3");
-    element.classList.add("fas");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-function goldenStarFour() {
-    let element = document.getElementById("starRating_4");
-    element.classList.add("fas");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
+// function goldenStarOne() {
+//     let element = document.getElementById("starRating_1");
+//     element.classList.add("fas");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function goldenStarTwo() {
+//     let element = document.getElementById("starRating_2");
+//     element.classList.add("fas");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+// function goldenStarThree() {
+//     let element = document.getElementById("starRating_3");
+//     element.classList.add("fas");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+// function goldenStarFour() {
+//     let element = document.getElementById("starRating_4");
+//     element.classList.add("fas");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function goldenStarFive() {
+//     let element = document.getElementById("starRating_5");
+//     element.classList.add("fas");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function emptyStarOne() {
+//     let element = document.getElementById("starRating_1");
+//     element.classList.add("far");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function emptyStarTwo() {
+//     let element = document.getElementById("starRating_2");
+//     element.classList.add("far");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function emptyStarThree() {
+//     let element = document.getElementById("starRating_3");
+//     element.classList.add("far");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function emptyStarFour() {
+//     let element = document.getElementById("starRating_4");
+//     element.classList.add("far");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
+// }
+//
+// function emptyStarFive() {
+//     let element = document.getElementById("starRating_5");
+//     element.classList.add("far");
+//     element.classList.add("fa-star");
+//     element.classList.add("bg-blue");
 
-function goldenStarFive() {
-    let element = document.getElementById("starRating_5");
-    element.classList.add("fas");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
 
-function emptyStarOne() {
-    let element = document.getElementById("starRating_1");
-    element.classList.add("far");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-
-function emptyStarTwo() {
-    let element = document.getElementById("starRating_2");
-    element.classList.add("far");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-
-function emptyStarThree() {
-    let element = document.getElementById("starRating_3");
-    element.classList.add("far");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-
-function emptyStarFour() {
-    let element = document.getElementById("starRating_4");
-    element.classList.add("far");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-
-function emptyStarFive() {
-    let element = document.getElementById("starRating_5");
-    element.classList.add("far");
-    element.classList.add("fa-star");
-    element.classList.add("bg-blue");
-}
-
-myFunc();
+// myFunc();
 
 // let oneStar = document.getElementById('starRating_1');
 // const TwoStar = document.getElementById('starRating_2');
