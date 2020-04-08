@@ -122,7 +122,6 @@ def insert_rating(task_id):
                     + star_array["starRating-1"])
 
     star_calculator = (int(star_calculator))
-    data = {'total': star_array["totalStarValue"]}
     print(star_calculator)
 
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
@@ -136,7 +135,7 @@ def insert_rating(task_id):
                             upsert=True
 
                             )
-    return render_template('pastry.html', pastry_details=star_array, data=data)
+    return render_template('pastry.html', pastry_details=star_array)
 
 
 
