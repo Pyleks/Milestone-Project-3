@@ -97,43 +97,46 @@ def insert_pastry():
 
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
-    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    starRating = request.form['submit_rating']
-    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
-                            {
-                                '$inc': {
-                                    starRating: 1,
-                                    'totalVotes': 1
-                                }
-                            },
-                            upsert=False
-                            )
-    star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
-                        + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
-                        + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
-                        + star_array["starRating-4"] + star_array["starRating-3"]
-                        + star_array["starRating-2"] + star_array["starRating-1"]))
+    if 'user' in session:
+        access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+        starRating = request.form['submit_rating']
+        mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                                {
+                                    '$inc': {
+                                        starRating: 1,
+                                        'totalVotes': 1
+                                    }
+                                },
+                                upsert=False
+                                )
+        star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+        star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
+                            + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
+                            + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
+                            + star_array["starRating-4"] + star_array["starRating-3"]
+                            + star_array["starRating-2"] + star_array["starRating-1"]))
 
-    total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
-                    + star_array["starRating-3"] + star_array["starRating-2"]
-                    + star_array["starRating-1"])
+        total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
+                        + star_array["starRating-3"] + star_array["starRating-2"]
+                        + star_array["starRating-1"])
 
-    star_calculator = (int(star_calculator))
-    print(star_calculator)
+        star_calculator = (int(star_calculator))
+        print(star_calculator)
 
-    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
-                            {
-                                '$set': {
-                                    'totalStarValue': star_calculator,
-                                    'totalVotes': total_votes
-                                }
-                            },
-                            # protection={'seq': True, '_id': False},
-                            upsert=True
+        mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                                {
+                                    '$set': {
+                                        'totalStarValue': star_calculator,
+                                        'totalVotes': total_votes
+                                    }
+                                },
+                                # protection={'seq': True, '_id': False},
+                                upsert=True
 
-                            )
-    return redirect(request.referrer)
+                                )
+        return redirect(request.referrer)
+    else:
+        return redirect(url_for('login'))
 
 
 
