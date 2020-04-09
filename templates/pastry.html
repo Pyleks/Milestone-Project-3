@@ -31,6 +31,7 @@
                     </button>
                     <span class="tV-font"> ({{pastry_details.totalVotes}})</span>
                 </div>
+                {% if session.user != pastry_details.author %}
                 <div id="overlay">
                     <div class="card-body overlay-content bg-fa">
                         <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
@@ -43,12 +44,23 @@
                                             value="starRating-{{star}}" aria-label="rating-button"
                                             class="far fa-star bg-blue star-box"></button>
                                     {%endfor%}
+
                                 </div>
                             </div>
                         </form>
                     </div>
-
                 </div>
+                {%endif%}
+                {% if session.user == pastry_details.author %}
+                <div id="overlay">
+                    <div class="card-body overlay-content bg-fa">
+                        <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
+                        <div id="star-wrap" class="star-wrap-pastry">
+                            <p class="star-review-callout">You can't rate your own submission.</p>
+                        </div>
+                    </div>
+                </div>
+                {%endif%}
                 <p class="text-center callout-margin">{{pastry_details.callout}}</p>
                 <p class="text-center">
                     <small>Author: {{pastry_details.author}}</small>

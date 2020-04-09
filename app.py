@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 users_collection = mongo.db.users
-admin_approval = mongo.db.approval
+recepie_collection = mongo.db.imageDB
 
 @app.route('/')
 @app.route('/recipes')
@@ -95,6 +95,7 @@ def insert_pastry():
     return redirect(url_for('recipes'))
 
 
+
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
     if 'user' in session:
@@ -113,12 +114,12 @@ def insert_rating(task_id):
         star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
                             + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
                             + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
-                            + star_array["starRating-4"] + star_array["starRating-3"]
-                            + star_array["starRating-2"] + star_array["starRating-1"]))
+                                                               + star_array["starRating-4"] + star_array["starRating-3"]
+                                                               + star_array["starRating-2"] + star_array["starRating-1"]))
 
         total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
-                        + star_array["starRating-3"] + star_array["starRating-2"]
-                        + star_array["starRating-1"])
+                       + star_array["starRating-3"] + star_array["starRating-2"]
+                       + star_array["starRating-1"])
 
         star_calculator = (int(star_calculator))
         print(star_calculator)
@@ -135,6 +136,7 @@ def insert_rating(task_id):
 
                                 )
         return redirect(request.referrer)
+
     else:
         return redirect(url_for('login'))
 
