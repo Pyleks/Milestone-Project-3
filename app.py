@@ -23,11 +23,8 @@ admin_approval = mongo.db.approval
 @app.route('/')
 @app.route('/recipes')
 def recipes():
-    if 'user' in session:
-        imageDB=(mongo.db.imageDB.find())
-        return render_template("index.html", imageDB=imageDB)
-    else:
         return render_template("index.html", imageDB=mongo.db.imageDB.find())
+
 
 
 
@@ -100,6 +97,7 @@ def insert_pastry():
 
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
+    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
     starRating = request.form['submit_rating']
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                             {
@@ -135,7 +133,7 @@ def insert_rating(task_id):
                             upsert=True
 
                             )
-    return render_template('pastry.html', pastry_details=star_array)
+    return redirect(request.referrer)
 
 
 
