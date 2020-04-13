@@ -98,7 +98,6 @@ def insert_pastry():
 
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
-
     if 'user' in session:
         access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
         starRating = request.form['submit_rating']
@@ -137,6 +136,7 @@ def insert_rating(task_id):
 
                                 )
         return redirect(request.referrer)
+
 
     else:
         return redirect(url_for('login'))
@@ -289,6 +289,7 @@ def register():
                         'username': form['username'],
                         'email': form['email'],
                         'password': hash_pass
+
                     }
                 )
                 # Check if user is actualy saved
