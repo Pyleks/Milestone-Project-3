@@ -8,18 +8,23 @@ const form = document.getElementById('form');
 
 $(document).ready(function() {
     ($("form").submit(function (e) {
-        const empty = document.createTextNode(" Is empty");
         let myUsername = $("#username").val();
-        if (myUsername.trim().length === 0) {
+        if (myUsername.trim().length === 0 || myUsername.trim().length < 3) {
             console.log(myUsername.trim().length);
-            userLabel.appendChild(empty);
+            userLabel.innerText = "Username is Empty or Too Short";
+            userLabel.style.color = "red";
             e.preventDefault()
 
-        }if(myUsername.length < 3 || myUsername.length > 12) {
-            const usernamelenght = document.createTextNode(" Username Min 3 and Max 12 Characters");
+        }if(myUsername.trim().length > 12) {
             console.log(username);
-            userLabel.appendChild(usernamelenght);
+            userLabel.innerText = "Username Max 12 Characters";
+            userLabel.style.color = "red";
+            // $("#userLabel").text("Maximum 8 Characters");
             e.preventDefault()
+
+
+
+
 
         } else {
             $('#formOverview').attr('action', '/register');
