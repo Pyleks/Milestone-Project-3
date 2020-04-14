@@ -8,6 +8,7 @@
             <h3 class="update-heading">Create Recipe</h3>
             <form action="{{ url_for('insert_pastry')}}" method="POST" class="full-form">
                 <div class="form-group card card-body bg-lightBlue">
+
                     <label class="strong-label">URL</label>
                     <input id="pastry_url" name="pastry_url" type="text" class="validate form-control">
 
@@ -27,7 +28,7 @@
                 <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control">
 
             </div>
-            <button type="submit" name="action" class="btn btn-outline-success">Create</button>
+            <button id="submitForm" type="submit" name="action" class="btn btn-outline-success">Create</button>
         </div>
         </form>
     </div>
