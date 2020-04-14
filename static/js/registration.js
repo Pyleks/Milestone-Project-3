@@ -1,18 +1,19 @@
 const username = document.getElementById('username');
-const content = document.createTextNode(" has too few characters");
-const empty = document.createTextNode(" empty username");
 const email = document.getElementById('email');
+const emailLabel = document.getElementById('email-label');
 const password = document.getElementById('password');
 const userLabel = document.getElementById('userLabel');
 const passwordLabel = document.getElementById('passwordLabel');
 const confirmPassword = document.getElementById("confirm-password");
-const form = document.getElementById('form');
+const confirmLabel = document.getElementById("confirm-password-label");
 
 $(document).ready(function() {
     ($("form").submit(function (e) {
         let myUsername = $("#username").val();
-        let mypassword = $("#password").val();
+        let myPassword = $("#password").val();
+        let myEmail = $("#email").val();
         let myConfirm = $("#confirm-password").val();
+        const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (myUsername.trim().length === 0 || myUsername.trim().length < 3) {
             console.log(myUsername.trim().length);
             userLabel.innerText = "Username is Empty or Too Short";
@@ -25,16 +26,22 @@ $(document).ready(function() {
             userLabel.style.color = "red";
             e.preventDefault()
 
-        }if(mypassword.trim().length === 0 || mypassword.trim().length < 8) {
+        }if(regEx.test(String(myEmail).toLowerCase()) !== true) {
+            emailLabel.innerText = "Please enter a valid email address";
+            emailLabel.style.color = "red";
+                e.preventDefault()
+
+
+        }if(myPassword.trim().length === 0 || myPassword.trim().length < 8) {
             console.log(username);
-            passwordLabel.innerText = "Password too short, Minimum 8 characters";
+            passwordLabel.innerText = "Password is too short, Minimum 8 characters";
             passwordLabel.style.color = "red";
             e.preventDefault()
 
-        }if(mypassword !== myConfirm) {
+        }if(myPassword !== myConfirm) {
             console.log(username);
-            passwordLabel.innerText = "Please make sure confirm password matches";
-            passwordLabel.style.color = "red";
+            confirmLabel.innerText = "Please make sure password matches";
+            confirmLabel.style.color = "red";
             e.preventDefault()
 
 
