@@ -246,6 +246,11 @@ a {
     padding: 0.5em 0 0.5em 0;
 
 }
+/************ CREATE RECIPE CSS************/
+.text-space {
+    margin: 1em 0 0 0;
+}
+
 
 /************ UPDATE PASTRY PAGE CSS************/
 .update-heading {
