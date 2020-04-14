@@ -19,7 +19,6 @@ $(document).ready(function() {
             console.log(username);
             userLabel.innerText = "Username Max 12 Characters";
             userLabel.style.color = "red";
-            // $("#userLabel").text("Maximum 8 Characters");
             e.preventDefault()
 
 
