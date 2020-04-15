@@ -17,16 +17,33 @@ $(document).ready(function() {
             userLabel.style.color = "red";
             e.preventDefault()
 
+        }if (myUsername.trim().length > 3) {
+            console.log(myUsername.trim().length);
+            userLabel.innerText = "Username Correct";
+            userLabel.style.color = "green";
+
+
         }if(myUsername.trim().length > 12) {
             // console.log(username);
             userLabel.innerText = "Username Max 12 Characters";
             userLabel.style.color = "red";
             e.preventDefault()
 
+        }if(myUsername.trim().length <= 12 && myUsername.trim().length >= 3 ) {
+            // console.log(username);
+            userLabel.innerText = "Username Correct";
+            userLabel.style.color = "green";
+
+
         }if(regEx.test(String(myEmail).toLowerCase()) !== true) {
             emailLabel.innerText = "Please enter a valid email address";
             emailLabel.style.color = "red";
                 e.preventDefault()
+
+        }if(regEx.test(String(myEmail).toLowerCase()) === true) {
+            emailLabel.innerText = "Email Correct";
+            emailLabel.style.color = "green";
+
 
 
         }if(myPassword.trim().length === 0 || myPassword.trim().length < 8) {
@@ -35,11 +52,30 @@ $(document).ready(function() {
             passwordLabel.style.color = "red";
             e.preventDefault()
 
+        }if(myPassword.trim().length >= 8) {
+            // console.log(username);
+            passwordLabel.innerText = "Password correct";
+            passwordLabel.style.color = "green";
+
+
         }if(myPassword !== myConfirm) {
             // console.log(username);
             confirmLabel.innerText = "Please make sure password matches";
             confirmLabel.style.color = "red";
             e.preventDefault()
+
+        }if(myPassword === myConfirm && myPassword.trim().length < 8) {
+            // console.log(username);
+            confirmLabel.innerText = "Password Matches but too short";
+            confirmLabel.style.color = "red";
+            e.preventDefault()
+
+
+        }if(myPassword === myConfirm && myPassword.trim.length >= 8) {
+            // console.log(username);
+            confirmLabel.innerText = "Password Matches";
+            confirmLabel.style.color = "green";
+
 
 
         } else {
