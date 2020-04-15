@@ -25,20 +25,40 @@ $(document).ready(function() {
             urlLabel.style.color = "red";
             e.preventDefault()
 
+        }if(!!pattern.test(pastryUrl) === true) {
+            urlLabel.innerText = "URL Valid";
+            urlLabel.style.color = "green";
+
+
         }if(pastryName.trim().length === 0 || pastryName.trim().length < 3) {
             pastryNameLabel.innerText = "Pastry name empty or too short";
             pastryNameLabel.style.color = "red";
             e.preventDefault()
+
+        }if(pastryName.trim().length >= 3) {
+            pastryNameLabel.innerText = "Pastry Name Correct";
+            pastryNameLabel.style.color = "green";
+
 
         }if(calloutText.trim().length === 0 || calloutText.trim().length < 5) {
             calloutLabel.innerText = "Callout Text too short";
             calloutLabel.style.color = "red";
             e.preventDefault()
 
+        }if(calloutText.trim().length > 5) {
+            calloutLabel.innerText = "Callout Text Correct";
+            calloutLabel.style.color = "green";
+
+
         }if(isNaN(portions) === true || portions.trim().length === 0) {
             portionLabel.innerText = "Please use numbers only";
             portionLabel.style.color = "red";
             e.preventDefault()
+
+        }if(isNaN(portions) !== true) {
+            portionLabel.innerText = "Number Correct";
+            portionLabel.style.color = "green";
+
 
 
         }if(Ingredients.trim().length === 0 || Ingredients.trim().length < 10) {
@@ -46,10 +66,20 @@ $(document).ready(function() {
             ingredientsLabel.style.color = "red";
             e.preventDefault()
 
+        }if(Ingredients.trim().length >= 10) {
+            ingredientsLabel.innerText = "Ingredients Correct";
+            ingredientsLabel.style.color = "green";
+
+
         }if(howTo.trim().length === 0 || howTo.trim().length < 15) {
             howToLabel.innerText = "How To description is too short";
             howToLabel.style.color = "red";
             e.preventDefault()
+
+        }if(howTo.trim().length >= 15) {
+            howToLabel.innerText = "How To Correct";
+            howToLabel.style.color = "green";
+
         }
 
     }));
