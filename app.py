@@ -172,6 +172,8 @@ def update_pastry(task_id):
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
     all_howto_array = all_howto.split(", ")
+    author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    keep_author = author["author"]
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                       {
                           'name': request.form.get('pastry_name'),
@@ -180,7 +182,7 @@ def update_pastry(task_id):
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
-                          'author': session['user'],
+                          'author': keep_author,
                           'approved': True,
                           'totalVotes': 0,
                           'starRating-1': 0,
