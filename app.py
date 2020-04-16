@@ -1,6 +1,8 @@
 import os
 from os import path
 import json
+import time
+import datetime
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -70,6 +72,7 @@ def add_pastry():
 
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
+    created_on = time.strftime("%Y-%m-%d", time.localtime())
     all_ingredients = request.form.get('pastry_ingredients')
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
@@ -84,6 +87,7 @@ def insert_pastry():
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user'],
                          'approved': False,
+                         'created-on': created_on,
                          'starRating-1': 0,
                          'starRating-2': 0,
                          'starRating-3': 0,
