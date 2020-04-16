@@ -64,14 +64,14 @@ $(document).ready(function() {
             confirmLabel.style.color = "red";
             e.preventDefault()
 
-        }if(myPassword === myConfirm && myPassword.trim().length < 8) {
-            // console.log(username);
-            confirmLabel.innerText = "Password Matches but too short";
-            confirmLabel.style.color = "red";
-            e.preventDefault()
+        // }if(myPassword === myConfirm && myPassword.trim().length < 8) {
+        //     // console.log(username);
+        //     confirmLabel.innerText = "Password Matches but too short";
+        //     confirmLabel.style.color = "red";
+        //     e.preventDefault()
 
 
-        }if(myPassword === myConfirm && myPassword.trim.length >= 8) {
+        }if(myPassword === myConfirm && myPassword.trim().length >= 8) {
             // console.log(username);
             confirmLabel.innerText = "Password Matches";
             confirmLabel.style.color = "green";
