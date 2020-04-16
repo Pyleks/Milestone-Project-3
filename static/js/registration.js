@@ -24,13 +24,11 @@ $(document).ready(function() {
 
 
         }if(myUsername.trim().length > 12) {
-            // console.log(username);
             userLabel.innerText = "Username Max 12 Characters";
             userLabel.style.color = "red";
             e.preventDefault()
 
         }if(myUsername.trim().length <= 12 && myUsername.trim().length >= 3 ) {
-            // console.log(username);
             userLabel.innerText = "Username Correct";
             userLabel.style.color = "green";
 
@@ -47,19 +45,16 @@ $(document).ready(function() {
 
 
         }if(myPassword.trim().length === 0 || myPassword.trim().length < 8) {
-            // console.log(username);
             passwordLabel.innerText = "Password is too short, Minimum 8 characters";
             passwordLabel.style.color = "red";
             e.preventDefault()
 
         }if(myPassword.trim().length >= 8) {
-            // console.log(username);
             passwordLabel.innerText = "Password correct";
             passwordLabel.style.color = "green";
 
 
         }if(myPassword !== myConfirm) {
-            // console.log(username);
             confirmLabel.innerText = "Please make sure password matches";
             confirmLabel.style.color = "red";
             e.preventDefault()
@@ -67,12 +62,10 @@ $(document).ready(function() {
 
 
         }if(myPassword === myConfirm && myPassword.trim().length >= 8) {
-            // console.log(username);
             confirmLabel.innerText = "Password Matches";
             confirmLabel.style.color = "green";
 
         }if(myPassword === myConfirm && myConfirm.trim().length < 8) {
-            // console.log(username);
             confirmLabel.innerText = "Password Matches but too short";
             confirmLabel.style.color = "red";
             e.preventDefault()
