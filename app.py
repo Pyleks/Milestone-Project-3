@@ -180,6 +180,7 @@ def update_pastry(task_id):
                           'ingredients': all_ingredients_array,
                           'howTo': all_howto_array,
                           'portions': request.form.get('pastry_portions'),
+                          'author': session['user'],
                           'approved': True,
                           'totalVotes': 0,
                           'starRating-1': 0,
