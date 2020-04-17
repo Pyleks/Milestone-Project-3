@@ -158,12 +158,13 @@ def viewBake(task_id):
 @app.route('/edit_pastry/<task_id>')
 def edit_pastry(task_id):
     if 'user' in session:
-        access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-        if session['user'] == 'Administrator':
-            return render_template('pastryUpdate.html', pastry_details=access_pastry)
+        recipe = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+        author = recipe["author"]
+        if session['user'] == author or session['user'] == "Administrator":
+            return render_template('pastryUpdate.html', pastry_details=recipe)
         else:
             flash('Only Admins can access this page!')
-            return render_template('pastryUpdate.html', pastry_details=access_pastry)
+            return redirect(url_for('recipes'))
     else:
         return redirect(url_for('login'))
 
