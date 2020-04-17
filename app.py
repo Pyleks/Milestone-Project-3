@@ -176,8 +176,8 @@ def update_pastry(task_id):
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
     all_howto_array = all_howto.split(", ")
-    author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    keep_author = author["author"]
+    recipe = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    keep_author = recipe["author"]
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                       {
                           'name': request.form.get('pastry_name'),
@@ -202,8 +202,16 @@ def update_pastry(task_id):
 
 @app.route('/delete_pastry/<task_id>')
 def delete_pastry(task_id):
-    mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('recipes'))
+    find_author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    author = find_author['author']
+    if 'user' in session:
+        if session['user'] == author:
+            mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
+            return redirect(url_for('recipes'))
+        else:
+            return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/delete_user/<task_id>')
