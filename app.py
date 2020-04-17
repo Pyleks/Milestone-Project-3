@@ -172,32 +172,38 @@ def edit_pastry(task_id):
 
 @app.route('/update_pastry/<task_id>', methods=["POST"])
 def update_pastry(task_id):
-    all_ingredients = request.form.get('pastry_ingredients')
-    all_ingredients_array = all_ingredients.split(", ")
-    all_howto = request.form.get('pastry_howTo')
-    all_howto_array = all_howto.split(", ")
     recipe = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    keep_author = recipe["author"]
-    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
-                      {
-                          'name': request.form.get('pastry_name'),
-                          'callout': request.form.get('pastry_callout'),
-                          'url': request.form.get('pastry_url'),
-                          'ingredients': all_ingredients_array,
-                          'howTo': all_howto_array,
-                          'portions': request.form.get('pastry_portions'),
-                          'author': keep_author,
-                          'approved': True,
-                          'totalVotes': 0,
-                          'starRating-1': 0,
-                          'starRating-2': 0,
-                          'starRating-3': 0,
-                          'starRating-4': 0,
-                          'starRating-5': 0,
-                          'totalVotes:': 0,
-                          'totalStarValue': 0
-                      })
-    return redirect(url_for('recipes'))
+    author = recipe["author"]
+    if 'user' in session:
+        if session['user'] == author:
+            all_ingredients = request.form.get('pastry_ingredients')
+            all_ingredients_array = all_ingredients.split(", ")
+            all_howto = request.form.get('pastry_howTo')
+            all_howto_array = all_howto.split(", ")
+            mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+                              {
+                                  'name': request.form.get('pastry_name'),
+                                  'callout': request.form.get('pastry_callout'),
+                                  'url': request.form.get('pastry_url'),
+                                  'ingredients': all_ingredients_array,
+                                  'howTo': all_howto_array,
+                                  'portions': request.form.get('pastry_portions'),
+                                  'author': author,
+                                  'approved': True,
+                                  'totalVotes': 0,
+                                  'starRating-1': 0,
+                                  'starRating-2': 0,
+                                  'starRating-3': 0,
+                                  'starRating-4': 0,
+                                  'starRating-5': 0,
+                                  'totalVotes:': 0,
+                                  'totalStarValue': 0
+                              })
+            return redirect(url_for('recipes'))
+        else:
+            return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
 
 
 @app.route('/delete_pastry/<task_id>')
