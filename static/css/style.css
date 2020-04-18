@@ -213,12 +213,17 @@ a {
     background-color: #6499ed !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
-    transition: background-color .3s, opacity .3s, visibility .5s;
+    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
+    transition: 0.3s;
 }
 
-.overlay-star-layer {
-    border: none;
-    background-color: ;
+/*.overlay-star-layer {*/
+/*    border: none;*/
+/*    background-color: ;*/
+/*}*/
+
+.button-placement:hover {
+    background-color: #006400 !important;
 }
 
 /************ PASTRY PAGE OVERLAY CSS ************/
