@@ -206,8 +206,8 @@ a {
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.8em 0.8em;
+    border-radius: 50px;
     font-size: 1.5em !important;
     color: #ffffff !important;
     background-color: #6499ed !important;
