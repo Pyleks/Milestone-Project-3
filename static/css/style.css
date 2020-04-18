@@ -198,7 +198,7 @@ a {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-.button-placement {
+.add-button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -208,7 +208,7 @@ a {
     z-index: 1000;
     padding: 0.8em 0.8em;
     border-radius: 50px;
-    font-size: 1.5em !important;
+    font-size: 1.6em !important;
     color: #ffffff !important;
     background-color: #6499ed !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
@@ -217,12 +217,51 @@ a {
     transition: 0.3s;
 }
 
-/*.overlay-star-layer {*/
-/*    border: none;*/
-/*    background-color: ;*/
-/*}*/
 
-.button-placement:hover {
+.update-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    bottom: 1em;
+    right: 1.2em;
+    z-index: 1000;
+    padding: 0.8em 0.8em;
+    border-radius: 50px;
+    font-size: 1.6em !important;
+    color: #ffffff !important;
+    background-color: #6499ed !important;
+    -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
+    -o-transition: background-color .3s, opacity .3s, visibility .5s;
+    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
+    transition: 0.3s;
+}
+
+.delete-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    bottom: 4em;
+    right: 1.2em;
+    z-index: 1000;
+    padding: 0.8em 0.8em;
+    border-radius: 50px;
+    font-size: 1.6em !important;
+    color: #ffffff !important;
+    background-color: #ff0000 !important;
+    -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
+    -o-transition: background-color .3s, opacity .3s, visibility .5s;
+    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
+    transition: 0.3s;
+}
+
+.overlay-star-layer {
+    border: none;
+
+}
+
+.add-button:hover {
     background-color: #006400 !important;
 }
 
