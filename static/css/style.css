@@ -121,6 +121,9 @@ a {
     background-size: cover;
 }
 
+.icon-size {
+    font-size: 1.5em !important;
+}
 
 
 /************ PASTRY PAGE CSS ************/
@@ -205,8 +208,9 @@ a {
     z-index: 1000;
     padding: 10px 20px;
     border-radius: 5px;
+    font-size: 1.5em !important;
     color: #ffffff !important;
-    background-color: blue !important;
+    background-color: #6499ed !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
     transition: background-color .3s, opacity .3s, visibility .5s;
