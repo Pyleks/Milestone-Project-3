@@ -83,7 +83,6 @@ a {
     display: block;
     height: auto;
 
-
 }
 /************ Card boxes ************/
 .info-card-wrap {
@@ -126,6 +125,20 @@ a {
 
 
 /************ PASTRY PAGE CSS ************/
+.pastry-img {
+    float: left;
+    height: 48.5em;
+    background-size: cover;
+}
+
+.card-full-size {
+    float: left;
+    height: 48.5em;
+    width: 100%;
+    overflow: hidden;
+}
+
+
 .pastry_text {
     font-size: 1.3em;
     line-height: 1.5;
