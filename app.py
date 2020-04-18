@@ -84,7 +84,8 @@ def insert_pastry():
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user'],
                          'approved': False,
-                         'created-on': created_on,
+                         'createdDate': created_on,
+                         'lastUpdatedDate': 0,
                          'starRating-1': 0,
                          'starRating-2': 0,
                          'starRating-3': 0,
@@ -170,8 +171,10 @@ def edit_pastry(task_id):
 
 @app.route('/update_pastry/<task_id>', methods=["POST"])
 def update_pastry(task_id):
+    last_updated_date = time.strftime("%Y-%m-%d", time.localtime())
     recipe = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
     author = recipe["author"]
+    created_date = recipe["createdDate"]
     if 'user' in session:
         if session['user'] == author:
             all_ingredients = request.form.get('pastry_ingredients')
@@ -188,6 +191,8 @@ def update_pastry(task_id):
                                   'portions': request.form.get('pastry_portions'),
                                   'author': author,
                                   'approved': True,
+                                  'createdDate': created_date,
+                                  'lastUpdatedDate': last_updated_date,
                                   'totalVotes': 0,
                                   'starRating-1': 0,
                                   'starRating-2': 0,
