@@ -116,7 +116,6 @@ a {
 
 .auto-size {
     float: left;
-    width: 370px;
     height: 310px;
     background-size: cover;
 }
