@@ -218,25 +218,6 @@ a {
 }
 
 
-.update-button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    bottom: 1em;
-    right: 1.2em;
-    z-index: 1000;
-    padding: 0.8em 0.8em;
-    border-radius: 50px;
-    font-size: 1.6em !important;
-    color: #ffffff !important;
-    background-color: #6499ed !important;
-    -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
-    -o-transition: background-color .3s, opacity .3s, visibility .5s;
-    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
-    transition: 0.3s;
-}
-
 .delete-button {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -258,11 +239,14 @@ a {
 
 .overlay-star-layer {
     border: none;
-
 }
 
 .add-button:hover {
     background-color: #006400 !important;
+}
+
+.delete-button:hover {
+    background-color: #ffA500 !important;
 }
 
 /************ PASTRY PAGE OVERLAY CSS ************/
