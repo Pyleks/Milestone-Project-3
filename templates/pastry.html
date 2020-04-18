@@ -63,12 +63,12 @@
                 {%endif%}
                 <p class="text-center callout-margin">{{pastry_details.callout}}</p>
                 <div class="text-center">
-                    <p>Author: {{pastry_details.author}}</p>
+                    <p class="text-buffer">Author: {{pastry_details.author}}</p>
                     {% if pastry_details.lastUpdateDate == 0 %}
-                    <p>Created on: {{pastry_details.createDate}}</p>
+                    <p class="text-buffer">Created on: {{pastry_details.createDate}}</p>
                     {%endif%}
                     {% if pastry_details.lastUpdateDate != 0%}
-                    <p>Updated on: {{pastry_details.lastUpdateDate}}</p>
+                    <p class="text-buffer">Updated on: {{pastry_details.lastUpdateDate}}</p>
                     {%endif%}
 
                 </div>

@@ -133,6 +133,11 @@ a {
     font-weight: 600;
 }
 
+.text-buffer {
+    padding: 0.5em 0 0 0;
+}
+
+
 .tV-font {
     color: cornflowerblue !important;
     font-size: 1.4em;
