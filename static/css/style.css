@@ -62,6 +62,11 @@ a {
 .bg-blue {
     color: cornflowerblue !important;
 }
+/************ Global Color Scheme ************/
+.txt-blue {
+    color: #6499ed;
+}
+
 /************ Navigation Bar ************/
 .navbar-nav {
     font-size: 1.5em;
@@ -132,6 +137,22 @@ a {
 }
 .no-border {
     margin: 0;
+}
+
+.divider {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #6499ed;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    z-index: -99;
+}
+
+.popular-recipe span {
+    background: #fafafa;
+    padding:0 10px;
+    font-size: 2em;
+    color: ;
 }
 
 /************ PASTRY PAGE CSS ************/

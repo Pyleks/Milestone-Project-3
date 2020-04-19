@@ -13,11 +13,13 @@
         <div class="col-2">
             <div class="dropdown menu-border">
 
-                <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{filterName}}
                 </button>
                 <div class="dropdown-menu menu-border" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Highest Rating {% set name = 'Highest Rating' %}</a>
+                    <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Highest Rating {% set name = 'Highest
+                        Rating' %}</a>
                     <a class="dropdown-item" href="{{url_for('recipes')}}">Unsorted</a>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
@@ -55,6 +57,16 @@
         {% endfor %}
     </div>
 </div>
+
+<section class="suggested-recipes container">
+    <div class="row">
+        <div class="col-12">
+            <div class="divider txt-blue">
+                <h2 class="text-center popular-recipe txt-blue"><span>Suggested Recipe</span></h2>
+            </div>
+        </div>
+    </div>
+</section>
 {% if session.user %}
 <a class="add-button btn btn-outline-dark fas fa-plus icon-size" href="{{url_for('add_pastry')}}" role="button"></a>
 {%endif%}
