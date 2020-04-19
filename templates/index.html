@@ -11,12 +11,12 @@
 <div class="container container-padding">
     <div class="row">
         <div class="col-2">
-            <div class="dropdown">
+            <div class="dropdown menu-border">
 
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{filterName}}
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu menu-border" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Highest Rating {% set name = 'Highest Rating' %}</a>
                     <a class="dropdown-item" href="{{url_for('recipes')}}">Unsorted</a>
                     <a class="dropdown-item" href="#">Something else here</a>

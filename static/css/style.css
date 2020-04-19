@@ -127,6 +127,12 @@ a {
     padding: 0.5em 0 0 1em;
 }
 
+.menu-border {
+    border: 1px solid black;
+}
+.no-border {
+    margin: 0;
+}
 
 /************ PASTRY PAGE CSS ************/
 .pastry-img {
