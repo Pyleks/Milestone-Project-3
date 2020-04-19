@@ -28,6 +28,16 @@ def recipes():
     return render_template("index.html", rating=rating, imageDB=mongo.db.imageDB.find())
 
 
+@app.route('/sort-by-rating')
+def sort_by_rating():
+    rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING), ('totalVotes', pymongo.DESCENDING),
+                                           ('approved', pymongo.DESCENDING)]).limit(6)
+    return render_template('index.html', imageDB=rating)
+
+
+
+
+
 
 
 @app.route('/admin_portal')
