@@ -32,7 +32,7 @@ def recipes():
 @app.route('/sort-by-rating')
 def sort_by_rating():
     rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING), ('totalVotes', pymongo.DESCENDING),
-                                           ('approved', pymongo.DESCENDING)]).limit(6)
+                                           ('approved', pymongo.DESCENDING)]).skip(1).limit(6)
     high = "Highest Rated"
     return render_template('index.html', imageDB=rating, filterName=high)
 
