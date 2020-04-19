@@ -62,11 +62,30 @@
     <div class="row">
         <div class="col-12">
             <div class="divider txt-blue">
-                <h2 class="text-center popular-recipe txt-blue"><span>Suggested Recipe</span></h2>
+                <h2 class="text-center popular-recipe txt-blue"><span>Highest Rated Recipe</span></h2>
             </div>
         </div>
     </div>
 </section>
+
+{% for url in displayImg%}
+<section class="highest-rated container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card card-box top-rated-card">
+                <img class="top-pastry-img" src="{{url.url}}">
+            </div>
+        </div>
+        <div class="col-6">
+            <h3 class="text-center">{{url.name}}</h3>
+
+        </div>
+    </div>
+</section>
+{%endfor%}
+
+
+
 {% if session.user %}
 <a class="add-button btn btn-outline-dark fas fa-plus icon-size" href="{{url_for('add_pastry')}}" role="button"></a>
 {%endif%}
