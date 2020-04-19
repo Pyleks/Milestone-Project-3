@@ -22,17 +22,19 @@ recepie_collection = mongo.db.imageDB
 @app.route('/')
 @app.route('/recipes')
 def recipes():
+    unsorted = "Unsorted"
     rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING), ('totalVotes', pymongo.DESCENDING),
                                            ('approved', pymongo.DESCENDING)]).limit(6)
 
-    return render_template("index.html", rating=rating, imageDB=mongo.db.imageDB.find())
+    return render_template("index.html", rating=rating, filterName=unsorted, imageDB=mongo.db.imageDB.find())
 
 
 @app.route('/sort-by-rating')
 def sort_by_rating():
     rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING), ('totalVotes', pymongo.DESCENDING),
                                            ('approved', pymongo.DESCENDING)]).limit(6)
-    return render_template('index.html', imageDB=rating)
+    high = "Highest Rated"
+    return render_template('index.html', imageDB=rating, filterName=high)
 
 
 
