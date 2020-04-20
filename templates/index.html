@@ -76,8 +76,21 @@
                 <img class="top-pastry-img" src="{{url.url}}">
             </div>
         </div>
-        <div class="col-6">
-            <h3 class="text-center">{{url.name}}</h3>
+        <div class="col-6 text-center">
+            <h3 class="n-recipe-heading">{{url.name}}</h3>
+            <p class="n-callout">{{url.callout}}</p>
+            <div class="n-star-wrap">
+                {% for star in range(url.totalStarValue) %}
+                <span id="starRating_{{i}}" class="fas fa-star bg-blue n-star-box"></span>
+                {%endfor%}
+                {% for empty in range(5 - url.totalStarValue)%}
+                <span id="starRating_{{i}}" class="far fa-star bg-blue n-star-box"></span>
+                {%endfor%}
+            </div>
+            {%if url.totalVotes == 0%}
+            <P class="n-vote-text">Be the first to vote!</P>
+            <P class="n-visit-text">Click the image to visit the recipe</P>
+            {%endif%}
 
         </div>
     </div>

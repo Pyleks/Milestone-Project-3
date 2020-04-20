@@ -144,7 +144,7 @@ a {
     text-align: center;
     border-bottom: 2px solid #6499ed;
     line-height: 0.1em;
-    margin: 2em 0 2em 0;
+    margin: 2em 0 4em 0;
     z-index: -99;
 }
 
@@ -166,6 +166,33 @@ a {
     /*width: 370px;*/
     height: 370px;
     background-size: cover;
+}
+
+.n-recipe-heading {
+    font-size: 2.7em;
+}
+.n-callout {
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+.n-star-wrap {
+    margin: 2em 0 2em 0;
+}
+.n-vote-text {
+    font-size: 1.5em;
+}
+
+.n-star-box {
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 2em !important;
+}
+
+.n-visit-text {
+    font-size: 1.5em;
+    margin: 0.5em 0 0 0;
 }
 
 /************ PASTRY PAGE CSS ************/
