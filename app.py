@@ -31,7 +31,7 @@ def recipes():
     new_recipe = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
                                                ('approved', pymongo.ASCENDING)]).limit(1)
 
-    remaining=mongo.db.imageDB.find().skip(9).limit(9)
+    remaining = mongo.db.imageDB.find().skip(9).limit(9)
 
     return render_template("index.html", rating=rating, filterName=high, remaining=remaining, displayImg=new_recipe, imageDB=mongo.db.imageDB.find().limit(9))
 
@@ -46,7 +46,9 @@ def sort_by_rating():
     new_recipe = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
                                                ('approved', pymongo.ASCENDING)]).limit(1)
 
-    return render_template('index.html', displayImg=new_recipe, imageDB=rating, filterName=high)
+    remaining = mongo.db.imageDB.find().skip(9).limit(9)
+
+    return render_template('index.html',remaining=remaining, displayImg=new_recipe, imageDB=rating, filterName=high)
 
 
 
