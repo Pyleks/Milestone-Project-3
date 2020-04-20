@@ -163,8 +163,7 @@ a {
 
 .top-pastry-img {
     float: left;
-    /*width: 370px;*/
-    height: 370px;
+    width: 41em;
     background-size: cover;
 }
 

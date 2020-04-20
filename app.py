@@ -203,7 +203,7 @@ def update_pastry(task_id):
     author = recipe["author"]
     created_date = recipe["createDate"]
     if 'user' in session:
-        if session['user'] == author:
+        if session['user'] == author or session['user'] == "Administrator":
             all_ingredients = request.form.get('pastry_ingredients')
             all_ingredients_array = all_ingredients.split(", ")
             all_howto = request.form.get('pastry_howTo')
