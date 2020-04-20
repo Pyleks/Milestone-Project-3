@@ -79,6 +79,7 @@
         <div class="col-6 text-center">
             <h3 class="n-recipe-heading">{{url.name}}</h3>
             <p class="n-callout">{{url.callout}}</p>
+
             <div class="n-star-wrap">
                 {% for star in range(url.totalStarValue) %}
                 <span id="starRating_{{i}}" class="fas fa-star bg-blue n-star-box"></span>
@@ -88,8 +89,14 @@
                 {%endfor%}
             </div>
             {%if url.totalVotes == 0%}
-            <P class="n-vote-text">Be the first to vote!</P>
-            <P class="n-visit-text">Click the image to visit the recipe</P>
+            <P class="n-vote-text txt-blue">Be the first to vote!</P>
+            {%endif%}
+            <p class="n-author text-buffer">Author: {{url.author}}</p>
+            {% if url.lastUpdateDate == 0 %}
+            <p class="n-date text-buffer">Created on: {{url.createDate}}</p>
+            {%endif%}
+            {% if url.lastUpdateDate != 0%}
+            <p class="n-date text-buffer">Updated on: {{url.lastUpdateDate}}</p>
             {%endif%}
 
         </div>
