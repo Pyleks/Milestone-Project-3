@@ -88,6 +88,7 @@
                 {% for empty in range(5 - url.totalStarValue)%}
                 <span id="starRating_{{i}}" class="far fa-star bg-blue n-star-box"></span>
                 {%endfor%}
+                <span class="n-tV-font"> ({{url.totalVotes}})</span>
             </div>
             {%if url.totalVotes == 0%}
             <P class="n-vote-text txt-blue">Be the first to vote!</P>

@@ -201,6 +201,11 @@ a {
 .n-date {
     font-size: 1.1em;
 }
+
+.n-tV-font {
+    color: cornflowerblue !important;
+    font-size: 1.8em;
+}
 /************ PASTRY PAGE CSS ************/
 .pastry-img {
     float: left;
