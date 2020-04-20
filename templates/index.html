@@ -73,7 +73,8 @@
     <div class="row">
         <div class="col-6">
             <div class="card card-box top-rated-card">
-                <img class="top-pastry-img" src="{{url.url}}">
+                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                    <img class="top-pastry-img" src="{{url.url}}"></a>
             </div>
         </div>
         <div class="col-6 text-center">
@@ -103,6 +104,8 @@
     </div>
 </section>
 {%endfor%}
+
+
 
 
 
