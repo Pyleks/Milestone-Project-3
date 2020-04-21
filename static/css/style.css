@@ -225,6 +225,16 @@ a {
     color: cornflowerblue !important;
 font-size: 1.8em;
 }
+
+.auto-size:hover {
+    opacity:0.5;
+    transition: 0.5s;
+}
+
+.top-pastry-img:hover {
+    opacity:0.5;
+    transition: 0.5s;
+}
 /************ PASTRY PAGE CSS ************/
 .pastry-img {
     float: left;
