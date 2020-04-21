@@ -24,6 +24,12 @@ time, mark, audio, video {
 /************ Global Font ************/
 body {
     font-family: 'Roboto', sans-serif;
+
+
+}
+
+.main-content {
+    min-height: calc(100vh - 74px - 90px) !important;
 }
 
 a:-webkit-any-link {
@@ -62,9 +68,17 @@ a {
 .bg-blue {
     color: cornflowerblue !important;
 }
+
+.bg-dark {
+    background-color: currentColor;
+}
 /************ Global Color Scheme ************/
 .txt-blue {
     color: #6499ed;
+}
+
+.txt-white {
+    color: white;
 }
 
 /************ Navigation Bar ************/
@@ -80,6 +94,11 @@ a {
 }
 .navbar-nav > .nav-item > .nav-link {
     font-size: 1em;
+}
+
+/************ Global Font Style************/
+.no-pad {
+    padding: 0;
 }
 
 /************ Hero Image ************/
