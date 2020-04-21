@@ -29,7 +29,7 @@ body {
 }
 
 .main-content {
-    min-height: calc(100vh - 74px - 90px) !important;
+    min-height: calc(100vh - 74px - 90px);
 }
 
 a:-webkit-any-link {
