@@ -35,7 +35,7 @@ def recipes():
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
     for x in find_last:
-        last_recip = ((x['name']))
+        last_recip = (x['name'])
 
     return render_template("index.html",
                            last_recip=last_recip,
@@ -61,7 +61,7 @@ def sort_by_rating():
                                       ('approved', pymongo.ASCENDING)]).limit(1)
 
     for x in find_last:
-        last_recip = ((x['name']))
+        last_recip = (x['name'])
 
     return render_template('index.html',
                            last_recip=last_recip,
