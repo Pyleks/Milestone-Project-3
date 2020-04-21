@@ -69,6 +69,7 @@
 </section>
 
 {% for url in displayImg%}
+{% if url.approved == true %}
 <section class="highest-rated container">
     <div class="row">
         <div class="col-6">
@@ -104,10 +105,52 @@
         </div>
     </div>
 </section>
+{%endif%}
 {%endfor%}
 
+<section class="suggested-recipes container">
+    <div class="row">
+        <div class="col-12">
+            <div class="divider txt-blue">
+                <h2 class="text-center popular-recipe txt-blue"><span>More Recipes</span></h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 
+
+<div class="section container container-space">
+    <div class="row">
+        {% for url in remaining%}
+        {% if url.approved == true and url.name != last_recip %}
+
+        <p>{{active_name}}</p>
+        <div class="col-4 extra-pad">
+            <div class="card card-size card-box cooking-img">
+                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                    <img class="auto-size" src="{{url.url}}"></a>
+                <div class="card-body">
+                    <div class="card-text ">
+                        <div class="info-card-wrap">
+                            <p>{{url.name}}</p>
+                            <div class="star-wrap">
+                                {% for star in range(url.totalStarValue) %}
+                                <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
+                                {%endfor%}
+                                {% for empty in range(5 - url.totalStarValue)%}
+                                <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
 
 
 {% if session.user %}

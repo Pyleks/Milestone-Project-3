@@ -28,12 +28,20 @@ def recipes():
                                            ('totalVotes', pymongo.DESCENDING),
                                            ('approved', pymongo.DESCENDING)]).limit(6)
 
-    new_recipe = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
-                                               ('approved', pymongo.ASCENDING)]).limit(1)
+    new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
+
+    # new_recipe = mongo.db.imageDB.find().sort({'approved': -1})
+
+    find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+                                                                ('approved', pymongo.ASCENDING)]).limit(1)
+
+    for x in find_last:
+        last_recip = ((x['name']))
 
     remaining = mongo.db.imageDB.find().skip(9).limit(9)
 
-    return render_template("index.html", rating=rating, filterName=high, remaining=remaining, displayImg=new_recipe, imageDB=mongo.db.imageDB.find().limit(9))
+    return render_template("index.html", last_recip=last_recip, rating=rating, filterName=high, remaining=remaining, displayImg=new_recipe, imageDB=mongo.db.imageDB.find().limit(9))
 
 
 @app.route('/sort-by-rating')
@@ -44,11 +52,17 @@ def sort_by_rating():
                                            ('approved', pymongo.DESCENDING)]).limit(6)
 
     new_recipe = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
-                                               ('approved', pymongo.ASCENDING)]).limit(1)
+                                               ('approved', pymongo.DESCENDING)]).limit(1)
+
+    find_last = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
+                                              ('approved', pymongo.DESCENDING)]).limit(1)
+
+    for x in find_last:
+        last_recip = ((x['name']))
 
     remaining = mongo.db.imageDB.find().skip(9).limit(9)
 
-    return render_template('index.html',remaining=remaining, displayImg=new_recipe, imageDB=rating, filterName=high)
+    return render_template('index.html', last_recip=last_recip, remaining=remaining, displayImg=new_recipe, imageDB=rating, filterName=high)
 
 
 
