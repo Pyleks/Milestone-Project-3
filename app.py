@@ -51,11 +51,11 @@ def sort_by_rating():
                                            ('totalVotes', pymongo.DESCENDING),
                                            ('approved', pymongo.DESCENDING)]).limit(6)
 
-    new_recipe = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
-                                               ('approved', pymongo.DESCENDING)]).limit(1)
+    new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
 
-    find_last = mongo.db.imageDB.find().sort([('_id', pymongo.DESCENDING),
-                                              ('approved', pymongo.DESCENDING)]).limit(1)
+    find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+                                                                ('approved', pymongo.ASCENDING)]).limit(1)
 
     for x in find_last:
         last_recip = ((x['name']))
