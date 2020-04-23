@@ -168,7 +168,6 @@ def insert_pastry():
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
     if 'user' in session:
-        access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
         starRating = request.form['submit_rating']
         mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                                 {
