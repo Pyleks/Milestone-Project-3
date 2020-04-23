@@ -48,7 +48,7 @@ def recipes():
                            last_recipe=last_recipe)
 
 
-# Medium Ranking Route landing page
+# Medium Ranking Route landing page Route
 @app.route('/sort-by-rating')
 def sort_by_rating():
     rated_text = "Medium Rank"
@@ -76,7 +76,7 @@ def sort_by_rating():
                            last_recipe=last_recipe)
 
 
-# Administrative Portal
+# Administrative Portal Route
 @app.route('/admin_portal')
 def admin_portal():
     # Check if user in session
@@ -101,7 +101,7 @@ def admin_portal():
         return redirect(url_for('login'))
 
 
-# User Profile
+# User Profile Route
 @app.route('/profile/')
 def profile():
     # Check if user is in session
@@ -109,19 +109,23 @@ def profile():
         # Collect all recipes both approved and pending
         approved_recipes = mongo.db.imageDB.find({'approved': True})
         pending_recipes = mongo.db.imageDB.find({'approved': False})
+        # Direct user to profile
         return render_template("profile.html",
                                approved_recipes=approved_recipes,
                                pending_recipes=pending_recipes)
     else:
+        # Direct user to login
         return redirect(url_for('login'))
 
-
+# Add Pastry Route
 @app.route('/add_pastry')
 def add_pastry():
+    # Check if user is logged in
     if 'user' in session:
-        user_in_db = users_collection.find_one({"username": session['user']})
-        if user_in_db:
-            # If so redirect user to his profile
+        # TODO Don't really need the line below but we will keep it until second sweep
+        user_in_database = mongo.db.users.find_one({"username": session['user']})
+        if user_in_database:
+            # If user in DB, redirected to Create Recipe page
             return render_template('add_pastry.html')
     else:
         # Render the page for user to be able to log in
