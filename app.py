@@ -222,8 +222,8 @@ def recipe(task_id):
 
 
 # Edit Pastry Route
-@app.route('/edit_pastry/<task_id>')
-def edit_pastry(task_id):
+@app.route('/edit_recipe/<task_id>')
+def edit_recipe(task_id):
     # Check if the user is in session
     if 'user' in session:
         # Collects all the recipe data for handling
@@ -240,27 +240,30 @@ def edit_pastry(task_id):
         return redirect(url_for('login'))
 
 
-
-
+# Update Pastry Route
 @app.route('/update_pastry/<task_id>', methods=["POST"])
 def update_pastry(task_id):
+    # Get the date for update
     last_updated_date = time.strftime("%Y-%m-%d", time.localtime())
-    recipe = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
-    author = recipe["author"]
-    created_date = recipe["createDate"]
+    recipe_data = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    # Get author
+    author = recipe_data["author"]
+    # Get created Date
+    created_date = recipe_data["createDate"]
     if 'user' in session:
+        # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
-            all_ingredients = request.form.get('pastry_ingredients')
-            all_ingredients_array = all_ingredients.split(", ")
-            all_howto = request.form.get('pastry_howTo')
-            all_howto_array = all_howto.split(", ")
+            recipe_ingredients = request.form.get('pastry_ingredients')
+            recipe_ingredients_array = recipe_ingredients.split(", ")
+            recipe_how_to = request.form.get('pastry_howTo')
+            recipe_how_to_array = recipe_how_to.split(", ")
             mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                               {
                                   'name': request.form.get('pastry_name'),
                                   'callout': request.form.get('pastry_callout'),
                                   'url': request.form.get('pastry_url'),
-                                  'ingredients': all_ingredients_array,
-                                  'howTo': all_howto_array,
+                                  'ingredients': recipe_ingredients_array,
+                                  'howTo': recipe_how_to_array,
                                   'portions': request.form.get('pastry_portions'),
                                   'author': author,
                                   'approved': True,
