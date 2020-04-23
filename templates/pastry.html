@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card card-full-size card-box">
-                    <img class="pastry-img" src="{{pastry_details.url}}">
+                    <img class="pastry-img" src="{{recipe_data.url}}">
                 </div>
             </div>
         </div>
@@ -18,26 +18,26 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="pastry-name text-center">{{pastry_details.name}}</h1>
-                {% for ingredient in pastry_details %}
+                <h1 class="pastry-name text-center">{{recipe_data.name}}</h1>
+                {% for ingredient in recipe_data %}
                 {{ingredient.name}}
                 {% endfor %}
                 <div id="star-wrap" class="star-wrap-pastry">
                     <button id="enable-overlay" class="overlay-star-layer bg-fa">
-                        {% for star in range(pastry_details.totalStarValue) %}
+                        {% for star in range(recipe_data.totalStarValue) %}
                         <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
                         {%endfor%}
-                        {% for empty in range(5 - pastry_details.totalStarValue)%}
+                        {% for empty in range(5 - recipe_data.totalStarValue)%}
                         <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
                         {%endfor%}
                     </button>
-                    <span class="tV-font"> ({{pastry_details.totalVotes}})</span>
+                    <span class="tV-font"> ({{recipe_data.totalVotes}})</span>
                 </div>
-                {% if session.user != pastry_details.author %}
+                {% if session.user != recipe_data.author %}
                 <div id="overlay">
                     <div class="card-body overlay-content bg-fa">
                         <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
-                        <form method="POST" action="{{ url_for('insert_rating', task_id=pastry_details._id)}}">
+                        <form method="POST" action="{{ url_for('insert_rating', task_id=recipe_data._id)}}">
                             <div id="star-wrap" class="star-wrap-pastry">
                                 <p class="star-review-callout">Please leave a star review</p>
                                 <div id="star-box">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 {%endif%}
-                {% if session.user == pastry_details.author %}
+                {% if session.user == recipe_data.author %}
                 <div id="overlay">
                     <div class="card-body overlay-content bg-fa">
                         <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
@@ -63,14 +63,14 @@
                     </div>
                 </div>
                 {%endif%}
-                <p class="text-center callout-margin">{{pastry_details.callout}}</p>
+                <p class="text-center callout-margin">{{recipe_data.callout}}</p>
                 <div class="text-center">
-                    <p class="text-buffer">Author: {{pastry_details.author}}</p>
-                    {% if pastry_details.lastUpdateDate == 0 %}
-                    <p class="text-buffer">Created on: {{pastry_details.createDate}}</p>
+                    <p class="text-buffer">Author: {{recipe_data.author}}</p>
+                    {% if recipe_data.lastUpdateDate == 0 %}
+                    <p class="text-buffer">Created on: {{recipe_data.createDate}}</p>
                     {%endif%}
-                    {% if pastry_details.lastUpdateDate != 0%}
-                    <p class="text-buffer">Updated on: {{pastry_details.lastUpdateDate}}</p>
+                    {% if recipe_data.lastUpdateDate != 0%}
+                    <p class="text-buffer">Updated on: {{recipe_data.lastUpdateDate}}</p>
                     {%endif%}
 
                 </div>
@@ -81,8 +81,8 @@
             <div class="col-5 text-center card-body bg-lightBlue">
                 <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
                 <h3 class="portion-size">Number of portions</h3>
-                <h3 class="portion-number">{{pastry_details.portions}}</h3>
-                {% for content in pastry_details.ingredients %}
+                <h3 class="portion-number">{{recipe_data.portions}}</h3>
+                {% for content in recipe_data.ingredients %}
                 <p class="card-text pastry_text">{{content}}</p>
                 <hr>
                 {%endfor%}
@@ -91,7 +91,7 @@
             <div class="offset-2 col-5 ">
                 <h2 class="pastry-h2 text-center">This is how you do it</h2>
                 <ol class="text-left pastry_text">
-                    {% for steps in pastry_details.howTo%}
+                    {% for steps in recipe_data.howTo%}
                     <li class="recipe-steps">{{steps}}</li>
                     {%endfor%}
                 </ol>
@@ -100,10 +100,10 @@
     </div>
 </section>
 
-{% if session.user == pastry_details.author or session.user == "Administrator" %}
+{% if session.user == recipe_data.author or session.user == "Administrator" %}
 <a class="delete-button btn btn-outline-dark fas fa-trash"
-   href="{{url_for('delete_pastry', task_id=pastry_details._id)}}" role="button"></a>
-<a class="add-button btn btn-outline-dark fas fa-pen" href="{{url_for('edit_pastry', task_id=pastry_details._id)}}"
+   href="{{url_for('delete_pastry', task_id=recipe_data._id)}}" role="button"></a>
+<a class="add-button btn btn-outline-dark fas fa-pen" href="{{url_for('edit_pastry', task_id=recipe_data._id)}}"
    role="button" id="update"></a>
 {% endif %}
 

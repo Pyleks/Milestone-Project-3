@@ -136,7 +136,7 @@ def add_pastry():
 # TODO Skill it for now, come back when you can change it all
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
-    created_date = time.strftime("%Y-%m-%d", time.localtime())
+    creation_date = time.strftime("%Y-%m-%d", time.localtime())
     all_ingredients = request.form.get('pastry_ingredients')
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
@@ -151,7 +151,7 @@ def insert_pastry():
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user'],
                          'approved': False,
-                         'createDate': created_date,
+                         'createDate': creation_date,
                          'lastUpdateDate': 0,
                          'starRating-1': 0,
                          'starRating-2': 0,
@@ -164,7 +164,8 @@ def insert_pastry():
     return redirect(url_for('recipes'))
 
 
-
+# Insert/Calculate Rating Route
+# TODO I don't understand my own code, recheck in the morning
 @app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
 def insert_rating(task_id):
     if 'user' in session:
@@ -210,22 +211,28 @@ def insert_rating(task_id):
         return redirect(url_for('login'))
 
 
+# Recipe Route
+@app.route('/recipe/<task_id>/')
+def recipe(task_id):
+    # Get all data related to the corresponding recipe_id
+    recipe_data = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+    # Get the star rating information
+    data = {'total': recipe_data["totalStarValue"]}
+    return render_template('pastry.html', recipe_data=recipe_data, data=data)
 
 
-@app.route('/pastries/<task_id>/')
-def viewBake(task_id):
-    access_pastry = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
-    data = {'total': access_pastry["totalStarValue"]}
-    return render_template('pastry.html', pastry_details=access_pastry, data=data)
-
-
+# Edit Pastry Route
 @app.route('/edit_pastry/<task_id>')
 def edit_pastry(task_id):
+    # Check if the user is in session
     if 'user' in session:
-        recipe = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+        # Collects all the recipe data for handling
+        recipe_data = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+        # Stores author for use later
         author = recipe["author"]
+        # Make sure only administrator or author can edit the recipe
         if session['user'] == author or session['user'] == "Administrator":
-            return render_template('pastryUpdate.html', pastry_details=recipe)
+            return render_template('pastryUpdate.html', recipe_data=recipe_data)
         else:
             flash('Only Admins can access this page!')
             return redirect(url_for('recipes'))

@@ -33,7 +33,7 @@
         {% if url.approved == true %}
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
-                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{url.url}}"></a>
                 <div class="card-body">
                     <div class="card-text ">
@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-6">
             <div class="card card-box top-rated-card">
-                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
                     <img class="top-pastry-img" src="{{url.url}}"></a>
             </div>
         </div>
@@ -126,7 +126,7 @@
         <p>{{active_name}}</p>
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
-                <a href="{{url_for('viewBake',task_id=url._id)}}" class="link-wrap">
+                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{url.url}}"></a>
                 <div class="card-body">
                     <div class="card-text ">
