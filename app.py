@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if path.exists("env.py"):
     import env
 
-
+# Connection to to Database
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'TheHappyBun'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -20,17 +20,20 @@ mongo = PyMongo(app)
 users_collection = mongo.db.users
 recepie_collection = mongo.db.imageDB
 
+# Landing page Route
 @app.route('/')
 @app.route('/recipes')
 def recipes():
     high = "Highest Rated"
+    # Collecting all the recipes for highest ranking Recipes
     remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
     rating = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
                                                                                    ("name", 1)])
-
+    # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
+    # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
@@ -38,23 +41,25 @@ def recipes():
         last_recip = (x['name'])
     return render_template("index.html",
                            last_recip=last_recip,
-
                            filterName=high,
                            remaining=remaining,
                            displayImg=new_recipe,
                            imageDB=rating)
 
 
-
+# Medium Ranking Route landing page
 @app.route('/sort-by-rating')
 def sort_by_rating():
     high = "Medium Rank"
+    # Collecting all the recipes for Medium ranking Recipes
     remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
     imageDB = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
 
+    # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
+    # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                       ('approved', pymongo.ASCENDING)]).limit(1)
 
