@@ -5,34 +5,34 @@
 
     <div class="row update-margin">
         <div class="col-12">
-            <h3 class="update-heading">Update {{pastry_details.name}} Recipe</h3>
-            <form action="{{ url_for('update_pastry', task_id=pastry_details._id)}}" method="POST" class="full-form" placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
+            <h3 class="update-heading">Update {{recipe_data.name}} Recipe</h3>
+            <form action="{{ url_for('update_pastry', task_id=recipe_data._id)}}" method="POST" class="full-form" placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
 
                 <div class="form-group card card-body bg-lightBlue">
 
                     <label id="urlLabel" class="strong-label" for="exampleInputEmail1"> Image URL</i></label>
                     <input id="pastry_url" name="pastry_url" type="text" class="validate form-control" placeholder="Chocolate Cake"
-                           value="{{pastry_details.url}}">
+                           value="{{recipe_data.url}}">
 
                     <label id="pastryNameLabel" class="strong-label" for="exampleInputPassword1">Pastry Name</label>
                     <input id="pastry_name" name="pastry_name" type="text" class="validate form-control"
-                           value="{{pastry_details.name}}">
+                           value="{{recipe_data.name}}">
 
                     <label id="calloutLabel" class="strong-label for="exampleInputPassword1">Callout Text</label>
                     <input id="pastry_callout" name="pastry_callout" type="text" class="validate form-control"  placeholder="World's best Chocolate cake"
-                           value="{{pastry_details.callout}}">
+                           value="{{recipe_data.callout}}">
 
                     <label id="portionLabel" class="strong-label" for="exampleInputPassword1">Portions</label>
                     <input id="pastry_portions" name="pastry_portions" type="text" class="validate form-control" placeholder="10"
-                           value="{{pastry_details.portions}}">
+                           value="{{recipe_data.portions}}">
 
                         <label id="ingredientsLabel" class="strong-label" for="exampleInputPassword1">Ingredients</label>
                         <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control" placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk"
-                               value="{{pastry_details.ingredients|join(', ')}}">
+                               value="{{recipe_data.ingredients|join(', ')}}">
 
                     <label id="howToLabel" class="strong-label" for="exampleInputPassword1">How To</label>
                     <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control" placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients"
-                           value="{{pastry_details.howTo|join(', ')}}">
+                           value="{{recipe_data.howTo|join(', ')}}">
                     <small class="text-space text-muted">All updates will go through Admin approval before displayed on the website.</small>
             </div>
             <button id="submitForm" type="submit" name="action" class="btn btn-outline-success">Update</button>

@@ -229,7 +229,7 @@ def edit_pastry(task_id):
         # Collects all the recipe data for handling
         recipe_data = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
         # Stores author for use later
-        author = recipe["author"]
+        author = recipe_data["author"]
         # Make sure only administrator or author can edit the recipe
         if session['user'] == author or session['user'] == "Administrator":
             return render_template('pastryUpdate.html', recipe_data=recipe_data)
