@@ -11,7 +11,7 @@ if path.exists("env.py"):
 
 # Connection to to Database
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'TheHappyBun'
+app.config["MONGO_DBNAME"] = 'nordicPastry'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
@@ -74,17 +74,6 @@ def sort_by_rating():
                            recipe_collection=medium_rated_recipes,
                            new_recipe=new_recipe,
                            last_recipe=last_recipe)
-
-
-
-
-
-
-
-
-
-
-
 
 
 @app.route('/admin_portal')
