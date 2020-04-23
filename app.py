@@ -87,11 +87,11 @@ def admin_portal():
             # And recipes waiting for approval
             all_users = mongo.db.users.find()
             all_users_number = all_users.count()
-            recipes_approval_false = mongo.db.imageDB.find({'approved': False})
-            approval_false_number = recipes_approval_false.count()
+            pending_recipes = mongo.db.imageDB.find({'approved': False})
+            pending_recipes_number = pending_recipes.count()
             return render_template("admin_portal.html",
-                                   recipes_approval_false=recipes_approval_false,
-                                   approval_false_number=approval_false_number,
+                                   pending_recipes=pending_recipes,
+                                   pending_recipes_number=pending_recipes_number,
                                    all_users=all_users,
                                    all_users_number=all_users_number)
 
