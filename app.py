@@ -1,4 +1,5 @@
 import os
+import math
 from os import path
 import time
 from flask import Flask, render_template, request, redirect, url_for, session, flash
@@ -22,11 +23,17 @@ recepie_collection = mongo.db.imageDB
 @app.route('/')
 @app.route('/recipes')
 def recipes():
-    high = "Unsorted"
-    remaining = mongo.db.imageDB.find().skip(9).limit(11)
-    rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING),
-                                           ('totalVotes', pymongo.DESCENDING),
-                                           ('approved', pymongo.DESCENDING)]).limit(6)
+    high = "Highest Rated"
+    remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
+    rating = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
+                                                                                   ("name", 1)])
+    # low = 1
+    # high = 9
+    # cluster_high = rating.count() / 9
+    # cluster_high = (math.ceil(cluster_high))
+    # for i in range(cluster_high):
+
+
 
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
@@ -36,23 +43,25 @@ def recipes():
 
     for x in find_last:
         last_recip = (x['name'])
-
     return render_template("index.html",
                            last_recip=last_recip,
-                           rating=rating,
+
                            filterName=high,
                            remaining=remaining,
                            displayImg=new_recipe,
-                           imageDB=mongo.db.imageDB.find().limit(9))
+                           imageDB=rating)
+
 
 
 @app.route('/sort-by-rating')
 def sort_by_rating():
-    high = "Highest Rated"
-    remaining = mongo.db.imageDB.find().skip(9).limit(9)
-    rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING),
-                                           ('totalVotes', pymongo.DESCENDING),
-                                           ('approved', pymongo.DESCENDING)]).limit(6)
+    high = "Medium Rank"
+    remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
+    imageDB = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
+
+    # rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING),
+    #                                        ('totalVotes', pymongo.DESCENDING),
+    #                                        ('approved', pymongo.DESCENDING)]).limit(6)
 
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
@@ -64,10 +73,10 @@ def sort_by_rating():
         last_recip = (x['name'])
 
     return render_template('index.html',
-                           last_recip=last_recip,
                            remaining=remaining,
+                           last_recip=last_recip,
                            displayImg=new_recipe,
-                           imageDB=rating,
+                           imageDB=imageDB,
                            filterName=high)
 
 

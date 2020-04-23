@@ -18,10 +18,9 @@
                     {{filterName}}
                 </button>
                 <div class="dropdown-menu menu-border" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Highest Rating {% set name = 'Highest
-                        Rating' %}</a>
-                    <a class="dropdown-item" href="{{url_for('recipes')}}">Unsorted</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="{{url_for('recipes')}}">Highest Rating {{low}} - {{high}}</a>
+                    <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Medium Rating</a>
+
                 </div>
             </div>
         </div>
@@ -123,8 +122,7 @@
 <div class="section container container-space">
     <div class="row">
         {% for url in remaining%}
-        {% if url.approved == true and url.name != last_recip %}
-
+        {% if url.approved == true and url.name != last_recip%}
         <p>{{active_name}}</p>
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
