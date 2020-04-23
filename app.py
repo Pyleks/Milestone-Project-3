@@ -76,14 +76,24 @@ def sort_by_rating():
                            last_recipe=last_recipe)
 
 
+# Administrative Portal
 @app.route('/admin_portal')
 def admin_portal():
+    # Check if user in session
     if 'user' in session:
+        # Check if the user is administrator
         if session['user'] == "Administrator":
+            # Collects all users
+            # And recipes waiting for approval
             all_users = mongo.db.users.find()
-            approval_false = mongo.db.imageDB.find({'approved': False})
-            return render_template("admin_portal.html", recipes=approval_false, total_count=approval_false.count(),
-                                   all_users=all_users, total_users=all_users.count())
+            all_users_number = all_users.count()
+            recipes_approval_false = mongo.db.imageDB.find({'approved': False})
+            approval_false_number = recipes_approval_false.count()
+            return render_template("admin_portal.html",
+                                   recipes_approval_false=recipes_approval_false,
+                                   approval_false_number=approval_false_number,
+                                   all_users=all_users,
+                                   all_users_number=all_users_number)
 
         else:
             return redirect(url_for('recipes'))
@@ -91,6 +101,7 @@ def admin_portal():
         return redirect(url_for('login'))
 
 
+# User Profile
 @app.route('/profile/')
 def profile():
     if 'user' in session:

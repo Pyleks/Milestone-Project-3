@@ -10,13 +10,13 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                <h2 class="approval-name">Waiting Approval({{total_count}})</h2>
+                                <h2 class="approval-name">Waiting Approval({{approval_false_number}})</h2>
                             </button>
                         </h5>
                     </div>
 
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        {% for content in recipes %}
+                        {% for content in recipes_approval_false %}
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-4">
@@ -55,7 +55,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
                                     aria-expanded="true" aria-controls="collapseTwo">
-                                <h2 class="approval-name">Users({{total_users}})</h2>
+                                <h2 class="approval-name">Users({{all_users_number}})</h2>
                             </button>
                         </h5>
                     </div>
