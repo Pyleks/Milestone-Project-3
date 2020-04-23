@@ -132,10 +132,11 @@ def add_pastry():
         return render_template("login.html")
 
 
-
+# Insert Pastry Route
+# TODO Skill it for now, come back when you can change it all
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
-    created_on = time.strftime("%Y-%m-%d", time.localtime())
+    created_date = time.strftime("%Y-%m-%d", time.localtime())
     all_ingredients = request.form.get('pastry_ingredients')
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
@@ -150,7 +151,7 @@ def insert_pastry():
                          'portions': request.form.get('pastry_portions'),
                          'author': session['user'],
                          'approved': False,
-                         'createDate': created_on,
+                         'createDate': created_date,
                          'lastUpdateDate': 0,
                          'starRating-1': 0,
                          'starRating-2': 0,
