@@ -6,7 +6,7 @@
     <div class="row update-margin">
         <div class="col-12">
             <h3 class="update-heading">Update {{recipe_data.name}} Recipe</h3>
-            <form action="{{ url_for('update_pastry', task_id=recipe_data._id)}}" method="POST" class="full-form" placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
+            <form action="{{ url_for('update_recipe', task_id=recipe_data._id)}}" method="POST" class="full-form" placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
 
                 <div class="form-group card card-body bg-lightBlue">
 

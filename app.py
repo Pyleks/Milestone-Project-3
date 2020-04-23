@@ -241,8 +241,8 @@ def edit_recipe(task_id):
 
 
 # Update Pastry Route
-@app.route('/update_pastry/<task_id>', methods=["POST"])
-def update_pastry(task_id):
+@app.route('/update_recipe/<task_id>', methods=["POST"])
+def update_recipe(task_id):
     # Get the date for update
     last_updated_date = time.strftime("%Y-%m-%d", time.localtime())
     recipe_data = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
@@ -285,8 +285,8 @@ def update_pastry(task_id):
         return redirect(url_for('login'))
 
 
-@app.route('/delete_pastry/<task_id>')
-def delete_pastry(task_id):
+@app.route('/delete_recipe/<task_id>')
+def delete_recipe(task_id):
     find_author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
     author = find_author['author']
     if 'user' in session:
