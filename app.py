@@ -24,9 +24,9 @@ recepie_collection = mongo.db.imageDB
 @app.route('/')
 @app.route('/recipes')
 def recipes():
-    high = "Highest Rated"
+    rated_text = "Highest Rated"
     # Collecting all the recipes for highest ranking Recipes
-    remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
+    un_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
     rating = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
                                                                                    ("name", 1)])
     # Finding the last Recipe added and approved for the Recipe highlight on the page
@@ -41,8 +41,8 @@ def recipes():
         last_recip = (x['name'])
     return render_template("index.html",
                            last_recip=last_recip,
-                           filterName=high,
-                           remaining=remaining,
+                           rated_text=rated_text,
+                           un_rated_recipes=un_rated_recipes,
                            displayImg=new_recipe,
                            imageDB=rating)
 
