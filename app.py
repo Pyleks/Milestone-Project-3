@@ -27,13 +27,6 @@ def recipes():
     remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
     rating = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
                                                                                    ("name", 1)])
-    # low = 1
-    # high = 9
-    # cluster_high = rating.count() / 9
-    # cluster_high = (math.ceil(cluster_high))
-    # for i in range(cluster_high):
-
-
 
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
@@ -58,10 +51,6 @@ def sort_by_rating():
     high = "Medium Rank"
     remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
     imageDB = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
-
-    # rating = mongo.db.imageDB.find().sort([('totalStarValue', pymongo.DESCENDING),
-    #                                        ('totalVotes', pymongo.DESCENDING),
-    #                                        ('approved', pymongo.DESCENDING)]).limit(6)
 
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
