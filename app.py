@@ -36,24 +36,25 @@ def recipes():
     # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
-
+    # Finds the name from last Recipe
     for x in find_last:
-        last_recip = (x['name'])
+        last_recipe = (x['name'])
+
     return render_template("index.html",
-                           last_recip=last_recip,
                            rated_text=rated_text,
                            un_rated_recipes=un_rated_recipes,
+                           recipe_collection=high_rated_recipes,
                            new_recipe=new_recipe,
-                           high_rated_recipes=high_rated_recipes)
+                           last_recipe=last_recipe)
 
 
 # Medium Ranking Route landing page
 @app.route('/sort-by-rating')
 def sort_by_rating():
-    high = "Medium Rank"
+    rated_text = "Medium Rank"
     # Collecting all the recipes for Medium ranking Recipes
-    remaining = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
-    imageDB = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
+    un_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
+    medium_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
 
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
@@ -63,15 +64,22 @@ def sort_by_rating():
     find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                       ('approved', pymongo.ASCENDING)]).limit(1)
 
+    # Finds the name from last Recipe
     for x in find_last:
-        last_recip = (x['name'])
+        last_recipe = (x['name'])
 
     return render_template('index.html',
-                           remaining=remaining,
-                           last_recip=last_recip,
-                           displayImg=new_recipe,
-                           imageDB=imageDB,
-                           filterName=high)
+                           rated_text=rated_text,
+                           un_rated_recipes=un_rated_recipes,
+                           recipe_collection=medium_rated_recipes,
+                           new_recipe=new_recipe,
+                           last_recipe=last_recipe)
+
+
+
+
+
+
 
 
 
