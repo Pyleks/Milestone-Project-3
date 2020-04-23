@@ -285,12 +285,17 @@ def update_recipe(task_id):
         return redirect(url_for('login'))
 
 
+# Delete Recipe Route
 @app.route('/delete_recipe/<task_id>')
 def delete_recipe(task_id):
+    # Find Author
     find_author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
     author = find_author['author']
+    # Check if user is in session
     if 'user' in session:
+        # Check if the user is the author
         if session['user'] == author:
+            # Deletes the Recipe
             mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
             return redirect(url_for('recipes'))
         else:
@@ -299,14 +304,15 @@ def delete_recipe(task_id):
         return redirect(url_for('login'))
 
 
+# Delete User Route
 @app.route('/delete_user/<task_id>')
 def delete_user(task_id):
     mongo.db.users.remove({'_id': ObjectId(task_id)})
     return redirect(url_for('admin_portal'))
 
-
-@app.route('/approve_pastry/<task_id>')
-def approve_pastry(task_id):
+# Approve Recipe
+@app.route('/approve_recipe/<task_id>')
+def approve_recipe(task_id):
     mongo.db.imageDB.update({'_id': ObjectId(task_id)},
                             {
                                 '$set': {
@@ -317,12 +323,9 @@ def approve_pastry(task_id):
                             upsert=False
 
                             )
-
     return redirect(url_for('admin_portal'))
 
-
-
-
+# Login Route
 @app.route('/login', methods=['GET'])
 def login():
     # Check if user is not logged in already
