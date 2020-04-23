@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-
+<!--Update Recipe form-->
 <div class="container">
 
     <div class="row update-margin">
@@ -9,32 +9,33 @@
             <form action="{{ url_for('update_recipe', task_id=recipe_data._id)}}" method="POST" class="full-form" placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
 
                 <div class="form-group card card-body bg-lightBlue">
-
+<!--                    URL label and input-->
                     <label id="urlLabel" class="strong-label"> Image URL</i></label>
                     <input id="pastry_url" name="pastry_url" type="text" class="validate form-control" placeholder="Chocolate Cake"
                            value="{{recipe_data.url}}">
-
+<!--                    Recipe label and input-->
                     <label id="pastryNameLabel" class="strong-label">Pastry Name</label>
                     <input id="pastry_name" name="pastry_name" type="text" class="validate form-control"
                            value="{{recipe_data.name}}">
-
+<!--                     Callout label and input-->
                     <label id="calloutLabel" class="strong-label">Callout Text</label>
                     <input id="pastry_callout" name="pastry_callout" type="text" class="validate form-control"  placeholder="World's best Chocolate cake"
                            value="{{recipe_data.callout}}">
-
+<!--                      Portions label and input-->
                     <label id="portionLabel" class="strong-label">Portions</label>
                     <input id="pastry_portions" name="pastry_portions" type="text" class="validate form-control" placeholder="10"
                            value="{{recipe_data.portions}}">
-
-                        <label id="ingredientsLabel" class="strong-label">Ingredients</label>
-                        <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control" placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk"
+<!--                       Ingredients label and input-->
+                    <label id="ingredientsLabel" class="strong-label">Ingredients</label>
+                    <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control" placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk"
                                value="{{recipe_data.ingredients|join(', ')}}">
-
+<!--                       How to label and input-->
                     <label id="howToLabel" class="strong-label">How To</label>
                     <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control" placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients"
                            value="{{recipe_data.howTo|join(', ')}}">
                     <small class="text-space text-muted">All updates will go through Admin approval before displayed on the website.</small>
             </div>
+<!--                       Submission button-->
             <button id="submitForm" type="submit" name="action" class="btn btn-outline-success">Update</button>
         </div>
         </form>
