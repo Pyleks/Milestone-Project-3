@@ -104,12 +104,14 @@ def admin_portal():
 # User Profile
 @app.route('/profile/')
 def profile():
+    # Check if user is in session
     if 'user' in session:
-        approval_true = mongo.db.imageDB.find({'approved': True})
-        print(approval_true)
-        approval_false = mongo.db.imageDB.find({'approved': False})
-        return render_template("profile.html", approved_recipes=approval_true, pending_recipes=approval_false,
-                               profile_count=approval_true.count())
+        # Collect all recipes both approved and pending
+        approved_recipes = mongo.db.imageDB.find({'approved': True})
+        pending_recipes = mongo.db.imageDB.find({'approved': False})
+        return render_template("profile.html",
+                               approved_recipes=approved_recipes,
+                               pending_recipes=pending_recipes)
     else:
         return redirect(url_for('login'))
 
