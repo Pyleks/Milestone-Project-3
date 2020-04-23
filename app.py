@@ -27,7 +27,7 @@ def recipes():
     rated_text = "Highest Rated"
     # Collecting all the recipes for highest ranking Recipes
     un_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
-    rating = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
+    high_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
                                                                                    ("name", 1)])
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
@@ -43,8 +43,8 @@ def recipes():
                            last_recip=last_recip,
                            rated_text=rated_text,
                            un_rated_recipes=un_rated_recipes,
-                           displayImg=new_recipe,
-                           imageDB=rating)
+                           new_recipe=new_recipe,
+                           high_rated_recipes=high_rated_recipes)
 
 
 # Medium Ranking Route landing page
