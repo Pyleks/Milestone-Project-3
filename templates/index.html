@@ -8,11 +8,11 @@
     </div>
 </div>
 
+<!--Filter-->
 <div class="container container-padding">
     <div class="row">
         <div class="col-2">
             <div class="dropdown menu-border">
-
                 <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{rated_text}}
@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-
+<!--Recipe Collection-->
 <div class="section container container-space">
     <div class="row">
         {% for url in recipe_collection%}
@@ -56,7 +56,7 @@
         {% endfor %}
     </div>
 </div>
-
+<!--Newest Recipe Showcase-->
 <section class="suggested-recipes container">
     <div class="row">
         <div class="col-12">
@@ -67,6 +67,7 @@
     </div>
 </section>
 
+<!--Newest and unrated Recipes-->
 {% for url in new_recipe%}
 {% if url.approved == true %}
 <section class="highest-rated container">
@@ -80,7 +81,7 @@
         <div class="col-6 text-center">
             <h3 class="n-recipe-heading">{{url.name}}</h3>
             <p class="n-callout">{{url.callout}}</p>
-
+<!--                Newest recipe details-->
             <div class="n-star-wrap">
                 {% for star in range(url.totalStarValue) %}
                 <span id="starRating_{{i}}" class="fas fa-star bg-blue n-star-box"></span>
@@ -107,6 +108,7 @@
 {%endif%}
 {%endfor%}
 
+<!--Headline for new and un-raked recipes-->
 <section class="suggested-recipes container">
     <div class="row">
         <div class="col-12">
@@ -118,7 +120,7 @@
 </section>
 
 
-
+<!--New and un-raked recipes-->
 <div class="section container container-space">
     <div class="row">
         {% for url in un_rated_recipes%}
@@ -150,7 +152,7 @@
     </div>
 </div>
 
-
+<!--Add recipe button-->
 {% if session.user %}
 <a class="add-button btn btn-outline-dark fas fa-plus icon-size" href="{{url_for('add_pastry')}}" role="button"></a>
 {%endif%}
