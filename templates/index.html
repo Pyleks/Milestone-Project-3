@@ -29,21 +29,21 @@
 <!--Recipe Collection-->
 <div class="section container container-space">
     <div class="row">
-        {% for url in recipe_collection%}
-        {% if url.approved == true %}
+        {% for content in recipe_collection%}
+        {% if content.approved == true %}
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
-                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
-                    <img class="auto-size" src="{{url.url}}"></a>
+                <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
+                    <img class="auto-size" src="{{content.url}}"></a>
                 <div class="card-body">
                     <div class="card-text ">
                         <div class="info-card-wrap">
-                            <p>{{url.name}}</p>
+                            <p>{{content.name}}</p>
                             <div class="star-wrap">
-                                {% for star in range(url.totalStarValue) %}
+                                {% for star in range(content.totalStarValue) %}
                                 <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
                                 {%endfor%}
-                                {% for empty in range(5 - url.totalStarValue)%}
+                                {% for empty in range(5 - content.totalStarValue)%}
                                 <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
                                 {%endfor%}
                             </div>
@@ -68,38 +68,38 @@
 </section>
 
 <!--Newest and unrated Recipes-->
-{% for url in new_recipe%}
-{% if url.approved == true %}
+{% for content in new_recipe%}
+{% if content.approved == true %}
 <section class="highest-rated container">
     <div class="row">
         <div class="col-6">
             <div class="card card-box top-rated-card">
-                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
-                    <img class="top-pastry-img" src="{{url.url}}"></a>
+                <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
+                    <img class="top-pastry-img" src="{{content.url}}"></a>
             </div>
         </div>
         <div class="col-6 text-center">
-            <h3 class="n-recipe-heading">{{url.name}}</h3>
-            <p class="n-callout">{{url.callout}}</p>
+            <h3 class="n-recipe-heading">{{content.name}}</h3>
+            <p class="n-callout">{{content.callout}}</p>
 <!--                Newest recipe details-->
             <div class="n-star-wrap">
-                {% for star in range(url.totalStarValue) %}
+                {% for star in range(content.totalStarValue) %}
                 <span id="starRating_{{i}}" class="fas fa-star bg-blue n-star-box"></span>
                 {%endfor%}
-                {% for empty in range(5 - url.totalStarValue)%}
+                {% for empty in range(5 - content.totalStarValue)%}
                 <span id="starRating_{{i}}" class="far fa-star bg-blue n-star-box"></span>
                 {%endfor%}
-                <span class="n-tV-font"> ({{url.totalVotes}})</span>
+                <span class="n-tV-font"> ({{content.totalVotes}})</span>
             </div>
-            {%if url.totalVotes == 0%}
+            {%if content.totalVotes == 0%}
             <P class="n-vote-text txt-blue">Be the first to vote!</P>
             {%endif%}
-            <p class="n-author text-buffer">Author: {{url.author}}</p>
-            {% if url.lastUpdateDate == 0 %}
-            <p class="n-date text-buffer">Created on: {{url.createDate}}</p>
+            <p class="n-author text-buffer">Author: {{content.author}}</p>
+            {% if content.lastUpdateDate == 0 %}
+            <p class="n-date text-buffer">Created on: {{content.createDate}}</p>
             {%endif%}
-            {% if url.lastUpdateDate != 0%}
-            <p class="n-date text-buffer">Updated on: {{url.lastUpdateDate}}</p>
+            {% if content.lastUpdateDate != 0%}
+            <p class="n-date text-buffer">Updated on: {{content.lastUpdateDate}}</p>
             {%endif%}
 
         </div>
@@ -123,22 +123,22 @@
 <!--New and un-raked recipes-->
 <div class="section container container-space">
     <div class="row">
-        {% for url in un_rated_recipes%}
-        {% if url.approved == true and url.name != last_recipe%}
+        {% for content in un_rated_recipes%}
+        {% if content.approved == true and content.name != last_recipe%}
         <p>{{active_name}}</p>
         <div class="col-4 extra-pad">
             <div class="card card-size card-box cooking-img">
-                <a href="{{url_for('recipe',task_id=url._id)}}" class="link-wrap">
-                    <img class="auto-size" src="{{url.url}}"></a>
+                <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
+                    <img class="auto-size" src="{{content.url}}"></a>
                 <div class="card-body">
                     <div class="card-text ">
                         <div class="info-card-wrap">
-                            <p>{{url.name}}</p>
+                            <p>{{content.name}}</p>
                             <div class="star-wrap">
-                                {% for star in range(url.totalStarValue) %}
+                                {% for star in range(content.totalStarValue) %}
                                 <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
                                 {%endfor%}
-                                {% for empty in range(5 - url.totalStarValue)%}
+                                {% for empty in range(5 - content.totalStarValue)%}
                                 <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
                                 {%endfor%}
                             </div>
