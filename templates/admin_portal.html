@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-
+<!--Administrative Portal-->
 <div class="container">
     <div class="row">
         <div class="col-12">
             <h1 class="admin-name">Administrative Portal</h1>
+<!--            Display all waiting for approval-->
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
@@ -14,7 +15,7 @@
                             </button>
                         </h5>
                     </div>
-
+<!--                    User content-->
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         {% for content in pending_recipes %}
                         <div class="card-body">
@@ -33,8 +34,10 @@
                                     <p><strong class="admin-card">Ingredients: </strong> {{content.ingredients}}</p>
                                     <p><strong class="admin-card">How To: </strong> {{content.howTo}}</p>
                                     <p><strong class="admin-card">Portions: </strong> {{content.portions}}</p>
+<!--                                    Approval button for recipes-->
                                     <a class="btn btn-primary text-white bg-success" href="{{url_for('approve_recipe', task_id=content._id)}}"
                                        role="button">Approve</a>
+<!--                                    Delete button for recipes-->
                                     <a class="btn btn-primary text-white bg-danger" href="{{url_for('delete_recipe', task_id=content._id)}}"
                                        role="button">Delete</a>
                                 </div>
@@ -49,6 +52,7 @@
     </div>
     <div class="row">
         <div class="col-12">
+<!--            Display all user accounts-->
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
@@ -67,7 +71,7 @@
                                 <div class="col-8">
                                     <p><strong class="admin-card">Username:</strong> {{user.username}}</p>
                                     <p><strong class="admin-card">Email: </strong> {{user.email}}</p>
-
+<!--                                    Admin have the option to delete users if needed-->
                                     <a class="btn btn-primary text-white bg-danger" href="{{url_for('delete_user', task_id=user._id)}}"
                                        role="button">Delete</a>
                                 </div>
