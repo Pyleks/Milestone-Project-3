@@ -1,9 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
+<!--User Profile-->
 <section class="profile container">
     <div class="row">
         <div class="col-12">
             <h1 class="admin-name">{{session.user}} Portal</h1>
+<!--            Displays all recipes waiting for confirmation-->
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
@@ -14,7 +16,7 @@
                             </button>
                         </h5>
                     </div>
-
+<!--                    Shows all recipes that got approved from that user-->
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                         {% for content in approved_recipes %}
                         {% if session.user == content.author %}
@@ -27,6 +29,7 @@
                                         </div>
                                     </div>
                                 </div>
+<!--                                Recipe details-->
                                 <div class="col-8">
                                     <p><span class="custom-font" class="admin-card">Author:</span> {{content.author}}</p>
                                     <p><span class="custom-font" class="admin-card">Name: </span> {{content.name}}</p>
@@ -45,6 +48,7 @@
                     </div>
                 </div>
             </div>
+<!--            All recipes waiting for approval-->
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
@@ -68,6 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
+<!--                                recipe details-->
                                 <div class="col-8">
                                     <p><strong class="admin-card">Author:</strong> {{content.author}}</p>
                                     <p><strong class="admin-card">Name: </strong> {{content.name}}</p>
