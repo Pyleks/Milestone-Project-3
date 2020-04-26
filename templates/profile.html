@@ -80,9 +80,6 @@
                                     <p><strong class="admin-card">Ingredients: </strong> {{content.ingredients}}</p>
                                     <p><strong class="admin-card">How To: </strong> {{content.howTo}}</p>
                                     <p><strong class="admin-card">Portions: </strong> {{content.portions}}</p>
-                                    <a class="btn btn-primary text-white bg-success"
-                                       href="{{url_for('approve_recipe', task_id=content._id)}}"
-                                       role="button">Update</a>
                                     <a class="btn btn-primary text-white bg-danger"
                                        href="{{url_for('delete_recipe', task_id=content._id)}}"
                                        role="button">Delete</a>

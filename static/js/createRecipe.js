@@ -1,6 +1,6 @@
 $(document).ready(function() {
     ($("#submitForm").click(function (e) {
-        let pastryUrl = $("#pastry_url").val();
+        let pastryUrl = $("#imageUrl").val();
         let portions = $("#pastry_portions").val();
         let pastryName = $("#pastry_name").val();
         let calloutText = $("#pastry_callout").val();
