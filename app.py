@@ -145,7 +145,7 @@ def insert_pastry():
                      {
                          'name': request.form.get('pastry_name'),
                          'callout': request.form.get('pastry_callout'),
-                         'url': request.form.get('pastry_url'),
+                         'imageUrl': request.form.get('imageUrl'),
                          'ingredients': all_ingredients_array,
                          'howTo': all_howto_array,
                          'portions': request.form.get('pastry_portions'),
@@ -261,7 +261,7 @@ def update_recipe(task_id):
                               {
                                   'name': request.form.get('pastry_name'),
                                   'callout': request.form.get('pastry_callout'),
-                                  'url': request.form.get('pastry_url'),
+                                  'imageUrl': request.form.get('imageUrl'),
                                   'ingredients': recipe_ingredients_array,
                                   'howTo': recipe_how_to_array,
                                   'portions': request.form.get('pastry_portions'),
