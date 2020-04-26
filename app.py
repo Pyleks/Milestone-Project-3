@@ -9,16 +9,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if path.exists("env.py"):
     import env
 
-# Connection to to Database
+# Connection to Database
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'nordicPastry'
+app.config["MONGO_DBNAME"] = 'TheHappyBun'
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
 users_collection = mongo.db.users
-recepie_collection = mongo.db.imageDB
+# recepie_collection = mongo.db.imageDB
 
 # Landing page Route
 @app.route('/')
@@ -26,15 +26,15 @@ recepie_collection = mongo.db.imageDB
 def recipes():
     rated_text = "Highest Rated"
     # Collecting all the recipes for highest ranking Recipes
-    un_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
-    high_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
+    un_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
+    high_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
                                                                                    ("name", 1)])
     # Finding the last Recipe added and approved for the Recipe highlight on the page
-    new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+    new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
-    find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+    find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
     # Finds the name from last Recipe
     for x in find_last:
@@ -53,15 +53,15 @@ def recipes():
 def sort_by_rating():
     rated_text = "Medium Rank"
     # Collecting all the recipes for Medium ranking Recipes
-    un_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
-    medium_rated_recipes = mongo.db.imageDB.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
+    un_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
+    medium_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
 
     # Finding the last Recipe added and approved for the Recipe highlight on the page
-    new_recipe = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+    new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                         ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
-    find_last = mongo.db.imageDB.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
+    find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
                                       ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Finds the name from last Recipe
@@ -87,7 +87,7 @@ def admin_portal():
             # And recipes waiting for approval
             all_users = mongo.db.users.find()
             all_users_number = all_users.count()
-            pending_recipes = mongo.db.imageDB.find({'approved': False})
+            pending_recipes = mongo.db.Recipes.find({'approved': False})
             pending_recipes_number = pending_recipes.count()
             return render_template("admin_portal.html",
                                    pending_recipes=pending_recipes,
@@ -107,8 +107,8 @@ def profile():
     # Check if user is in session
     if 'user' in session:
         # Collect all recipes both approved and pending
-        approved_recipes = mongo.db.imageDB.find({'approved': True})
-        pending_recipes = mongo.db.imageDB.find({'approved': False})
+        approved_recipes = mongo.db.Recipes.find({'approved': True})
+        pending_recipes = mongo.db.Recipes.find({'approved': False})
         # Direct user to profile
         return render_template("profile.html",
                                approved_recipes=approved_recipes,
@@ -141,7 +141,7 @@ def insert_pastry():
     all_ingredients_array = all_ingredients.split(", ")
     all_howto = request.form.get('pastry_howTo')
     all_howto_array = all_howto.split(", ")
-    mongo.db.imageDB.insert(
+    mongo.db.Recipes.insert(
                      {
                          'name': request.form.get('pastry_name'),
                          'callout': request.form.get('pastry_callout'),
@@ -170,7 +170,7 @@ def insert_pastry():
 def insert_rating(task_id):
     if 'user' in session:
         starRating = request.form['submit_rating']
-        mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+        mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                                 {
                                     '$inc': {
                                         starRating: 1,
@@ -179,7 +179,7 @@ def insert_rating(task_id):
                                 },
                                 upsert=False
                                 )
-        star_array = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+        star_array = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
         star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
                             + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
                             + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
@@ -193,7 +193,7 @@ def insert_rating(task_id):
         star_calculator = (int(star_calculator))
         print(star_calculator)
 
-        mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+        mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                                 {
                                     '$set': {
                                         'totalStarValue': star_calculator,
@@ -215,7 +215,7 @@ def insert_rating(task_id):
 @app.route('/recipe/<task_id>/')
 def recipe(task_id):
     # Get all data related to the corresponding recipe_id
-    recipe_data = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+    recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(task_id)})
     # Get the star rating information
     data = {'total': recipe_data["totalStarValue"]}
     return render_template('pastry.html', recipe_data=recipe_data, data=data)
@@ -227,7 +227,7 @@ def edit_recipe(task_id):
     # Check if the user is in session
     if 'user' in session:
         # Collects all the recipe data for handling
-        recipe_data = mongo.db.imageDB.find_one({"_id": ObjectId(task_id)})
+        recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(task_id)})
         # Stores author for use later
         author = recipe_data["author"]
         # Make sure only administrator or author can edit the recipe
@@ -245,7 +245,7 @@ def edit_recipe(task_id):
 def update_recipe(task_id):
     # Get the date for update
     last_updated_date = time.strftime("%Y-%m-%d", time.localtime())
-    recipe_data = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    recipe_data = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
     # Get author
     author = recipe_data["author"]
     # Get created Date
@@ -257,7 +257,7 @@ def update_recipe(task_id):
             recipe_ingredients_array = recipe_ingredients.split(", ")
             recipe_how_to = request.form.get('pastry_howTo')
             recipe_how_to_array = recipe_how_to.split(", ")
-            mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+            mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                               {
                                   'name': request.form.get('pastry_name'),
                                   'callout': request.form.get('pastry_callout'),
@@ -289,14 +289,14 @@ def update_recipe(task_id):
 @app.route('/delete_recipe/<task_id>')
 def delete_recipe(task_id):
     # Find Author
-    find_author = mongo.db.imageDB.find_one({'_id': ObjectId(task_id)})
+    find_author = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
     author = find_author['author']
     # Check if user is in session
     if 'user' in session:
         # Check if the user is the author
         if session['user'] == author:
             # Deletes the Recipe
-            mongo.db.imageDB.remove({'_id': ObjectId(task_id)})
+            mongo.db.Recipes.remove({'_id': ObjectId(task_id)})
             return redirect(url_for('recipes'))
         else:
             return redirect(url_for('recipes'))
@@ -313,7 +313,7 @@ def delete_user(task_id):
 # Approve Recipe
 @app.route('/approve_recipe/<task_id>')
 def approve_recipe(task_id):
-    mongo.db.imageDB.update({'_id': ObjectId(task_id)},
+    mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                             {
                                 '$set': {
                                     'approved': True
