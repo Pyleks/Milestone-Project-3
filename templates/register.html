@@ -1,24 +1,25 @@
 {% extends 'base.html' %} {% block content %}
 
+<!--Registration container-->
 <section class="registration container">
     <div class="row credential-margin">
         <div class="col-12">
             <h3 class="register-heading">Register</h3>
             <form id="formOverview" action="/register" method="POST" class="full-form">
                 <div class="form-group card card-body bg-lightBlue">
-
+<!--                    Username input-->
                     <label id="userLabel" class="strong-label">Username</label>
                     <input id="username" name="username" type="text" placeholder="Maximum 12 Characters"
                            class="validate user-feedback form-control" required>
-
+<!--                    Email input-->
                     <label id="emailLabel" class="strong-label">Email</label>
                     <input id="email" name="email" type="email" placeholder="Email" class="validate form-control"
                            required>
-
+<!--                    password input-->
                     <label id="passwordLabel" class="strong-label">Password</label>
                     <input id="password" name="user_password" type="password" placeholder="Minimum 8 Characters"
                            class="validate form-control" required>
-
+<!--                        confirm password input-->
                     <label id="confirm-password-label" class="strong-label">Confirm Password</label>
                     <input id="confirm-password" name="user_password1" type="password"
                            placeholder="Type your Password Again" class="validate form-control" required>
