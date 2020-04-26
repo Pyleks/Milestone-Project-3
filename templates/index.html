@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <!--    callout image-->
-<div class="section image-container container">
+<section class="image-container container">
     <div class="row">
         <div class="col-12">
             <img class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
         </div>
     </div>
-</div>
+</section>
 
 <!--Filter-->
-<div class="container container-padding">
+<section class="container container-padding">
     <div class="row">
         <div class="col-2">
             <div class="dropdown menu-border">
@@ -25,9 +25,10 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+
 <!--Recipe Collection-->
-<div class="section container container-space">
+<section class="container container-space">
     <div class="row">
         {% for content in recipe_collection%}
         {% if content.approved == true %}
@@ -55,7 +56,7 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
+</section>
 <!--Newest Recipe Showcase-->
 <section class="suggested-recipes container">
     <div class="row">
@@ -81,7 +82,7 @@
         <div class="col-6 text-center">
             <h3 class="n-recipe-heading">{{content.name}}</h3>
             <p class="n-callout">{{content.callout}}</p>
-<!--                Newest recipe details-->
+            <!--                Newest recipe details-->
             <div class="n-star-wrap">
                 {% for star in range(content.totalStarValue) %}
                 <span id="starRating_{{i}}" class="fas fa-star bg-blue n-star-box"></span>
@@ -121,7 +122,7 @@
 
 
 <!--New and un-raked recipes-->
-<div class="section container container-space">
+<section class="container containers-space">
     <div class="row">
         {% for content in un_rated_recipes%}
         {% if content.approved == true and content.name != last_recipe%}
@@ -150,7 +151,8 @@
         {% endif %}
         {% endfor %}
     </div>
-</div>
+</section>
+
 
 <!--Add recipe button-->
 {% if session.user %}
