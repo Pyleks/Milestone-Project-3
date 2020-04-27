@@ -4,8 +4,8 @@ $(document).ready(function() {
         let portions = $("#recipe_portions").val();
         let pastryName = $("#recipe_name").val();
         let calloutText = $("#recipe_callout").val();
-        let Ingredients = $("#pastry_ingredients").val();
-        let howTo = $("#pastry_howTo").val();
+        let Ingredients = $("#recipe_ingredients").val();
+        let howTo = $("#recipe_howTo").val();
         const urlLabel = document.getElementById('urlLabel');
         const pastryNameLabel = document.getElementById('pastryNameLabel');
         const calloutLabel = document.getElementById('calloutLabel');

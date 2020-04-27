@@ -30,12 +30,12 @@
                            value="{{recipe_data.portions}}">
                     <!--                       Ingredients label and input-->
                     <label id="ingredientsLabel" class="strong-label">Ingredients</label>
-                    <input id="pastry_ingredients" name="pastry_ingredients" type="text" class="validate form-control"
+                    <input id="recipe_ingredients" name="recipe_ingredients" type="text" class="validate form-control"
                            placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk"
                            value="{{recipe_data.ingredients|join(', ')}}">
                     <!--                       How to label and input-->
                     <label id="howToLabel" class="strong-label">How To</label>
-                    <input id="pastry_howTo" name="pastry_howTo" type="text" class="validate form-control"
+                    <input id="recipe_howTo" name="recipe_howTo" type="text" class="validate form-control"
                            placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients"
                            value="{{recipe_data.howTo|join(', ')}}">
                     <small class="text-space text-muted">All updates will go through Admin approval before displayed on

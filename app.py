@@ -137,9 +137,9 @@ def add_pastry():
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
     creation_date = time.strftime("%Y-%m-%d", time.localtime())
-    all_ingredients = request.form.get('pastry_ingredients')
+    all_ingredients = request.form.get('recipe_ingredients')
     all_ingredients_array = all_ingredients.split(", ")
-    all_howto = request.form.get('pastry_howTo')
+    all_howto = request.form.get('recipe_howTo')
     all_howto_array = all_howto.split(", ")
     mongo.db.Recipes.insert(
                      {
@@ -253,9 +253,9 @@ def update_recipe(task_id):
     if 'user' in session:
         # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
-            recipe_ingredients = request.form.get('pastry_ingredients')
+            recipe_ingredients = request.form.get('recipe_ingredients')
             recipe_ingredients_array = recipe_ingredients.split(", ")
-            recipe_how_to = request.form.get('pastry_howTo')
+            recipe_how_to = request.form.get('recipe_howTo')
             recipe_how_to_array = recipe_how_to.split(", ")
             mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                               {
