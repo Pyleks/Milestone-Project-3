@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 users_collection = mongo.db.users
-# recepie_collection = mongo.db.imageDB
+
 
 # Landing page Route
 @app.route('/')
