@@ -133,7 +133,6 @@ def add_pastry():
 
 
 # Insert Pastry Route
-# TODO Skill it for now, come back when you can change it all
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
     creation_date = time.strftime("%Y-%m-%d", time.localtime())
@@ -183,8 +182,8 @@ def insert_rating(task_id):
         star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
                             + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
                             + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
-                                                               + star_array["starRating-4"] + star_array["starRating-3"]
-                                                               + star_array["starRating-2"] + star_array["starRating-1"]))
+                            + star_array["starRating-4"] + star_array["starRating-3"]
+                            + star_array["starRating-2"] + star_array["starRating-1"]))
 
         total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
                        + star_array["starRating-3"] + star_array["starRating-2"]
