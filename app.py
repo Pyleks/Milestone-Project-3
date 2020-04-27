@@ -137,17 +137,17 @@ def add_pastry():
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
     creation_date = time.strftime("%Y-%m-%d", time.localtime())
-    all_ingredients = request.form.get('recipe_ingredients')
-    all_ingredients_array = all_ingredients.split(", ")
-    all_howto = request.form.get('recipe_howTo')
-    all_howto_array = all_howto.split(", ")
+    recipe_ingredients = request.form.get('recipe_ingredients')
+    recipe_ingredients_array = recipe_ingredients.split(", ")
+    recipe_how_to = request.form.get('recipe_howTo')
+    recipe_how_to_array = recipe_how_to.split(", ")
     mongo.db.Recipes.insert(
                      {
                          'name': request.form.get('recipe_name'),
                          'callout': request.form.get('recipe_callout'),
                          'imageUrl': request.form.get('imageUrl'),
-                         'ingredients': all_ingredients_array,
-                         'howTo': all_howto_array,
+                         'ingredients': recipe_ingredients_array,
+                         'howTo': recipe_how_to_array,
                          'portions': request.form.get('recipe_portions'),
                          'author': session['user'],
                          'approved': False,
