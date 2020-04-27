@@ -143,12 +143,12 @@ def insert_pastry():
     all_howto_array = all_howto.split(", ")
     mongo.db.Recipes.insert(
                      {
-                         'name': request.form.get('pastry_name'),
-                         'callout': request.form.get('pastry_callout'),
+                         'name': request.form.get('recipe_name'),
+                         'callout': request.form.get('recipe_callout'),
                          'imageUrl': request.form.get('imageUrl'),
                          'ingredients': all_ingredients_array,
                          'howTo': all_howto_array,
-                         'portions': request.form.get('pastry_portions'),
+                         'portions': request.form.get('recipe_portions'),
                          'author': session['user'],
                          'approved': False,
                          'createDate': creation_date,
@@ -259,12 +259,12 @@ def update_recipe(task_id):
             recipe_how_to_array = recipe_how_to.split(", ")
             mongo.db.Recipes.update({'_id': ObjectId(task_id)},
                               {
-                                  'name': request.form.get('pastry_name'),
-                                  'callout': request.form.get('pastry_callout'),
+                                  'name': request.form.get('recipe_name'),
+                                  'callout': request.form.get('recipe_callout'),
                                   'imageUrl': request.form.get('imageUrl'),
                                   'ingredients': recipe_ingredients_array,
                                   'howTo': recipe_how_to_array,
-                                  'portions': request.form.get('pastry_portions'),
+                                  'portions': request.form.get('recipe_portions'),
                                   'author': author,
                                   'approved': True,
                                   'createDate': created_date,

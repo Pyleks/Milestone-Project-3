@@ -1,9 +1,9 @@
 $(document).ready(function() {
     ($("#submitForm").click(function (e) {
         let pastryUrl = $("#imageUrl").val();
-        let portions = $("#pastry_portions").val();
-        let pastryName = $("#pastry_name").val();
-        let calloutText = $("#pastry_callout").val();
+        let portions = $("#recipe_portions").val();
+        let pastryName = $("#recipe_name").val();
+        let calloutText = $("#recipe_callout").val();
         let Ingredients = $("#pastry_ingredients").val();
         let howTo = $("#pastry_howTo").val();
         const urlLabel = document.getElementById('urlLabel');
