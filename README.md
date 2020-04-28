@@ -25,6 +25,11 @@ CRUD functionality (Create, Read, Update and Delete) within as few clicks as pos
 experience the entire platform for ease of use.
 
 
+#### Smart Filter
+Built in Smart filter to manage the content on the website automatically, allowing high rated recipes
+to get visibility on the same line as brand new content, providing the visitor a quick overview
+over the best and the newest.
+
 
 
 
