@@ -30,6 +30,23 @@ Built in Smart filter to manage the content on the website automatically, allowi
 to get visibility on the same line as brand new content, providing the visitor a quick overview
 over the best and the newest.
 
+## User Stories
+> Quick access to recipes for baking that is easy to follow.  
 
+> Sharing my favorite recipe with co-workers, family and friends.  
+
+> Want to try a new recipe that have good rating.  
+
+> Want to add my own recipe to see if others like my pastry.  
+
+> Want to use it as my own digital recipe book for easy sharing.  
+
+> Provide high rating for a great recipe I found.  
+
+> Tried a new recipe without rating to be experimental.
+
+> A family member added a recipe they want to share. 
+
+> Everyone at work loved my chocolate cake and asked for the recipe.
 
 
