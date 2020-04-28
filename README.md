@@ -30,7 +30,7 @@ Built in Smart filter to manage the content on the website automatically, allowi
 to get visibility on the same line as brand new content, providing the visitor a quick overview
 over the best and the newest.
 
-## User Stories
+#### User Stories
 > Quick access to recipes for baking that is easy to follow.  
 
 > Sharing my favorite recipe with co-workers, family and friends.  
@@ -49,4 +49,7 @@ over the best and the newest.
 
 > Everyone at work loved my chocolate cake and asked for the recipe.
 
+#### WireFrames
+
+## Design Decisions
 
