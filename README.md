@@ -52,4 +52,8 @@ over the best and the newest.
 #### WireFrames
 
 ## Design Decisions
+The design follows a minimalistic approach by only displaying content that is of value to the visitor, 
+and keeping any overflow out of the design process, relying heavily on dynamic user content.
+The happy bun takes much inspiration from [Tine mat](https://www.tine.no/oppskrifter).
+
 
