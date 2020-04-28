@@ -17,3 +17,14 @@ for each recipe.
 Making all content available to the visitor upon accessing the page, but most importantly, making that 
 content relevant, giving first glimpse of all the highest rated recipes before they dive further into
 The Happy Bun.
+
+
+#### Traversing
+Key design decision allowing visitors, users, and administrator to access the entire page, and all
+CRUD functionality (Create, Read, Update and Delete) within as few clicks as possible, yet get to
+experience the entire platform for ease of use.
+
+
+
+
+
