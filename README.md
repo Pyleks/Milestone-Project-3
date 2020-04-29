@@ -69,5 +69,22 @@ I choose to only use __Roboto__ for the project, due to it's readability
 and familiarity, as well avoiding having multiple fonts, fight for the users
 attention.
 
+## Features
+All the features were developed with dynamic user content with appropriate restrictions.
+Features like create, update, delete, approve are hidden behind a registration wall or login portal, but this do not 
+hinder visitors from viewing the overall content.
 
+### Implemented Features
 
+#### Home Page (visitor)
+The home page includes Login and registration menu at the very top, with all the highest rated recipes come into view
+with the option to filter between highest and medium rated recipes, lower on the page you will find a own section
+for the newest added recipe followed by all the unrated ones,
+This page also shows the star rating for all recipe
+
+#### Home Page (Registered/logged in)
+After logging out, a few new features apper, the header will now show Logout and your username, which leads to your 
+own profile page, a new button on the right side of the screen appears allowing you to add a recipe if you so want to.
+this do not obstruct the view of the recipes itself.
+
+#### Recipe Page (visitor)
