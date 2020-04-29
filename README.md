@@ -56,4 +56,8 @@ The design follows a minimalistic approach by only displaying content that is of
 and keeping any overflow out of the design process, relying heavily on dynamic user content.
 The happy bun takes much inspiration from [Tine mat](https://www.tine.no/oppskrifter).
 
+#### Color Scheme
+
+![alt text](static/img/color-scheme.jpg)
+
 
