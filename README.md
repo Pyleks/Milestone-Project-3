@@ -60,4 +60,14 @@ The happy bun takes much inspiration from [Tine mat](https://www.tine.no/oppskri
 
 ![alt text](static/img/color-scheme.jpg)
 
+The Happy Bun uses light colors, to have a clear contrast with
+any of the strong colors to enhance overall visibility, and minimizing bombarding the visitors
+with colors, but rather finding the appropriate places to apply them.
+
+#### Typography
+I choose to only use __Roboto__ for the project, due to it's readability
+and familiarity, as well avoiding having multiple fonts, fight for the users
+attention.
+
+
 
