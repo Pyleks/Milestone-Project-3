@@ -160,10 +160,10 @@ and was left to the end.
 ### Languages
 | Languages  | Usage |
 | :------------- | :------------- |
-| [HTML](https://www.w3schools.com/html/)  | Creating the entire foundation for the website  |
-| [CSS](https://www.w3schools.com/css/)  | Applying styling across all pages  |
-| [JavaScript](https://www.w3schools.com/js/)  | Add logic rules to all input forms, 5 star rating, and buttons  |
-| [Python](https://www.python.org/)  | Runs the entire backend server code, including the logic and safety  |
+| [HTML](https://www.w3schools.com/html/)  | Creating the entire foundation for the website.  |
+| [CSS](https://www.w3schools.com/css/)  | Applying styling across all pages.  |
+| [JavaScript](https://www.w3schools.com/js/)  | Add logic rules to all input forms, 5 star rating, and buttons.  |
+| [Python](https://www.python.org/)  | Runs the entire backend server code, including the logic and safety.  |
 
 
 
@@ -171,25 +171,25 @@ and was left to the end.
 
 |Libraries  |Usage  |
 | :-------------| :-------------|
-| [Material Bootstrap](https://getbootstrap.com/)  | Styling Framework to get a modern feel to the website  |
-| [Font Awesome](https://fontawesome.com/)  | Used for all website icons  |
-| [jQuery](https://jquery.com/) | Simplifying some of the get id's for Javascript  |
-| [Google Fonts](https://fonts.google.com/) | For all fonts on all pages  |
+| [Material Bootstrap](https://getbootstrap.com/)  | Styling Framework to get a modern feel to the website.  |
+| [Font Awesome](https://fontawesome.com/)  | Used for all website icons.  |
+| [jQuery](https://jquery.com/) | Simplifying some of the get id's for Javascript.  |
+| [Google Fonts](https://fonts.google.com/) | For all fonts on all pages.  |
 
 
 ### Python Libraries and Framework
 
 |Libraries  |Usage  |
 | :-------------| :-------------|
-| [Flask](https://flask.palletsprojects.com/en/1.1.x/)  | Required to run all route operations in the code  |
-| [OS](https://docs.python.org/3/library/os.html)  | Required to read environmental variables  |
-| [time](https://docs.python.org/3/library/time.html)  | Required to generate timestamp which later is used in the database  |
-| [flask_pymongo](https://flask-pymongo.readthedocs.io/en/latest/)  | Most search queries requires pyMongo to operate in the code  |
-| [bson](https://api.mongodb.com/python/current/api/bson/index.html)  | Required to acquire the object ID of the different data-sets  |
-| [werkzeug.security](https://werkzeug.palletsprojects.com/en/1.0.x/installation/)  | Required to operate hash, salt operations for secure passwords  |
+| [Flask](https://flask.palletsprojects.com/en/1.1.x/)  | Required to run all route operations in the code.  |
+| [OS](https://docs.python.org/3/library/os.html)  | Required to read environmental variables.  |
+| [time](https://docs.python.org/3/library/time.html)  | Required to generate timestamp which later is used in the database.  |
+| [flask_pymongo](https://flask-pymongo.readthedocs.io/en/latest/)  | Most search queries requires pyMongo to operate in the code.  |
+| [bson](https://api.mongodb.com/python/current/api/bson/index.html)  | Required to acquire the object ID of the different data-sets.  |
+| [werkzeug.security](https://werkzeug.palletsprojects.com/en/1.0.x/installation/)  | Required to operate hash, salt operations for secure passwords.  |
 
 ### Database
 
 |Libraries  |Usage  |
 | :-------------| :-------------|
-| [MongoDB](https://getbootstrap.com/)  | Store all content for the database for recipes and users  |
+| [MongoDB](https://getbootstrap.com/)  | Store all content for the database for recipes and users.  |
