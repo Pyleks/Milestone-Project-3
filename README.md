@@ -142,13 +142,14 @@ and was left to the end.
 - Provide user group policy, allowing administrator to provide anyone with admin rights if needed.
 
 
+### Implemented Feature Summary
 | Feature List        | Difficulty          |
 |:------------- |:-------------:|
 | Create Account     | 3 | 
 | Delete Account | 2      | 
 | Login     | 3|
 | Create Recipe | 4      | 
-| Edit Recipe | 3.      | 
+| Edit Recipe | 3      | 
 | Approve Recipe | 3      | 
 | Delete Recipe | 2      | 
 | Standard Filter | 5      | 
@@ -193,5 +194,7 @@ and was left to the end.
 |Libraries  |Usage  |
 | :-------------| :-------------|
 | [MongoDB](https://getbootstrap.com/)  | Store all content for the database for recipes and users.  |
+
+## Testing
 
 
