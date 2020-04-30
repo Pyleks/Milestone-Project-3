@@ -134,5 +134,23 @@ This system uses whole numbers to preform a complex calculation based on the num
 as well what rating they choose, this featured is also powered by Javascript to make it 
 more dynamic when choosing the right star.
 
+### Features I want to implement  
+In time of development, I noticed multiple important features that should be added
+for the complete experience, but they are not necessary for the project to be completed
+and was left to the end.
+- Limit Voting
+- Provide user group policy, allowing administrator to provide anyone with admin rights if needed.
 
 
+| Feature Summarize        | Difficulty          |
+|:------------- |:-------------:|
+| Create Account     | 3 | 
+| Delete Account | 2      | 
+| Login     | 3|
+| Create Recipe | 4      | 
+| Edit Recipe | 3.      | 
+| Approve Recipe | 3      | 
+| Delete Recipe | 2      | 
+| Standard Filter | 5      | 
+| Smart Filter | 5     | 
+| 5 Star Rating System | 5      | 
