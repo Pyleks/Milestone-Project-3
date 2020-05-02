@@ -134,8 +134,8 @@ a {
 
 .card-size {
     float: left;
-    width: 370px;
-    height: 370px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -476,4 +476,37 @@ a {
 
 .recipe-box {
     padding: 0 0 5% 0;
+}
+
+/************ Media Queries ************/
+@media (max-width: 1024px) {
+    .auto-size {
+
+        height: 20em;
+
+    }
+
+}
+
+@media (max-width: 992px) {
+    /*Card Image Information*/
+    .auto-size {
+        height: 15em;
+    }
+    .card-body {
+        text-align: center;
+        padding: 6%;
+    }
+    .info-card-wrap > p {
+        padding: 2%;
+    }
+    .info-card-wrap {
+        display: unset;
+    }
+    .star-wrap {
+        float: unset;
+        margin-left: unset;
+    }
+
+
 }
