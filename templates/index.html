@@ -28,11 +28,11 @@
 </section>
 
 <!--Recipe Collection-->
-<section class="container container-space">
+<section class="recipe-container container container-space">
     <div class="row">
         {% for content in recipe_collection%}
         {% if content.approved == true %}
-        <div class="col-4 extra-pad">
+        <div class="col-sm-12 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{content.imageUrl}}"></a>
@@ -73,13 +73,13 @@
 {% if content.approved == true %}
 <section class="highest-rated container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-sm-12 col-md-6 col-xl-6">
             <div class="card card-box top-rated-card">
                 <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                     <img class="top-pastry-img" src="{{content.imageUrl}}"></a>
             </div>
         </div>
-        <div class="col-6 text-center">
+        <div class="col-sm-12 col-md-6 col-xl-6 text-center">
             <h3 class="n-recipe-heading">{{content.name}}</h3>
             <p class="n-callout">{{content.callout}}</p>
             <!--                Newest recipe details-->
@@ -122,12 +122,12 @@
 
 
 <!--New and un-raked recipes-->
-<section class="container containers-space">
+<section class="new-recipe-container container containers-space">
     <div class="row">
         {% for content in un_rated_recipes%}
         {% if content.approved == true and content.name != last_recipe%}
         <p>{{active_name}}</p>
-        <div class="col-4 extra-pad">
+        <div class="col-sm-12 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{content.imageUrl}}"></a>

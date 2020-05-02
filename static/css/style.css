@@ -508,5 +508,59 @@ a {
         margin-left: unset;
     }
 
+}
+
+@media (max-width: 767px) {
+    /*Main Image*/
+    .image-container {
+        padding: 0;
+    }
+    /*Card Image Information*/
+    .auto-size {
+        height: 12em;
+        width: 50%;
+    }
+    .star-box {
+        font-size: 1.2em !important;
+    }
+    .recipe-container > .row > .extra-pad > .card {
+        display: unset !important;
+    }
+    .new-recipe-container > .row > .extra-pad > .card {
+        display: unset !important;
+    }
+    .cooking-img > .card-body {
+        box-shadow: unset;
+        padding: 8% 0 6% 0;
+    }
+    .info-card-wrap > p {
+        font-size: 1.3em;
+    }
+    /*Newest Recipe*/
+    .n-recipe-heading{
+        font-size: 2em;
+        margin: 1% 0 0 0;
+    }
+    .n-star-wrap {
+        margin: 0.5em 0 0.5em 0;
+    }
+    .n-callout {
+        display: none;
+    }
+    .n-date {
+        display: none;
+    }
+    .n-vote-text {
+        display: none;
+    }
+    .n-star-box {
+        font-size: 1.3em !important;
+    }
+    .n-tV-font {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 576px) {
 
 }
