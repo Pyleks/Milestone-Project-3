@@ -235,20 +235,6 @@ a {
     transition: 0.5s;
 }
 /************ PASTRY PAGE CSS ************/
-.pastry-img {
-    float: left;
-    height: 48.5em;
-    background-size: cover;
-}
-
-.card-full-size {
-    float: left;
-    height: 48.5em;
-    width: 100%;
-    overflow: hidden;
-}
-
-
 .pastry_text {
     font-size: 1.3em;
     line-height: 1.5;
@@ -478,9 +464,11 @@ a {
 /************ Media Queries ************/
 @media (max-width: 1024px) {
     .auto-size {
-
         height: 20em;
-
+    }
+    /*Recipe Page*/
+    .overlay-content {
+        width: 35%;
     }
 
 }
@@ -490,7 +478,7 @@ a {
     .auto-size {
         height: 15em;
     }
-    .card-body {
+    .align-content {
         text-align: center;
         padding: 6%;
     }
@@ -504,6 +492,10 @@ a {
         float: unset;
         margin-left: unset;
     }
+    /*Recipe Page*/
+    .overlay-content {
+        width: 50%;
+    }
 
 }
 
@@ -514,8 +506,8 @@ a {
     }
     /*Card Image Information*/
     .auto-size {
-        height: 12em;
-        width: 50%;
+        height: 10em;
+        width: 45%;
     }
     .star-box {
         font-size: 1.2em !important;
@@ -556,8 +548,33 @@ a {
     .n-tV-font {
         font-size: 1.3em;
     }
+    /*Recipe Page*/
+    .pastry-h2 {
+        padding-top: 2em;
+        text-align: center;
+    }
+    .recipe-steps {
+        list-style-type: none;
+        text-align: center;
+    }
+    .overlay-content {
+        width: 60%;
+    }
 }
 
-@media (max-width: 576px) {
 
+@media (max-width: 576px) {
+    /*Recipe Page*/
+    .navbar-brand {
+        font-size: 1.7em;
+    }
+    .pastry-name {
+        font-size: 1.9em;
+    }
+    .pastry-h2 {
+        font-size: 1.9em;
+    }
+    .overlay-content {
+        width: 90%;
+    }
 }

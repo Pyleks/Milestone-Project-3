@@ -4,9 +4,9 @@
 <section class="images container-fluid bg-lightBlue">
     <div class="section image-container container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 no-pad">
                 <div class="card card-full-size card-box">
-                    <img class="pastry-img" src="{{recipe_data.imageUrl}}">
+                    <img class="pastry-img img-fluid" src="{{recipe_data.imageUrl}}">
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
     </div>
 <!--    Recipe box-->
     <div class="row recipe-box">
-        <div class="col-5 text-center card-body bg-lightBlue">
+        <div class="col-sm-12 col-md-5 col-xl-5 text-center card-body bg-lightBlue">
             <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
             <h3 class="portion-size">Number of portions</h3>
             <h3 class="portion-number">{{recipe_data.portions}}</h3>
@@ -92,8 +92,8 @@
 
         </div>
 <!--        Recipe to do steps-->
-        <div class="offset-2 col-5 ">
-            <h2 class="pastry-h2 text-center">This is how you do it</h2>
+        <div class="col-sm-12 col-md-5 offset-md-2 col-xl-5 offset-xl-2">
+            <h2 class="pastry-h2">This is how you do it</h2>
             <ol class="text-left pastry_text">
                 {% for steps in recipe_data.howTo%}
                 <li class="recipe-steps">{{steps}}</li>
