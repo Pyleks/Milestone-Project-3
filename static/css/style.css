@@ -427,8 +427,11 @@ a {
 
 .register-heading {
     font-size: 3em;
-    margin: 30% 0 5%;
+    margin: 20% 0 5%;
     text-align: center;
+}
+.register-margin {
+    padding: 0 25% 0 25%;
 }
 
 /************ ADMIN PORTAL CSS************/
@@ -500,6 +503,10 @@ a {
     .credential-margin {
         padding: 25% 15% 0 15%;
     }
+    /*Registration page*/
+    .register-margin {
+        padding: 0 15% 0 15%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -566,6 +573,13 @@ a {
     /*Login Page*/
     .credential-margin {
         padding: 30% 10% 0 10%;
+    }
+    /*Registration page*/
+    .register-heading {
+        font-size: 2.5em;
+    }
+    .register-margin {
+        padding: 0 5% 0 5%;
     }
 }
 
