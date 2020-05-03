@@ -20,14 +20,14 @@
                         {% for content in pending_recipes %}
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-12 col-md-6 col-xl-4">
                                     <div class="card card-box cooking-img">
                                         <div href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
-                                            <img class="auto-size img-fluid" src="{{content.imageUrl}}">
+                                            <img class="img-fluid" src="{{content.imageUrl}}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
                                     <p><strong class="admin-card">Author:</strong> {{content.author}}</p>
                                     <p><strong class="admin-card">Name: </strong> {{content.name}}</p>
                                     <p><strong class="admin-card">Callout: </strong> {{content.callout}}</p>

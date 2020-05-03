@@ -22,7 +22,7 @@
                         {% if session.user == content.author %}
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-12 col-md-4 col-xl-4">
+                                <div class="col-sm-12 col-md-6 col-xl-4">
                                     <div class="card card-box cooking-img">
                                         <div href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                                             <img class="img-fluid" src="{{content.imageUrl}}">
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
 <!--                                Recipe details-->
-                                <div class="profile-recipe col-sm-12 col-md-8 col-xl-8">
+                                <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
                                     <p><span class="custom-font" class="admin-card">Author:</span> {{content.author}}</p>
                                     <p><span class="custom-font" class="admin-card">Name: </span> {{content.name}}</p>
                                     <p><span class="custom-font" class="admin-card">Callout: </span> {{content.callout}}</p>
@@ -65,7 +65,7 @@
                         {% if session.user == content.author %}
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-12 col-md-4 col-xl-4">
+                                <div class="col-sm-12 col-md-6 col-xl-4">
                                     <div class="card card-box cooking-img">
                                         <div href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                                             <img class="img-fluid" src="{{content.imageUrl}}">
@@ -73,7 +73,7 @@
                                     </div>
                                 </div>
 <!--                                recipe details-->
-                                <div class="profile-recipe col-sm-12 col-md-8 col-xl-8">
+                                <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
                                     <p><strong class="admin-card">Author:</strong> {{content.author}}</p>
                                     <p><strong class="admin-card">Name: </strong> {{content.name}}</p>
                                     <p><strong class="admin-card">Callout: </strong> {{content.callout}}</p>
