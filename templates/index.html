@@ -1,16 +1,18 @@
 {% extends 'base.html' %} {% block content %}
 <!--    callout image-->
 <section class="image-container container">
-    <div class="row">
-        <div class="col-12">
-            <img class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
+    <div class="row no-margin">
+        <div class="col-12 no-pad">
+            <div class="card">
+                <img class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
+            </div>
         </div>
     </div>
 </section>
 
 <!--Filter-->
 <section class="container container-padding">
-    <div class="row">
+    <div class="row no-margin">
         <div class="col-2">
             <div class="dropdown menu-border">
                 <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton"
