@@ -2,9 +2,9 @@
 
 <!--Update Recipe form-->
 <section class="update-recipe container">
-    <div class="row update-margin">
+    <div class="row recipe-space">
         <div class="col-12">
-            <h3 class="update-heading">Update {{recipe_data.name}} Recipe</h3>
+            <h3 class="recipe-heading">Update {{recipe_data.name}} Recipe</h3>
             <form action="{{ url_for('update_recipe', task_id=recipe_data._id)}}" method="POST" class="full-form"
                   placeholder="Valid URL: https://worlds-best-chocolate-cake.com/etc">
 

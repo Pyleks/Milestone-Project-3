@@ -400,6 +400,7 @@ a {
 /************ UPDATE PASTRY PAGE CSS************/
 .recipe-heading {
     font-size: 3em;
+    padding: 0 0 2% 0;
 }
 
 .strong-label {
@@ -409,7 +410,7 @@ a {
 }
 
 .recipe-space{
-    padding: 10% 10% 0 10%;
+    padding: 5% 10% 0 10%;
 }
 
 /************ LOGIN AND REGISTER CSS************/
@@ -507,7 +508,10 @@ a {
     }
     /*Create Recipe*/
     .recipe-space{
-        padding: 10% 5% 0 5%;
+        padding: 5% 5% 0 5%;
+    }
+    .recipe-heading {
+        font-size: 2em;
     }
 }
 
@@ -589,7 +593,7 @@ a {
     }
     /*Create Recipe*/
     .recipe-space{
-        padding: 10% 0 0 0;
+        padding: 5% 0 0 0;
     }
 }
 
@@ -615,5 +619,9 @@ a {
     /*Login Page*/
     .credential-margin {
         padding: 40% 5% 0 5%;
+    }
+    /*Create Recipe*/
+    .recipe-heading {
+        font-size: 1.8em;
     }
 }
