@@ -416,12 +416,12 @@ a {
 
 /************ LOGIN AND REGISTER CSS************/
 .credential-margin {
-    margin: 0 25% 0 25%;
+    padding: 20% 25% 0 25%;
 }
 
 .login-heading{
     font-size: 3em;
-    margin: 50% 0 5%;
+    margin: 0 0 3% 0;
     text-align: center;
 }
 
@@ -496,7 +496,10 @@ a {
     .overlay-content {
         width: 50%;
     }
-
+    /*Login page*/
+    .credential-margin {
+        padding: 25% 15% 0 15%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -560,10 +563,18 @@ a {
     .overlay-content {
         width: 60%;
     }
+    /*Login Page*/
+    .credential-margin {
+        padding: 30% 10% 0 10%;
+    }
 }
 
 
 @media (max-width: 576px) {
+    /*footer Placement calculation*/
+    .main-content {
+        min-height: calc(100vh - 59px - 90px);
+    }
     /*Recipe Page*/
     .navbar-brand {
         font-size: 1.7em;
@@ -576,5 +587,9 @@ a {
     }
     .overlay-content {
         width: 90%;
+    }
+    /*Login Page*/
+    .credential-margin {
+        padding: 40% 5% 0 5%;
     }
 }
