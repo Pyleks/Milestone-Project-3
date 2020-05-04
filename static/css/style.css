@@ -77,7 +77,7 @@ a {
 }
 
 .txt-white {
-    color: white;
+    color: white !important;
 }
 /************ Custom Placeholder text opacity ************/
 
@@ -138,6 +138,16 @@ a {
     float: left;
     height: 310px;
     background-size: cover;
+}
+
+/*Hidden Mobile button*/
+.m-add-recipe {
+    background-color: cornflowerblue;
+    color: white;
+    margin-bottom: 0;
+    padding: 0.9em 1em 0.9em 1em;
+    float: right;
+    display: none;
 }
 
 .icon-size {
@@ -631,5 +641,8 @@ a {
     /*Add Recipe Button*/
     .add-button {
         display: none;
+    }
+    .m-add-recipe {
+        display: unset;
     }
 }

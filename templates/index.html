@@ -13,7 +13,7 @@
 <!--Filter-->
 <section class="container container-padding">
     <div class="row no-margin">
-        <div class="col-2">
+        <div class="col-6 no-pad">
             <div class="dropdown menu-border">
                 <button class="btn btn-secondary dropdown-toggle w-100 no-border" type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,10 +22,14 @@
                 <div class="dropdown-menu menu-border" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{url_for('recipes')}}">Highest Rating</a>
                     <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Medium Rating</a>
-
                 </div>
             </div>
         </div>
+        {% if session.user %}
+        <div class="col-6">
+            <a type="button" class="bg-blue txt-white btn m-add-recipe fas fa-plus" href="{{url_for('add_pastry')}}"> Add Recipe</a>
+        </div>
+        {%endif%}
     </div>
 </section>
 
