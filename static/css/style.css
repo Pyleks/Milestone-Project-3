@@ -521,19 +521,11 @@ a {
         padding: 0;
     }
     /*Card Image Information*/
-    .auto-size {
-        height: 10em;
-        width: 45%;
-    }
+
     .star-box {
         font-size: 1.2em !important;
     }
-    .recipe-container > .row > .extra-pad > .card {
-        display: unset !important;
-    }
-    .new-recipe-container > .row > .extra-pad > .card {
-        display: unset !important;
-    }
+
     .cooking-img > .card-body {
         box-shadow: unset;
         padding: 8% 0 6% 0;

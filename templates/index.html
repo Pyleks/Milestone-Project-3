@@ -34,7 +34,7 @@
     <div class="row">
         {% for content in recipe_collection%}
         {% if content.approved == true %}
-        <div class="col-sm-12 col-md-4 col-xl-4 extra-pad">
+        <div class="col-sm-6 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{content.imageUrl}}"></a>
@@ -129,7 +129,7 @@
         {% for content in un_rated_recipes%}
         {% if content.approved == true and content.name != last_recipe%}
         <p>{{active_name}}</p>
-        <div class="col-sm-12 col-md-4 col-xl-4 extra-pad">
+        <div class="col-sm-6 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
                     <img class="auto-size" src="{{content.imageUrl}}"></a>
