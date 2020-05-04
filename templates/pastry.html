@@ -79,6 +79,21 @@
             <hr class="buffer-margin">
         </div>
     </div>
+    <!--Filter-->
+    {% if session.user == recipe_data.author or session.user == "Administrator" %}
+    <div class="m-recipe-padding">
+        <div class="row no-margin">
+            <div class="col-6">
+                    <a type="button" class="bg-blue txt-white m-update-recipe btn fas fa-pen" href="{{url_for('edit_recipe', task_id=recipe_data._id)}}">
+                        </a>
+                </div>
+            <div class="col-6">
+                <a type="button" class="bg-blue txt-white btn m-delete-recipe fas fa-trash" href="{{url_for('delete_recipe', task_id=recipe_data._id)}}">
+                    </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 <!--    Recipe box-->
     <div class="row recipe-box">
         <div class="col-sm-12 col-md-5 col-xl-5 text-center card-body bg-lightBlue">

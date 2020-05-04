@@ -158,6 +158,10 @@ a {
     padding: 1em 0 1em 0;
 }
 
+.m-recipe-padding {
+    padding: 0 0 1em 0;
+}
+
 .menu-border {
     float: left;
     border: 1px solid black;
@@ -354,6 +358,7 @@ a {
     transition: 0.3s;
 }
 
+
 .overlay-star-layer {
     border: none;
 }
@@ -364,6 +369,28 @@ a {
 
 .delete-button:hover {
     background-color: #ffA500 !important;
+}
+
+.m-update-recipe {
+    background-color: #6499ed !important;
+    border-radius: 50px;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 0;
+    float: right;
+    padding: 1em 1em 1em 1em;
+    display: none;
+}
+
+.m-delete-recipe {
+    background-color: #ff0000 !important;
+    border-radius: 50px;
+    font-size: 1.2em;
+    color: white;
+    margin-bottom: 0;
+    padding: 1em 1em 1em 1em;
+
+    display: none;
 }
 
 
@@ -630,6 +657,12 @@ a {
     .overlay-content {
         width: 90%;
     }
+    .m-delete-recipe {
+        display: unset;
+    }
+    .m-update-recipe {
+        display: unset;
+    }
     /*Login Page*/
     .credential-margin {
         padding: 40% 5% 0 5%;
@@ -642,7 +675,11 @@ a {
     .add-button {
         display: none;
     }
+    .delete-button {
+        display: none;
+    }
     .m-add-recipe {
         display: unset;
     }
+
 }
