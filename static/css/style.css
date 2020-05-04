@@ -595,6 +595,18 @@ a {
     .main-content {
         min-height: calc(100vh - 59px - 90px);
     }
+    /*Index page*/
+    .auto-size {
+        height: 12em;
+        width: 50%;
+        background-size: cover;
+    }
+    .recipe-container > .row > .extra-pad > .card {
+        display: unset !important;
+    }
+    .new-recipe-container > .row > .extra-pad > .card {
+        display: unset !important;
+    }
     /*Recipe Page*/
     .navbar-brand {
         font-size: 1.7em;
