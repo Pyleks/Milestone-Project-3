@@ -628,4 +628,8 @@ a {
     .recipe-heading {
         font-size: 1.8em;
     }
+    /*Add Recipe Button*/
+    .add-button {
+        display: none;
+    }
 }
