@@ -657,14 +657,10 @@ a {
         width: 90%;
     }
     .m-delete-recipe {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: unset;
     }
     .m-update-recipe {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        display: unset;
     }
     /*Login Page*/
     .credential-margin {
@@ -675,9 +671,9 @@ a {
         font-size: 1.8em;
     }
     /*Add Recipe Button*/
-    .add-button {
-        display: none;
-    }
+    /*.add-button {*/
+    /*    display: none;*/
+    /*}*/
     .delete-button {
         display: none;
     }
