@@ -371,16 +371,18 @@ a {
     background-color: #ffA500 !important;
 }
 
-.m-update-recipe {
-    background-color: #6499ed !important;
-    border-radius: 50px;
-    font-size: 1.2em;
-    color: white;
-    margin-bottom: 0;
-    float: right;
-    padding: 1em 1em 1em 1em;
-    display: none;
-}
+
+
+/*.m-update-recipe {*/
+/*    background-color: #6499ed !important;*/
+/*    border-radius: 50px;*/
+/*    font-size: 1.2em;*/
+/*    color: white;*/
+/*    margin-bottom: 0;*/
+/*    float: right;*/
+/*    padding: 1em 1em 1em 1em;*/
+/*    display: none;*/
+/*}*/
 
 .m-delete-recipe {
     background-color: #ff0000 !important;
@@ -660,7 +662,18 @@ a {
         display: unset;
     }
     .m-update-recipe {
-        display: unset;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0.8em 0.8em;
+        border-radius: 50px;
+        font-size: 1.6em !important;
+        color: #ffffff !important;
+        background-color: #ff0000 !important;
+        -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
+        -o-transition: background-color .3s, opacity .3s, visibility .5s;
+        /*transition: background-color .3s, opacity .3s, visibility .5s;*/
+        transition: 0.3s;
     }
     /*Login Page*/
     .credential-margin {
