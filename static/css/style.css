@@ -665,7 +665,7 @@ a {
         display: unset;
     }
     .m-update-recipe {
-        display: unset;
+        display: flex;
     }
     /*Login Page*/
     .credential-margin {
