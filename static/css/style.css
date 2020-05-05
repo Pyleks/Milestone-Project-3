@@ -372,8 +372,6 @@ a {
 }
 
 .m-update-recipe {
-    display: -webkit-box;
-    display: -ms-flexbox;
     background-color: #6499ed !important;
     border-radius: 50px;
     font-size: 1.2em;
@@ -385,15 +383,12 @@ a {
 }
 
 .m-delete-recipe {
-    display: -webkit-box;
-    display: -ms-flexbox;
     background-color: #ff0000 !important;
     border-radius: 50px;
     font-size: 1.2em;
     color: white;
     margin-bottom: 0;
     padding: 1em 1em 1em 1em;
-
     display: none;
 }
 
@@ -662,9 +657,13 @@ a {
         width: 90%;
     }
     .m-delete-recipe {
-        display: unset;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
     }
     .m-update-recipe {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     /*Login Page*/
