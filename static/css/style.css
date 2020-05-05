@@ -676,9 +676,9 @@ a {
         font-size: 1.8em;
     }
     /*Add Recipe Button*/
-    .add-button {
-        display: none;
-    }
+    /*.add-button {*/
+    /*    display: none;*/
+    /*}*/
     .delete-button {
         display: none;
     }
