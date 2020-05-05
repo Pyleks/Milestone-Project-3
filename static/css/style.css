@@ -372,6 +372,8 @@ a {
 }
 
 .m-update-recipe {
+    display: -webkit-box;
+    display: -ms-flexbox;
     background-color: #6499ed !important;
     border-radius: 50px;
     font-size: 1.2em;
@@ -383,6 +385,8 @@ a {
 }
 
 .m-delete-recipe {
+    display: -webkit-box;
+    display: -ms-flexbox;
     background-color: #ff0000 !important;
     border-radius: 50px;
     font-size: 1.2em;
