@@ -682,8 +682,8 @@ a {
     .delete-button {
         display: none;
     }
-    .m-add-recipe {
-        display: unset;
-    }
+    /*.m-add-recipe {*/
+    /*    display: unset;*/
+    /*}*/
 
 }
