@@ -137,11 +137,13 @@ a {
 .auto-size {
     float: left;
     height: 310px;
+    width: 100%;
     background-size: cover;
 }
 
 /*Hidden Mobile button*/
 .m-add-recipe {
+    display: -webkit-box;
     background-color: cornflowerblue;
     color: white;
     margin-bottom: 0;
@@ -194,7 +196,7 @@ a {
 
 .top-pastry-img {
     float: left;
-    width: 41em;
+    width: fit-content;
     background-size: cover;
 }
 
