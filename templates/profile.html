@@ -24,7 +24,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-xl-4">
                                     <div class="card card-box cooking-img">
-                                        <div href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
+                                        <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
                                             <img class="img-fluid" src="{{content.imageUrl}}">
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                     <p><span class="custom-font" class="admin-card">How To: </span> {{content.howTo}}</p>
                                     <p><span class="custom-font" class="admin-card">Portions: </span> {{content.portions}}</p>
                                     <a class="btn btn-primary text-white bg-danger"
-                                       href="{{url_for('delete_recipe', task_id=content._id)}}"
+                                       href="{{url_for('delete_recipe', recipe_id=content._id)}}"
                                        role="button">Delete</a>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-xl-4">
                                     <div class="card card-box cooking-img">
-                                        <div href="{{url_for('recipe',task_id=content._id)}}" class="link-wrap">
+                                        <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
                                             <img class="img-fluid" src="{{content.imageUrl}}">
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                     <p><strong class="admin-card">How To: </strong> {{content.howTo}}</p>
                                     <p><strong class="admin-card">Portions: </strong> {{content.portions}}</p>
                                     <a class="btn btn-primary text-white bg-danger"
-                                       href="{{url_for('delete_recipe', task_id=content._id)}}"
+                                       href="{{url_for('delete_recipe', recipe_id=content._id)}}"
                                        role="button">Delete</a>
                                 </div>
                             </div>

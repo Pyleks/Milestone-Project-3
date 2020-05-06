@@ -37,7 +37,7 @@
             <div id="overlay">
                 <div class="card-body overlay-content bg-fa">
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
-                    <form method="POST" action="{{ url_for('insert_rating', task_id=recipe_data._id)}}">
+                    <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
                         <div id="star-wrap" class="star-wrap-pastry">
                             <p class="star-review-callout">Please leave a star review</p>
                             <div id="star-box">
@@ -84,11 +84,11 @@
     <div class="m-recipe-padding">
         <div class="row no-margin">
             <div class="col-6">
-                    <a role="button" class="bg-blue txt-white m-update-recipe btn fas fa-pen" href="{{url_for('edit_recipe', task_id=recipe_data._id)}}">
+                    <a role="button" class="bg-blue txt-white m-update-recipe btn fas fa-pen" href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}">
                         </a>
                 </div>
             <div class="col-6">
-                <a role="button" class="bg-blue txt-white btn m-delete-recipe fas fa-trash" href="{{url_for('delete_recipe', task_id=recipe_data._id)}}">
+                <a role="button" class="bg-blue txt-white btn m-delete-recipe fas fa-trash" href="{{url_for('delete_recipe', recipe_id=recipe_data._id)}}">
                     </a>
             </div>
         </div>
@@ -120,8 +120,8 @@
 <!--Checks if user in session or admin in session-->
 {% if session.user == recipe_data.author or session.user == "Administrator" %}
 <a class="delete-button btn btn-outline-dark fas fa-trash"
-   href="{{url_for('delete_recipe', task_id=recipe_data._id)}}" role="button"></a>
-<a class="add-button btn btn-outline-dark fas fa-pen" href="{{url_for('edit_recipe', task_id=recipe_data._id)}}"
+   href="{{url_for('delete_recipe', recipe_id=recipe_data._id)}}" role="button"></a>
+<a class="add-button btn btn-outline-dark fas fa-pen" href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}"
    role="button" id="update"></a>
 {% endif %}
 

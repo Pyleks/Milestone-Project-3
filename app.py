@@ -6,6 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_pymongo import PyMongo, pymongo
 from bson import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+
 if path.exists("env.py"):
     import env
 
@@ -27,15 +28,16 @@ def recipes():
     rated_text = "Highest Rated"
     # Collecting all the recipes for highest ranking Recipes
     un_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 1}}).sort("name", 1)
-    high_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort([('totalStarValue', pymongo.DESCENDING),
-                                                                                   ("name", 1)])
+    high_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort(
+        [('totalStarValue', pymongo.DESCENDING),
+         ("name", 1)])
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                        ('approved', pymongo.ASCENDING)]).limit(1)
+                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                        ('approved', pymongo.ASCENDING)]).limit(1)
+                                                                ('approved', pymongo.ASCENDING)]).limit(1)
     # Finds the name from last Recipe
     for x in find_last:
         last_recipe = (x['name'])
@@ -54,15 +56,16 @@ def sort_by_rating():
     rated_text = "Medium Rank"
     # Collecting all the recipes for Medium ranking Recipes
     un_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 1}}).sort("name", 1).limit(9)
-    medium_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort([('totalStarValue', pymongo.DESCENDING), ("name", 1)])
+    medium_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$lt": 4, "$gt": 0}}).sort(
+        [('totalStarValue', pymongo.DESCENDING), ("name", 1)])
 
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                        ('approved', pymongo.ASCENDING)]).limit(1)
+                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                      ('approved', pymongo.ASCENDING)]).limit(1)
+                                                                ('approved', pymongo.ASCENDING)]).limit(1)
 
     # Finds the name from last Recipe
     for x in find_last:
@@ -117,6 +120,7 @@ def profile():
         # Direct user to login
         return redirect(url_for('login'))
 
+
 # Add Pastry Route
 @app.route('/add_pastry')
 def add_pastry():
@@ -141,35 +145,35 @@ def insert_pastry():
     recipe_how_to = request.form.get('recipe_howTo')
     recipe_how_to_array = recipe_how_to.split(", ")
     mongo.db.Recipes.insert(
-                     {
-                         'name': request.form.get('recipe_name'),
-                         'callout': request.form.get('recipe_callout'),
-                         'imageUrl': request.form.get('imageUrl'),
-                         'ingredients': recipe_ingredients_array,
-                         'howTo': recipe_how_to_array,
-                         'portions': request.form.get('recipe_portions'),
-                         'author': session['user'],
-                         'approved': False,
-                         'createDate': creation_date,
-                         'lastUpdateDate': 0,
-                         'starRating-1': 0,
-                         'starRating-2': 0,
-                         'starRating-3': 0,
-                         'starRating-4': 0,
-                         'starRating-5': 0,
-                         'totalVotes': 0,
-                         'totalStarValue': 0
-                     })
+        {
+            'name': request.form.get('recipe_name'),
+            'callout': request.form.get('recipe_callout'),
+            'imageUrl': request.form.get('imageUrl'),
+            'ingredients': recipe_ingredients_array,
+            'howTo': recipe_how_to_array,
+            'portions': request.form.get('recipe_portions'),
+            'author': session['user'],
+            'approved': False,
+            'createDate': creation_date,
+            'lastUpdateDate': 0,
+            'starRating-1': 0,
+            'starRating-2': 0,
+            'starRating-3': 0,
+            'starRating-4': 0,
+            'starRating-5': 0,
+            'totalVotes': 0,
+            'totalStarValue': 0
+        })
     return redirect(url_for('recipes'))
 
 
 # Insert/Calculate Rating Route
 # TODO I don't understand my own code, recheck in the morning
-@app.route('/insert_rating/<task_id>', methods=['POST', 'GET'])
-def insert_rating(task_id):
+@app.route('/insert_rating/<recipe_id>', methods=['POST', 'GET'])
+def insert_rating(recipe_id):
     if 'user' in session:
         starRating = request.form['submit_rating']
-        mongo.db.Recipes.update({'_id': ObjectId(task_id)},
+        mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
                                 {
                                     '$inc': {
                                         starRating: 1,
@@ -178,12 +182,14 @@ def insert_rating(task_id):
                                 },
                                 upsert=False
                                 )
-        star_array = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
-        star_calculator = ((5*star_array["starRating-5"] + 4*star_array["starRating-4"]
-                            + 3*star_array["starRating-3"] + 2*star_array["starRating-2"]
-                            + 1*star_array["starRating-1"]) / (star_array["starRating-5"]
-                            + star_array["starRating-4"] + star_array["starRating-3"]
-                            + star_array["starRating-2"] + star_array["starRating-1"]))
+        star_array = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
+        star_calculator = ((5 * star_array["starRating-5"] + 4 * star_array["starRating-4"]
+                            + 3 * star_array["starRating-3"] + 2 * star_array["starRating-2"]
+                            + 1 * star_array["starRating-1"]) / (star_array["starRating-5"]
+                                                                 + star_array["starRating-4"] + star_array[
+                                                                     "starRating-3"]
+                                                                 + star_array["starRating-2"] + star_array[
+                                                                     "starRating-1"]))
 
         total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
                        + star_array["starRating-3"] + star_array["starRating-2"]
@@ -192,7 +198,7 @@ def insert_rating(task_id):
         star_calculator = (int(star_calculator))
         print(star_calculator)
 
-        mongo.db.Recipes.update({'_id': ObjectId(task_id)},
+        mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
                                 {
                                     '$set': {
                                         'totalStarValue': star_calculator,
@@ -211,22 +217,22 @@ def insert_rating(task_id):
 
 
 # Recipe Route
-@app.route('/recipe/<task_id>/')
-def recipe(task_id):
+@app.route('/recipe/<recipe_id>/')
+def recipe(recipe_id):
     # Get all data related to the corresponding recipe_id
-    recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(task_id)})
+    recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(recipe_id)})
     # Get the star rating information
     data = {'total': recipe_data["totalStarValue"]}
     return render_template('pastry.html', recipe_data=recipe_data, data=data)
 
 
 # Edit Pastry Route
-@app.route('/edit_recipe/<task_id>')
-def edit_recipe(task_id):
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
     # Check if the user is in session
     if 'user' in session:
         # Collects all the recipe data for handling
-        recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(task_id)})
+        recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(recipe_id)})
         # Stores author for use later
         author = recipe_data["author"]
         # Make sure only administrator or author can edit the recipe
@@ -240,11 +246,11 @@ def edit_recipe(task_id):
 
 
 # Update Pastry Route
-@app.route('/update_recipe/<task_id>', methods=["POST"])
-def update_recipe(task_id):
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
     # Get the date for update
     last_updated_date = time.strftime("%Y-%m-%d", time.localtime())
-    recipe_data = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
+    recipe_data = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
     # Get author
     author = recipe_data["author"]
     # Get created Date
@@ -256,27 +262,27 @@ def update_recipe(task_id):
             recipe_ingredients_array = recipe_ingredients.split(", ")
             recipe_how_to = request.form.get('recipe_howTo')
             recipe_how_to_array = recipe_how_to.split(", ")
-            mongo.db.Recipes.update({'_id': ObjectId(task_id)},
-                              {
-                                  'name': request.form.get('recipe_name'),
-                                  'callout': request.form.get('recipe_callout'),
-                                  'imageUrl': request.form.get('imageUrl'),
-                                  'ingredients': recipe_ingredients_array,
-                                  'howTo': recipe_how_to_array,
-                                  'portions': request.form.get('recipe_portions'),
-                                  'author': author,
-                                  'approved': True,
-                                  'createDate': created_date,
-                                  'lastUpdateDate': last_updated_date,
-                                  'totalVotes': 0,
-                                  'starRating-1': 0,
-                                  'starRating-2': 0,
-                                  'starRating-3': 0,
-                                  'starRating-4': 0,
-                                  'starRating-5': 0,
-                                  'totalVotes:': 0,
-                                  'totalStarValue': 0
-                              })
+            mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
+                                    {
+                                        'name': request.form.get('recipe_name'),
+                                        'callout': request.form.get('recipe_callout'),
+                                        'imageUrl': request.form.get('imageUrl'),
+                                        'ingredients': recipe_ingredients_array,
+                                        'howTo': recipe_how_to_array,
+                                        'portions': request.form.get('recipe_portions'),
+                                        'author': author,
+                                        'approved': True,
+                                        'createDate': created_date,
+                                        'lastUpdateDate': last_updated_date,
+                                        'totalVotes': 0,
+                                        'starRating-1': 0,
+                                        'starRating-2': 0,
+                                        'starRating-3': 0,
+                                        'starRating-4': 0,
+                                        'starRating-5': 0,
+                                        'totalVotes:': 0,
+                                        'totalStarValue': 0
+                                    })
             return redirect(url_for('recipes'))
         else:
             return redirect(url_for('recipes'))
@@ -285,17 +291,17 @@ def update_recipe(task_id):
 
 
 # Delete Recipe Route
-@app.route('/delete_recipe/<task_id>')
-def delete_recipe(task_id):
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
     # Find Author
-    find_author = mongo.db.Recipes.find_one({'_id': ObjectId(task_id)})
+    find_author = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
     author = find_author['author']
     # Check if user is in session
     if 'user' in session:
         # Check if the user is the author
         if session['user'] == author:
             # Deletes the Recipe
-            mongo.db.Recipes.remove({'_id': ObjectId(task_id)})
+            mongo.db.Recipes.remove({'_id': ObjectId(recipe_id)})
             return redirect(url_for('recipes'))
         else:
             return redirect(url_for('recipes'))
@@ -304,15 +310,16 @@ def delete_recipe(task_id):
 
 
 # Delete User Route
-@app.route('/delete_user/<task_id>')
-def delete_user(task_id):
-    mongo.db.users.remove({'_id': ObjectId(task_id)})
+@app.route('/delete_user/<recipe_id>')
+def delete_user(recipe_id):
+    mongo.db.users.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('admin_portal'))
 
+
 # Approve Recipe
-@app.route('/approve_recipe/<task_id>')
-def approve_recipe(task_id):
-    mongo.db.Recipes.update({'_id': ObjectId(task_id)},
+@app.route('/approve_recipe/<recipe_id>')
+def approve_recipe(recipe_id):
+    mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
                             {
                                 '$set': {
                                     'approved': True
@@ -323,6 +330,7 @@ def approve_recipe(task_id):
 
                             )
     return redirect(url_for('admin_portal'))
+
 
 # Login Route
 @app.route('/login', methods=['GET'])
@@ -377,7 +385,7 @@ def register():
         # Check if the password and password1 actualy match
         if form['user_password'] == form['user_password1']:
             # If so try to find the user in db
-            user = users_collection.find_one({"username" : form['username']})
+            user = users_collection.find_one({"username": form['username']})
             if user:
                 flash(f"{form['username']} already exists!")
                 return redirect(url_for('register'))
@@ -385,7 +393,7 @@ def register():
             else:
                 # Hash password
                 hash_pass = generate_password_hash(form['user_password'])
-                #Create new user with hashed password
+                # Create new user with hashed password
                 users_collection.insert_one(
                     {
                         'username': form['username'],
@@ -409,6 +417,7 @@ def register():
             return redirect(url_for('register'))
 
     return render_template("register.html")
+
 
 @app.route('/logout')
 def logout():
