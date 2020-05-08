@@ -202,7 +202,7 @@ After all the tests there will be a summary section for a quick overview over al
 All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native Android browser.
 
 ### Intended Use on Chrome, Firefox and Edge (Interaction)
-#### Landing Page
+#### Landing Page(Not logged in)
 - Opening website on full screen expecting all images, icons, labels to be displayed with correct ratio.
 - Clicking on a recipe image expecting it to redirect to recipe correctly.
 - Clicking newest recipe image expecting it ro redirect to the newest recipe correctly.
@@ -212,7 +212,8 @@ All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native 
 - CLicking Register to redirect me to registration page
 - Hoovering over images to experience grey overlay indication
 
-
-
-
-
+#### Recipe Page(Not logged in)
+- Opening Recipe page, expecting all icons, text to display correctly.
+- clicking on login to redirect me to login page
+- clicking on register to redirect me to registration page page
+- Clicking stars expecting to not be able to review, (Bug allowing me to review)
