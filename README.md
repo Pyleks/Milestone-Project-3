@@ -214,8 +214,25 @@ All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native 
 
 #### Recipe Page(Not logged in)
 - Opening Recipe page, expecting all icons, text to display correctly.
-- clicking on login to redirect me to login page
-- clicking on register to redirect me to registration page page
+- Clicking on login to redirect me to login page
+- Clicking on register to redirect me to registration page page
 - Clicking stars expecting to not be able to review, (Bug allowing me to review)
 - Clicking "The happy Bun" get redirected to main landing page.
 
+#### Registration Page(Not logged in)
+- Attempted putting in 1 letter into username, and left email password and confirm password blank.
+Expecting feedback on email
+- Attempted putting in 1 letter into username, leaving .com in email, and add too short password with identical confirm password.
+Expecting feedback on all input boxes.
+- Fixed username to 5 letters, left email, password and confirm password, still block user from register.
+- Fixed email as well to include .com, left password too short, and confirm password still matches.
+Expecting password to inform it's too short.
+- Fixed password, but left confirm password.
+Expecting confirmed password to inform it's incorrect.
+- Fixed password, now all registration rules are correct, allowing user to register.
+
+#### Login Page with newly created account(Not logged in)
+- Typed in username only and click login, asked for password.
+- Typed in username and wrong password, (Bug)expected feedback, non given but was not logged in.
+- Typed in only password, but no username, was informed to type in username too.
+- Typed in correct username and correct password, website allowed me to login.
