@@ -196,3 +196,11 @@ and was left to the end.
 | [MongoDB](https://getbootstrap.com/)  | Store all content for the database for recipes and users.  |
 
 ## Testing
+Due to all the features on the website, the testing have been broken up in multiple sections, each covering testing such as
+Intended use, Features, Responsiveness, Security and Code Testing, as well as Feedback.
+After all the tests there will be a summary section for a quick overview over all passed tests and bugs found.
+All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native Android browser.
+
+
+
+
