@@ -196,5 +196,3 @@ and was left to the end.
 | [MongoDB](https://getbootstrap.com/)  | Store all content for the database for recipes and users.  |
 
 ## Testing
-
-
