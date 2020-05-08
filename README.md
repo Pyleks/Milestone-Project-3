@@ -217,3 +217,5 @@ All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native 
 - clicking on login to redirect me to login page
 - clicking on register to redirect me to registration page page
 - Clicking stars expecting to not be able to review, (Bug allowing me to review)
+- Clicking "The happy Bun" get redirected to main landing page.
+
