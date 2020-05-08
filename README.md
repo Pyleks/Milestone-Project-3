@@ -201,6 +201,18 @@ Intended use, Features, Responsiveness, Security and Code Testing, as well as Fe
 After all the tests there will be a summary section for a quick overview over all passed tests and bugs found.
 All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native Android browser.
 
+### Intended Use on Chrome, Firefox and Edge (Interaction)
+#### Landing Page
+- Opening website on full screen expecting all images, icons, labels to be displayed with correct ratio.
+- Clicking on a recipe image expecting it to redirect to recipe correctly.
+- Clicking newest recipe image expecting it ro redirect to the newest recipe correctly.
+- Clicking Filtering from Highest Rated to Medium expect it to filter for 1 - 3 star ratings correctly
+- Clicking Filtering from Medium to Highest Rated expect it to filter for 4 - 5 stars rating correctly
+- Clicking Login to redirect me to login page
+- CLicking Register to redirect me to registration page
+- Hoovering over images to experience grey overlay indication
+
+
 
 
 
