@@ -236,3 +236,20 @@ Expecting confirmed password to inform it's incorrect.
 - Typed in username and wrong password, (Bug)expected feedback, non given but was not logged in.
 - Typed in only password, but no username, was informed to type in username too.
 - Typed in correct username and correct password, website allowed me to login.
+- When logged in successfully, expecting the page to redirect user to landing page
+
+#### Landing Page(Logged in)
+- Expecting the navigation bar to no longer have Login and Register, but Logout and Username
+- Expecting to see a blue + button to add recipes, added correctly.
+- Clicked Blue + icon, getting redirected to create recipes page.
+- Clicked username, getting redirected to client profile page.
+- Clicked any of the images, taking me to the recipe page.
+
+#### Recipe Page(Not author, but Logged in)
+- Visiting Recipe page that my user have not made, expect to not see update or delete buttons.
+- Clicked rating stars to rate, hoover over each star expecting to see them populate 1 by 1.
+- Clicked the preferred rating, expecting to see the total rate increase.
+- view recipe correctly.
+- Clicked website name to redirect to main page.
+
+#### Recipe Page(author, and Logged in)
