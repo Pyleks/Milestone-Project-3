@@ -265,3 +265,11 @@ Expecting confirmed password to inform it's incorrect.
 - Clicking delete in "Your Public Recipes" removes the recipe from the database. (Bug user get redirected to main page)
 - Clicking delete in "Waiting Approval" removes the recipe from the database. (Bug user get redirected to main page)
 
+#### Admin Portal(only accessible when logged in as Administrator)
+- Visiting admin portal, expecting to see "Waiting Approval" and users
+- Expecting to see the number of new recipes added and waiting for approval
+- Expanding Waiting Approval, to see all the recipe details and approve and delete button.
+- Clicking Approve will transfer the recipe into the recipe main page.
+- Clicking delete will remove the recipe from database.
+- Expanding Users, will see all user names and emails + the option to delete the user.
+
