@@ -291,3 +291,41 @@ Expecting confirmed password to inform it's incorrect.
 - Follows all the same rules as creating new recipe.
 - Attempting to remove any fields, block it from updating
 - Once user click update, it cleans the rating.
+
+### URL Injection (Security)
+Just because certain buttons, or icons are not displaying don't mean we can't preform certain malicious
+actions like deleting content made by other users, this section will attempt to preform different URL injections
+to see if we can by pass security.
+
+#### Add recipe without being logged in.
+- Upon using "https://the-happy-bun.herokuapp.com/add_pastry" I attempt adding pastry without using login credentials.  
+This redirect the visitor to login window
+
+#### Delete recipe without being logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a pastry without
+being logged in.  
+This redirected the visitor to login window
+
+#### Update recipe without being logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea599ad92cf716f6bd77557" I attempt to access update pastry without
+being logged in.
+This redirected the visitor to login window.
+
+#### Delete user without being logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0" I attempt to delete a user without
+being logged in.  
+This redirect the visitor to login window.
+
+
+#### Delete recipe to another user while logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a recipe made by someone else  
+This redirected the user to not found URL (BUG need to make a 404 window)
+
+#### Update recipe to another user while logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea70117dbca44bff3063847" I attempted to update someone else recipe.
+This redirected the user to main page(BUG, should come with a 404 window)
+
+
+#### Delete user without being logged in.
+- Upon using "http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0" I attempted to delete a user without being administrator
+and successfully deleted the administrator of the page, (BUG)
