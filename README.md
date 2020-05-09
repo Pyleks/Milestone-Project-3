@@ -286,3 +286,8 @@ Expecting confirmed password to inform it's incorrect.
 - Adding ingredients, anything less then 8 characters will inform user it's too short.
 - Adding How To steps, anything less then 12 characters will inform the user it's too short.
 - Click create, pushes the submission to Admin portal.
+
+#### Update recipe(Only accessible logged in and on your own recipes)
+- Follows all the same rules as creating new recipe.
+- Attempting to remove any fields, block it from updating
+- Once user click update, it cleans the rating.
