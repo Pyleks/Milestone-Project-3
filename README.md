@@ -306,6 +306,11 @@ This redirect the visitor to login window
 being logged in.  
 This redirected the visitor to login window
 
+#### Approve recipe without being logged in.
+- upon using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68067da4d9fe0620a801d" I attempt to approve a recipe without being logged in.  
+This redirect the visitor to login window
+But also approved it.
+
 #### Update recipe without being logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea599ad92cf716f6bd77557" I attempt to access update pastry without
 being logged in.
@@ -314,7 +319,8 @@ This redirected the visitor to login window.
 #### Delete user without being logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0" I attempt to delete a user without
 being logged in.  
-This redirect the visitor to login window.
+and successfully deleted the administrator of the page, (BUG)
+and redirected the user to login page
 
 
 #### Delete recipe to another user while logged in.
@@ -325,7 +331,7 @@ This redirected the user to not found URL (BUG need to make a 404 window)
 - Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea70117dbca44bff3063847" I attempted to update someone else recipe.
 This redirected the user to main page(BUG, should come with a 404 window)
 
-
-#### Delete user without being logged in.
-- Upon using "http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0" I attempted to delete a user without being administrator
-and successfully deleted the administrator of the page, (BUG)
+#### Approve recipe while being logged in as a user but not administrator
+- Upon using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd" I attempted to approve a recipe without
+being logged int as administrator.
+BUG, any user was able to approve the recipe
