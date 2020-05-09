@@ -273,3 +273,16 @@ Expecting confirmed password to inform it's incorrect.
 - Clicking delete will remove the recipe from database.
 - Expanding Users, will see all user names and emails + the option to delete the user.
 
+#### Create new recipe(Only accessible logged in)
+- Attempting to submit the form empty, expecting to receive error message across the whole form.
+- Adding random letters in url, error message don't change.
+- Adding a regular website url, (bug get approved)
+- Adding 1 letter in pastry name, but is told it's too short
+- Adding more then 3, and get approved.
+- Adding plenty of empty spaces in callout text, is registered as no input.
+- Added more then 8 characters in callout, and it's approved
+- Adding letters into portions, feeds back "Please use numbers only"
+- Adding number works.
+- Adding ingredients, anything less then 8 characters will inform user it's too short.
+- Adding How To steps, anything less then 12 characters will inform the user it's too short.
+- Click create, pushes the submission to Admin portal.

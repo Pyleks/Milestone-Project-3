@@ -56,7 +56,7 @@ $(document).ready(function() {
             e.preventDefault()
 
         }if(isNaN(portions) === false && portions.trim().length >= 1) {
-            portionLabel.innerText = "Number CCCCorrect";
+            portionLabel.innerText = "Number Correct";
             portionLabel.style.color = "green";
 
 
