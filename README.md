@@ -351,5 +351,3 @@ slider across Chrome, Firefox and Edge.
   <li>1024 x 1366 iPad Pro</li>
    </ol>
 
-
-
