@@ -334,4 +334,22 @@ This redirected the user to main page(BUG, should come with a 404 window)
 #### Approve recipe while being logged in as a user but not administrator
 - Upon using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd" I attempted to approve a recipe without
 being logged int as administrator.
-BUG, any user was able to approve the recipe
+BUG, any user was able to approve the recipe.
+
+### Responsiveness
+In this test the website was tested to all default device sizes provided my chrome as well responsive
+slider across Chrome, Firefox and Edge.
+
+  <ol>
+  <li>360 x 640 Galaxy S5</li>
+  <li>375 x 667 iPhone 6/7/8</li>
+  <li>375 x 812 iPhone X</li>
+  <li>411 x 731 Pixel 2</li>
+  <li>411 x 823 Pixel 2 XL</li>
+  <li>414 x 736 iPhone 6/7/8 Plus</li>
+  <li>768 x 1024 iPad</li>
+  <li>1024 x 1366 iPad Pro</li>
+   </ol>
+
+
+
