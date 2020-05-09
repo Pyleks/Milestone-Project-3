@@ -4,7 +4,7 @@
     <div class="row no-margin">
         <div class="col-12 no-pad">
             <div class="card">
-                <img class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
+                <img alt="Waffles, egg and flour main image" class="main-image" src="{{ url_for('static', filename='img/homepage.jpg')}}">
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                    <img class="auto-size" src="{{content.imageUrl}}"></a>
+                    <img alt="The Happy Bun high rated recipe image" class="auto-size" src="{{content.imageUrl}}"></a>
                 <div class="card-body align-content">
                     <div class="card-text ">
                         <div class="info-card-wrap">
@@ -83,7 +83,7 @@
         <div class="col-sm-12 col-md-6 col-xl-6">
             <div class="card card-box top-rated-card">
                 <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                    <img class="top-pastry-img" src="{{content.imageUrl}}"></a>
+                    <img alt="Newest recipe image" class="top-pastry-img" src="{{content.imageUrl}}"></a>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-xl-6 text-center">
@@ -137,7 +137,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-xl-4 extra-pad">
             <div class="card card-size card-box cooking-img">
                 <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                    <img class="auto-size" src="{{content.imageUrl}}"></a>
+                    <img alt="The Happy Bun un-rated recipe image" class="auto-size" src="{{content.imageUrl}}"></a>
                 <div class="card-body align-content">
                     <div class="card-text ">
                         <div class="info-card-wrap">
