@@ -253,3 +253,15 @@ Expecting confirmed password to inform it's incorrect.
 - Clicked website name to redirect to main page.
 
 #### Recipe Page(author, and Logged in)
+- Visiting recipe page as author, expecting to see delete button and update button in red and blue.
+- Clicking update button redirect user to update page correctly.
+- Clicking delete button, delete the recipe and redirect user to main page
+- Attempting to rate my own submission provides feedback "You can't rate your own submission"
+
+#### User Portal(only accessible when logged in)
+- Visiting user portal, expecting to see "Your Public Recipes" and "Waiting Approval"
+- Expanding "Your Public Recipes" displays all recipes the user have posted with the option to delete any of them
+- Expanding "Waiting Approval" shows all recipes added, but have not yet been approved with the option to delete it.
+- Clicking delete in "Your Public Recipes" removes the recipe from the database. (Bug user get redirected to main page)
+- Clicking delete in "Waiting Approval" removes the recipe from the database. (Bug user get redirected to main page)
+
