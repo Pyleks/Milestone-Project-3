@@ -31,12 +31,12 @@
                                 </div>
 <!--                                Recipe details-->
                                 <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
-                                    <p><span class="custom-font" class="admin-card">Author:</span> {{content.author}}</p>
-                                    <p><span class="custom-font" class="admin-card">Name: </span> {{content.name}}</p>
-                                    <p><span class="custom-font" class="admin-card">Callout: </span> {{content.callout}}</p>
-                                    <p><span class="custom-font" class="admin-card">Ingredients: </span> {{content.ingredients}}</p>
-                                    <p><span class="custom-font" class="admin-card">How To: </span> {{content.howTo}}</p>
-                                    <p><span class="custom-font" class="admin-card">Portions: </span> {{content.portions}}</p>
+                                    <p><span >Author:</span> {{content.author}}</p>
+                                    <p><span >Name: </span> {{content.name}}</p>
+                                    <p><span >Callout: </span> {{content.callout}}</p>
+                                    <p><span >Ingredients: </span> {{content.ingredients}}</p>
+                                    <p><span >How To: </span> {{content.howTo}}</p>
+                                    <p><span >Portions: </span> {{content.portions}}</p>
                                     <a class="btn btn-primary text-white bg-danger"
                                        href="{{url_for('delete_recipe', recipe_id=content._id)}}"
                                        role="button">Delete</a>
