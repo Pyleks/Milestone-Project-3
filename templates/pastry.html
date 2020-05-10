@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 <!--Generated Image from MongoDB-->
-<section class="images container-fluid bg-lightBlue">
-    <div class="section image-container container">
+<section class="images bg-lightBlue">
+    <div class="image-container container">
         <div class="row">
             <div class="col-12 no-pad">
                 <div class="card card-full-size card-box">
@@ -32,41 +32,36 @@
                 </button>
                 <span class="tV-font"> ({{recipe_data.totalVotes}})</span>
             </div>
-<!--            If user is not author they can vote-->
+            <!--            If user is not author they can vote-->
             {% if session.user != recipe_data.author %}
-            <div id="overlay">
-                <div class="card-body overlay-content bg-fa">
-                    <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
-                    <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
-                        <div class="star-wrap-pastry">
-                            <p class="star-review-callout">Please leave a star review</p>
-                            <div id="star-box">
-                                {% for star in range(1, 6) %}
-                                <button type="submit" id="starRating_{{star}}" name="submit_rating"
-                                        value="starRating-{{star}}" aria-label="rating-button"
-                                        class="far fa-star bg-blue star-box"></button>
-                                {%endfor%}
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            {%endif%}
-<!--            Check if user is author before allowing to vote-->
-            {% if session.user == recipe_data.author %}
-            <div id="overlay">
-                <div class="card-body overlay-content bg-fa">
-                    <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
+            <div id="overlay" class="card-body overlay-content bg-fa">
+                <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
+                <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
                     <div class="star-wrap-pastry">
-                        <p class="star-review-callout">You can't rate your own submission.</p>
+                        <p class="star-review-callout">Please leave a star review</p>
+                        <div id="star-box">
+                            {% for star in range(1, 6) %}
+                            <button type="submit" id="starRating_{{star}}" name="submit_rating"
+                                    value="starRating-{{star}}" aria-label="rating-button"
+                                    class="far fa-star bg-blue star-box"></button>
+                            {%endfor%}
+                        </div>
                     </div>
+                </form>
+            </div>
+            {%endif%}
+            <!--            Check if user is author before allowing to vote-->
+            {% if session.user == recipe_data.author %}
+            <div id="overlay" class="card-body overlay-content bg-fa">
+                <button id="disable-overlay" class="fas fa-times leave-button bg-fa bg-blue"></button>
+                <div class="star-wrap-pastry">
+                    <p class="star-review-callout">You can't rate your own submission.</p>
                 </div>
             </div>
             {%endif%}
-<!--            Shows star rating-->
-            <p class="text-center callout-margin">{{recipe_data.callout}}</p>
+            <!--            Shows star rating-->
             <div class="text-center">
+                <p class="callout-margin">{{recipe_data.callout}}</p>
                 <p class="text-buffer">Author: {{recipe_data.author}}</p>
                 {% if recipe_data.lastUpdateDate == 0 %}
                 <p class="text-buffer">Created on: {{recipe_data.createDate}}</p>
@@ -74,27 +69,28 @@
                 {% if recipe_data.lastUpdateDate != 0%}
                 <p class="text-buffer">Updated on: {{recipe_data.lastUpdateDate}}</p>
                 {%endif%}
-
             </div>
             <hr class="buffer-margin">
         </div>
     </div>
-    <!--Filter-->
+    <!--Checks user if permission found-->
     {% if session.user == recipe_data.author or session.user == "Administrator" %}
     <div class="m-recipe-padding">
         <div class="row no-margin">
             <div class="col-6">
-                    <a role="button" class="bg-blue txt-white m-update-recipe btn fas fa-pen" href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}">
-                        </a>
-                </div>
+                <a role="button" class="bg-blue txt-white m-update-recipe btn fas fa-pen"
+                   href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}">
+                </a>
+            </div>
             <div class="col-6">
-                <a role="button" class="bg-blue txt-white btn m-delete-recipe fas fa-trash" href="{{url_for('delete_recipe', recipe_id=recipe_data._id)}}">
-                    </a>
+                <a role="button" class="bg-blue txt-white btn m-delete-recipe fas fa-trash"
+                   href="{{url_for('delete_recipe', recipe_id=recipe_data._id)}}">
+                </a>
             </div>
         </div>
     </div>
     {% endif %}
-<!--    Recipe box-->
+    <!--    Recipe box-->
     <div class="row recipe-box">
         <div class="col-sm-12 col-md-5 col-xl-5 text-center card-body bg-lightBlue">
             <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
@@ -106,7 +102,7 @@
             {%endfor%}
 
         </div>
-<!--        Recipe to do steps-->
+        <!--        Recipe to do steps-->
         <div class="col-sm-12 col-md-5 offset-md-2 col-xl-5 offset-xl-2">
             <h2 class="pastry-h2">This is how you do it</h2>
             <ol class="text-left pastry_text">
