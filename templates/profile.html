@@ -5,90 +5,83 @@
     <div class="row">
         <div class="col-12">
             <h1 class="admin-name">{{session.user}} Portal</h1>
-<!--            Displays all recipes waiting for confirmation-->
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                <p class="approval-name">Your Public Recipes</p>
-                            </button>
-                        </h5>
-                    </div>
-<!--                    Shows all recipes that got approved from that user-->
-                    <div id="collapseOne" class="collapse" data-parent="#accordion">
-                        {% for content in approved_recipes %}
-                        {% if session.user == content.author %}
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-xl-4">
-                                    <div class="card card-box cooking-img">
-                                        <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                                            <img alt="Public recipe image" class="img-fluid" src="{{content.imageUrl}}">
-                                        </div>
+            <!--            Displays all recipes waiting for confirmation-->
+            <div class="card">
+                <div class="card-header mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                        <p class="approval-name">Your Public Recipes</p>
+                    </button>
+                </div>
+                <!--                    Shows all recipes that got approved from that user-->
+                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                    {% for content in approved_recipes %}
+                    {% if session.user == content.author %}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-xl-4">
+                                <div class="card card-box cooking-img">
+                                    <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
+                                        <img alt="Public recipe image" class="img-fluid" src="{{content.imageUrl}}">
                                     </div>
                                 </div>
-<!--                                Recipe details-->
-                                <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
-                                    <p><span >Author:</span> {{content.author}}</p>
-                                    <p><span >Name: </span> {{content.name}}</p>
-                                    <p><span >Callout: </span> {{content.callout}}</p>
-                                    <p><span >Ingredients: </span> {{content.ingredients}}</p>
-                                    <p><span >How To: </span> {{content.howTo}}</p>
-                                    <p><span >Portions: </span> {{content.portions}}</p>
-                                    <a class="btn btn-primary text-white bg-danger"
-                                       href="{{url_for('delete_recipe', recipe_id=content._id)}}"
-                                       role="button">Delete</a>
-                                </div>
+                            </div>
+                            <!--                                Recipe details-->
+                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
+                                <p><span>Author:</span> {{content.author}}</p>
+                                <p><span>Name: </span> {{content.name}}</p>
+                                <p><span>Callout: </span> {{content.callout}}</p>
+                                <p><span>Ingredients: </span> {{content.ingredients}}</p>
+                                <p><span>How To: </span> {{content.howTo}}</p>
+                                <p><span>Portions: </span> {{content.portions}}</p>
+                                <a class="btn btn-primary text-white bg-danger"
+                                   href="{{url_for('delete_recipe', recipe_id=content._id)}}"
+                                   role="button">Delete</a>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-<!--            All recipes waiting for approval-->
-            <div id="accordion">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                <p class="approval-name">Waiting Approval</p>
-                            </button>
-                        </h5>
-                    </div>
 
-                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                        {% for content in pending_recipes %}
-                        {% if session.user == content.author %}
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-xl-4">
-                                    <div class="card card-box cooking-img">
-                                        <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                                            <img alt="Waiting approval recipe image" class="img-fluid" src="{{content.imageUrl}}">
-                                        </div>
+            <!--            All recipes waiting for approval-->
+            <div class="card">
+                <div class="card-header mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="true" aria-controls="collapseOne">
+                        <p class="approval-name">Waiting Approval</p>
+                    </button>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    {% for content in pending_recipes %}
+                    {% if session.user == content.author %}
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-xl-4">
+                                <div class="card card-box cooking-img">
+                                    <div href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
+                                        <img alt="Waiting approval recipe image" class="img-fluid"
+                                             src="{{content.imageUrl}}">
                                     </div>
                                 </div>
-<!--                                recipe details-->
-                                <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
-                                    <p><span >Author:</span> {{content.author}}</p>
-                                    <p><span >Name: </span> {{content.name}}</p>
-                                    <p><span >Callout: </span> {{content.callout}}</p>
-                                    <p><span >Ingredients: </span> {{content.ingredients}}</p>
-                                    <p><span >How To: </span> {{content.howTo}}</p>
-                                    <p><span >Portions: </span> {{content.portions}}</p>
-                                    <a class="btn btn-primary text-white bg-danger"
-                                       href="{{url_for('delete_recipe', recipe_id=content._id)}}"
-                                       role="button">Delete</a>
-                                </div>
+                            </div>
+                            <!--                                recipe details-->
+                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
+                                <p><span>Author:</span> {{content.author}}</p>
+                                <p><span>Name: </span> {{content.name}}</p>
+                                <p><span>Callout: </span> {{content.callout}}</p>
+                                <p><span>Ingredients: </span> {{content.ingredients}}</p>
+                                <p><span>How To: </span> {{content.howTo}}</p>
+                                <p><span>Portions: </span> {{content.portions}}</p>
+                                <a class="btn btn-primary text-white bg-danger"
+                                   href="{{url_for('delete_recipe', recipe_id=content._id)}}"
+                                   role="button">Delete</a>
                             </div>
                         </div>
-                        {% endif %}
-                        {% endfor %}
                     </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
