@@ -23,7 +23,7 @@ $(document).ready(function() {
         if(!!pattern.test(pastryUrl) !== true) {
             urlLabel.innerText = "Please add a valid URL";
             urlLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(!!pattern.test(pastryUrl) === true) {
             urlLabel.innerText = "URL Valid";
@@ -33,7 +33,7 @@ $(document).ready(function() {
         }if(pastryName.trim().length === 0 || pastryName.trim().length < 3) {
             pastryNameLabel.innerText = "Pastry name empty or too short";
             pastryNameLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(pastryName.trim().length >= 3) {
             pastryNameLabel.innerText = "Pastry Name Correct";
@@ -43,7 +43,7 @@ $(document).ready(function() {
         }if(calloutText.trim().length === 0 || calloutText.trim().length < 5) {
             calloutLabel.innerText = "Callout Text too short";
             calloutLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(calloutText.trim().length > 5) {
             calloutLabel.innerText = "Callout Text Correct";
@@ -53,7 +53,7 @@ $(document).ready(function() {
         }if(isNaN(portions) === true || portions.trim().length === 0) {
             portionLabel.innerText = "Please use numbers only";
             portionLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(isNaN(portions) === false && portions.trim().length >= 1) {
             portionLabel.innerText = "Number Correct";
@@ -64,7 +64,7 @@ $(document).ready(function() {
         }if(Ingredients.trim().length === 0 || Ingredients.trim().length < 10) {
             ingredientsLabel.innerText = "Ingredients too short";
             ingredientsLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(Ingredients.trim().length >= 10) {
             ingredientsLabel.innerText = "Ingredients Correct";
@@ -74,7 +74,7 @@ $(document).ready(function() {
         }if(howTo.trim().length === 0 || howTo.trim().length < 15) {
             howToLabel.innerText = "How To description is too short";
             howToLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(howTo.trim().length >= 15) {
             howToLabel.innerText = "How To Correct";
