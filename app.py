@@ -31,13 +31,18 @@ def recipes():
     high_rated_recipes = mongo.db.Recipes.find({'totalStarValue': {"$gt": 3, "$lt": 6}}).sort(
         [('totalStarValue', pymongo.DESCENDING),
          ("name", 1)])
+
     # Finding the last Recipe added and approved for the Recipe highlight on the page
-    new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
+    new_recipe = mongo.db.Recipes.find({'approved': True}) \
+        .sort([('_id', pymongo.DESCENDING), (
+        'approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
-    find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                                                ('approved', pymongo.ASCENDING)]).limit(1)
+    find_last = mongo.db.Recipes.find({'approved': True}) \
+        .sort([('_id', pymongo.DESCENDING), (
+        'approved', pymongo.ASCENDING)]).limit(1)
+
+
     # Finds the name from last Recipe
     for x in find_last:
         last_recipe = (x['name'])
@@ -60,12 +65,14 @@ def sort_by_rating():
         [('totalStarValue', pymongo.DESCENDING), ("name", 1)])
 
     # Finding the last Recipe added and approved for the Recipe highlight on the page
-    new_recipe = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                                                 ('approved', pymongo.ASCENDING)]).limit(1)
+    new_recipe = mongo.db.Recipes.find({'approved': True}) \
+        .sort([('_id', pymongo.DESCENDING), (
+        'approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
-    find_last = mongo.db.Recipes.find({'approved': True}).sort([('_id', pymongo.DESCENDING),
-                                                                ('approved', pymongo.ASCENDING)]).limit(1)
+    find_last = mongo.db.Recipes.find({'approved': True}) \
+        .sort([('_id', pymongo.DESCENDING), (
+        'approved', pymongo.ASCENDING)]).limit(1)
 
     # Finds the name from last Recipe
     for x in find_last:
@@ -183,16 +190,21 @@ def insert_rating(recipe_id):
                                 upsert=False
                                 )
         star_array = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
-        star_calculator = ((5 * star_array["starRating-5"] + 4 * star_array["starRating-4"]
-                            + 3 * star_array["starRating-3"] + 2 * star_array["starRating-2"]
-                            + 1 * star_array["starRating-1"]) / (star_array["starRating-5"]
-                                                                 + star_array["starRating-4"] + star_array[
-                                                                     "starRating-3"]
-                                                                 + star_array["starRating-2"] + star_array[
-                                                                     "starRating-1"]))
+        star_calculator = ((5 * star_array["starRating-5"]
+                            + 4 * star_array["starRating-4"]
+                            + 3 * star_array["starRating-3"]
+                            + 2 * star_array["starRating-2"]
+                            + 1 * star_array["starRating-1"])
+                           / (star_array["starRating-5"]
+                              + star_array["starRating-4"]
+                              + star_array["starRating-3"]
+                              + star_array["starRating-2"]
+                              + star_array["starRating-1"]))
 
-        total_votes = (star_array["starRating-5"] + star_array["starRating-4"]
-                       + star_array["starRating-3"] + star_array["starRating-2"]
+        total_votes = (star_array["starRating-5"]
+                       + star_array["starRating-4"]
+                       + star_array["starRating-3"]
+                       + star_array["starRating-2"]
                        + star_array["starRating-1"])
 
         star_calculator = (int(star_calculator))
@@ -261,27 +273,27 @@ def update_recipe(recipe_id):
             recipe_ingredients_array = recipe_ingredients.split(", ")
             recipe_how_to = request.form.get('recipe_howTo')
             recipe_how_to_array = recipe_how_to.split(", ")
-            mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
-                                    {
-                                        'name': request.form.get('recipe_name'),
-                                        'callout': request.form.get('recipe_callout'),
-                                        'imageUrl': request.form.get('imageUrl'),
-                                        'ingredients': recipe_ingredients_array,
-                                        'howTo': recipe_how_to_array,
-                                        'portions': request.form.get('recipe_portions'),
-                                        'author': author,
-                                        'approved': True,
-                                        'createDate': created_date,
-                                        'lastUpdateDate': last_updated_date,
-                                        'totalVotes': 0,
-                                        'starRating-1': 0,
-                                        'starRating-2': 0,
-                                        'starRating-3': 0,
-                                        'starRating-4': 0,
-                                        'starRating-5': 0,
-                                        'totalVotes:': 0,
-                                        'totalStarValue': 0
-                                    })
+            mongo.db.Recipes.update({'_id': ObjectId(recipe_id)}, {
+                'name': request.form.get('recipe_name'),
+                'callout': request.form.get('recipe_callout'),
+                'imageUrl': request.form.get('imageUrl'),
+                'ingredients': recipe_ingredients_array,
+                'howTo': recipe_how_to_array,
+                'portions': request.form.get('recipe_portions'),
+                'author': author,
+                'approved': True,
+                'createDate': created_date,
+                'lastUpdateDate': last_updated_date,
+                'totalVotes': 0,
+                'starRating-1': 0,
+                'starRating-2': 0,
+                'starRating-3': 0,
+                'starRating-4': 0,
+                'starRating-5': 0,
+                'totalVotes:': 0,
+                'totalStarValue': 0
+
+            })
             return redirect(url_for('recipes'))
         else:
             return redirect(url_for('recipes'))
