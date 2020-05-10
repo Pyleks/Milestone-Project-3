@@ -15,7 +15,7 @@ $(document).ready(function() {
             console.log(myUsername.trim().length);
             userLabel.innerText = "Username is Empty or Too Short";
             userLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if (myUsername.trim().length > 3) {
             console.log(myUsername.trim().length);
@@ -26,7 +26,7 @@ $(document).ready(function() {
         }if(myUsername.trim().length > 12) {
             userLabel.innerText = "Username Max 12 Characters";
             userLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(myUsername.trim().length <= 12 && myUsername.trim().length >= 3 ) {
             userLabel.innerText = "Username Correct";
@@ -36,7 +36,7 @@ $(document).ready(function() {
         }if(regEx.test(String(myEmail).toLowerCase()) !== true) {
             emailLabel.innerText = "Please enter a valid email address";
             emailLabel.style.color = "red";
-                e.preventDefault()
+                e.preventDefault();
 
         }if(regEx.test(String(myEmail).toLowerCase()) === true) {
             emailLabel.innerText = "Email Correct";
@@ -47,7 +47,7 @@ $(document).ready(function() {
         }if(myPassword.trim().length === 0 || myPassword.trim().length < 8) {
             passwordLabel.innerText = "Password is too short, Minimum 8 characters";
             passwordLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
         }if(myPassword.trim().length >= 8) {
             passwordLabel.innerText = "Password correct";
@@ -57,7 +57,7 @@ $(document).ready(function() {
         }if(myPassword !== myConfirm) {
             confirmLabel.innerText = "Please make sure password matches";
             confirmLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
 
 
@@ -68,7 +68,7 @@ $(document).ready(function() {
         }if(myPassword === myConfirm && myConfirm.trim().length < 8) {
             confirmLabel.innerText = "Password Matches but too short";
             confirmLabel.style.color = "red";
-            e.preventDefault()
+            e.preventDefault();
 
 
 
