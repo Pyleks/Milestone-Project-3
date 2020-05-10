@@ -13,7 +13,7 @@
                         </button>
                 </div>
                 <!--                    User content-->
-                <div id="collapseRecipes" class="collapse" aria-labelledby="Approval-Accordion" data-parent="#accordion">
+                <div id="collapseRecipes" class="collapse" aria-labelledby="collapseRecipes" data-parent="#accordion">
                     {% for content in pending_recipes %}
                     <div class="card-body">
                         <div class="row">
@@ -58,7 +58,7 @@
                             Users({{all_users_number}})
                     </button>
                 </div>
-                <div id="collapseUsers" class="collapse" aria-labelledby="User-Accordion" data-parent="#accordion">
+                <div id="collapseUsers" class="collapse" aria-labelledby="collapseUsers" data-parent="#accordion">
                     {% for user in all_users %}
                     <div class="card-body">
                         <div class="row">
@@ -79,6 +79,6 @@
         </div>
     </div>
 </div>
-</div>
+
 
 {% endblock %}
