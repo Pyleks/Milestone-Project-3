@@ -240,7 +240,7 @@ Expecting password to inform it's too short.
 Expecting confirmed password to inform it's incorrect.
 - Fixed password, now all registration rules are correct, allowing user to register.
 
-#### Login Page with newly created account(Not logged in)
+#### Login Page
 - Typed in username only and click login, asked for password.
 - Typed in username and wrong password, (Bug)expected feedback, non given but was not logged in.
 - Typed in only password, but no username, was informed to type in username too.
@@ -360,4 +360,22 @@ slider across Chrome, Firefox and Edge.
   <li>1024 x 1366 iPad Pro</li>
    </ol>
 
-### W3 HTML Validator
+### Testing Summary
+
+### Functionality
+| Page        | Bugs           | Status  |
+|:------------- |:-------------| :-----:|
+| Main Page(visitor)     | No issues found | Good |
+| Main Page(logged in)     | No issues found      | Good |
+| Recipe Page(visitor) | No issues found  | Not Fixed |
+| Recipe Page(logged in Visitor) | No issues found     | Good |
+| Recipe Page(logged in Author) | No issues found     | Good |
+| Registration Page | No issues found     | Good |
+| Login Page) | No issues found     | Good |
+| User Portal | No issues found     | Good |
+| Admin Portal | No issues found     | Good |
+| Create New Recipe | No issues found    | Good |
+| Update Recipe | No issues found     | Good |
+
+
+

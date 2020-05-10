@@ -211,7 +211,6 @@ def insert_rating(recipe_id):
                                 )
         return redirect(request.referrer)
 
-
     else:
         return redirect(url_for('login'))
 
