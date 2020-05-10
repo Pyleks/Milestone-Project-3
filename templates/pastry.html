@@ -24,10 +24,10 @@
             <div class="star-wrap-pastry">
                 <button id="enable-overlay" class="overlay-star-layer bg-fa">
                     {% for star in range(recipe_data.totalStarValue) %}
-                    <span id="starRating_{{i}}" class="fas fa-star bg-blue star-box"></span>
+                    <span class="fas fa-star bg-blue star-box"></span>
                     {%endfor%}
                     {% for empty in range(5 - recipe_data.totalStarValue)%}
-                    <span id="starRating_{{i}}" class="far fa-star bg-blue star-box"></span>
+                    <span class="far fa-star bg-blue star-box"></span>
                     {%endfor%}
                 </button>
                 <span class="tV-font"> ({{recipe_data.totalVotes}})</span>
