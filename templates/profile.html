@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-12">
             <h1 class="admin-name">{{session.user}} Portal</h1>
-            <!--            Displays all recipes waiting for confirmation-->
+            <!--            Displays all public recipes posted by this user-->
             <div class="card">
                 <div class="card-header mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                        <p class="approval-name">Your Public Recipes</p>
+                    <button class="btn btn-link profile-headings" data-toggle="collapse" data-target="#PublicRecipes"
+                            aria-expanded="true" aria-controls="PublicRecipes">
+                            Your Public Recipes
                     </button>
                 </div>
                 <!--                    Shows all recipes that got approved from that user-->
-                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div id="PublicRecipes" class="collapse" aria-labelledby="Public-Recipes"  data-parent="#accordion">
                     {% for content in approved_recipes %}
                     {% if session.user == content.author %}
                     <div class="card-body">
@@ -48,12 +48,12 @@
             <!--            All recipes waiting for approval-->
             <div class="card">
                 <div class="card-header mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="true" aria-controls="collapseOne">
-                        <p class="approval-name">Waiting Approval</p>
+                    <button class="btn btn-link profile-headings" data-toggle="collapse" data-target="#WaitingRecipes"
+                            aria-expanded="true" aria-controls="WaitingRecipes">
+                            Waiting Approval
                     </button>
                 </div>
-                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div id="WaitingRecipes" class="collapse" aria-labelledby="Waiting-Approval" data-parent="#accordion">
                     {% for content in pending_recipes %}
                     {% if session.user == content.author %}
                     <div class="card-body">
