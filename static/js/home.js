@@ -14,7 +14,6 @@ $(document).ready(function() {
         const ThreeStar = document.getElementById('starRating_3');
         const FourStar = document.getElementById('starRating_4');
         const FiveStar = document.getElementById('starRating_5');
-        const starBox = document.getElementById('star-box');
 
 
         // One star
