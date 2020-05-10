@@ -386,6 +386,14 @@ slider across Chrome, Firefox and Edge.
 | Approve recipe while being logged in as a user but not administrator   | This was fully possible without being logged in as admin using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd| Not fixed yet |
 
 
+### W3 HTML Validator
+| Page        | Bugs           | Status  |
+|:------------- |:-------------| :-----:|
+| All Pages     | Reoccurring ALT tag missing on all images on all pages | Fixed |
+| Profile Page    | Redundant ID's  | Fixed |
+| Profile Page    | Duplicate ID's  | Fixed |
+| Admin Page Page    | a tag inside button | Fixed |
+| All pages    | Many minor issues | Fixed |
 
 
-
+### W3 CSS Validator
