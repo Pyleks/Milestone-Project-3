@@ -201,6 +201,15 @@ Intended use, Features, Responsiveness, Security and Code Testing, as well as Fe
 After all the tests there will be a summary section for a quick overview over all passed tests and bugs found.
 All tests will be preformed in Chrome, Firefox, and Edge on Desktop, and native Android browser.
 
+__I have tested the following__
+- Intended use (Interactivity)  
+- URL Injection (Security)
+- Responsiveness across devices
+- W3 HTML Validator using URL and copy/paste code
+- W3 CSS Validator
+- JS Hint
+- PEP8
+
 ### Intended Use on Chrome, Firefox and Edge (Interaction)
 #### Landing Page(Not logged in)
 - Opening website on full screen expecting all images, icons, labels to be displayed with correct ratio.
