@@ -385,6 +385,13 @@ slider across Chrome, Firefox and Edge.
 | Delete recipe to another user while logged in    | Not possible to delete the recipe, but they get redirected to 404 | Not fixed yet |
 | Approve recipe while being logged in as a user but not administrator   | This was fully possible without being logged in as admin using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd| Not fixed yet |
 
+### Responsiveness
+| Page        | Bugs           | Status  |
+|:------------- |:-------------| :-----:|
+| Main Page     | Small image scaling issue where it became too narrow on small devices | Fixed |
+| Main Page     | Add recipe button on mobile devices was too big, to changed it with a more user friendly one| Fixed |
+| Recipe Page     | Main image did not scale correctly, and would look stretched | Fixed |
+
 
 ### W3 HTML Validator
 | Page        | Bugs           | Status  |
@@ -397,3 +404,7 @@ slider across Chrome, Firefox and Edge.
 
 
 ### W3 CSS Validator
+| Page        | Bugs           | Status  |
+|:------------- |:-------------| :-----:|
+| CSS Stylesheet     | Minor issues with stray symbols | Fixed |
+
