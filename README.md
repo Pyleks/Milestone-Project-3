@@ -408,3 +408,13 @@ slider across Chrome, Firefox and Edge.
 |:------------- |:-------------| :-----:|
 | CSS Stylesheet     | Minor issues with stray symbols | Fixed |
 
+### JS Hint
+| Page        | Bugs           | Status  |
+|:------------- |:-------------| :-----:|
+|  registration.js  | Missing semicolon | Fixed |
+|  createRecipe.js  | Missing semicolon | Fixed |
+|  home.js  | No issues| Good |
+|  All JS scripts  | Struggled to see my variables in use, so left untouched | No fix needed |
+
+
+
