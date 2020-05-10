@@ -199,7 +199,6 @@ a {
     width: 100%;
     height: 30em;
 }
-}
 
 .n-recipe-heading {
     font-size: 2.7em;
@@ -509,7 +508,6 @@ a {
     position: absolute;
     bottom: 0;
     width: 100%;
-    viewBox
 }
 
 .recipe-box {
@@ -674,7 +672,7 @@ a {
         display: unset !important;
     }
     /*Recipe Page*/
-    ..pastry-img {
+    .pastry-img {
         height: 20em;
     }
     .navbar-brand {
