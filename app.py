@@ -35,12 +35,12 @@ def recipes():
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.Recipes.find({'approved': True}) \
         .sort([('_id', pymongo.DESCENDING), (
-        'approved', pymongo.ASCENDING)]).limit(1)
+            'approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.Recipes.find({'approved': True}) \
         .sort([('_id', pymongo.DESCENDING), (
-        'approved', pymongo.ASCENDING)]).limit(1)
+            'approved', pymongo.ASCENDING)]).limit(1)
 
 
     # Finds the name from last Recipe
@@ -321,6 +321,7 @@ def delete_recipe(recipe_id):
 
 
 # Delete User Route
+# TODO Fix recipe_id to user ID
 @app.route('/delete_user/<recipe_id>')
 def delete_user(recipe_id):
     mongo.db.users.remove({'_id': ObjectId(recipe_id)})
