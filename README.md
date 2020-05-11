@@ -461,14 +461,18 @@ the database.
 5. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
 6. Please change out MongoDB-Password, Cluster-Name and Database-Name in Mongo_URI with your own.
 
-#### 4. Understand Mongo_URI
+#### 4. Understand Connection string
 mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority
 1. To get MongoDB-Password, you need to provide the password for your MongoDB atlas account.
 2. Cluster-Name is the name you create when setting up MongoDB for the first time, it is where your databases are stored, often shown at the top of the page.
 3. Database-Name this is the name of the database you have created, can be found under the Collections tab inside MongoDB Atlas.
 
+#### 5. Adding the database to app.py
+1. Open app.py
+2. Scroll to the top.
+3. Add <code>app.config["MONGO_DBNAME"] = 'Your database name'</code>
 
 
-#### 4. Running the Project
+#### 6. Running the Project locally
 1. Run app.py
 2. Paste <code>http://127.0.0.1:5000/ </code> into your browser URL to access.
