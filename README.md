@@ -455,10 +455,17 @@ Once you have the project cloned on your computer, you are ready to set the proj
 Once the project is cloned, and you have the libraries installed from requirements.txt, we can now set up
 the database.
 1. Create a python file called __env.py__, and place it outside of the folder structure, next to app.py.
-2. Inside the newly created env.py file, you need to add information to 2 variables.
-3. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
-4. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
-5. Please change out MONGODB-PASSWORD, CLUSTER-NAME and DATABASE-NAME in Mongo_URI
+2. Inside the newly created env.py file, you need to add information to 2 variables and 1 import.
+3.At the top of env.py add the following line <code>import os</code>
+4. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
+5. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
+6. Please change out MongoDB-Password, Cluster-Name and Database-Name in Mongo_URI with your own.
+
+#### 4. Understand Mongo_URI
+mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority
+1. To get MongoDB-Password, you need to provide the password for your MongoDB atlas account.
+2. Cluster-Name is the name you create when setting up MongoDB for the first time, it is where your databases are stored, often shown at the top of the page.
+3. Database-Name this is the name of the database you have created, can be found under the Collections tab inside MongoDB Atlas.
 
 
 
