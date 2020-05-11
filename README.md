@@ -457,9 +457,10 @@ the database.
 1. Create a python file called __env.py__, and place it outside of the folder structure, next to app.py.
 2. Inside the newly created env.py file, you need to add information to 2 variables and 1 import.  
 3. At the top of env.py add the following line <code>import os</code>
-4. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
-5. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
-6. Please change out MongoDB-Password, Cluster-Name and Database-Name in Mongo_URI with your own.
+4. Then add the following 2 lines below.
+5. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
+6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
+
 
 #### 4. Understand Connection string
 mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority
