@@ -462,7 +462,7 @@ the database.
 6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
 
 
-#### 4. Understand Connection string
+#### 4. Understand the Connection string
 mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority
 1. MongoDB-Password, you need to provide the password for your MongoDB atlas account.
 2. Cluster-Name is the name you create when setting up MongoDB for the first time, it is where your databases are stored, often shown at the top of the page.
@@ -477,3 +477,22 @@ mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__D
 #### 6. Running the Project locally
 1. Run app.py
 2. Paste <code>http://127.0.0.1:5000/ </code> into your browser URL to access.
+
+
+### Deploy The Happy Bun on Heroku
+Before beginning this step, you need to complete the above step 1. Clone Website.
+1. Create an account on [Heroku](https://dashboard.heroku.com/login)
+2. Click New button, then Click Create new app.
+3. Give it a name and choose your region.
+4. Click Create App
+5. Find your App name on the dash board, and enter.
+6. Click Settings, and locate Config Vars, and fill in like shown below.
+
+
+| Key        | Value           | 
+|:------------- |:-------------| 
+|  IP  | 0.0.0.0 | 
+|  MONGO_URI  | mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority | 
+|  SECRET_KEY  | "Secret key you made for local" |
+
+We are skipping PORT purposely, but if you experience problems, also add <code>PORT 5000</code>
