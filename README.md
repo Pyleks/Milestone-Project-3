@@ -377,7 +377,7 @@ slider across Chrome, Firefox and Edge.
 |:------------- |:-------------| :-----:|
 | Main Page(visitor)     | No issues found | Good |
 | Main Page(logged in)     | No issues found      | Good |
-| Recipe Page(visitor) | No issues found  | Not Fixed |
+| Recipe Page(visitor) | No issues found  | Good |
 | Recipe Page(logged in Visitor) | No issues found     | Good |
 | Recipe Page(logged in Author) | No issues found     | Good |
 | Registration Page | No issues found     | Good |
