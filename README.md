@@ -6,6 +6,8 @@ as well vote on the fellow members recipes. Comes with fully built in admin cent
 website content, as well a easy to use user portal for quick overview of each recipe provided by the
 user.
 
+![alt text](static/img/responsive.jpg)
+
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
 needing to signup, but provides the opportunity to register and contribute with their favorite
@@ -500,9 +502,11 @@ We are skipping PORT purposely, but if you experience problems, also add <code>P
 
 #### 2. Setting up our files
 At this stage, go back to your IDE, we are now setting everything up for pushing to Heroku.
-1. If the  procfile is missing, preform the command in your terminal <code>echo web: python3 app.py > Procfile</code>
-2. If the requirements.txt is missing, preform the following command in your terminal <code>pip3 freeze > requirements.txt</code>
+1. If the  procfile is missing, please preform the following command in your terminal <code>echo web: python3 app.py > Procfile</code>
+2. If the requirements.txt is missing, please preform the following command in your terminal <code>pip3 freeze > requirements.txt</code>
 
 
 #### 3. Deploy to Heroku
-
+1.In your Terminal type <code>heroku login</code>
+2. Then <code>git push heroku master </code>
+3. 
