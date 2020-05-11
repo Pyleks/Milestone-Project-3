@@ -463,7 +463,7 @@ the database.
 
 #### 4. Understand Connection string
 mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority
-1. To get MongoDB-Password, you need to provide the password for your MongoDB atlas account.
+1. MongoDB-Password, you need to provide the password for your MongoDB atlas account.
 2. Cluster-Name is the name you create when setting up MongoDB for the first time, it is where your databases are stored, often shown at the top of the page.
 3. Database-Name this is the name of the database you have created, can be found under the Collections tab inside MongoDB Atlas.
 
