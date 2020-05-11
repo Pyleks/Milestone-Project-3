@@ -426,7 +426,7 @@ slider across Chrome, Firefox and Edge.
 ## Deployment
 The following steps will explain how you can get the website running on heroku and locally with just a few steps.
 
-### Tools required before cloning project
+### Tools required to be installed
 - Python 3 (Pip 3 comes installed by default)
 - Git
 
@@ -448,19 +448,21 @@ the master branch.
 
 #### 2. Installing Requirements.
 Once you have the project cloned on your computer, you are ready to set the project up.
-1. Open the Terminal and navigate to __Milestone-Project-3__ 
+1. Open the Terminal and navigate to __Milestone-Project-3__ folder on the computer
 2. Install the libraries from requirements.txt by typing <code>pip3 install -r requirements.txt</code>
 
-#### 3. Setting up the database credentials
+#### 3. Setting up the database keys
 Once the project is cloned, and you have the libraries installed from requirements.txt, we can now set up
 the database.
 1. Create a python file called __env.py__, and place it outside of the folder structure, next to app.py.
 2. Inside the env.py file, you need to add information to 2 variables.
 
-| Variable        | Variable Content           |
-|:------------- |:-------------| 
-| os.environ["Mongo_URI"] =     | mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority |
-| os.environ["SECRET_KEY"] =     | Can be anything you want  |
+<code>
+import os
+
+os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority |
+os.environ["SECRET_KEY"] = "Can be anything you want"
+</code>
 
 #### 4. Running the Project
 1. Run app.py
