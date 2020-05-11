@@ -481,6 +481,7 @@ mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__D
 
 ### Deploy The Happy Bun on Heroku
 Before beginning this step, you need to complete the above step 1. Clone Website.
+#### 1. Setting up Heroku
 1. Create an account on [Heroku](https://dashboard.heroku.com/login)
 2. Click New button, then Click Create new app.
 3. Give it a name and choose your region.
@@ -492,7 +493,16 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 | Key        | Value           | 
 |:------------- |:-------------| 
 |  IP  | 0.0.0.0 | 
-|  MONGO_URI  | mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority | 
+|  MONGO_URI  | mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority | 
 |  SECRET_KEY  | "Secret key you made for local" |
 
 We are skipping PORT purposely, but if you experience problems, also add <code>PORT 5000</code>
+
+#### 2. Setting up our files
+At this stage, go back to your IDE, we are now setting everything up for pushing to Heroku.
+1. If the  procfile is missing, preform the command in your terminal <code>echo web: python3 app.py > Procfile</code>
+2. If the requirements.txt is missing, preform the following command in your terminal <code>pip3 freeze > requirements.txt</code>
+
+
+#### 3. Deploy to Heroku
+
