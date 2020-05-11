@@ -52,6 +52,14 @@ over the best and the newest.
 > Everyone at work loved my chocolate cake and asked for the recipe.
 
 #### WireFrames
+[Main Page ](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/1%20Main%20Page%20Desktop%20Tablet%20Mobile.pdf)    
+[Recipe Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/2%20Recipe%20Page%20Desktop%20Tablet%20Mobile.pdf)  
+[Profile Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/3%20Profile%20Page%20Desktop%20Tablet%20Mobile.pdf)   
+[Administrator](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/4%20Administrator%20Page%20Destkop%20Tablet%20Mobile.pdf)  
+[Create Recipe](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/5%20Create%20Recipe%20Desktop%20Tablet%20Mobile.pdf)  
+[Update Recipe](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/6%20Update%20Recipe%20Desktop%20Tablet%20Mobile.pdf)   
+[Register Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/7%20Register%20Page%20Desktop%20Tablet%20Mobile.pdf)   
+[Login Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/8%20Login%20Page%20Desktop%20Tablet%20Mobile.pdf)
 
 ## Design Decisions
 The design follows a minimalistic approach by only displaying content that is of value to the visitor, 
