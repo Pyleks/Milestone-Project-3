@@ -601,6 +601,21 @@ At this stage, go back to your IDE, we are now setting everything up for pushing
 ## Credits
 
 Big shout out to Anna_CI for showing me [DCD_LEAD](https://github.com/MiroslavSvec/DCD_lead)
-Authentication for Heroku, this made the entire product completely understandable and everything else that
+Authentication for Heroku, this made the entire project completely understandable and everything else that
 followed was much easier.
+
+Also massive help from Mentor Aaron for showing me pagination in practise, even though at writing moment
+I've not had the time to implement it yet, but hopefully will do so very soon.
+
+A huge shout out to Igor_lead that provided some great input on some array challenges I had early on.
+Helped me a ton.
+
+Another huge thank you to Tutor Slack Team and Simen(Eventyret) who helped when I had a difficult time
+implementing my 5 star rating system, I know Tutor was suffering when my overly complex solution was trying
+to make it's way into my Milestone Project.
+
+
+I also got amazing inspiration from [Tine Mat](https://www.tine.no/oppskrifter)
+A Norwegian website that do recipes, so much of my design is heavily influenced by this page.
+
 
