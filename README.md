@@ -65,7 +65,7 @@ over the best and the newest.
 <summary>Test text</summary>
 <br>
 
-![Main Page Desktop](static/wireframes/README wireframes/Main Page Desktop.png)
+![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Desktop.png)
 
 </details>
 
