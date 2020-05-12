@@ -63,8 +63,7 @@ over the best and the newest.
 #### WireFrames
 <details>
 <summary>Main Page</summary>
-
-
+<br>
 
 ![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Desktop.png)
 ![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Tablet.png)
@@ -521,6 +520,7 @@ The following steps will explain how you can get the website running on heroku a
 ### Tools required to be installed
 - Python 3 (Pip 3 comes installed by default)
 - Git
+- Heroku CLI
 
 ### Branches
 Please note there are a total of 3 branches, but to get the latest up to date, we want to focus on
@@ -551,7 +551,8 @@ the database.
 3. At the top of env.py add the following line <code>import os</code>
 4. Then add the following 2 lines below.
 5. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
-6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>
+6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>  
+7. Add <code>os.environ["MONGO_DBNAME"] = 'Your database name'</code>  
 
 
 #### 4. Understand the Connection string
@@ -559,11 +560,6 @@ mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__D
 1. MongoDB-Password, you need to provide the password for your MongoDB atlas account.
 2. Cluster-Name is the name you create when setting up MongoDB for the first time, it is where your databases are stored, often shown at the top of the page.
 3. Database-Name this is the name of the database you have created, can be found under the Collections tab inside MongoDB Atlas.
-
-#### 5. Adding the database to app.py
-1. Open app.py
-2. Scroll to the top.
-3. Add <code>app.config["MONGO_DBNAME"] = 'Your database name'</code>
 
 
 #### 6. Running the Project locally
@@ -585,6 +581,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 | Key        | Value           | 
 |:------------- |:-------------| 
 |  IP  | 0.0.0.0 | 
+|  PORT  | 5000 | 
 |  MONGO_URI  | mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority | 
 |  SECRET_KEY  | "Secret key you made for local" |
 
