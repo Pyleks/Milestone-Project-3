@@ -582,7 +582,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 |:------------- |:-------------| 
 |  IP  | 0.0.0.0 | 
 |  PORT  | 5000 | 
-|  MONGO_URI  | mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority | 
+|  MONGO_URI  | "mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority" | 
 |  SECRET_KEY  | "Secret key you made for local" |
 
 We are skipping PORT purposely, but if you experience problems, also add <code>PORT 5000</code>
