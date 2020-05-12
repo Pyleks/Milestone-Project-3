@@ -9,7 +9,13 @@ user.
 ![alt text](static/img/responsive.jpg)
 
 ## Contents
-1. [Design Decisions](#Design-Decisions)
+1. [UX](#UX)
+2. [Design Decisions](#Design-Decisions)
+2. [Features](#Features)
+3. [Technologies](#Technologies)
+4. [Testing](#Testing)
+5. [Testing Summary](#Testing-Summary)
+6. [Deployment](#Deployment)
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
@@ -373,7 +379,7 @@ slider across Chrome, Firefox and Edge.
   <li>1024 x 1366 iPad Pro</li>
    </ol>
 
-### Testing Summary
+## Testing Summary
 
 ### Functionality
 | Page        | Bugs           | Status  |
