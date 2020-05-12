@@ -9,7 +9,7 @@ user.
 ![alt text](static/img/responsive.jpg)
 
 ## Contents
-1. [Design Decisions](#Design Decisions)
+1. [Design Decisions](#Design-Decisions)
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
