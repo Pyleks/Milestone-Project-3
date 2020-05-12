@@ -585,7 +585,6 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 |  MONGO_URI  | "mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority" | 
 |  SECRET_KEY  | "Secret key you made for local" |
 
-We are skipping PORT purposely, but if you experience problems, also add <code>PORT 5000</code>
 
 #### 2. Setting up our files
 At this stage, go back to your IDE, we are now setting everything up for pushing to Heroku.
@@ -596,4 +595,12 @@ At this stage, go back to your IDE, we are now setting everything up for pushing
 #### 3. Deploy to Heroku
 1.In your Terminal type <code>heroku login</code>  
 2. Then <code>git push heroku master </code>  
-3. 
+3. Open Heroku website.
+4. Navigate to the app (The Happy Bun), and click Open App, and now everything should be running.
+
+## Credits
+
+Big shout out to Anna_CI for showing me [DCD_LEAD](https://github.com/MiroslavSvec/DCD_lead)
+Authentication for Heroku, this made the entire product completely understandable and everything else that
+followed was much easier.
+
