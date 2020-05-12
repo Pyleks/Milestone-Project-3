@@ -116,7 +116,7 @@ over the best and the newest.
 <summary>Update Recipe</summary>
 <br>
 
-![Update Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Update%20Recipe%20Page.png)
+![Update Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Update%20Recipe%20Page%20Desktop.png)
 ![Update Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Update%20Recipe%20Page%20Tablet.png)
 ![Update Recipe Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Update%20Recipe%20Page%20Mobile.png)
 
