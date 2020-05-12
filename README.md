@@ -136,7 +136,7 @@ over the best and the newest.
 <summary>Login Page</summary>
 <br>
 
-![Login Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Login%20Page.png)
+![Login Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Login%20Page%20Desktop.png)
 ![Login Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Login%20Page%20Tablet.png)
 ![Login Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Login%20Page%20Mobile.png)
 
