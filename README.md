@@ -66,9 +66,9 @@ over the best and the newest.
 
 <br>
 
-![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Desktop.png)
-![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Tablet.png)
-![Main Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Phone.png)
+![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Main%20Page%20Desktop.png)
+![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Main%20Page%20Tablet.png)
+![Main Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Main%20Page%20Phone.png)
 
 </details>
 
@@ -76,9 +76,9 @@ over the best and the newest.
 <summary>Recipe Page</summary>
 <br>
 
-![Recipe Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Recipe%20Page%20Desktop.png)
-![Recipe Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Recipe%20Page%20Tablet.png)
-![Recipe Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Recipe%20Page%20Phone.png)
+![Recipe Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Recipe%20Page%20Desktop.png)
+![Recipe Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Recipe%20Page%20Tablet.png)
+![Recipe Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Recipe%20Page%20Phone.png)
 
 </details>
 
@@ -86,9 +86,9 @@ over the best and the newest.
 <summary>Profile Page</summary>
 <br>
 
-![Profile Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Profile%20Page%20Desktop.png)
-![Profile Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Profile%20Page%20Tablet.png)
-![Profile Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Profile%20Page%20Phone.png)
+![Profile Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Profile%20Page%20Desktop.png)
+![Profile Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Profile%20Page%20Tablet.png)
+![Profile Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Profile%20Page%20Phone.png)
 
 </details>
 
@@ -96,9 +96,9 @@ over the best and the newest.
 <summary>Administrator Page</summary>
 <br>
 
-![Administrator Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Administrator%20%20Desktop.png)
-![Administrator Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Administrator%20Page%20Tablet.png)
-![Administrator Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Administrator%20Page%20Mobile.png)
+![Administrator Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Administrator%20%20Desktop.png)
+![Administrator Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Administrator%20Page%20Tablet.png)
+![Administrator Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Administrator%20Page%20Mobile.png)
 
 </details>
 
@@ -106,9 +106,9 @@ over the best and the newest.
 <summary>Create Recipe</summary>
 <br>
 
-![Create Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Create%20Recipe%20Page%20Desktop.png)
-![Create Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Create%20Recipe%20Page%20Tablet.png)
-![Create Recipe Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Create%20Recipe%20Page%20Mobile.png)
+![Create Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Create%20Recipe%20Page%20Desktop.png)
+![Create Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Create%20Recipe%20Page%20Tablet.png)
+![Create Recipe Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Create%20Recipe%20Page%20Mobile.png)
 
 </details>
 
@@ -116,9 +116,9 @@ over the best and the newest.
 <summary>Update Recipe</summary>
 <br>
 
-![Update Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Update%20Recipe%20Page.png)
-![Update Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Update%20Recipe%20Page%20Tablet.png)
-![Update Recipe Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Update%20Recipe%20Page%20Mobile.png)
+![Update Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Update%20Recipe%20Page.png)
+![Update Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Update%20Recipe%20Page%20Tablet.png)
+![Update Recipe Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Update%20Recipe%20Page%20Mobile.png)
 
 </details>
 
@@ -126,9 +126,9 @@ over the best and the newest.
 <summary>Recipe Page</summary>
 <br>
 
-![Register Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Register%20Page.png)
-![Register Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Register%20Page%20Tablet.png)
-![Register Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Register%20Page%20Mobile.png)
+![Register Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Register%20Page.png)
+![Register Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Register%20Page%20Tablet.png)
+![Register Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Register%20Page%20Mobile.png)
 
 </details>
 
@@ -136,9 +136,9 @@ over the best and the newest.
 <summary>Login Page</summary>
 <br>
 
-![Login Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Login%20Page.png)
-![Login Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Login%20Page%20Tablet.png)
-![Login Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Login%20Page%20Mobile.png)
+![Login Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Login%20Page.png)
+![Login Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Login%20Page%20Tablet.png)
+![Login Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/%20wireframes/Login%20Page%20Mobile.png)
 
 </details>
 
