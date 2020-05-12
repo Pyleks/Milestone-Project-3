@@ -61,6 +61,14 @@ over the best and the newest.
 > Everyone at work loved my chocolate cake and asked for the recipe.
 
 #### WireFrames
+<details>
+<summary>Test text</summary>
+<br>
+
+![Main Page Desktop](static/wireframes/README wireframes/Main Page Desktop.png)
+
+</details>
+
 [Main Page ](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/1%20Main%20Page%20Desktop%20Tablet%20Mobile.pdf)    
 [Recipe Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/2%20Recipe%20Page%20Desktop%20Tablet%20Mobile.pdf)  
 [Profile Page](https://github.com/Pyleks/Milestone-Project-3/blob/master/wireframes/3%20Profile%20Page%20Desktop%20Tablet%20Mobile.pdf)   
