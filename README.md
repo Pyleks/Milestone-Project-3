@@ -391,9 +391,9 @@ slider across Chrome, Firefox and Edge.
 ### URL Injection
 | Attempt        | Bugs           | Status  |
 |:------------- |:-------------| :-----:|
-| Delete user without being logged in)     | This was fully possible with http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0 | Not fixed yet |
+| Delete user without being logged in)     | This was fully possible with http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0 | Fixed |
 | Delete recipe to another user while logged in    | Not possible to delete the recipe, but they get redirected to 404 | Not fixed yet |
-| Approve recipe while being logged in as a user but not administrator   | This was fully possible without being logged in as admin using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd| Not fixed yet |
+| Approve recipe while being logged in as a user but not administrator   | This was fully possible without being logged in as admin using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd| Fixed |
 
 ### Responsiveness
 | Page        | Bugs           | Status  |
@@ -515,6 +515,6 @@ At this stage, go back to your IDE, we are now setting everything up for pushing
 
 
 #### 3. Deploy to Heroku
-1.In your Terminal type <code>heroku login</code>
-2. Then <code>git push heroku master </code>
+1.In your Terminal type <code>heroku login</code>  
+2. Then <code>git push heroku master </code>  
 3. 

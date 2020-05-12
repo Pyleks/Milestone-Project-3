@@ -324,24 +324,36 @@ def delete_recipe(recipe_id):
 # TODO Fix recipe_id to user ID
 @app.route('/delete_user/<recipe_id>')
 def delete_user(recipe_id):
-    mongo.db.users.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('admin_portal'))
+    if 'user' in session:
+        if session['user'] == "Administrator":
+            mongo.db.users.remove({'_id': ObjectId(recipe_id)})
+            return redirect(url_for('admin_portal'))
+        else:
+            return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
 
 
 # Approve Recipe
 @app.route('/approve_recipe/<recipe_id>')
 def approve_recipe(recipe_id):
-    mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
-                            {
-                                '$set': {
-                                    'approved': True
-                                }
-                            },
-                            # protection={'seq': True, '_id': False},
-                            upsert=False
+    if 'user' in session:
+        if session["user"] == "Administrator":
+            mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
+                                    {
+                                        '$set': {
+                                            'approved': True
+                                        }
+                                    },
+                                    # protection={'seq': True, '_id': False},
+                                    upsert=False
 
-                            )
-    return redirect(url_for('admin_portal'))
+                                    )
+            return redirect(url_for('admin_portal'))
+        else:
+            return redirect(url_for('recipes'))
+    else:
+        return redirect(url_for('login'))
 
 
 # Login Route
