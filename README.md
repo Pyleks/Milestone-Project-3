@@ -64,7 +64,7 @@ over the best and the newest.
 <details>
 <summary>Main Page</summary>
 
-<br>https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Administrator%20%20Desktop.png
+
 
 ![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Desktop.png)
 ![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Tablet.png)
