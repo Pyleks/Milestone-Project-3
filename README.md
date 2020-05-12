@@ -62,10 +62,12 @@ over the best and the newest.
 
 #### WireFrames
 <details>
-<summary>Test text</summary>
+<summary>Main Page</summary>
 <br>
 
 ![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Desktop.png)
+![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Tablet.png)
+![Main Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/README%20wireframes/Main%20Page%20Phone.png)
 
 </details>
 
