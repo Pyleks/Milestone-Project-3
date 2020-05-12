@@ -123,10 +123,10 @@ over the best and the newest.
 </details>
 
 <details>
-<summary>Recipe Page</summary>
+<summary>Register Page</summary>
 <br>
 
-![Register Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Register%20Page.png)
+![Register Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Register%20Page%20Desktop.png)
 ![Register Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Register%20Page%20Tablet.png)
 ![Register Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Register%20Page%20Mobile.png)
 
