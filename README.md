@@ -16,6 +16,7 @@ user.
 4. [Testing](#Testing)
 5. [Testing Summary](#Testing-Summary)
 6. [Deployment](#Deployment)
+7. [Credits](#Credits)
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
