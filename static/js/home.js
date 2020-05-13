@@ -1,3 +1,4 @@
+// Enabling Star review overlay if the criteria is met.
 $(document).ready(function() {
     let enableOverlay = document.getElementById("enable-overlay");
     if(enableOverlay) {
@@ -9,6 +10,7 @@ $(document).ready(function() {
             document.getElementById("overlay").style.display = "none";
         });
 
+        // Acquire all the variables for the star review to apply/remove stars.
         let OneStar = document.getElementById('starRating_1');
         const TwoStar = document.getElementById('starRating_2');
         const ThreeStar = document.getElementById('starRating_3');
@@ -16,14 +18,16 @@ $(document).ready(function() {
         const FiveStar = document.getElementById('starRating_5');
         const starBox = document.getElementById('star-box');
 
-
-        // One star
+        // Star Review interactivity script, when hoovering over the stars, it will add all the stars up until
+        // The point you hoover, so hoover over star 3 it will populate star 1, 2 and 3.
+        // Adds stars as you hover over each.
         OneStar.addEventListener('mouseover', function () {
             OneStar.classList.add("fas", "fa-star");
             TwoStar.classList.remove("fas", "fa-star");
             TwoStar.classList.add("far", "fa-star");
         });
 
+        // Adds stars as you hover over each.
         TwoStar.addEventListener('mouseover', function () {
             OneStar.classList.add("fas", "fa-star");
             TwoStar.classList.add("fas", "fa-star");
@@ -31,6 +35,7 @@ $(document).ready(function() {
             ThreeStar.classList.add("far", "fa-star");
         });
 
+        // Adds stars as you hover over each.
         ThreeStar.addEventListener('mouseover', function () {
             OneStar.classList.add("fas", "fa-star");
             TwoStar.classList.add("fas", "fa-star");
@@ -39,6 +44,7 @@ $(document).ready(function() {
             FourStar.classList.add("far", "fa-star");
         });
 
+        // Adds stars as you hover over each.
         FourStar.addEventListener('mouseover', function () {
             OneStar.classList.add("fas", "fa-star");
             TwoStar.classList.add("fas", "fa-star");
@@ -48,6 +54,7 @@ $(document).ready(function() {
             FiveStar.classList.add("far", "fa-star");
         });
 
+        // Adds stars as you hover over each.
         FiveStar.addEventListener('mouseover', function () {
             OneStar.classList.add("fas", "fa-star");
             TwoStar.classList.add("fas", "fa-star");
@@ -56,6 +63,8 @@ $(document).ready(function() {
             FiveStar.classList.add("fas", "fa-star");
         });
 
+        // A smart little trick to make the stars fully interactive by removing all stars, by taking the mouse
+        // out it clears all stars.
         starBox.addEventListener('mouseleave', function () {
             OneStar.classList.remove("fas", "fa-star");
             OneStar.classList.add("far", "fa-star");
@@ -73,29 +82,3 @@ $(document).ready(function() {
             FiveStar.classList.add("far", "fa-star");
     });
 }});
-
-
-
-
-
-
-
-
-
-// function emptyStar() {
-//     let element = document.getElementById("starRating_5");
-//     element.classList.add("far", "fa-star");
-//
-// }
-//
-// function fullstar() {
-//     let element = document.getElementById("starRating_5");
-//     element.classList.add("fas", "fa-star");
-
-// }
-
-
-
-
-// $().button('toggle');
-
