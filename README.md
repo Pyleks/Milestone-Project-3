@@ -630,3 +630,7 @@ I also got amazing inspiration from [Tine Mat](https://www.tine.no/oppskrifter)
 A Norwegian website that do recipes, so much of my design is heavily influenced by this page.
 
 
+#### Images
+404 Image license is purchased by me from shutter stock  
+
+All other images are acquired from [Pixaby](https://pixabay.com/)
