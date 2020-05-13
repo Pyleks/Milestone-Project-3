@@ -41,7 +41,6 @@ def recipes():
         .sort([('_id', pymongo.DESCENDING), (
             'approved', pymongo.ASCENDING)]).limit(1)
 
-
     # Finds the name from last Recipe
     for x in find_last:
         last_recipe = (x['name'])

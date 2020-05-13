@@ -23,8 +23,10 @@ time, mark, audio, video {
 /************ Global Font ************/
 body {
     font-family: 'Roboto', sans-serif;
+}
 
-
+.navbar-brand {
+    font-family: 'Stylish', sans-serif;
 }
 
 .main-content {
