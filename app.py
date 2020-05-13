@@ -441,7 +441,7 @@ def register():
 
     return render_template("register.html")
 
-
+# Log out route
 @app.route('/logout')
 def logout():
     # Clear the session
@@ -449,7 +449,7 @@ def logout():
     flash('You were logged out!')
     return redirect(url_for('recipes'))
 
-
+# Error handler route
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
