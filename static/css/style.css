@@ -75,7 +75,7 @@ a {
 }
 /************ Global Color Scheme ************/
 .txt-blue {
-    color: #6499ed;
+    color: #6499ed !important;
 }
 
 .txt-white {
