@@ -516,7 +516,7 @@ a {
 /************ 404 page ************/
 .error-header {
     font-size: 3em;
-    padding: 2em 0 0 0;
+    padding: 2em 0 1em 0;
     }
 
 .error-direction {
@@ -665,7 +665,7 @@ a {
     }
     /*404 error page*/
     .error-header {
-        font-size: 2.5em;
+        font-size: 2.1em;
 
     }
 
@@ -732,6 +732,15 @@ a {
     }
     .m-add-recipe {
         display: unset;
+    }
+
+    /*404 error page*/
+    .error-header {
+        font-size: 1.8em;
+
+    }
+    .error-direction {
+        font-size: 1.4em;
     }
 
 }
