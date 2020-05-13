@@ -525,6 +525,7 @@ a {
 
 
 
+
 /************ Media Queries ************/
 @media (max-width: 1200px) {
     /*Recipe Page*/
@@ -671,6 +672,7 @@ a {
     .error-direction {
         font-size: 1.6em;
     }
+
 }
 
 
