@@ -308,7 +308,7 @@ def delete_recipe(recipe_id):
     # Check if user is in session
     if 'user' in session:
         # Check if the user is the author
-        if session['user'] == author:
+        if session['user'] == author or session['user'] == "Administrator":
             # Deletes the Recipe
             mongo.db.Recipes.remove({'_id': ObjectId(recipe_id)})
             return redirect(url_for('recipes'))
