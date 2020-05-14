@@ -10,12 +10,13 @@ website content, as well a easy to use user portal for quick overview of each re
 ## Contents
 1. [UX](#UX)
 2. [Design Decisions](#Design-Decisions)
-2. [Features](#Features)
-3. [Technologies](#Technologies)
-4. [Testing](#Testing)
-5. [Testing Summary](#Testing-Summary)
-6. [Deployment](#Deployment)
-7. [Credits](#Credits)
+3. [Database](#Database)
+4. [Features](#Features)
+5. [Technologies](#Technologies)
+6. [Testing](#Testing)
+7. [Testing Summary](#Testing-Summary)
+8. [Deployment](#Deployment)
+9. [Credits](#Credits)
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
