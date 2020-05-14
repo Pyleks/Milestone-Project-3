@@ -17,7 +17,6 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-users_collection = mongo.db.users
 
 
 # Landing page Route
@@ -359,10 +358,9 @@ def approve_recipe(recipe_id):
 def login():
     # Check if user is not logged in already
     if 'user' in session:
-        user_in_db = users_collection.find_one({"username": session['user']})
+        user_in_db = mongo.db.users.find_one({"username": session['user']})
         if user_in_db:
             # If so redirect user to his profile
-            flash("You are logged in already!")
             return redirect(url_for('recipes'))
     else:
         # Render the page for user to be able to log in
@@ -372,7 +370,7 @@ def login():
 @app.route('/user_auth', methods=['POST'])
 def user_auth():
     form = request.form.to_dict()
-    user_in_db = users_collection.find_one({"username": form['username']})
+    user_in_db = mongo.db.users.find_one({"username": form['username']})
     # Check for user in database
     if user_in_db:
         # If passwords match (hashed / real password)
@@ -407,7 +405,7 @@ def register():
         # Check if the password and password1 actualy match
         if form['user_password'] == form['user_password1']:
             # If so try to find the user in db
-            user = users_collection.find_one({"username": form['username']})
+            user = mongo.db.users.find_one({"username": form['username']})
             if user:
                 flash(f"{form['username']} already exists!")
                 return redirect(url_for('register'))
@@ -416,7 +414,7 @@ def register():
                 # Hash password
                 hash_pass = generate_password_hash(form['user_password'])
                 # Create new user with hashed password
-                users_collection.insert_one(
+                mongo.db.users.insert_one(
                     {
                         'username': form['username'],
                         'email': form['email'],
@@ -425,7 +423,7 @@ def register():
                     }
                 )
                 # Check if user is actualy saved
-                user_in_db = users_collection.find_one({"username": form['username']})
+                user_in_db = mongo.db.users.find_one({"username": form['username']})
                 if user_in_db:
                     # Log user in (add to session)
                     session['user'] = user_in_db['username']
