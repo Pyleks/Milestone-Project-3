@@ -171,6 +171,19 @@ I choose to only use __Roboto__ for the project, due to it's readability
 and familiarity, as well avoiding having multiple fonts, fight for the users
 attention.
 
+## Database
+This website have many 2 databases, 1 for users and 1 for recipes, these are both being used to connect
+with each other as well being used to preform various calculations,  and general store all information on the page
+it self, all the content on the page is generated from these 2 databases.
+
+<details>
+<summary>Users</summary>
+<br>
+
+![404 Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/404%20Page%20Desktop.png)
+
+</details>
+
 ## Features
 All the features were developed with dynamic user content with appropriate restrictions.
 Features like create, update, delete, approve are hidden behind a registration wall or login portal, but this do not 
