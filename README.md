@@ -224,6 +224,13 @@ This takes all the starRatings 1 - 5 preform a multiplication and division calcu
 totalStarValues, which again is used by the filtering application to place all the recipes in order on the website.  
 Total Votes is simply to show how many votes each recipe received.
 
+### Relations
+The biggest relation is between username and author, as the application makes the decision if they can either vote
+or update/delete the recipe.
+As well in the user portal, will display all the recipes provided by the logged in user, as well all recipes
+waiting for approval.
+
+
 
 ## Features
 All the features were developed with dynamic user content with appropriate restrictions.
