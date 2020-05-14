@@ -220,7 +220,8 @@ This require it's own section to explain what is happening to the rating data.
 - TotalStarValue
 
 This takes all the starRatings 1 - 5 preform a multiplication and division calculation, and applies it to 
-totalStarValues, which again is used by the filtering application to place all the recipes in order on the website.
+totalStarValues, which again is used by the filtering application to place all the recipes in order on the website.  
+Total Votes is simply to show how many votes each recipe received.
 
 
 ## Features
