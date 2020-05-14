@@ -24,8 +24,10 @@
                     <a class="dropdown-item" href="{{url_for('sort_by_rating')}}">Medium Rating</a>
                 </div>
             </div>
+            {% if session.user %}
+            <a role="button" class="bg-blue txt-white btn add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
+                Add Recipe</a>
         </div>
-        {% if session.user %}
         <div class="col-6">
             <a role="button" class="bg-blue txt-white btn m-add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
                 Add Recipe</a>
@@ -162,11 +164,6 @@
     </div>
 </section>
 
-
-<!--Add recipe button-->
-{% if session.user %}
-<a class="add-button btn btn-outline-dark fas fa-plus icon-size" href="{{url_for('add_pastry')}}" role="button"></a>
-{%endif%}
 
 {% endblock %}
 
