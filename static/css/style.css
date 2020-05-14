@@ -67,7 +67,7 @@ a {
 }
 
 .bg-blue {
-    color: cornflowerblue !important;
+    color: #6499ed !important;
 }
 
 .bg-dark {
@@ -79,7 +79,7 @@ a {
 }
 
 .txt-white {
-    color: white !important;
+    color: #ffffff !important;
 }
 /************ Custom Placeholder text opacity ************/
 
@@ -146,8 +146,8 @@ a {
 /*Hidden Mobile button*/
 .m-add-recipe {
     display: -webkit-box;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #6499ed;
+    color: #ffffff;
     margin-bottom: 0;
     padding: 0.9em 1em 0.9em 1em;
     float: right;
@@ -156,8 +156,8 @@ a {
 
 .add-recipe {
     display: -webkit-box;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #6499ed;
+    color: #ffffff;
     margin: 0 0 0 2em;
     padding: 0.9em 1em 0.9em 1em;
     float: left;
@@ -247,7 +247,7 @@ a {
 }
 
 .n-tV-font {
-    color: cornflowerblue !important;
+    color: #6499ed !important;
     font-size: 1.8em;
 }
 
@@ -283,7 +283,7 @@ a {
 
 
 .tV-font {
-    color: cornflowerblue !important;
+    color: #6499ed !important;
     font-size: 1.4em;
 }
 
@@ -397,7 +397,7 @@ a {
     background-color: #6499ed !important;
     border-radius: 50px;
     font-size: 1.2em;
-    color: white;
+    color: #ffffff;
     margin-bottom: 0;
     float: right;
     padding: 1em 1em 1em 1em;
@@ -408,7 +408,7 @@ a {
     background-color: #ff0000 !important;
     border-radius: 50px;
     font-size: 1.2em;
-    color: white;
+    color: #ffffff;
     margin-bottom: 0;
     float: left;
     padding: 1em 1em 1em 1em;
