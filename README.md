@@ -177,10 +177,18 @@ with each other as well being used to preform various calculations,  and general
 it self, all the content on the page is generated from these 2 databases.
 
 <details>
-<summary>Users</summary>
+<summary>User Database</summary>
 <br>
 
-![404 Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/404%20Page%20Desktop.png)
+![User Database](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/img/user-database.png)
+
+</details>
+
+<details>
+<summary>Recipe Database</summary>
+<br>
+
+![Recipe Database](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/img/recipe-database.png)
 
 </details>
 
