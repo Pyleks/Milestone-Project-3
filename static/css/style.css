@@ -742,7 +742,7 @@ a {
         font-size: 1.8em;
     }
     /*Add Recipe Button*/
-    .add-button {
+    .update-button {
         display: none;
     }
     .delete-button {
