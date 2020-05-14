@@ -192,6 +192,37 @@ it self, all the content on the page is generated from these 2 databases.
 
 </details>
 
+
+### User database explained
+- Username: Stores the chosen username added by the user.
+- Email: Stores the email address added by the user.
+- Password: Is a hashed and salted password, so no password is in clear text inside the database.
+
+### Recipe database explained.
+- Name: Is what the user choose to call the recipe
+- callout: This is where you can type a small text to "sell" your recipe to the visitor
+- ImageURL: Here you can choose any image off the web for your recipe.
+- Ingredients: This is stored as an array, and unpacks on the website, storing all ingredients the user choose to use.
+- HowTo: Also store as an array, and unpacks on the recipe page for viewing.
+- Portions: Added by user, simply how many portions added the recipe contains
+- CreatedDate: This takes the date the recipe is created and apply it to the details when viewing the recipe later.
+- LastUpdatedDate: If the user choose to update it later, it removes CreateDate and apply LastUpdatedDate.
+
+### 5 star rating system broken down.
+This require it's own section to explain what is happening to the rating data.
+- Provides the user with a total of 5 stars to click, and this is how they align.
+- StarRating - 1
+- StarRating - 2
+- StarRating - 3
+- StarRating - 4
+- StarRating - 5
+- Total Votes
+- TotalStarValue
+
+This takes all the starRatings 1 - 5 preform a multiplication and division calculation, and applies it to 
+totalStarValues, which again is used by the filtering application to place all the recipes in order on the website.
+
+
 ## Features
 All the features were developed with dynamic user content with appropriate restrictions.
 Features like create, update, delete, approve are hidden behind a registration wall or login portal, but this do not 
