@@ -1,9 +1,9 @@
 # The Happy Bun - Milestone Project 3
 
 ## Introduction
-The Happy Bun is a public recipe website, designed for users to upload and share their own recipes
-as well vote on the fellow members recipes. Comes with fully built in admin center for managing the
-website content, as well a easy to use user portal for quick overview of each recipe provided.
+Experience The Happy Bun, a easy to use recipe website, giving everyone access to their favorites just a few clicks away.
+A safe and responsive site to provide you the tools needed to try out your new favorite pastry. 
+Share, Up-vote, and enjoy.
 
 ![alt text](static/img/responsive.jpg)
 
@@ -27,7 +27,7 @@ for each recipe.
 
 #### Relevant content
 Making all content available to the visitor upon accessing the page, but most importantly, making that 
-content relevant, giving first glimpse of all the highest rated recipes before they dive further into
+content relevant, providing first glimpse of all the highest rated recipes before they dive further into
 The Happy Bun.
 
 
@@ -164,7 +164,7 @@ The happy bun takes much inspiration from [Tine mat](https://www.tine.no/oppskri
 ![alt text](static/img/color-scheme.jpg)
 
 The Happy Bun uses light colors, to have a clear contrast with
-any of the strong colors to enhance overall visibility, and minimizing bombarding the visitors
+any of the stronger colors to enhance overall visibility, and minimizing bombarding the visitors
 with colors, but rather finding the appropriate places to apply them.
 
 #### Typography
@@ -173,9 +173,9 @@ and familiarity, as well avoiding having multiple fonts, fight for the users
 attention.
 
 ## Database
-This website have many 2 databases, 1 for users and 1 for recipes, these are both being used to connect
-with each other as well being used to preform various calculations,  and general store all information on the page
-it self, all the content on the page is generated from these 2 databases.
+This website have 2 databases, 1 for users and 1 for recipes, these are both being used to connect
+with each other as well being used to preform various calculations, and store all information on the page.
+All the content on the page is generated from these 2 databases.
 
 <details>
 <summary>User Database</summary>
@@ -246,9 +246,9 @@ for the newest added recipe followed by all the unrated ones,
 This page also shows the star rating for all recipe
 
 #### Home Page (Registered/logged in)
-After logging out, a few new features apper, the header will now show Logout and your username, which leads to your 
-own profile page, a new button on the right side of the screen appears allowing you to add a recipe if you so want to.
-this do not obstruct the view of the recipes itself.
+After logging in, a few new features appear, the header will now show Logout and your username, which leads to your 
+own profile page, a new button next to the filter to add a new recipe, originally this button was a circle on the right
+side, but was reported to be overseen too easily. This do not obstruct the view of the recipes itself.
 
 #### Recipe Page (visitor)
 On this page you can view the entire recipe, author, date added or updated, as well the image of the recipe.
@@ -265,11 +265,11 @@ can not update or delete someone else recipe, so this feature is completely remo
 only.
 
 #### User Profile (logged in)
-This portal allow you to see all your recipes public recipes in a drop down menu, making it easy
+This portal allow you to see all your public recipes in a drop down menu, making it easy
 if you want to remove any of them.  
 This also contains a section for Waiting approval, once you post a recipe, it will go to approval
 with the administrator, and appear under waiting approval, once approved it will appear under
-Your Public Recipes.
+your Public Recipes.
 
 #### Administrator Profile (logged in)
 This page allows you to see every recipe that is waiting for approval, as well the number
@@ -301,8 +301,13 @@ more dynamic when choosing the right star.
 In time of development, I noticed multiple important features that should be added
 for the complete experience, but they are not necessary for the project to be completed
 and was left to the end.
-- Limit Voting
+- Limit Voting.
 - Provide user group policy, allowing administrator to provide anyone with admin rights if needed.
+- More comprehensive but yet simplified way of adding new recipes, + a tagging system for later filtering and searching.
+- Add Reset password for users in the user profile.
+- Add reset password option for Admin to preform on all users.
+- Security from Python code and not just JS
+- A more Stylized feedback to the user
 
 
 ### Implemented Feature Summary
@@ -335,7 +340,7 @@ and was left to the end.
 
 |Libraries  |Usage  |
 | :-------------| :-------------|
-| [Material Bootstrap](https://getbootstrap.com/)  | Styling Framework to get a modern feel to the website.  |
+| [Material Bootstrap](https://fezvrasta.github.io/bootstrap-material-design/)  | Styling Framework to get a modern feel to the website.  |
 | [Font Awesome](https://fontawesome.com/)  | Used for all website icons.  |
 | [jQuery](https://jquery.com/) | Simplifying some of the get id's for Javascript.  |
 | [Google Fonts](https://fonts.google.com/) | For all fonts on all pages.  |
@@ -378,23 +383,23 @@ __I have tested the following__
 - Opening website on full screen expecting all images, icons, labels to be displayed with correct ratio.
 - Clicking on a recipe image expecting it to redirect to recipe correctly.
 - Clicking newest recipe image expecting it ro redirect to the newest recipe correctly.
-- Clicking Filtering from Highest Rated to Medium expect it to filter for 1 - 3 star ratings correctly
-- Clicking Filtering from Medium to Highest Rated expect it to filter for 4 - 5 stars rating correctly
-- Clicking Login to redirect me to login page
-- CLicking Register to redirect me to registration page
-- Hoovering over images to experience grey overlay indication
+- Clicking Filtering from Highest Rated to Medium expect it to filter for 1 - 3 star ratings correctly.
+- Clicking Filtering from Medium to Highest Rated expect it to filter for 4 - 5 stars rating correctly.
+- Clicking Login to redirect me to login page.
+- Clicking Register to redirect me to registration page.
+- Hoovering over images to experience grey overlay indication.
 
 #### Recipe Page(Not logged in)
 - Opening Recipe page, expecting all icons, text to display correctly.
-- Clicking on login to redirect me to login page
-- Clicking on register to redirect me to registration page page
-- Clicking stars expecting to not be able to review, (Bug allowing me to review)
+- Clicking on login to redirect me to login page.
+- Clicking on register to redirect me to registration page page.
+- Clicking stars expecting to not be able to review.
 - Clicking "The happy Bun" get redirected to main landing page.
 
 #### Registration Page(Not logged in)
-- Attempted putting in 1 letter into username, and left email password and confirm password blank.
-Expecting feedback on email
-- Attempted putting in 1 letter into username, leaving .com in email, and add too short password with identical confirm password.
+- Attempted putting in 1 letter into username, and left email password and confirm password blank
+Expecting feedback on email.
+- Attempted putting in 1 letter into username, leaving .com in email, and add too short password with identical confirm password
 Expecting feedback on all input boxes.
 - Fixed username to 5 letters, left email, password and confirm password, still block user from register.
 - Fixed email as well to include .com, left password too short, and confirm password still matches.
@@ -408,10 +413,10 @@ Expecting confirmed password to inform it's incorrect.
 - Typed in username and wrong password, (Bug)expected feedback, non given but was not logged in.
 - Typed in only password, but no username, was informed to type in username too.
 - Typed in correct username and correct password, website allowed me to login.
-- When logged in successfully, expecting the page to redirect user to landing page
+- When logged in successfully, expecting the page to redirect user to landing page.
 
 #### Landing Page(Logged in)
-- Expecting the navigation bar to no longer have Login and Register, but Logout and Username
+- Expecting the navigation bar to no longer have Login and Register, but Logout and Username.
 - Expecting to see a blue + button to add recipes, added correctly.
 - Clicked Blue + icon, getting redirected to create recipes page.
 - Clicked username, getting redirected to client profile page.
@@ -427,20 +432,20 @@ Expecting confirmed password to inform it's incorrect.
 #### Recipe Page(author, and Logged in)
 - Visiting recipe page as author, expecting to see delete button and update button in red and blue.
 - Clicking update button redirect user to update page correctly.
-- Clicking delete button, delete the recipe and redirect user to main page
-- Attempting to rate my own submission provides feedback "You can't rate your own submission"
+- Clicking delete button, delete the recipe and redirect user to main page.
+- Attempting to rate my own submission provides feedback "You can't rate your own submission".
 
 #### User Portal(only accessible when logged in)
 - Visiting user portal, expecting to see "Your Public Recipes" and "Waiting Approval"
-- Expanding "Your Public Recipes" displays all recipes the user have posted with the option to delete any of them
+- Expanding "Your Public Recipes" displays all recipes the user have posted with the option to delete any of them.
 - Expanding "Waiting Approval" shows all recipes added, but have not yet been approved with the option to delete it.
-- Clicking delete in "Your Public Recipes" removes the recipe from the database. (Bug user get redirected to main page)
-- Clicking delete in "Waiting Approval" removes the recipe from the database. (Bug user get redirected to main page)
+- Clicking delete in "Your Public Recipes" removes the recipe from the database. (Bug user get redirected to main page).
+- Clicking delete in "Waiting Approval" removes the recipe from the database. (Bug user get redirected to main page).
 
 #### Admin Portal(only accessible when logged in as Administrator)
-- Visiting admin portal, expecting to see "Waiting Approval" and users
-- Expecting to see the number of new recipes added and waiting for approval
-- Expanding Waiting Approval, to see all the recipe details and approve and delete button.
+- Visiting admin portal, expecting to see "Waiting Approval" and users.
+- Expecting to see the number of new recipes added and waiting for approval.
+- Expanding waiting approval, to see all the recipe details and approve and delete button.
 - Clicking Approve will transfer the recipe into the recipe main page.
 - Clicking delete will remove the recipe from database.
 - Expanding Users, will see all user names and emails + the option to delete the user.
@@ -448,12 +453,12 @@ Expecting confirmed password to inform it's incorrect.
 #### Create new recipe(Only accessible logged in)
 - Attempting to submit the form empty, expecting to receive error message across the whole form.
 - Adding random letters in url, error message don't change.
-- Adding a regular website url, (bug get approved)
-- Adding 1 letter in pastry name, but is told it's too short
+- Adding a regular website url, (bug get approved).
+- Adding 1 letter in pastry name, but is told it's too short.
 - Adding more then 3, and get approved.
 - Adding plenty of empty spaces in callout text, is registered as no input.
-- Added more then 8 characters in callout, and it's approved
-- Adding letters into portions, feeds back "Please use numbers only"
+- Added more then 8 characters in callout, and it's approved.
+- Adding letters into portions, feeds back "Please use numbers only".
 - Adding number works.
 - Adding ingredients, anything less then 8 characters will inform user it's too short.
 - Adding How To steps, anything less then 12 characters will inform the user it's too short.
@@ -475,38 +480,31 @@ This redirect the visitor to login window
 
 #### Delete recipe without being logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a pastry without
-being logged in.  
-This redirected the visitor to login window
+being logged in, this redirected the visitor to login window.
 
 #### Approve recipe without being logged in.
 - upon using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68067da4d9fe0620a801d" I attempt to approve a recipe without being logged in.  
-This redirect the visitor to login window
-But also approved it.
+This redirect the visitor to login window, but also approved it.
 
 #### Update recipe without being logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea599ad92cf716f6bd77557" I attempt to access update pastry without
-being logged in.
-This redirected the visitor to login window.
+being logged in, this redirected the visitor to login window.
 
 #### Delete user without being logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0" I attempt to delete a user without
-being logged in.  
-and successfully deleted the administrator of the page, (BUG)
-and redirected the user to login page
-
+being logged in, and successfully deleted the administrator of the page and redirected the user to login page.
 
 #### Delete recipe to another user while logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a recipe made by someone else  
-This redirected the user to not found URL (BUG need to make a 404 window)
+This redirected the user to not found URL.
 
 #### Update recipe to another user while logged in.
 - Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea70117dbca44bff3063847" I attempted to update someone else recipe.
-This redirected the user to main page(BUG, should come with a 404 window)
+This redirected the user to main page.
 
 #### Approve recipe while being logged in as a user but not administrator
 - Upon using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd" I attempted to approve a recipe without
-being logged int as administrator.
-BUG, any user was able to approve the recipe.
+being logged in as administrator, any user was able to approve the recipe.
 
 ### Responsiveness
 In this test the website was tested to all default device sizes provided my chrome as well responsive
@@ -611,8 +609,8 @@ the master branch.
 6. Or clone from URL using the following command in terminal: <code>got clone https://github.com/Pyleks/Milestone-Project-3.git</code>
 
 #### 2. Installing Requirements.
-Once you have the project cloned on your computer, you are ready to set the project up.
-1. Open the Terminal and navigate to __Milestone-Project-3__ folder on the computer
+Once you have the project cloned on your computer, you are ready to set everything up.
+1. Open the Terminal and navigate to __Milestone-Project-3__ folder on the computer.
 2. Install the libraries from requirements.txt by typing <code>pip3 install -r requirements.txt</code>
 
 #### 3. Setting up the database keys
@@ -620,11 +618,11 @@ Once the project is cloned, and you have the libraries installed from requiremen
 the database.
 1. Create a python file called __env.py__, and place it outside of the folder structure, next to app.py.
 2. Inside the newly created env.py file, you need to add information to 2 variables and 1 import.  
-3. At the top of env.py add the following line <code>import os</code>
+3. At the top of env.py add the following line <code>import os</code>.
 4. Then add the following 2 lines below.
-5. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>
-6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>  
-7. Add <code>os.environ["MONGO_DBNAME"] = 'Your database name'</code>  
+5. <code>os.environ["Mongo_URI"] = "mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__DATABASE-NAME__?retryWrites=true&w=majority"</code>.
+6. <code>os.environ["SECRET_KEY"] = "Can be anything you want"</code>.  
+7. Add <code>os.environ["MONGO_DBNAME"] = 'Your database name'</code>.  
 
 
 #### 4. Understand the Connection string
@@ -642,10 +640,10 @@ mongodb+srv://myRoot:__MONGODB-PASSWORD__@__CLUSTER-NAME__-96wib.mongodb.net/__D
 ### Deploy The Happy Bun on Heroku
 Before beginning this step, you need to complete the above step 1. Clone Website.
 #### 1. Setting up Heroku
-1. Create an account on [Heroku](https://dashboard.heroku.com/login)
+1. Create an account on [Heroku](https://dashboard.heroku.com/login).
 2. Click New button, then Click Create new app.
 3. Give it a name and choose your region.
-4. Click Create App
+4. Click Create App.
 5. Find your App name on the dash board, and enter.
 6. Click Settings, and locate Config Vars, and fill in like shown below.
 
@@ -660,13 +658,13 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 
 #### 2. Setting up our files
 At this stage, go back to your IDE, we are now setting everything up for pushing to Heroku.
-1. If the  procfile is missing, please preform the following command in your terminal <code>echo web: python3 app.py > Procfile</code>
+1. If the procfile is missing, please preform the following command in your terminal <code>echo web: python3 app.py > Procfile</code>
 2. If the requirements.txt is missing, please preform the following command in your terminal <code>pip3 freeze > requirements.txt</code>
 
 
 #### 3. Deploy to Heroku
-1.In your Terminal type <code>heroku login</code>  
-2. Then <code>git push heroku master </code>  
+1. In your Terminal type <code>heroku login</code>.  
+2. Then <code>git push heroku master </code>.  
 3. Open Heroku website.
 4. Navigate to the app (The Happy Bun), and click Open App, and now everything should be running.
 
@@ -692,6 +690,6 @@ A Norwegian website that do recipes, so much of my design is heavily influenced 
 
 
 #### Images
-404 Image license is purchased by me from shutter stock  
+404 Image license is purchased by me from shutter stock.  
 
 All other images are acquired from [Pixaby](https://pixabay.com/)
