@@ -153,15 +153,6 @@ a {
     background-size: cover;
 }
 
-/*Hidden Mobile button*/
-.m-add-recipe {
-    display: -webkit-box;
-    margin-bottom: 0;
-    padding: 0.9em 1em 0.9em 1em;
-    float: right;
-    display: none;
-}
-
 .add-recipe {
     display: -webkit-box;
     margin: 0 0 0 2em;
@@ -265,6 +256,15 @@ a {
     opacity:0.5;
     transition: 0.5s;
 }
+/************ Index Mobile Button ************/
+.m-add-recipe {
+    display: -webkit-box;
+    margin-bottom: 0;
+    padding: 0.9em 1em 0.9em 1em;
+    float: right;
+    display: none;
+}
+
 /************ PASTRY PAGE CSS ************/
 .pastry-img {
     object-fit: cover;
@@ -446,13 +446,13 @@ a {
     padding: 0.5em 0 0.5em 0;
 
 }
-/************ CREATE RECIPE CSS************/
+/************ Create Recipe ************/
 .text-space {
     margin: 1em 0 0 0;
 }
 
 
-/************ UPDATE PASTRY PAGE CSS************/
+/************ Update Pastry Page ************/
 .recipe-heading {
     font-size: 3em;
     padding: 0 0 2% 0;
@@ -468,7 +468,7 @@ a {
     padding: 5% 10% 0 10%;
 }
 
-/************ LOGIN AND REGISTER CSS************/
+/************ Login and Register************/
 .credential-margin {
     padding: 20% 25% 0 25%;
 }
@@ -488,7 +488,7 @@ a {
     padding: 0 25% 0 25%;
 }
 
-/************ ADMIN PORTAL CSS************/
+/************ Admin Portal************/
 .admin-name {
     font-size: 2.5em;
     margin: 10% 0 0 0;
