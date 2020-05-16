@@ -25,8 +25,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
+
 .navbar-brand {
-    font-family: 'Stylish', sans-serif;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+h2 span {
+    font-family: 'Love Ya Like A Sister', cursive;
 }
 
 .main-content {
@@ -109,7 +115,7 @@ a {
 }
 
 .navbar-brand {
-    font-size: 2.5em;
+    font-size: 3em;
 }
 .navbar {
     box-shadow: none !important;
@@ -192,7 +198,7 @@ a {
 .popular-recipe span {
     background: #fafafa;
     padding:0 10px;
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .top-rated-card {
