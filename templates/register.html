@@ -24,6 +24,13 @@
                     <input id="confirm-password" name="user_password1" type="password"
                            placeholder="Type your Password Again" class="validate form-control" required>
                 </div>
+                {% with messages = get_flashed_messages() %}
+                {%if messages %}
+                {% for message in messages %}
+                <h3 class="flash-text text-center">{{ message }}</h3>
+                {%endfor%}
+                {%endif%}
+                {% endwith %}
                 <button id="submit-reg-form" type="submit" name="action" class="btn btn-outline-success">Submit</button>
             </form>
         </div>

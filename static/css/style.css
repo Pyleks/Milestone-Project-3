@@ -33,6 +33,7 @@ body {
     min-height: calc(100vh - 74px - 90px);
 }
 
+/************ Global Cursor/Button Style ************/
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
@@ -65,13 +66,20 @@ a {
 .bg-lightBlue {
     background-color: #f0f8ff !important;
 }
-
 .bg-blue {
-    color: #6499ed !important;
+    background-color: #6499ed !important;
 }
 
 .bg-dark {
     background-color: #1F271B;
+}
+
+.bg-yellow {
+    background-color: #FFA500;
+}
+
+.bg-red {
+    background-color: #ff0000 !important;
 }
 /************ Global Color Scheme ************/
 .txt-blue {
@@ -81,8 +89,19 @@ a {
 .txt-white {
     color: #ffffff !important;
 }
-/************ Custom Placeholder text opacity ************/
 
+/************ padding and margin remover ************/
+.no-pad {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+/************ Flash Text ************/
+.flash-text {
+    font-size: 1.5em;
+}
 
 /************ Navigation Bar ************/
 .navbar-nav {
@@ -97,11 +116,6 @@ a {
 }
 .navbar-nav > .nav-item > .nav-link {
     font-size: 1em;
-}
-
-/************ Global Font Style************/
-.no-pad {
-    padding: 0;
 }
 
 /************ Hero Image ************/
@@ -121,10 +135,6 @@ a {
     margin-left: auto;
 }
 /************ Landing Page CSS ************/
-.no-margin {
-    margin: 0;
-}
-
 .extra-pad {
     padding: 1% 1% 1% 1%;
 }
@@ -146,8 +156,6 @@ a {
 /*Hidden Mobile button*/
 .m-add-recipe {
     display: -webkit-box;
-    background-color: #6499ed;
-    color: #ffffff;
     margin-bottom: 0;
     padding: 0.9em 1em 0.9em 1em;
     float: right;
@@ -156,8 +164,6 @@ a {
 
 .add-recipe {
     display: -webkit-box;
-    background-color: #6499ed;
-    color: #ffffff;
     margin: 0 0 0 2em;
     padding: 0.9em 1em 0.9em 1em;
     float: left;
@@ -247,7 +253,6 @@ a {
 }
 
 .n-tV-font {
-    color: #6499ed !important;
     font-size: 1.8em;
 }
 
@@ -283,7 +288,6 @@ a {
 
 
 .tV-font {
-    color: #6499ed !important;
     font-size: 1.4em;
 }
 
@@ -350,8 +354,6 @@ a {
     padding: 0.8em 0.8em;
     border-radius: 50px;
     font-size: 1.6em !important;
-    color: #ffffff !important;
-    background-color: #6499ed !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
     /*transition: background-color .3s, opacity .3s, visibility .5s;*/
@@ -370,8 +372,6 @@ a {
     padding: 0.8em 0.8em;
     border-radius: 50px;
     font-size: 1.6em !important;
-    color: #ffffff !important;
-    background-color: #ff0000 !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
     /*transition: background-color .3s, opacity .3s, visibility .5s;*/
@@ -394,10 +394,8 @@ a {
 
 
 .m-update-recipe {
-    background-color: #6499ed !important;
     border-radius: 50px;
     font-size: 1.2em;
-    color: #ffffff;
     margin-bottom: 0;
     float: right;
     padding: 1em 1em 1em 1em;
@@ -405,10 +403,8 @@ a {
 }
 
 .m-delete-recipe {
-    background-color: #ff0000 !important;
     border-radius: 50px;
     font-size: 1.2em;
-    color: #ffffff;
     margin-bottom: 0;
     float: left;
     padding: 1em 1em 1em 1em;
@@ -735,7 +731,7 @@ a {
     }
     /*Login Page*/
     .credential-margin {
-        padding: 40% 5% 0 5%;
+        padding: 20% 5% 0 5%;
     }
     /*Create Recipe*/
     .recipe-heading {

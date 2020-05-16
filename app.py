@@ -385,19 +385,17 @@ def user_auth():
                 return redirect(url_for('recipes'))
 
         else:
-            flash("Wrong password or user name!")
+            flash("Wrong password or user name")
             return redirect(url_for('login'))
     else:
-        flash("You must be registered!")
-        return redirect(url_for('register'))
+        flash("You are not registered")
+        return redirect(url_for('login'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     # Check if user is not logged in already
     if 'user' in session:
-        flash('You are already sign in!')
-        print("You are alreay loggedin")
         return redirect(url_for('recipes'))
 
     if request.method == 'POST':

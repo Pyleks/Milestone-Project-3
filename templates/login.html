@@ -7,15 +7,24 @@
             <h3 class="login-heading">Login</h3>
             <form action="/user_auth" method="POST" class="full-form">
                 <div class="login-box form-group card card-body bg-lightBlue">
-<!--                    Username input-->
+                    <!--                    Username input-->
                     <label class="strong-label">Username</label>
                     <input name="username" type="text" placeholder="Username" class="validate form-control" required>
-<!--                    Password input-->
+                    <!--                    Password input-->
                     <label class="strong-label">Password</label>
                     <input name="user_password" type="password" placeholder="Type your Password"
                            class="validate form-control" required>
 
                 </div>
+                {% with messages = get_flashed_messages() %}
+                {%if messages %}
+                {% for message in messages %}
+                <h3 class="flash-text text-center">{{ message }}</h3>
+                {%endfor%}
+                {%endif%}
+                {% endwith %}
+
+
                 <button type="submit" name="action" class="btn btn-outline-success">Login</button>
             </form>
         </div>

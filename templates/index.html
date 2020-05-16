@@ -25,11 +25,11 @@
                 </div>
             </div>
             {% if session.user %}
-            <a role="button" class="bg-blue txt-white btn add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
+            <a role="button" class="txt-white bg-blue btn add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
                 Add Recipe</a>
         </div>
         <div class="col-6">
-            <a role="button" class="bg-blue txt-white btn m-add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
+            <a role="button" class="txt-white bg-blue btn m-add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
                 Add Recipe</a>
         </div>
         {%endif%}
@@ -51,12 +51,12 @@
                             <p>{{content.name}}</p>
                             <div class="star-wrap">
                                 {% for star in range(content.totalStarValue) %}
-                                <span class="fas fa-star bg-blue star-box"></span>
+                                <span class="fas fa-star txt-blue star-box"></span>
                                 {%endfor%}
                                 {% for empty in range(5 - content.totalStarValue)%}
-                                <span class="far fa-star bg-blue star-box"></span>
+                                <span class="far fa-star txt-blue star-box"></span>
                                 {%endfor%}
-                                <span class="tV-font"> ({{content.totalVotes}})</span>
+                                <span class="tV-font txt-blue"> ({{content.totalVotes}})</span>
                             </div>
                         </div>
                     </div>
@@ -95,12 +95,12 @@
             <!--                Newest recipe details-->
             <div class="n-star-wrap">
                 {% for star in range(content.totalStarValue) %}
-                <span class="fas fa-star bg-blue n-star-box"></span>
+                <span class="fas fa-star txt-blue n-star-box"></span>
                 {%endfor%}
                 {% for empty in range(5 - content.totalStarValue)%}
-                <span class="far fa-star bg-blue n-star-box"></span>
+                <span class="far fa-star txt-blue n-star-box"></span>
                 {%endfor%}
-                <span class="n-tV-font"> ({{content.totalVotes}})</span>
+                <span class="n-tV-font txt-blue"> ({{content.totalVotes}})</span>
             </div>
             {%if content.totalVotes == 0%}
             <P class="n-vote-text txt-blue">Be the first to vote!</P>
@@ -147,12 +147,12 @@
                             <p>{{content.name}}</p>
                             <div class="star-wrap">
                                 {% for star in range(content.totalStarValue) %}
-                                <span class="fas fa-star bg-blue star-box"></span>
+                                <span class="fas fa-star txt-blue star-box"></span>
                                 {%endfor%}
                                 {% for empty in range(5 - content.totalStarValue)%}
-                                <span class="far fa-star bg-blue star-box"></span>
+                                <span class="far fa-star txt-blue star-box"></span>
                                 {%endfor%}
-                                <span class="tV-font"> ({{content.totalVotes}})</span>
+                                <span class="tV-font txt-blue"> ({{content.totalVotes}})</span>
                             </div>
                         </div>
                     </div>

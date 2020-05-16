@@ -29,29 +29,29 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         {% if session.user %}
-<!--                        Logout Button displayed if user is logged in-->
+                        <!--                        Logout Button displayed if user is logged in-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                         </li>
                         {%endif%}
-<!--                        profile button displays if user is logged in and is not administrator-->
+                        <!--                        profile button displays if user is logged in and is not administrator-->
                         {% if session.user and session.user != "Administrator" %}
                         <li class="nav-item">
                             <a class="nav-link h" href="{{url_for('profile')}}">{{session.user}}</a>
                         </li>
                         {% endif %}
-<!--                        display login If user is nog logged in-->
+                        <!--                        display login If user is nog logged in-->
                         {% if not session.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for('login')}}">Login</a>
                         </li>
-<!--                        Register is displayed if user is nog logged in-->
+                        <!--                        Register is displayed if user is nog logged in-->
                         <li class="nav-item">
                             <a class="nav-link  {% if 'register' in request.path %} active {% endif %}"
                                href="{{url_for('register')}}">Register</a>
                         </li>
                         {% endif %}
-<!--                        Administrator portal displayed if administrator is logged in-->
+                        <!--                        Administrator portal displayed if administrator is logged in-->
                         {% if session.user == "Administrator" %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{url_for('admin_portal')}}">Admin Portal</a>
@@ -67,8 +67,8 @@
 </div>
 
 <div class="main-content">
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 </div>
 
 <!--Footer content on all pages-->
