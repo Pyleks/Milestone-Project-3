@@ -34,6 +34,9 @@ body {
 h2 span {
     font-family: 'Love Ya Like A Sister', cursive;
 }
+.pastry-name {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
 
 .main-content {
     min-height: calc(100vh - 74px - 90px);
@@ -307,8 +310,7 @@ a {
     padding: 0.5em 0 0.5em 0;
 }
 .pastry-name {
-    font-size: 2.5em;
-    text-decoration: underline;
+    font-size: 3em;
     padding: 0.5em 0 0 0;
 
 }
@@ -328,7 +330,7 @@ a {
 }
 .star-wrap-pastry {
     text-align: center;
-    padding: 2em 0 2em 0;
+    padding: 1em 0 2em 0;
 }
 
 .ing-buffer {
