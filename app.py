@@ -109,7 +109,7 @@ def admin_portal():
 
 
 # User Profile Route
-@app.route('/profile/')
+@app.route('/profile')
 def profile():
     # Check if user is in session
     if 'user' in session:
@@ -130,7 +130,6 @@ def profile():
 def add_pastry():
     # Check if user is logged in
     if 'user' in session:
-        # TODO Don't really need the line below but we will keep it until second sweep
         user_in_database = mongo.db.users.find_one({"username": session['user']})
         if user_in_database:
             # If user in DB, redirected to Create Recipe page
