@@ -64,12 +64,12 @@ def sort_by_rating():
     # Finding the last Recipe added and approved for the Recipe highlight on the page
     new_recipe = mongo.db.Recipes.find({'approved': True}) \
         .sort([('_id', pymongo.DESCENDING), (
-        'approved', pymongo.ASCENDING)]).limit(1)
+            'approved', pymongo.ASCENDING)]).limit(1)
 
     # Same as above, but acquiring to it make sure there is no duplicates
     find_last = mongo.db.Recipes.find({'approved': True}) \
         .sort([('_id', pymongo.DESCENDING), (
-        'approved', pymongo.ASCENDING)]).limit(1)
+            'approved', pymongo.ASCENDING)]).limit(1)
 
     # Finds the name from last Recipe
     for x in find_last:
@@ -103,7 +103,7 @@ def admin_portal():
                                    all_users_number=all_users_number)
 
         else:
-            return redirect(url_for('recipes'))
+            return redirect(url_for('profile'))
     else:
         return redirect(url_for('login'))
 
@@ -427,7 +427,7 @@ def register():
                     session['user'] = user_in_db['username']
                     return redirect(url_for('register'))
                 else:
-                    flash("There was a problem savaing your profile")
+                    flash("There was a problem saving your profile")
                     return redirect(url_for('register'))
 
         else:
