@@ -184,6 +184,7 @@ def insert_rating(recipe_id):
                                 },
                                 upsert=False
                                 )
+        # Preforms the calculation for the 5 star rating
         star_array = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
         star_calculator = ((5 * star_array["starRating-5"]
                             + 4 * star_array["starRating-4"]
