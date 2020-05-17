@@ -171,7 +171,6 @@ def insert_pastry():
 
 
 # Insert/Calculate Rating Route
-# TODO I don't understand my own code, recheck in the morning
 @app.route('/insert_rating/<recipe_id>', methods=['POST', 'GET'])
 def insert_rating(recipe_id):
     if 'user' in session:
