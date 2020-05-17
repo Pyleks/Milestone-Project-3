@@ -646,7 +646,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 3. Give it a name and choose your region.
 4. Click Create App.
 5. Find your App name on the dash board, and enter.
-6. Click Settings, and locate Config Vars, and fill in like shown below.
+6. Click Settings, and locate Config Vars, and fill in like shown below (Just edit out the placeholder text).
 
 
 | Key        | Value           | 
@@ -654,6 +654,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 |  IP  | 0.0.0.0 | 
 |  PORT  | 5000 | 
 |  MONGO_URI  | "mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority" | 
+|  MONGO_DBNAME  | Name of the database |
 |  SECRET_KEY  | "Secret key you made for local" |
 
 
