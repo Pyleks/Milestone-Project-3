@@ -437,7 +437,7 @@ a {
 
 .overlay-content{
     position: absolute;
-    width: 30%;
+    width: 35%;
     top: 50%;
     left: 50%;
     font-size: 1.5em;
@@ -451,7 +451,7 @@ a {
     font-size: 1.3em !important;
 }
 .star-review-callout {
-    padding: 0.5em 0 0.5em 0;
+    padding: 1em 0 0.5em 0;
 
 }
 /************ Create Recipe ************/
@@ -555,7 +555,7 @@ a {
     }
     /*Recipe Page*/
     .overlay-content {
-        width: 35%;
+        width: 40%;
     }
 
 }
