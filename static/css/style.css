@@ -548,6 +548,17 @@ a {
         height: 18em;
     }
 
+    /*Index Page*/
+    .info-card-wrap {
+        display: unset;
+    }
+    .star-wrap {
+        float: none;
+        padding: 0.5em 0 0 0;
+    }
+    .align-content {
+        text-align: center;
+    }
 }
 @media (max-width: 1024px) {
     .auto-size {
@@ -558,9 +569,13 @@ a {
         width: 40%;
     }
 
+
+
+
+
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     /*Card Image Information*/
     .auto-size {
         height: 13em;
@@ -698,14 +713,14 @@ a {
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     /*footer Placement calculation*/
     .main-content {
         min-height: calc(100vh - 59px - 90px);
     }
     /*Index page*/
     .auto-size {
-        height: 12em;
+        height: 13em;
         width: 50%;
         background-size: cover;
     }

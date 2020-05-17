@@ -551,6 +551,7 @@ slider across Chrome, Firefox and Edge.
 |:------------- |:-------------| :-----:|
 | Main Page     | Small image scaling issue where it became too narrow on small devices | Fixed |
 | Main Page     | Add recipe button on mobile devices was too big, to changed it with a more user friendly one| Fixed |
+| Main Page     | Strange issue wit h Media breakpoints, the image were not really scaling well with 992px and 576px, so dropped them to 991 and 575 to fix issue | Fixed |
 | Recipe Page     | Main image did not scale correctly, and would look stretched | Fixed |
 
 
