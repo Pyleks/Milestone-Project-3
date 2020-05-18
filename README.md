@@ -693,6 +693,7 @@ to make it's way into my Milestone Project.
 I also got amazing inspiration from [Tine Mat](https://www.tine.no/oppskrifter)
 A Norwegian website that do recipes, so much of my design is heavily influenced by this page.
 
+Thanks to BeeZee for her suggestion on the unique fonts for headers
 
 #### Images
 404 Image license is purchased by me from shutter stock.  
