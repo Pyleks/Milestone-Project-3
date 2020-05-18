@@ -27,13 +27,13 @@ $(document).ready(function() {
             userLabel.style.color = "green";
 
             // Check if the username is longer then 12
-        }if(myUsername.trim().length > 12) {
-            userLabel.innerText = "Username Max 12 Characters";
+        }if(myUsername.trim().length > 15) {
+            userLabel.innerText = "Username Max 15 Characters";
             userLabel.style.color = "red";
             e.preventDefault();
 
             // Check if the username is longer then 3
-        }if(myUsername.trim().length <= 12 && myUsername.trim().length >= 3 ) {
+        }if(myUsername.trim().length <= 15 && myUsername.trim().length >= 3 ) {
             userLabel.innerText = "Username Correct";
             userLabel.style.color = "green";
 
