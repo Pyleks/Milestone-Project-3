@@ -220,6 +220,7 @@ def insert_rating(recipe_id):
         return redirect(request.referrer)
 
     else:
+        flash('To rate a recipe you must be logged in')
         return redirect(url_for('login'))
 
 
