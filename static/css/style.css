@@ -785,3 +785,19 @@ a {
     }
 
 }
+
+@media (max-width: 360px) {
+    /*Recipe index page*/
+    .top-rated-card {
+        height: 25em;
+    }
+    .auto-size {
+        height: 10em;
+    }
+    .top-pastry-img {
+        height: 25em;
+    }
+    .popular-recipe span {
+        font-size: 2em;
+    }
+}
