@@ -318,12 +318,11 @@ def delete_recipe(recipe_id):
 
 
 # Delete User Route
-# TODO Fix recipe_id to user ID
-@app.route('/delete_user/<recipe_id>')
-def delete_user(recipe_id):
+@app.route('/delete_user/<user_id>')
+def delete_user(user_id):
     if 'user' in session:
         if session['user'] == "Administrator":
-            mongo.db.users.remove({'_id': ObjectId(recipe_id)})
+            mongo.db.users.remove({'_id': ObjectId(user_id)})
             return redirect(url_for('admin_portal'))
         else:
             return redirect(url_for('recipes'))
