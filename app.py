@@ -420,7 +420,7 @@ def register():
 
                     }
                 )
-                # Check if user is actualy saved
+                # Check if user is actually saved
                 user_in_db = mongo.db.users.find_one({"username": form['username']})
                 if user_in_db:
                     # Log user in (add to session)

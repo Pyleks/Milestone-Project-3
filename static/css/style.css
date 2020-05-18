@@ -204,14 +204,14 @@ a {
     font-size: 2.5em;
 }
 
-.top-rated-card {
+.n-rated-card {
     float: left;
     width: 100%;
-    height: 370px;
+    height: 25em;
     overflow: hidden;
 }
 
-.top-pastry-img {
+.n-pastry-img {
     object-fit: cover;
     width: 100%;
     height: 30em;
@@ -261,7 +261,7 @@ a {
     transition: 0.5s;
 }
 
-.top-pastry-img:hover {
+.n-pastry-img:hover {
     opacity:0.5;
     transition: 0.5s;
 }
@@ -356,8 +356,8 @@ a {
     display: -ms-flexbox;
     display: flex;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 1em;
+    right: 1.2em;
     z-index: 1000;
     padding: 0.8em 0.8em;
     border-radius: 50px;
@@ -788,14 +788,14 @@ a {
 
 @media (max-width: 360px) {
     /*Recipe index page*/
-    .top-rated-card {
-        height: 25em;
+    .n-rated-card {
+        height: 20em;
     }
     .auto-size {
         height: 10em;
     }
-    .top-pastry-img {
-        height: 25em;
+    .n-pastry-img {
+        height: 20em;
     }
     .popular-recipe span {
         font-size: 2em;
