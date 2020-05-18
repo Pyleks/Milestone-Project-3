@@ -168,9 +168,9 @@ any of the stronger colors to enhance overall visibility, and minimizing bombard
 with colors, but rather finding the appropriate places to apply them.
 
 #### Typography
-I choose to only use __Roboto__ for the project, due to it's readability
-and familiarity, as well avoiding having multiple fonts, fight for the users
-attention.
+I choose to use __Roboto__ for majority of the text, due to it's readability, and
+__Love Ya Like A Sister__ for certain headings to make the text stand out, and give the page
+a bit more personality.
 
 ## Database
 This website have 2 databases, 1 for users and 1 for recipes, these are both being used to connect
