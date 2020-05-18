@@ -67,7 +67,7 @@
                                 <p><span>Email: </span> {{user.email}}</p>
                                 <!--                                    Admin have the option to delete users if needed-->
                                 <a class="btn btn-primary text-white bg-danger"
-                                   href="{{url_for('delete_user', recipe_id=user._id)}}"
+                                   href="{{url_for('delete_user', user_id=user._id)}}"
                                    role="button">Delete</a>
                             </div>
                         </div>
