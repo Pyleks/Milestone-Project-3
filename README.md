@@ -676,6 +676,8 @@ Big shout out to Anna_CI for showing me [DCD_LEAD](https://github.com/MiroslavSv
 Authentication for Heroku, this made the entire project completely understandable and everything else that
 followed was much easier.
 
+Also part of the Login is taken from the project above, and tweaked to some degree.
+
 Also massive help from Mentor Aaron for showing me pagination in practise, even though at writing moment
 I've not had the time to implement it yet, but hopefully will do so very soon.
 
