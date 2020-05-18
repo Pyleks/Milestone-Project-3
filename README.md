@@ -17,6 +17,7 @@ Share, Up-vote, and enjoy.
 7. [Testing Summary](#Testing-Summary)
 8. [Deployment](#Deployment)
 9. [Credits](#Credits)
+10. [Disclaimer](#Disclaimer)
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
@@ -697,3 +698,6 @@ A Norwegian website that do recipes, so much of my design is heavily influenced 
 404 Image license is purchased by me from shutter stock.  
 
 All other images are acquired from [Pixaby](https://pixabay.com/)
+
+## Disclaimer
+This project is for Educational purpose only
