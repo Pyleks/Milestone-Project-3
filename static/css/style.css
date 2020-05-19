@@ -497,9 +497,9 @@ a {
 }
 
 /************ Admin Portal************/
-.admin-name {
+.profile-name {
     font-size: 2.5em;
-    margin: 10% 0 0 0;
+    margin: 10% 0 3% 0;
 }
 
 .profile-headings {

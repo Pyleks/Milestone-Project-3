@@ -540,6 +540,11 @@ slider across Chrome, Firefox and Edge.
 | Update Recipe | No issues found     | Good |
 
 
+### Big issue found
+Towards the end I noticed how poor user experience my update section became, but due to time restraints, this will have to
+be left out, even though it is pushing down the user experience a fair bit, this should have been extensively tested
+earlier on and completely removed/redone, with some added functionality.
+
 ### URL Injection
 | Attempt        | Bugs           | Status  |
 |:------------- |:-------------| :-----:|
