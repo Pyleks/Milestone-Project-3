@@ -800,4 +800,15 @@ a {
     .popular-recipe span {
         font-size: 2em;
     }
+    .dropdownMenu {
+        font-size: 0.8em ;
+    }
+    .m-add-recipe {
+        font-size: 0.8em;
+    }
+
+    /*profile page*/
+    .main-content {
+        min-height: calc(100vh - 60px - 88px);
+    }
 }
