@@ -17,8 +17,9 @@ Share, Up-vote, and enjoy.
 7. [Testing Summary](#Testing-Summary)
 8. [Deployment](#Deployment)
 9. [Credits](#Credits)
-10. [Disclaimer](#Disclaimer)
-11. [Note To Assessor](#Assessor)
+10. [Note To Assessor](#Assessor)
+11. [Disclaimer](#Disclaimer)
+
 
 ## UX
 This website have been designed to give any visitors easy access to all of it's content without
@@ -710,10 +711,9 @@ All other images are acquired from [Pixaby](https://pixabay.com/)
 When reviewing the page, it is advisable to use the admin account, as you get access to all almost all the features,
 Especially since you can add a new recipe and approve it yourself, without having to change accounts.
 Please note the main difference between a user account and Admin account is that user accounts can not approve
-But they can see a list of their own submissions.
+But user accounts can see a list of their own submissions.
 
 It is also advisable to try this process with a regular and admin account to see the entire process.
-
 
 ## Disclaimer
 This project is for Educational purpose only
