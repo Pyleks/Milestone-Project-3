@@ -1,6 +1,8 @@
 // This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
 
 $(document).ready(function() {
+    CKEDITOR.replace('recipe_ingredients');
+    CKEDITOR.replace('recipe_howTo');
     // All the variables required to handle the operation
     ($("#submitForm").click(function (e) {
         let pastryUrl = $("#imageUrl").val();
