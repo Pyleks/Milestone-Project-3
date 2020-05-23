@@ -143,17 +143,17 @@ def add_pastry():
 @app.route('/insert_pastry', methods=['POST'])
 def insert_pastry():
     creation_date = time.strftime("%Y-%m-%d", time.localtime())
-    recipe_ingredients = request.form.get('recipe_ingredients')
-    recipe_ingredients_array = recipe_ingredients.split(", ")
-    recipe_how_to = request.form.get('recipe_howTo')
-    recipe_how_to_array = recipe_how_to.split(", ")
+    # recipe_ingredients = request.form.get('recipe_ingredients')
+    # recipe_ingredients_array = recipe_ingredients.split(", ")
+    # recipe_how_to = request.form.get('recipe_howTo')
+    # recipe_how_to_array = recipe_how_to.split(", ")
     mongo.db.Recipes.insert(
         {
             'name': request.form.get('recipe_name'),
             'callout': request.form.get('recipe_callout'),
             'imageUrl': request.form.get('imageUrl'),
-            'ingredients': recipe_ingredients_array,
-            'howTo': recipe_how_to_array,
+            'ingredients': request.form.get('recipe_ingredients'),
+            'howTo': request.form.get('recipe_howTo'),
             'portions': request.form.get('recipe_portions'),
             'author': session['user'],
             'approved': False,
@@ -266,16 +266,16 @@ def update_recipe(recipe_id):
     if 'user' in session:
         # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
-            recipe_ingredients = request.form.get('recipe_ingredients')
-            recipe_ingredients_array = recipe_ingredients.split(", ")
-            recipe_how_to = request.form.get('recipe_howTo')
-            recipe_how_to_array = recipe_how_to.split(", ")
+            # recipe_ingredients = request.form.get('recipe_ingredients')
+            # recipe_ingredients_array = recipe_ingredients.split(", ")
+            # recipe_how_to = request.form.get('recipe_howTo')
+            # recipe_how_to_array = recipe_how_to.split(", ")
             mongo.db.Recipes.update({'_id': ObjectId(recipe_id)}, {
                 'name': request.form.get('recipe_name'),
                 'callout': request.form.get('recipe_callout'),
                 'imageUrl': request.form.get('imageUrl'),
-                'ingredients': recipe_ingredients_array,
-                'howTo': recipe_how_to_array,
+                'ingredients': request.form.get('recipe_ingredients'),
+                'howTo': request.form.get('recipe_howTo'),
                 'portions': request.form.get('recipe_portions'),
                 'author': author,
                 'approved': True,

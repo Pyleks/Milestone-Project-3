@@ -1,8 +1,31 @@
 // This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
 
 $(document).ready(function() {
-    CKEDITOR.replace('recipe_ingredients');
-    CKEDITOR.replace('recipe_howTo');
+    CKEDITOR.replace( 'recipe_ingredients', {
+        language: 'fr',
+        uiColor: '#9AB8F3',
+        customConfig: '/config.js'
+    });
+
+    CKEDITOR.replace( 'recipe_howTo', {
+        language: 'fr',
+        uiColor: '#9AB8F3',
+        customConfig: '/config.js'
+    });
+
+
+
+    // CKEDITOR.replace('recipe_ingredients', {
+    //     config.disallowedContent = 'p'
+    // });
+    //
+    //
+    // // CKEDITOR.replace('recipe_howTo', {
+    // //     config.disallowedContent = 'p'
+    // // })
+
+
+
     // All the variables required to handle the operation
     ($("#submitForm").click(function (e) {
         let pastryUrl = $("#imageUrl").val();
@@ -72,26 +95,26 @@ $(document).ready(function() {
 
 
             // Check if the ingredients have sufficient character, and not just empty space
-        }if(Ingredients.trim().length === 0 || Ingredients.trim().length < 10) {
-            ingredientsLabel.innerText = "Ingredients too short";
-            ingredientsLabel.style.color = "red";
-            e.preventDefault();
-
-            // If it's longer then 10 characters
-        }if(Ingredients.trim().length >= 10) {
-            ingredientsLabel.innerText = "Ingredients Correct";
-            ingredientsLabel.style.color = "green";
-
-            // If how to is empty string, or if it's shorter then 15 characters
-        }if(howTo.trim().length === 0 || howTo.trim().length < 15) {
-            howToLabel.innerText = "How To description is too short";
-            howToLabel.style.color = "red";
-            e.preventDefault();
-
-            // If it's above 15 characters
-        }if(howTo.trim().length >= 15) {
-            howToLabel.innerText = "How To Correct";
-            howToLabel.style.color = "green";
+        // }if(Ingredients.trim().length === 0 || Ingredients.trim().length < 10) {
+        //     ingredientsLabel.innerText = "Ingredients too short";
+        //     ingredientsLabel.style.color = "red";
+        //     e.preventDefault();
+        //
+        //     // If it's longer then 10 characters
+        // }if(Ingredients.trim().length >= 10) {
+        //     ingredientsLabel.innerText = "Ingredients Correct";
+        //     ingredientsLabel.style.color = "green";
+        //
+        //     // If how to is empty string, or if it's shorter then 15 characters
+        // }if(howTo.trim().length === 0 || howTo.trim().length < 15) {
+        //     howToLabel.innerText = "How To description is too short";
+        //     howToLabel.style.color = "red";
+        //     e.preventDefault();
+        //
+        //     // If it's above 15 characters
+        // }if(howTo.trim().length >= 15) {
+        //     howToLabel.innerText = "How To Correct";
+        //     howToLabel.style.color = "green";
 
         }
 

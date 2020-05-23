@@ -98,20 +98,18 @@
             <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
             <h3 class="portion-size">Number of portions</h3>
             <h3 class="portion-number">{{recipe_data.portions}}</h3>
-            {% for content in recipe_data.ingredients %}
-            <p class="card-text pastry_text">{{content}}</p>
-            <hr>
-            {%endfor%}
+            <div class="card-text pastry_text">
+                <p>{{recipe_data.ingredients|safe}}</p>
 
+
+            </div>
         </div>
         <!--        Recipe to do steps-->
         <div class="col-sm-12 col-md-5 offset-md-2 col-xl-5 offset-xl-2">
             <h2 class="pastry-h2">This is how you do it</h2>
-            <ol class="text-left pastry_text">
-                {% for steps in recipe_data.howTo%}
-                <li class="recipe-steps">{{steps}}</li>
-                {%endfor%}
-            </ol>
+            <div class="recipe-steps">
+                <p>{{recipe_data.howTo|safe}}</p>
+            </div>
         </div>
     </div>
 </section>
@@ -119,7 +117,8 @@
 {% if session.user == recipe_data.author or session.user == "Administrator" %}
 <a class="delete-button bg-red txt-white btn btn-outline-dark fas fa-trash"
    href="{{url_for('delete_recipe', recipe_id=recipe_data._id)}}" role="button"></a>
-<a class="update-button bg-blue txt-white btn btn-outline-dark fas fa-pen" href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}"
+<a class="update-button bg-blue txt-white btn btn-outline-dark fas fa-pen"
+   href="{{url_for('edit_recipe', recipe_id=recipe_data._id)}}"
    role="button" id="update"></a>
 {% endif %}
 

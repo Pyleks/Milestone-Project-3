@@ -28,17 +28,18 @@
                            placeholder="10"
                            value="{{recipe_data.portions}}">
                     <!--                       Ingredients label and input-->
-                    <label id="ingredientsLabel" class="strong-label">Ingredients</label>
-                    <input id="recipe_ingredients" name="recipe_ingredients" type="text" class="validate form-control"
-                           placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk"
-                           value="{{recipe_data.ingredients|join(', ')}}">
+                     <label id="ingredientsLabel" class="strong-label">Ingredients</label>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="form-control"
+                              placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk ">{{recipe_data.ingredients}}</textarea>
+                        <!--                       How to label and input-->
                     <!--                       How to label and input-->
                     <label id="howToLabel" class="strong-label">How To</label>
-                    <input id="recipe_howTo" name="recipe_howTo" type="text" class="validate form-control"
-                           placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients"
-                           value="{{recipe_data.howTo|join(', ')}}">
-                    <small class="text-space text-muted">All updates will go through Admin approval before displayed on
-                        the website.
+                    <textarea id="recipe_howTo" name="recipe_howTo" aria-label="textarea" class="form-control"
+                              placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients">
+                    {{recipe_data.howTo}}
+                    </textarea>
+                    <small class="text-space text-muted">All submissions will go through Admin approval before displayed
+                        on the website.
                     </small>
                 </div>
                 <!--                       Submission button-->
