@@ -99,8 +99,7 @@
             <h3 class="portion-size">Number of portions</h3>
             <h3 class="portion-number">{{recipe_data.portions}}</h3>
             <div class="card-text pastry_text">
-                <p>{{recipe_data.ingredients|safe}}</p>
-
+                {{recipe_data.ingredients|safe}}
 
             </div>
         </div>
@@ -108,7 +107,7 @@
         <div class="col-sm-12 col-md-5 offset-md-2 col-xl-5 offset-xl-2">
             <h2 class="pastry-h2">This is how you do it</h2>
             <div class="recipe-steps">
-                <p>{{recipe_data.howTo|safe}}</p>
+                {{recipe_data.howTo|safe}}
             </div>
         </div>
     </div>
