@@ -1,14 +1,15 @@
 // This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
 
 $(document).ready(function() {
+
     CKEDITOR.replace( 'recipe_ingredients', {
-        uiColor: '#9AB8F3',
-        customConfig: '/CKeditor-config.js'
+        uiColor: '#6499ed',
+        customConfig: '/../static/js/config.js'
     });
 
     CKEDITOR.replace( 'recipe_howTo', {
-        uiColor: '#9AB8F3',
-        customConfig: '/CKeditor-config.js'
+        uiColor: '#6499ed',
+        customConfig: '/../static/js/config.js'
     });
 
 
