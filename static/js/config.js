@@ -6,5 +6,4 @@ CKEDITOR.editorConfig = function( config ) {
 
     config.removeButtons = 'Underline,Italic,Bold,Strike,Subscript,Superscript,RemoveFormat';
     config.removePlugins = 'elementspath,resize';
-    // config.removePlugins = 'editor,resize';
 };
