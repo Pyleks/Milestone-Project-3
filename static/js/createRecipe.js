@@ -2,15 +2,13 @@
 
 $(document).ready(function() {
     CKEDITOR.replace( 'recipe_ingredients', {
-        language: 'fr',
         uiColor: '#9AB8F3',
-        customConfig: '/config.js'
+        customConfig: '/CKeditor-config.js'
     });
 
     CKEDITOR.replace( 'recipe_howTo', {
-        language: 'fr',
         uiColor: '#9AB8F3',
-        customConfig: '/config.js'
+        customConfig: '/CKeditor-config.js'
     });
 
 

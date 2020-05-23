@@ -4,10 +4,10 @@
 <section class="update-recipe container">
     <div class="row recipe-space">
         <div class="col-12">
-            <h3 class="recipe-heading">Update {{recipe_data.name}} Recipe</h3>
             <form action="{{ url_for('update_recipe', recipe_id=recipe_data._id)}}" method="POST" class="full-form">
 
                 <div class="form-group card card-body bg-lightBlue">
+                    <h3 class="recipe-heading text-center">Update {{recipe_data.name}} Recipe</h3>
                     <!--                    URL label and input-->
                     <label id="urlLabel" class="strong-label"> Image URL</label>
                     <input id="imageUrl" name="imageUrl" type="text" class="validate form-control"

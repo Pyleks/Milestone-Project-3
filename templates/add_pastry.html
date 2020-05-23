@@ -5,9 +5,9 @@
 
     <div class="row recipe-space">
         <div class="col-12">
-            <h3 class="recipe-heading">Create Recipe</h3>
             <form action="{{ url_for('insert_pastry')}}" method="POST" class="full-form">
                 <div class="form-group card card-body bg-lightBlue">
+                    <h3 class="recipe-heading text-center">Create Recipe</h3>
                     <!--                    URL label and input-->
                     <label id="urlLabel" class="strong-label">Photo URL</label>
                     <input id="imageUrl" name="imageUrl" type="text" class="validate form-control"
