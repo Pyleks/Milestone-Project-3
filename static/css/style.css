@@ -307,6 +307,8 @@ a {
     font-size: 1.5em !important;
 }
 .recipe-steps {
+    font-size: 1.3em;
+    line-height: 1.5;
     padding: 0.5em 0 0.5em 0;
 }
 .pastry-name {
@@ -676,8 +678,10 @@ a {
         text-align: center;
     }
     .recipe-steps {
-        list-style-type: none;
         text-align: center;
+    }
+    .recipe-steps ol li {
+        list-style: none !important;
     }
     .overlay-content {
         width: 60%;
