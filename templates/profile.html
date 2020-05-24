@@ -8,13 +8,14 @@
             <!--            Displays all public recipes posted by this user-->
             <div class="card">
                 <div class="card-header mb-0">
-                    <button class="btn btn-link profile-headings" data-toggle="collapse" data-target="#PublicRecipes"
+                    <button class="btn btn-link profile-headings" data-toggle="collapse"
+                            data-target="#PublicRecipes"
                             aria-expanded="true" aria-controls="PublicRecipes">
                             Your Public Recipes
                     </button>
                 </div>
                 <!--                    Shows all recipes that got approved from that user-->
-                <div id="PublicRecipes" class="collapse" aria-labelledby="PublicRecipes"  data-parent="#accordion">
+                <div id="PublicRecipes" class="collapse" aria-labelledby="PublicRecipes" data-parent="#accordion">
                     {% for content in approved_recipes %}
                     {% if session.user == content.author %}
                     <div class="card-body">
@@ -48,9 +49,10 @@
             <!--            All recipes waiting for approval-->
             <div class="card">
                 <div class="card-header mb-0">
-                    <button class="btn btn-link profile-headings" data-toggle="collapse" data-target="#WaitingRecipes"
+                    <button class="btn btn-link profile-headings" data-toggle="collapse"
+                            data-target="#WaitingRecipes"
                             aria-expanded="true" aria-controls="WaitingRecipes">
-                            Waiting Approval
+                        Waiting Approval
                     </button>
                 </div>
                 <div id="WaitingRecipes" class="collapse" aria-labelledby="WaitingRecipes" data-parent="#accordion">
