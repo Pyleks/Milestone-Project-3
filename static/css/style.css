@@ -314,7 +314,7 @@ a {
 
 .recipe-steps  p {
     line-height: 1.3;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
 }
 .pastry-name {
     font-size: 3em;
@@ -342,6 +342,10 @@ a {
 
 .ing-buffer {
     padding: 0 0 0.5em 0;
+}
+
+.ingredient-box {
+    height: 100%;
 }
 
 .portion-size {

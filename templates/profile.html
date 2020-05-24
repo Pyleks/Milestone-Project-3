@@ -31,8 +31,8 @@
                                 <p><span>Author:</span> {{content.author}}</p>
                                 <p><span>Name: </span> {{content.name}}</p>
                                 <p><span>Callout: </span> {{content.callout}}</p>
-                                <p><span>Ingredients: </span> {{content.ingredients}}</p>
-                                <p><span>How To: </span> {{content.howTo}}</p>
+                                <p><span>Ingredients: </span> {{content.ingredients|safe}}</p>
+                                <p><span>How To: </span> {{content.howTo|safe}}</p>
                                 <p><span>Portions: </span> {{content.portions}}</p>
                                 <a class="btn btn-primary text-white bg-danger"
                                    href="{{url_for('delete_recipe', recipe_id=content._id)}}"
