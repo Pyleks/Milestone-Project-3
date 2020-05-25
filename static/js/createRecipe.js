@@ -8,7 +8,7 @@ $(document).ready(function() {
             customConfig: '/../static/js/config.js'
         });
 
-        CKEDITOR.replace( 'recipe_howTo', {
+        CKEDITOR.replace( 'recipe', {
             uiColor: '#6499ed',
             customConfig: '/../static/js/config.js'
         });

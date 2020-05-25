@@ -18,7 +18,6 @@ app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 # Landing page Route
 @app.route('/')
 @app.route('/recipes')
