@@ -550,6 +550,18 @@ Towards the end I noticed how poor user experience my update section became, but
 be left out, even though it is pushing down the user experience a fair bit, this should have been extensively tested
 earlier on and completely removed/redone, with some added functionality.
 
+#### Big issue solution
+This was fixed by revamping the entire section where they provide ingredients and recipe steps.
+
+
+### Approval issue found(Fixed)
+If they make the recipe, then enter it from "Waiting Approval" section, and click update, the recipe get set to approval
+setting right away, By passing admin approval.
+
+#### Approval issue solution:
+I fetched the current approval status from the database, and fed it back to the database, making the approval stay the same.
+
+
 ### URL Injection
 | Attempt        | Bugs           | Status  |
 |:------------- |:-------------| :-----:|

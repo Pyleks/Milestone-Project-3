@@ -256,6 +256,7 @@ def update_recipe(recipe_id):
     recipe_data = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
     # Get author
     author = recipe_data["author"]
+    approval = recipe_data["approved"]
     # Get created Date
     created_date = recipe_data["createDate"]
     if 'user' in session:
@@ -269,7 +270,7 @@ def update_recipe(recipe_id):
                 'recipe': request.form.get('recipe'),
                 'portions': request.form.get('recipe_portions'),
                 'author': author,
-                'approved': True,
+                'approved': approval,
                 'createDate': created_date,
                 'lastUpdateDate': last_updated_date,
                 'totalVotes': 0,
