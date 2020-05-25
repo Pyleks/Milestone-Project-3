@@ -74,7 +74,7 @@
                                 <p><span>Name: </span> {{content.name}}</p>
                                 <p><span>Description: </span> {{content.description}}</p>
                                 <p><span>Ingredients: </span> {{content.ingredients|safe}}</p>
-                                <p><span>How To: </span> {{content.recipe|safe}}</p>
+                                <p><span>Recipe: </span> {{content.recipe|safe}}</p>
                                 <p><span>Portions: </span> {{content.portions}}</p>
                                 <a class="btn btn-primary text-white bg-danger"
                                    href="{{url_for('delete_recipe', recipe_id=content._id)}}"

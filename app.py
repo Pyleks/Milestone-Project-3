@@ -390,7 +390,7 @@ def register():
 
     if request.method == 'POST':
         form = request.form.to_dict()
-        # Check if the password and password1 actualy match
+        # Check if the password and password actually match
         if form['user_password'] == form['user_password1']:
             # If so try to find the user in db
             user = mongo.db.users.find_one({"username": form['username']})
