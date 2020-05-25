@@ -256,39 +256,24 @@ def update_recipe(recipe_id):
     recipe_data = mongo.db.Recipes.find_one({'_id': ObjectId(recipe_id)})
     # Get author
     author = recipe_data["author"]
-    approval = recipe_data["approved"]
     # Get created Date
-    created_date = recipe_data["createDate"]
-    star_one = recipe_data["starRating-1"]
-    star_two = recipe_data["starRating-2"]
-    star_three = recipe_data["starRating-3"]
-    star_four = recipe_data["starRating-4"]
-    star_five = recipe_data["starRating-5"]
-    total_votes = recipe_data["totalVotes"]
-    total_star_value = recipe_data["totalStarValue"]
     if 'user' in session:
         # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
             mongo.db.Recipes.update({'_id': ObjectId(recipe_id)}, {
-                'name': request.form.get('recipe_name'),
-                'description': request.form.get('recipe_description'),
-                'imageUrl': request.form.get('imageUrl'),
-                'ingredients': request.form.get('recipe_ingredients'),
-                'recipe': request.form.get('recipe'),
-                'portions': request.form.get('recipe_portions'),
-                'author': author,
-                'approved': approval,
-                'createDate': created_date,
-                'lastUpdateDate': last_updated_date,
-                'starRating-1': star_one,
-                'starRating-2': star_two,
-                'starRating-3': star_three,
-                'starRating-4': star_four,
-                'starRating-5': star_five,
-                'totalVotes': total_votes,
-                'totalStarValue': total_star_value
+                '$set': {
+                    'name': request.form.get('recipe_name'),
+                    'description': request.form.get('recipe_description'),
+                    'imageUrl': request.form.get('imageUrl'),
+                    'ingredients': request.form.get('recipe_ingredients'),
+                    'recipe': request.form.get('recipe'),
+                    'portions': request.form.get('recipe_portions'),
+                    'lastUpdateDate': last_updated_date,
+                        }
+                    },
+                            upsert=True
+                )
 
-            })
             return redirect(url_for('recipes'))
         else:
             return redirect(url_for('recipes'))
