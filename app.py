@@ -273,7 +273,6 @@ def update_recipe(recipe_id):
                 'approved': approval,
                 'createDate': created_date,
                 'lastUpdateDate': last_updated_date,
-                'totalVotes': 0,
                 'starRating-1': 0,
                 'starRating-2': 0,
                 'starRating-3': 0,
