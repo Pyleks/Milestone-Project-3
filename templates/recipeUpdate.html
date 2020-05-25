@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <!--Update Recipe form-->
-<section id="recipe" class="update-recipe container">
+<section id="recipe-form" class="update-recipe container">
     <div class="row recipe-space">
         <div class="col-12">
             <form action="{{ url_for('update_recipe', recipe_id=recipe_data._id)}}" method="POST" class="full-form">
@@ -31,12 +31,10 @@
                      <label id="ingredientsLabel" class="strong-label">Ingredients</label>
                     <textarea id="recipe_ingredients" name="recipe_ingredients" class="form-control"
                               placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk ">{{recipe_data.ingredients}}</textarea>
-                        <!--                       How to label and input-->
-                    <!--                       How to label and input-->
-                    <label id="howToLabel" class="strong-label">How To</label>
-                    <textarea id="recipe_howTo" name="recipe_howTo" aria-label="textarea" class="form-control"
-                              placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients">
-                    {{recipe_data.howTo}}
+                        <!--                   Recipe label and input-->
+                    <label id="recipeLabel" class="strong-label">Recipe</label>
+                    <textarea id="recipe" name="recipe" aria-label="textarea" class="form-control"
+                    {{recipe_data.recipe}}
                     </textarea>
                     <small class="text-space text-muted">All submissions will go through Admin approval before displayed
                         on the website.

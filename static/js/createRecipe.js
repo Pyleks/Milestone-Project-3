@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // This code enables CK editor on the website, but also fetches the config.js file
     // Also makes sure it don't throw errors when opening other pages
-    let recipeLoad = document.getElementById("recipe");
+    let recipeLoad = document.getElementById("recipe-form");
     if(recipeLoad) {
         CKEDITOR.replace( 'recipe_ingredients', {
             uiColor: '#6499ed',

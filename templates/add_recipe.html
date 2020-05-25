@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <!--Add Recipe section-->
-<div id="recipe" class="container">
+<div id="recipe-form" class="container">
 
     <div class="row recipe-space">
         <div class="col-12">
@@ -29,9 +29,8 @@
                     <textarea id="recipe_ingredients" name="recipe_ingredients" class="form-control"
                               placeholder="Place comma between ingredients: 1 Tsp Sugar, 1L Milk "></textarea>
                     <!--                       How to label and input-->
-                    <label id="howToLabel" class="strong-label">How To</label>
-                    <textarea id="recipe_howTo" name="recipe_howTo" aria-label="textarea" class="form-control"
-                           placeholder="Place comma between actions: Preheat oven to 220 degrees, Mix the dry ingredients"></textarea>
+                    <label id="recipeLabel" class="strong-label">Recipe</label>
+                    <textarea id="recipe" name="recipe" aria-label="textarea" class="form-control"
                     <small class="text-space text-muted">All submissions will go through Admin approval before displayed
                         on the website.
                     </small>
