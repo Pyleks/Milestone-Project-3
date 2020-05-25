@@ -39,7 +39,7 @@
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
                         <div class="star-wrap-recipe">
-                            <p class="star-review-callout">Please leave a star review</p>
+                            <p class="star-review-description">Please leave a star review</p>
                             <div id="star-box">
                                 {% for star in range(1, 6) %}
                                 <button type="submit" id="starRating_{{star}}" name="submit_rating"
@@ -58,14 +58,14 @@
                 <div class="card-body overlay-content bg-fa">
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <div class="star-wrap-recipe">
-                        <p class="star-review-callout">You can't rate your own submission.</p>
+                        <p class="star-review-description">You can't rate your own submission.</p>
                     </div>
                 </div>
             </div>
             {%endif%}
             <!--            Shows star rating-->
             <div class="text-center">
-                <p class="callout-margin">{{recipe_data.callout}}</p>
+                <p class="description-margin">{{recipe_data.description}}</p>
                 <p class="text-buffer">Author: {{recipe_data.author}}</p>
                 {% if recipe_data.lastUpdateDate == 0 %}
                 <p class="text-buffer">Created on: {{recipe_data.createDate}}</p>

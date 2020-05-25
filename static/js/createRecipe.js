@@ -20,10 +20,10 @@ $(document).ready(function() {
             let recipeUrl = $("#imageUrl").val();
             let portions = $("#recipe_portions").val();
             let recipeName = $("#recipe_name").val();
-            let calloutText = $("#recipe_callout").val();
+            let description = $("#recipe_description").val();
             const urlLabel = document.getElementById('urlLabel');
             const recipeNameLabel = document.getElementById('recipeNameLabel');
-            const calloutLabel = document.getElementById('calloutLabel');
+            const descriptionLabel = document.getElementById('descriptionLabel');
             const portionLabel = document.getElementById('portionLabel');
 
 
@@ -57,16 +57,16 @@ $(document).ready(function() {
                 recipeNameLabel.innerText = "Recipe Name Correct";
                 recipeNameLabel.style.color = "green";
 
-                // Check if call out text is just spaces or less then 5
-            }if(calloutText.trim().length === 0 || calloutText.trim().length < 5) {
-                calloutLabel.innerText = "Callout Text too short";
-                calloutLabel.style.color = "red";
+                // Check if description is just spaces or less then 5
+            }if(description.trim().length === 0 || description.trim().length < 5) {
+                descriptionLabel.innerText = "Description too short";
+                descriptionLabel.style.color = "red";
                 e.preventDefault();
 
                 // If it's longer then 5 characters
-            }if(calloutText.trim().length > 5) {
-                calloutLabel.innerText = "Callout Text Correct";
-                calloutLabel.style.color = "green";
+            }if(description.trim().length > 5) {
+                descriptionLabel.innerText = "Description Correct";
+                descriptionLabel.style.color = "green";
 
                 // If the portions are not a number or just empty space
             }if(isNaN(portions) === true || portions.trim().length === 0) {

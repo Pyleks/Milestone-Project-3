@@ -211,7 +211,7 @@ a {
 .n-recipe-heading {
     font-size: 2.7em;
 }
-.n-callout {
+.n-description {
     font-size: 1.5em;
     line-height: 2em;
 }
@@ -313,7 +313,7 @@ a {
 
 }
 
-.callout-margin {
+.description-margin {
     margin: 0 20% 0 20%;
     font-size: 1.5em;
 }
@@ -460,7 +460,7 @@ a {
     border: none;
     font-size: 1.3em !important;
 }
-.star-review-callout {
+.star-review-description {
     padding: 1em 0 0.5em 0;
 
 }
@@ -658,7 +658,7 @@ a {
     .n-star-wrap {
         margin: 0.5em 0 0.5em 0;
     }
-    .n-callout {
+    .n-description {
         display: none;
     }
     .n-date {

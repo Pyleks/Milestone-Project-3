@@ -145,7 +145,7 @@ def insert_recipe():
     mongo.db.Recipes.insert(
         {
             'name': request.form.get('recipe_name'),
-            'callout': request.form.get('recipe_callout'),
+            'description': request.form.get('recipe_description'),
             'imageUrl': request.form.get('imageUrl'),
             'ingredients': request.form.get('recipe_ingredients'),
             'recipe': request.form.get('recipe'),
@@ -263,7 +263,7 @@ def update_recipe(recipe_id):
         if session['user'] == author or session['user'] == "Administrator":
             mongo.db.Recipes.update({'_id': ObjectId(recipe_id)}, {
                 'name': request.form.get('recipe_name'),
-                'callout': request.form.get('recipe_callout'),
+                'description': request.form.get('recipe_description'),
                 'imageUrl': request.form.get('imageUrl'),
                 'ingredients': request.form.get('recipe_ingredients'),
                 'recipe': request.form.get('recipe'),
