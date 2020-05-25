@@ -259,6 +259,13 @@ def update_recipe(recipe_id):
     approval = recipe_data["approved"]
     # Get created Date
     created_date = recipe_data["createDate"]
+    star_one = recipe_data["starRating-1"]
+    star_two = recipe_data["starRating-2"]
+    star_three = recipe_data["starRating-3"]
+    star_four = recipe_data["starRating-4"]
+    star_five = recipe_data["starRating-5"]
+    total_votes = recipe_data["totalVotes"]
+    total_star_value = recipe_data["totalStarValue"]
     if 'user' in session:
         # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
@@ -273,13 +280,13 @@ def update_recipe(recipe_id):
                 'approved': approval,
                 'createDate': created_date,
                 'lastUpdateDate': last_updated_date,
-                'starRating-1': 0,
-                'starRating-2': 0,
-                'starRating-3': 0,
-                'starRating-4': 0,
-                'starRating-5': 0,
-                'totalVotes:': 0,
-                'totalStarValue': 0
+                'starRating-1': star_one,
+                'starRating-2': star_two,
+                'starRating-3': star_three,
+                'starRating-4': star_four,
+                'starRating-5': star_five,
+                'totalVotes': total_votes,
+                'totalStarValue': total_star_value
 
             })
             return redirect(url_for('recipes'))

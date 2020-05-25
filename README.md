@@ -291,8 +291,7 @@ This page looks the same for user and administrator
 
 #### Update Recipe (Only available when logged in and author of the recipe)
 Provides identical user interface as add recipe, but pulls all the data from the database
-to be edited, updating a recipe at the moment will also wipe the rating, as this can be
-abused.
+to be edited, updating a recipe will no longer remove the rating(As originally designed to do).
 
 #### Smart Filter
 This filter all content on the home page depending on rating, and when it was added to give
