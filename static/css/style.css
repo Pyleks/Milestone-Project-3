@@ -376,7 +376,6 @@ a {
     font-size: 1.6em !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
-    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
     transition: 0.3s;
 }
 
@@ -394,7 +393,6 @@ a {
     font-size: 1.6em !important;
     -webkit-transition: background-color .3s, opacity .3s, visibility .5s;
     -o-transition: background-color .3s, opacity .3s, visibility .5s;
-    /*transition: background-color .3s, opacity .3s, visibility .5s;*/
     transition: 0.3s;
 }
 
