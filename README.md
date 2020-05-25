@@ -2,7 +2,7 @@
 
 ## Introduction
 Experience The Happy Bun, a easy to use recipe website, giving everyone access to their favorites just a few clicks away.
-A safe and responsive site to provide you the tools needed to try out your new favorite pastry. 
+A safe and responsive site to provide you the tools needed to try out your new favorite recipe. 
 Share, Up-vote, and enjoy.
 
 ![alt text](static/img/responsive.jpg)
@@ -52,7 +52,7 @@ over the best and the newest.
 
 > Want to try a new recipe that have good rating.  
 
-> Want to add my own recipe to see if others like my pastry.  
+> Want to add my own recipe to see if others like my recipe.  
 
 > Want to use it as my own digital recipe book for easy sharing.  
 
@@ -457,7 +457,7 @@ Expecting confirmed password to inform it's incorrect.
 - Attempting to submit the form empty, expecting to receive error message across the whole form.
 - Adding random letters in url, error message don't change.
 - Adding a regular website url, (bug get approved).
-- Adding 1 letter in pastry name, but is told it's too short.
+- Adding 1 letter in recipe name, but is told it's too short.
 - Adding more then 3, and get approved.
 - Adding plenty of empty spaces in callout text, is registered as no input.
 - Added more then 8 characters in callout, and it's approved.
@@ -478,11 +478,11 @@ actions like deleting content made by other users, this section will attempt to 
 to see if we can by pass security.
 
 #### Add recipe without being logged in.
-- Upon using "https://the-happy-bun.herokuapp.com/add_recipe" I attempt adding pastry without using login credentials.  
+- Upon using "https://the-happy-bun.herokuapp.com/add_recipe" I attempt adding recipe without using login credentials.  
 This redirect the visitor to login window
 
 #### Delete recipe without being logged in.
-- Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a pastry without
+- Upon using "http://the-happy-bun.herokuapp.com/delete_recipe/5ea599ad92cf716f6bd77557" I attempted to delete a recipe without
 being logged in, this redirected the visitor to login window.
 
 #### Approve recipe without being logged in.
@@ -490,7 +490,7 @@ being logged in, this redirected the visitor to login window.
 This redirect the visitor to login window, but also approved it.
 
 #### Update recipe without being logged in.
-- Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea599ad92cf716f6bd77557" I attempt to access update pastry without
+- Upon using "http://the-happy-bun.herokuapp.com/edit_recipe/5ea599ad92cf716f6bd77557" I attempt to access update recipe without
 being logged in, this redirected the visitor to login window.
 
 #### Delete user without being logged in.
