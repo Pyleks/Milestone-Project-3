@@ -274,7 +274,7 @@ a {
     display: none;
 }
 
-/************ PASTRY PAGE CSS ************/
+/************ Recipe PAGE CSS ************/
 .recipe-img {
     object-fit: cover;
     width: 100%;
@@ -441,7 +441,7 @@ a {
 }
 
 
-/************ PASTRY PAGE OVERLAY CSS ************/
+/************ Recipe PAGE OVERLAY CSS ************/
 #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
@@ -481,7 +481,7 @@ a {
 }
 
 
-/************ Update Pastry Page ************/
+/************ Update Recipe Page ************/
 .recipe-heading {
     font-size: 3em;
     padding: 0 0 2% 0;
