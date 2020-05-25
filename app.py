@@ -208,7 +208,6 @@ def insert_rating(recipe_id):
                                         'totalVotes': total_votes
                                     }
                                 },
-                                # protection={'seq': True, '_id': False},
                                 upsert=True
 
                                 )
