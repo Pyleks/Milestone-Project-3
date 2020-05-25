@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <!--Update Recipe form-->
-<section class="update-recipe container">
+<section id="recipe" class="update-recipe container">
     <div class="row recipe-space">
         <div class="col-12">
             <form action="{{ url_for('update_recipe', recipe_id=recipe_data._id)}}" method="POST" class="full-form">

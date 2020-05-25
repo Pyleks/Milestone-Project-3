@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    // THis code enables CK editor on the website, but also fetches the config.js file
+    // This code enables CK editor on the website, but also fetches the config.js file
+    // Also makes sure it don't throw errors when opening other pages
+    let recipeLoad = document.getElementById("recipe");
+    if(recipeLoad) {
     CKEDITOR.replace( 'recipe_ingredients', {
         uiColor: '#6499ed',
         customConfig: '/../static/js/config.js'
@@ -9,6 +12,7 @@ $(document).ready(function() {
         uiColor: '#6499ed',
         customConfig: '/../static/js/config.js'
     });
+    }
 
     // This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
     // All the variables required to handle the operation
@@ -74,7 +78,6 @@ $(document).ready(function() {
         }if(isNaN(portions) === false && portions.trim().length >= 1) {
             portionLabel.innerText = "Number Correct";
             portionLabel.style.color = "green";
-
 
         }
 
