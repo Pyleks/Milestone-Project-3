@@ -6,7 +6,7 @@
         <div class="row no-margin">
             <div class="col-12 no-pad">
                 <div class="card card-full-size card-box">
-                    <img alt="Recipe description image" class="pastry-img img-fluid" src="{{recipe_data.imageUrl}}">
+                    <img alt="Recipe description image" class="recipe-img img-fluid" src="{{recipe_data.imageUrl}}">
                 </div>
             </div>
         </div>
@@ -17,11 +17,11 @@
 <section class="food-headline description container">
     <div class="row">
         <div class="col-12">
-            <h1 class="pastry-name unique-font text-center">{{recipe_data.name}}</h1>
+            <h1 class="recipe-name unique-font text-center">{{recipe_data.name}}</h1>
             {% for ingredient in recipe_data %}
             {{ingredient.name}}
             {% endfor %}
-            <div class="star-wrap-pastry">
+            <div class="star-wrap-recipe">
                 <button id="enable-overlay" class="overlay-star-layer bg-fa">
                     {% for star in range(recipe_data.totalStarValue) %}
                     <span class="fas fa-star txt-blue star-box"></span>
@@ -38,7 +38,7 @@
                 <div class="card-body overlay-content bg-fa">
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
-                        <div class="star-wrap-pastry">
+                        <div class="star-wrap-recipe">
                             <p class="star-review-callout">Please leave a star review</p>
                             <div id="star-box">
                                 {% for star in range(1, 6) %}
@@ -57,7 +57,7 @@
             <div id="overlay">
                 <div class="card-body overlay-content bg-fa">
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
-                    <div class="star-wrap-pastry">
+                    <div class="star-wrap-recipe">
                         <p class="star-review-callout">You can't rate your own submission.</p>
                     </div>
                 </div>
@@ -95,17 +95,17 @@
     <!--    Recipe box-->
     <div class="row recipe-box">
         <div class="col-sm-12 col-md-5 col-xl-5 ingredient-box text-center card-body bg-lightBlue">
-            <h2 class="pastry-h2 ing-buffer">Ingredients</h2>
+            <h2 class="recipe-h2 ing-buffer">Ingredients</h2>
             <h3 class="portion-size">Number of portions</h3>
             <h3 class="portion-number">{{recipe_data.portions}}</h3>
-            <div class="card-text pastry_text">
+            <div class="card-text recipe_text">
                 {{recipe_data.ingredients|safe}}
 
             </div>
         </div>
         <!--        Recipe to do steps-->
         <div class="col-sm-12 col-md-5 offset-md-2 col-xl-5 offset-xl-2">
-            <h2 class="pastry-h2">This is how you do it</h2>
+            <h2 class="recipe-h2">This is how you do it</h2>
             <div class="recipe-steps">
                 {{recipe_data.howTo|safe}}
             </div>

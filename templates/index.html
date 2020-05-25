@@ -25,11 +25,11 @@
                 </div>
             </div>
             {% if session.user %}
-            <a role="button" class="txt-white bg-blue btn add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
+            <a role="button" class="txt-white bg-blue btn add-recipe fas fa-plus" href="{{url_for('add_recipe')}}">
                 Add Recipe</a>
         </div>
         <div class="col-6">
-            <a role="button" class="txt-white bg-blue btn m-add-recipe fas fa-plus" href="{{url_for('add_pastry')}}">
+            <a role="button" class="txt-white bg-blue btn m-add-recipe fas fa-plus" href="{{url_for('add_recipe')}}">
                 Add Recipe</a>
         </div>
         {%endif%}
@@ -86,7 +86,7 @@
         <div class="col-sm-12 col-md-6 col-xl-6">
             <div class="card card-box n-rated-card">
                 <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
-                    <img alt="Newest recipe image" class="n-pastry-img" src="{{content.imageUrl}}"></a>
+                    <img alt="Newest recipe image" class="n-recipe-img" src="{{content.imageUrl}}"></a>
             </div>
         </div>
         <div class="col-sm-12 col-md-6 col-xl-6 text-center">

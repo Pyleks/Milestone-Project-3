@@ -27,14 +27,14 @@ $(document).ready(function() {
 
     // All the variables required to handle the operation
     ($("#submitForm").click(function (e) {
-        let pastryUrl = $("#imageUrl").val();
+        let recipeUrl = $("#imageUrl").val();
         let portions = $("#recipe_portions").val();
-        let pastryName = $("#recipe_name").val();
+        let recipeName = $("#recipe_name").val();
         let calloutText = $("#recipe_callout").val();
         let Ingredients = $("#recipe_ingredients").val();
         let howTo = $("#recipe_howTo").val();
         const urlLabel = document.getElementById('urlLabel');
-        const pastryNameLabel = document.getElementById('pastryNameLabel');
+        const recipeNameLabel = document.getElementById('recipeNameLabel');
         const calloutLabel = document.getElementById('calloutLabel');
         const portionLabel = document.getElementById('portionLabel');
         const ingredientsLabel = document.getElementById("ingredientsLabel");
@@ -49,26 +49,26 @@ $(document).ready(function() {
             '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
 
             // Checks if the URL is invalid
-        if(!!pattern.test(pastryUrl) !== true) {
+        if(!!pattern.test(recipeUrl) !== true) {
             urlLabel.innerText = "Please add a valid URL";
             urlLabel.style.color = "red";
             e.preventDefault();
 
             // If the URL is valid, it provides valid URL
-        }if(!!pattern.test(pastryUrl) === true) {
+        }if(!!pattern.test(recipeUrl) === true) {
             urlLabel.innerText = "URL Valid";
             urlLabel.style.color = "green";
 
             // Check if there is text and not just spaces, and if it's shorter then 3 characters
-        }if(pastryName.trim().length === 0 || pastryName.trim().length < 3) {
-            pastryNameLabel.innerText = "Pastry name empty or too short";
-            pastryNameLabel.style.color = "red";
+        }if(recipeName.trim().length === 0 || recipeName.trim().length < 3) {
+            recipeNameLabel.innerText = "Recipe name empty or too short";
+            recipeNameLabel.style.color = "red";
             e.preventDefault();
 
             // Check if the recipe name is long enough
-        }if(pastryName.trim().length >= 3) {
-            pastryNameLabel.innerText = "Pastry Name Correct";
-            pastryNameLabel.style.color = "green";
+        }if(recipeName.trim().length >= 3) {
+            recipeNameLabel.innerText = "Recipe Name Correct";
+            recipeNameLabel.style.color = "green";
 
             // Check if call out text is just spaces or less then 5
         }if(calloutText.trim().length === 0 || calloutText.trim().length < 5) {

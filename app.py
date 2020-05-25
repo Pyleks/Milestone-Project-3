@@ -125,28 +125,24 @@ def profile():
         return redirect(url_for('login'))
 
 
-# Add Pastry Route
-@app.route('/add_pastry')
-def add_pastry():
+# Add Recipe Route
+@app.route('/add_recipe')
+def add_recipe():
     # Check if user is logged in
     if 'user' in session:
         user_in_database = mongo.db.users.find_one({"username": session['user']})
         if user_in_database:
             # If user in DB, redirected to Create Recipe page
-            return render_template('add_pastry.html')
+            return render_template('add_recipe.html')
     else:
         # Render the page for user to be able to log in
         return render_template("login.html")
 
 
-# Insert Pastry Route
-@app.route('/insert_pastry', methods=['POST'])
-def insert_pastry():
+# Insert Recipe Route
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
     creation_date = time.strftime("%Y-%m-%d", time.localtime())
-    # recipe_ingredients = request.form.get('recipe_ingredients')
-    # recipe_ingredients_array = recipe_ingredients.split(", ")
-    # recipe_how_to = request.form.get('recipe_howTo')
-    # recipe_how_to_array = recipe_how_to.split(", ")
     mongo.db.Recipes.insert(
         {
             'name': request.form.get('recipe_name'),
@@ -231,10 +227,10 @@ def recipe(recipe_id):
     recipe_data = mongo.db.Recipes.find_one({"_id": ObjectId(recipe_id)})
     # Get the star rating information
     data = {'total': recipe_data["totalStarValue"]}
-    return render_template('pastry.html', recipe_data=recipe_data, data=data)
+    return render_template('recipe.html', recipe_data=recipe_data, data=data)
 
 
-# Edit Pastry Route
+# Edit Recipe Route
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     # Check if the user is in session
@@ -245,7 +241,7 @@ def edit_recipe(recipe_id):
         author = recipe_data["author"]
         # Make sure only administrator or author can edit the recipe
         if session['user'] == author or session['user'] == "Administrator":
-            return render_template('pastryUpdate.html', recipe_data=recipe_data)
+            return render_template('recipeUpdate.html', recipe_data=recipe_data)
         else:
             flash('Only Admins can access this page!')
             return redirect(url_for('recipes'))
@@ -253,7 +249,7 @@ def edit_recipe(recipe_id):
         return redirect(url_for('login'))
 
 
-# Update Pastry Route
+# Update Recipe Route
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_recipe(recipe_id):
     # Get the date for update
@@ -266,10 +262,6 @@ def update_recipe(recipe_id):
     if 'user' in session:
         # Check if user is either author, administrator
         if session['user'] == author or session['user'] == "Administrator":
-            # recipe_ingredients = request.form.get('recipe_ingredients')
-            # recipe_ingredients_array = recipe_ingredients.split(", ")
-            # recipe_how_to = request.form.get('recipe_howTo')
-            # recipe_how_to_array = recipe_how_to.split(", ")
             mongo.db.Recipes.update({'_id': ObjectId(recipe_id)}, {
                 'name': request.form.get('recipe_name'),
                 'callout': request.form.get('recipe_callout'),

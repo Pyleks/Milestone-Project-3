@@ -478,7 +478,7 @@ actions like deleting content made by other users, this section will attempt to 
 to see if we can by pass security.
 
 #### Add recipe without being logged in.
-- Upon using "https://the-happy-bun.herokuapp.com/add_pastry" I attempt adding pastry without using login credentials.  
+- Upon using "https://the-happy-bun.herokuapp.com/add_recipe" I attempt adding pastry without using login credentials.  
 This redirect the visitor to login window
 
 #### Delete recipe without being logged in.

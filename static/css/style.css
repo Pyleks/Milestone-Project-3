@@ -211,7 +211,7 @@ a {
     overflow: hidden;
 }
 
-.n-pastry-img {
+.n-recipe-img {
     object-fit: cover;
     width: 100%;
     height: 30em;
@@ -261,7 +261,7 @@ a {
     transition: 0.5s;
 }
 
-.n-pastry-img:hover {
+.n-recipe-img:hover {
     opacity:0.5;
     transition: 0.5s;
 }
@@ -275,13 +275,13 @@ a {
 }
 
 /************ PASTRY PAGE CSS ************/
-.pastry-img {
+.recipe-img {
     object-fit: cover;
     width: 100%;
     height: 50em;
 }
 
-.pastry_text {
+.recipe_text {
     font-size: 1.3em;
     line-height: 1.5;
 }
@@ -316,7 +316,7 @@ a {
     line-height: 1.3;
     margin-bottom: 1.3em;
 }
-.pastry-name {
+.recipe-name {
     font-size: 3em;
     padding: 0.5em 0 0 0;
 
@@ -331,11 +331,11 @@ a {
     margin: 5% 0 5% 0;
 }
 
-.pastry-h2 {
+.recipe-h2 {
     font-size: 1.9em;
     font-weight: 600;
 }
-.star-wrap-pastry {
+.star-wrap-recipe {
     text-align: center;
     padding: 1em 0 2em 0;
 }
@@ -362,11 +362,11 @@ a {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
-.pastry_text ol li {
+.recipe_text ol li {
     list-style: none !important;
     border-bottom: 1px solid #676461;
 }
-.pastry_text p {
+.recipe_text p {
     border-bottom: 1px solid #8395c1 ;
     margin: 7% 0 7% 0;
 }
@@ -623,7 +623,7 @@ a {
     .overlay-content {
         width: 50%;
     }
-    .pastry-img {
+    .recipe-img {
         height: 30em;
     }
     /*Login page*/
@@ -685,10 +685,10 @@ a {
         font-size: 1.3em;
     }
     /*Recipe Page*/
-    .pastry-img {
+    .recipe-img {
         height: 25em;
     }
-    .pastry-h2 {
+    .recipe-h2 {
         padding-top: 2em;
         text-align: center;
     }
@@ -759,16 +759,16 @@ a {
         display: unset !important;
     }
     /*Recipe Page*/
-    .pastry-img {
+    .recipe-img {
         height: 20em;
     }
     .navbar-brand {
         font-size: 1.7em;
     }
-    .pastry-name {
+    .recipe-name {
         font-size: 1.9em;
     }
-    .pastry-h2 {
+    .recipe-h2 {
         font-size: 1.9em;
     }
     .overlay-content {
@@ -819,7 +819,7 @@ a {
     .auto-size {
         height: 10em;
     }
-    .n-pastry-img {
+    .n-recipe-img {
         height: 20em;
     }
     .popular-recipe span {
