@@ -1,7 +1,5 @@
-// This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
-
 $(document).ready(function() {
-
+    // THis code enables CK editor on the website, but also fetches the config.js file
     CKEDITOR.replace( 'recipe_ingredients', {
         uiColor: '#6499ed',
         customConfig: '/../static/js/config.js'
@@ -12,7 +10,7 @@ $(document).ready(function() {
         customConfig: '/../static/js/config.js'
     });
 
-
+    // This JS is for making sure that recipe creation go well, and provide the client with sufficient feedback
     // All the variables required to handle the operation
     ($("#submitForm").click(function (e) {
         let recipeUrl = $("#imageUrl").val();
