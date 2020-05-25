@@ -19,14 +19,11 @@ $(document).ready(function() {
         let portions = $("#recipe_portions").val();
         let recipeName = $("#recipe_name").val();
         let calloutText = $("#recipe_callout").val();
-        let Ingredients = $("#recipe_ingredients").val();
-        let howTo = $("#recipe_howTo").val();
         const urlLabel = document.getElementById('urlLabel');
         const recipeNameLabel = document.getElementById('recipeNameLabel');
         const calloutLabel = document.getElementById('calloutLabel');
         const portionLabel = document.getElementById('portionLabel');
-        const ingredientsLabel = document.getElementById("ingredientsLabel");
-        const howToLabel = document.getElementById("howToLabel");
+
 
             // This one is to make sure the URL string is correct
         const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
