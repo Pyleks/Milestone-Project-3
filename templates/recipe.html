@@ -35,7 +35,7 @@
             <!--            If user is not author they can vote-->
             {% if session.user != recipe_data.author %}
             <div id="overlay">
-                <div class="card-body overlay-content bg-fa">
+                <div id="find-overlay" class="card-body overlay-content bg-fa">
                     <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
                         <div class="star-wrap-recipe">
