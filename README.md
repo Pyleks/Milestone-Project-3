@@ -109,6 +109,7 @@ over the best and the newest.
 <details>
 <summary>Create Recipe</summary>
 <br>
+<p>I overhauled this page, adding 2 new text areas, to add recipe ingredients easier</p>
 
 ![Create Recipe Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Create%20Recipe%20Page%20Desktop.png)
 ![Create Recipe Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Create%20Recipe%20Page%20Tablet.png)
