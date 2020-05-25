@@ -68,6 +68,7 @@ over the best and the newest.
 <details>
 <summary>Main Page</summary>
 <br>
+<p>The button on the wireframe have been removed, and replaced with a new button next to Filter since this was made</p>
 
 ![Main Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Desktop.png)
 ![Main Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/Main%20Page%20Tablet.png)
