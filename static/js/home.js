@@ -1,14 +1,33 @@
 // Enabling Star review overlay if the criteria is met.
 $(document).ready(function() {
+    // If JS can find enable-overlay before initializing the code
     let enableOverlay = document.getElementById("enable-overlay");
     if(enableOverlay) {
         enableOverlay.addEventListener("click", function () {
-            document.getElementById("overlay").style.display = "block";
-        });
+            let overlayAuthor = document.getElementById("overlay-author");
+            let enableUser = document.getElementById("overlay-user");
+            // If the visitor is author, this IF statement get executed.
+            if(overlayAuthor) {
+                document.getElementById("overlay-author").style.display = "block";
+                document.getElementById("disable-author-overlay").addEventListener("click", function () {
+                    document.getElementById("overlay-author").style.display = "none";
 
-        document.getElementById("disable-overlay").addEventListener("click", function () {
-            document.getElementById("overlay").style.display = "none";
-        });
+                });
+              // If the visitor is a user looking around, this section enables stat review overlay for voting .
+            } else if(enableUser) {
+                document.getElementById("overlay-user").style.display = "block";
+                document.getElementById("disable-user-overlay").addEventListener("click", function () {
+                    document.getElementById("overlay-user").style.display = "none";
+                });
+              // If the user is not logged in, they will be prompted to either login or register on the website.
+            } else {
+                document.getElementById("overlay-logged-out").style.display = "block";
+                document.getElementById("disable-logged-out-overlay").addEventListener("click", function () {
+                    document.getElementById("overlay-logged-out").style.display = "none";
+                });
+            }});
+
+
 
         let recipeLoad = document.getElementById("find-overlay");
         if(recipeLoad) {

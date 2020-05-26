@@ -431,7 +431,7 @@ a {
 
 
 /************ Recipe PAGE OVERLAY CSS ************/
-#overlay {
+.overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -824,5 +824,9 @@ a {
     /*profile page*/
     .main-content {
         min-height: calc(100vh - 60px - 88px);
+    }
+    /*Overlay text size*/
+    .star-review-description {
+        font-size: 0.8em;
     }
 }

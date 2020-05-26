@@ -32,11 +32,11 @@
                 </button>
                 <span class="tV-font txt-blue"> ({{recipe_data.totalVotes}})</span>
             </div>
-            <!--            If user is not author they can vote-->
-            {% if session.user != recipe_data.author %}
-            <div id="overlay">
+            <!--            If user is not author and logged in they can vote-->
+            {% if session.user != recipe_data.author and session.user %}
+            <div id="overlay-user" class="overlay">
                 <div id="find-overlay" class="card-body overlay-content bg-fa">
-                    <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
+                    <button id="disable-user-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <form method="POST" action="{{ url_for('insert_rating', recipe_id=recipe_data._id)}}">
                         <div class="star-wrap-recipe">
                             <p class="star-review-description">Please leave a star review</p>
@@ -54,11 +54,23 @@
             {%endif%}
             <!--            Check if user is author before allowing to vote-->
             {% if session.user == recipe_data.author %}
-            <div id="overlay">
+            <div id="overlay-author" class="overlay">
                 <div class="card-body overlay-content bg-fa">
-                    <button id="disable-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
+                    <button id="disable-author-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
                     <div class="star-wrap-recipe">
                         <p class="star-review-description">You can't rate your own submission.</p>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+            <!--            Check if the user is not logged in-->
+            {% if not session.user %}
+            <div id="overlay-logged-out" class="overlay">
+                <div class="card-body overlay-content bg-fa">
+                    <button id="disable-logged-out-overlay" class="fas fa-times leave-button bg-fa txt-blue"></button>
+                    <div class="star-wrap-recipe">
+                        <p class="star-review-description">You need to login to rate <a href="{{url_for('login')}}">Login here</a></p>
+                        <p class="star-review-description">Not registered? <a href="{{url_for('register')}}">Register here</a></p>
                     </div>
                 </div>
             </div>
