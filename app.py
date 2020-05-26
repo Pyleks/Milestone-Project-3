@@ -200,7 +200,7 @@ def insert_rating(recipe_id):
 
         star_calculator = (int(star_calculator))
         print(star_calculator)
-
+        # Preform a set update to only updated the values inserted
         mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
                                 {
                                     '$set': {
@@ -302,8 +302,10 @@ def delete_recipe(recipe_id):
 # Delete User Route
 @app.route('/delete_user/<user_id>')
 def delete_user(user_id):
+    # Check if user is logged in
     if 'user' in session:
         if session['user'] == "Administrator":
+            # Finds the user and removes it
             mongo.db.users.remove({'_id': ObjectId(user_id)})
             return redirect(url_for('admin_portal'))
         else:
@@ -315,8 +317,10 @@ def delete_user(user_id):
 # Approve Recipe
 @app.route('/approve_recipe/<recipe_id>')
 def approve_recipe(recipe_id):
+    # Check if user is in session
     if 'user' in session:
         if session["user"] == "Administrator":
+            # Set the approval to True
             mongo.db.Recipes.update({'_id': ObjectId(recipe_id)},
                                     {
                                         '$set': {
@@ -348,6 +352,7 @@ def login():
         return render_template('login.html')
 
 
+# User authentication route
 @app.route('/user_auth', methods=['POST'])
 def user_auth():
     form = request.form.to_dict()
@@ -372,7 +377,7 @@ def user_auth():
         flash("You are not registered")
         return redirect(url_for('login'))
 
-
+# Registration route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     # Check if user is not logged in already
@@ -383,7 +388,7 @@ def register():
         form = request.form.to_dict()
         # Check if the password and password actually match
         if form['user_password'] == form['user_password1']:
-            # If so try to find the user in db
+            # Check if the user exist in the database
             user = mongo.db.users.find_one({"username": form['username']})
             if user:
                 flash(f"{form['username']} already exists!")
@@ -425,10 +430,15 @@ def logout():
     flash('You were logged out!')
     return redirect(url_for('recipes'))
 
-# Error handler route
+# Error 404 handler route
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+# Error 500 handler route
+@app.errorhandler(500)
+def server_error(e):
+    return render_template('500.html'), 500
 
 
 if __name__ == '__main__':
