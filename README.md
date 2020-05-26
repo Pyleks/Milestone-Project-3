@@ -685,7 +685,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 |:------------- |:-------------| 
 |  IP  | 0.0.0.0 | 
 |  PORT  | 5000 | 
-|  MONGO_URI  | "mongodb+srv://myRoot:<span>MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb</span>.net/DATABASE-NAME?retryWrites=true&w=majority" | 
+|  MONGO_URI  | "mongodb+srv://myRoot:<span>MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net</span>/DATABASE-NAME?retryWrites=true&w=majority" | 
 |  MONGO_DBNAME  | Name of the database |
 |  SECRET_KEY  | "Secret key you made for local" |
 
