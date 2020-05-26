@@ -20,15 +20,15 @@
                     {% if session.user == content.author %}
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-12 col-md-6 col-xl-4">
+                            <div class="col-sm-12 col-md-6 col-xl-6">
                                 <div class="card card-box cooking-img">
                                     <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
                                         <img alt="Public recipe image" class="img-fluid" src="{{content.imageUrl}}">
                                     </a>
                                 </div>
                             </div>
-                            <!--                                Recipe details-->
-                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
+                            <!--             Recipe details-->
+                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-6">
                                 <p><span>Author:</span> {{content.author}}</p>
                                 <p><span>Name: </span> {{content.name}}</p>
                                 <p><span>Description: </span> {{content.description}}</p>
@@ -60,7 +60,7 @@
                     {% if session.user == content.author %}
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-12 col-md-6 col-xl-4">
+                            <div class="col-sm-12 col-md-6 col-xl-6">
                                 <div class="card card-box cooking-img">
                                     <a href="{{url_for('recipe',recipe_id=content._id)}}" class="link-wrap">
                                         <img alt="Waiting approval recipe image" class="img-fluid"
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                             <!--                                recipe details-->
-                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-8">
+                            <div class="profile-recipe col-sm-12 col-md-6 col-xl-6">
                                 <p><span>Author:</span> {{content.author}}</p>
                                 <p><span>Name: </span> {{content.name}}</p>
                                 <p><span>Description: </span> {{content.description}}</p>
