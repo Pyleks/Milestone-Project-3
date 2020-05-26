@@ -2,7 +2,7 @@
 
 ## Introduction
 Experience The Happy Bun, a easy to use recipe website, giving everyone access to their favorites just a few clicks away.
-A safe and responsive site to provide you the tools needed to try out your new favorite recipe. 
+A safe and responsive website to provide you with the tools needed to try out your new favorite recipe. 
 Share, Up-vote, and enjoy.
 
 ![alt text](static/img/responsive.jpg)
@@ -173,7 +173,7 @@ over the best and the newest.
 
 ## Design Decisions
 The design follows a minimalistic approach by only displaying content that is of value to the visitor, 
-and keeping any overflow out of the design process, relying heavily on dynamic user content.
+and keeping any overflow out of the design process, and relying heavily on dynamic user content.
 The happy bun takes much inspiration from [Tine mat](https://www.tine.no/oppskrifter).
 
 #### Color Scheme
@@ -191,7 +191,7 @@ a bit more personality.
 
 ## Database
 This website have 2 databases, 1 for users and 1 for recipes, these are both being used to connect
-with each other as well being used to preform various calculations, and store all information on the page.
+with each other as well being used to store various calculations, and store all general information on the page.
 All the content on the page is generated from these 2 databases.
 
 <details>
@@ -217,12 +217,12 @@ All the content on the page is generated from these 2 databases.
 - Password: Is a hashed and salted password, so no password is in clear text inside the database.
 
 ### Recipe database explained.
-- Name: Is what the user choose to call the recipe
-- callout: This is where you can type a small text to "sell" your recipe to the visitor
+- Name: Is what the user choose to call the recipe.
+- Description: This is where you can type a small text to "sell" your recipe to the visitor.
 - ImageURL: Here you can choose any image off the web for your recipe.
 - Ingredients: This is stored as an array, and unpacks on the website, storing all ingredients the user choose to use.
-- HowTo: Also store as an array, and unpacks on the recipe page for viewing.
-- Portions: Added by user, simply how many portions added the recipe contains
+- Recipe: Also store as an array, and unpacks on the recipe page for viewing.
+- Portions: Added by user, simply how many portions added the recipe contains.
 - CreatedDate: This takes the date the recipe is created and apply it to the details when viewing the recipe later.
 - LastUpdatedDate: If the user choose to update it later, it removes CreateDate and apply LastUpdatedDate.
 
@@ -238,8 +238,8 @@ This require it's own section to explain what is happening to the rating data.
 - TotalStarValue
 
 This takes all the starRatings 1 - 5 preform a multiplication and division calculation, and applies it to 
-totalStarValues, which again is used by the filtering application to place all the recipes in order on the website.  
-Total Votes is simply to show how many votes each recipe received.
+totalStarValues, which again is used by the filtering function to place all the recipes in the right order on the website.  
+Total Votes is simply to show how many votes each of the recipes received.
 
 ### Relations
 The biggest relation is between username and author, as the application makes the decision if they can either vote
@@ -248,36 +248,35 @@ As well in the user portal, will display all the recipes provided by the logged 
 waiting for approval.
 
 
-
 ## Features
 All the features were developed with dynamic user content with appropriate restrictions.
 Features like create, update, delete, approve are hidden behind a registration wall or login portal, but this do not 
 hinder visitors from viewing the overall content.
 
-### Implemented Features
 
 #### Home Page (visitor)
-The home page includes Login and registration menu at the very top, with all the highest rated recipes come into view
-with the option to filter between highest and medium rated recipes, lower on the page you will find a own section
-for the newest added recipe followed by all the unrated ones,
-This page also shows the star rating for all recipe
+The home page includes Login and Registration menu at the very top, where all the highest rated recipes comes into view
+with the option to filter between highest and medium rated recipes. 
+Lower on the page you will find a own section for the newest added recipe followed by all the unrated.
+This page also shows the star rating for all recipes.
 
 #### Home Page (Registered/logged in)
-After logging in, a few new features appear, the header will now show Logout and your username, which leads to your 
-own profile page, a new button next to the filter to add a new recipe, originally this button was a circle on the right
+After logging in a few new features appear, the header will now show Logout and your username, which leads to your 
+own profile page. 
+A new button next to the filter to add a new recipe, originally this button was a circle on the right
 side, but was reported to be overseen too easily. This do not obstruct the view of the recipes itself.
 
 #### Recipe Page (visitor)
-On this page you can view the entire recipe, author, date added or updated, as well the image of the recipe.
+On this page you can view the entire recipe, author, date added or updated, star rating as well as the image of the recipe.
 This page is fully generated by the author of the recipe. 
-the navigation bar stays the same on all pages as a visitor.
+
 
 #### Recipe Page (logged in as Author and viewing your own recipe)
 Once logged in there is a few new features appearing, and 1 disappearing, you now have the ability to update or delete
-your own recipe, however you can not rate a recipe that you made.
+your own recipe, however you can not rate a recipe that you have made.
 
 #### Recipe Page (logged in but not the author)
-Once again, as a registered user and logged in, you can view other pages, and rate them as you see fit, but you 
+Once again, as a registered user and logged in you can view other pages, and rate them as you see fit, but you 
 can not update or delete someone else recipe, so this feature is completely removed and limited to author and administrator
 only.
 
@@ -296,7 +295,7 @@ This page also comes with a total view of all the registered users that can be d
 
 #### Add Recipe (Only available when logged in)
 This can be found as a blue button once logged in on the home page.  
-Allowing the user to add their own image url, recipe name, callout text, portions, ingredients and
+Allowing the user to add their own image url, recipe name, description text, portions, ingredients and
 the steps to make a recipe.  
 This page looks the same for user and administrator
 
@@ -322,8 +321,8 @@ and was left to the end.
 - More comprehensive but yet simplified way of adding new recipes, + a tagging system for later filtering and searching.
 - Add Reset password for users in the user profile.
 - Add reset password option for Admin to preform on all users.
-- Security from Python code and not just JS
-- A more Stylized feedback to the user
+- Password security from Python code and not just JS.
+- A more Stylized feedback to the user.
 
 
 ### Implemented Feature Summary
@@ -452,7 +451,7 @@ Expecting confirmed password to inform it's incorrect.
 - Attempting to rate my own submission provides feedback "You can't rate your own submission".
 
 #### User Portal(only accessible when logged in)
-- Visiting user portal, expecting to see "Your Public Recipes" and "Waiting Approval"
+- Visiting user portal, expecting to see "Your Public Recipes" and "Waiting Approval".
 - Expanding "Your Public Recipes" displays all recipes the user have posted with the option to delete any of them.
 - Expanding "Waiting Approval" shows all recipes added, but have not yet been approved with the option to delete it.
 - Clicking delete in "Your Public Recipes" removes the recipe from the database. (Bug user get redirected to main page).
@@ -482,7 +481,7 @@ Expecting confirmed password to inform it's incorrect.
 
 #### Update recipe(Only accessible logged in and on your own recipes)
 - Follows all the same rules as creating new recipe.
-- Attempting to remove any fields, block it from updating
+- Attempting to remove any fields, block it from updating.
 - Once user click update, it cleans the rating.
 
 ### URL Injection (Security)
@@ -556,9 +555,8 @@ slider across Chrome, Firefox and Edge.
 
 
 ### Big issue found (Fixed)
-Towards the end I noticed how poor user experience my update section became, but due to time restraints, this will have to
-be left out, even though it is pushing down the user experience a fair bit, this should have been extensively tested
-earlier on and completely removed/redone, with some added functionality.
+Towards the end I noticed how poor user experience my update section became, but due to time restraints,I originally planned
+to leave this out, but decide to dive back in and solve it.
 
 #### Big issue solution
 This was fixed by revamping the entire section where they provide ingredients and recipe steps.
@@ -576,7 +574,7 @@ I fetched the current approval status from the database, and fed it back to the 
 | Attempt        | Bugs           | Status  |
 |:------------- |:-------------| :-----:|
 | Delete user without being logged in)     | This was fully possible with http://the-happy-bun.herokuapp.com/delete_user/5ea59229470f17c99fd02da0 | Fixed |
-| Delete recipe to another user while logged in    | Not possible to delete the recipe, but they get redirected to 404 | Not fixed yet |
+| Delete recipe to another user while logged in    | Not possible to delete the recipe, but they get redirected to 404 | Fixed |
 | Approve recipe while being logged in as a user but not administrator   | This was fully possible without being logged in as admin using "http://the-happy-bun.herokuapp.com/approve_recipe/5eb68ff7eaa1e74ae8f3e6cd| Fixed |
 
 ### Responsiveness
@@ -627,17 +625,18 @@ The following steps will explain how you can get the website running on heroku a
 - Heroku CLI
 
 ### Branches
-Please note there are a total of 3 branches, but to get the latest up to date, we want to focus on
+Please note there are a total of 4 branches, but to get the latest up to date, we want to focus on
 the master branch.  
 - Master
 - Authentication
 - VariableOverhaul
+- Create_Recipe_overhaul
 
 ### How to Clone and set up the website locally in a few steps
 #### 1. Clone website
 1. Go to [GitHub](https://github.com/Pyleks)
-2. Click Repositories
-3. Locate Milestone-Project-3
+2. Click Repositories.
+3. Locate Milestone-Project-3.
 4. Open [Milestone-Project-3](https://github.com/Pyleks/Milestone-Project-3)
 5. Click the green button clone to download.
 6. Or clone from URL using the following command in terminal: <code>got clone https://github.com/Pyleks/Milestone-Project-3.git</code>
@@ -693,7 +692,7 @@ Before beginning this step, you need to complete the above step 1. Clone Website
 
 #### 2. Setting up our files
 At this stage, go back to your IDE, we are now setting everything up for pushing to Heroku.
-1. If the procfile is missing, please preform the following command in your terminal <code>echo web: python3 app.py > Procfile</code>
+1. If the Procfile is missing, please preform the following command in your terminal <code>echo web: python3 app.py > Procfile</code>
 2. If the requirements.txt is missing, please preform the following command in your terminal <code>pip3 freeze > requirements.txt</code>
 
 
@@ -728,9 +727,11 @@ A Norwegian website that do recipes, so much of my design is heavily influenced 
 Thanks to BeeZee for her suggestion on the unique fonts for headers
 
 #### Images
-404 Image license is purchased by me from shutter stock.  
+404/500 Image license is purchased by me from shutter stock.  
 
-All other images are acquired from [Pixaby](https://pixabay.com/)
+All other images are acquired from [Pixaby](https://pixabay.com/)   
+
+Favicon is also acquired from [Pixaby](https://pixabay.com/no/vectors/eple-smil-barn-smiling-innh%C3%B8sting-3226653/)  
 
 ## Assessor
 When reviewing the page, it is advisable to use the admin account, as you get access to all almost all the features,
