@@ -160,6 +160,17 @@ over the best and the newest.
 </details>
 
 
+<details>
+<summary>500 Page</summary>
+<br>
+
+![404 Page Desktop](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/500%20Page%20Desktop.png)
+![404 Page Tablet](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/500%20Page%20Tablet.png)
+![404 Page Phone](https://github.com/Pyleks/Milestone-Project-3/blob/master/static/wireframes/500%20Page%20Mobile.png)
+
+</details>
+
+
 ## Design Decisions
 The design follows a minimalistic approach by only displaying content that is of value to the visitor, 
 and keeping any overflow out of the design process, relying heavily on dynamic user content.
